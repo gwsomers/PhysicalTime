@@ -5,7 +5,7 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let endAngle = CGFloat(2*M_PI)
+        let endAngle = CGFloat(2 * Double.pi)
         
         
         let newView = View(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.width))
@@ -26,7 +26,7 @@ class ViewController: UIViewController{
 }
 
 func degree2radian(_ a:CGFloat)->CGFloat {
-    let b = CGFloat(M_PI) * a/180
+    let b = CGFloat(Double.pi) * a/180
     return b
 }
 
@@ -93,7 +93,7 @@ class View: UIView {
         // decide on radius
         let rad = rect.width/3.5
         
-        let endAngle = CGFloat(2*M_PI)
+        let endAngle = CGFloat(2 * Double.pi)
         
         // add the circle to the context
         ctx?.addArc(center: CGPoint(x:rect.midX, y:rect.midY), radius: rad, startAngle: 0, endAngle: endAngle, clockwise: true)
