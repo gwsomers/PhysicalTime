@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D52A5282047532400881C04 /* clockHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52A5272047532400881C04 /* clockHand.swift */; };
+		5D52A52A2047536A00881C04 /* handFormulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52A5292047536A00881C04 /* handFormulas.swift */; };
 		5DCCA1DF2022A1EB00C4D397 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCCA1DE2022A1EB00C4D397 /* Clock.swift */; };
 		F9EFB87D1B02B6AF0052A285 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EFB87C1B02B6AF0052A285 /* AppDelegate.swift */; };
 		F9EFB87F1B02B6AF0052A285 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EFB87E1B02B6AF0052A285 /* ViewController.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D52A5272047532400881C04 /* clockHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clockHand.swift; sourceTree = "<group>"; };
+		5D52A5292047536A00881C04 /* handFormulas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = handFormulas.swift; sourceTree = "<group>"; };
 		5DCCA1DE2022A1EB00C4D397 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		F9EFB8771B02B6AF0052A285 /* Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9EFB87B1B02B6AF0052A285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,7 +85,9 @@
 			children = (
 				F9EFB87C1B02B6AF0052A285 /* AppDelegate.swift */,
 				F9EFB87E1B02B6AF0052A285 /* ViewController.swift */,
+				5D52A5272047532400881C04 /* clockHand.swift */,
 				5DCCA1DE2022A1EB00C4D397 /* Clock.swift */,
+				5D52A5292047536A00881C04 /* handFormulas.swift */,
 				F9EFB8801B02B6AF0052A285 /* Main.storyboard */,
 				F9EFB8831B02B6AF0052A285 /* Images.xcassets */,
 				F9EFB8851B02B6AF0052A285 /* LaunchScreen.xib */,
@@ -219,8 +225,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DCCA1DF2022A1EB00C4D397 /* Clock.swift in Sources */,
+				5D52A5282047532400881C04 /* clockHand.swift in Sources */,
 				F9EFB87F1B02B6AF0052A285 /* ViewController.swift in Sources */,
 				F9EFB87D1B02B6AF0052A285 /* AppDelegate.swift in Sources */,
+				5D52A52A2047536A00881C04 /* handFormulas.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
