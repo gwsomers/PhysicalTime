@@ -10,8 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
     let timer = Timer()
+    var hoursPerDay: Int!
+    var minutesPerHour: Int!
+    var revolutionPerDay: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,7 @@ class ViewController: UIViewController {
         hourLayer.frame = newView.frame
         let path = CGMutablePath()
         path.move(to: CGPoint(x: newView.frame.midX, y: newView.frame.midY))
-        let anglePosition = Hand_Positioner(pPD: 24, pRPD: 2, tPP: 60, tRPP: 1, fRO: 0, tRO: 0)
+        let anglePosition = Hand_Positioner(pPD: self.hoursPerDay, pRPD: self.revolutionPerDay, tPP: self.minutesPerHour, tRPP: 1, fRO: 0, tRO: 0)
         let hourAngle = anglePosition.partAngle(timeHour: getCurrentHour(), timeMin: getCurrentMinute(), timeSec: getCurrentSecond())
         let hourX = findxCoord(handLength: 70, angle:CGFloat(hourAngle))
         let hourY = findyCoord(handLength: 70, angle:CGFloat(hourAngle))
