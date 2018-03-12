@@ -47,6 +47,9 @@ class Hand_Positioner{
         totalTime = TimeResetOffset + totalTime + getModeOffset()
         let fullDay = getFullDay()
         let portionOfDay:Float = Float(totalTime)/Float(fullDay)
+        print("portionOfDay: ", portionOfDay)
+        print(fullDay)
+        print(totalTime)
         return (2 * Float(Double.pi) * portionOfDay) * Float(partRevsPerDay) + FaceResetOffset
         
     }
@@ -78,8 +81,8 @@ class Hand_Positioner{
     //TODO: Find how much time will be had by a dawn mode clock
     func getFullDay()->Int{
         if(Clockmode == DAWN_MODE){
-            return 24*60*60 - (getDawn(myDate: NSDate() as Date)) -
-                getDawn(myDate: Date.init(timeInterval: 24*3600, since: NSDate() as Date))
+            return 24*60*60 - ((getDawn(myDate: NSDate() as Date)) -
+                getDawn(myDate: Date.init(timeInterval: 24*3600, since: NSDate() as Date)))
         }
         return 24*60*60
     }
