@@ -20,6 +20,10 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var hoursPerDayText: UITextField!
     @IBOutlet weak var minutesPerHourText: UITextField!
     @IBOutlet weak var revolutionPerDayText: UITextField!
+    @IBOutlet weak var minutesRevolutionPerHourText: UITextField!
+    @IBOutlet weak var angleOffsetText: UITextField!
+    @IBOutlet weak var timeOffsetText: UITextField!
+    @IBOutlet weak var modeText: UITextField!
     
     
     @IBAction func buttonTap(_ sender: UIButton) {
@@ -34,6 +38,11 @@ class SettingsViewController: UIViewController {
                 clockViewController.hoursPerDay = Int(hoursPerDayText.text!)
                 clockViewController.minutesPerHour = Int(minutesPerHourText.text!)
                 clockViewController.revolutionPerDay = Int(revolutionPerDayText.text!)
+                clockViewController.minuteRevolutionPerHour = Int(minutesRevolutionPerHourText.text!)
+                clockViewController.angleOffset = Float(angleOffsetText.text!)
+                clockViewController.timeOffset = Int(timeOffsetText.text!)
+                clockViewController.mode = Int(modeText.text!)
+                
             }
         }
     }

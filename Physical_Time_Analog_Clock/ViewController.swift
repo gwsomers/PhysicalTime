@@ -14,6 +14,10 @@ class ViewController: UIViewController {
     var hoursPerDay: Int!
     var minutesPerHour: Int!
     var revolutionPerDay: Int!
+    var minuteRevolutionPerHour: Int!
+    var angleOffset: Float!
+    var timeOffset: Int!
+    var mode: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,42 +31,78 @@ class ViewController: UIViewController {
         hourLayer.frame = newView.frame
         let path = CGMutablePath()
         path.move(to: CGPoint(x: newView.frame.midX, y: newView.frame.midY))
-        let anglePosition = Hand_Positioner(pPD: self.hoursPerDay, pRPD: self.revolutionPerDay, tPP: self.minutesPerHour, tRPP: 1, fRO: 0, tRO: 0)
-        let hourAngle = anglePosition.partAngle(timeHour: getCurrentHour(), timeMin: getCurrentMinute(), timeSec: getCurrentSecond())
-        let hourX = findxCoord(handLength: 70, angle:CGFloat(hourAngle))
-        let hourY = findyCoord(handLength: 70, angle:CGFloat(hourAngle))
-        path.addLine(to: CGPoint(x: newView.frame.midX + hourX, y: newView.frame.midY - hourY ))
-        hourLayer.path = path
-        hourLayer.lineWidth = 4.5
-        hourLayer.lineCap = kCALineCapRound
-        hourLayer.strokeColor = UIColor.red.cgColor
-        self.view.layer.addSublayer(hourLayer)
-        hourLayer.rasterizationScale = UIScreen.main.scale;
-        hourLayer.shouldRasterize = true
-       
-        
-        let minuteLayer = CAShapeLayer()
-        minuteLayer.frame = newView.frame
-        let mpath = CGMutablePath()
-        mpath.move(to: CGPoint(x: newView.frame.midX, y: newView.frame.midY))
-        let minuteAngle = anglePosition.tickAngle(timeHour: getCurrentHour(), timeMin: getCurrentMinute(), timeSec: getCurrentSecond())
-        let MinX = findxCoord(handLength: 90, angle:CGFloat(minuteAngle))
-        let MinY = findyCoord(handLength: 90, angle:CGFloat(minuteAngle))
-        mpath.addLine(to: CGPoint(x: newView.frame.midX + MinX, y: newView.frame.midY - MinY ))
-        minuteLayer.path = mpath
-        minuteLayer.lineWidth = 3
-        minuteLayer.lineCap = kCALineCapRound
-        minuteLayer.strokeColor = UIColor.white.cgColor
-        self.view.layer.addSublayer(minuteLayer)
-        
-        minuteLayer.rasterizationScale = UIScreen.main.scale;
-        minuteLayer.shouldRasterize = true
-        
-        updateHourHand(currentLayer: hourLayer, duration: CFTimeInterval(anglePosition.partDuration()))
-        updateHourHand(currentLayer: minuteLayer, duration: CFTimeInterval(anglePosition.tickDuration()))
-        getCurrentTime()
+        if mode == 1 {
+            let anglePosition = Hand_Positioner(pPD: self.hoursPerDay, pRPD: self.revolutionPerDay, tPP: self.minutesPerHour, tRPP: self.minuteRevolutionPerHour, fRO: self.angleOffset, tRO: self.timeOffset)
+            let hourAngle = anglePosition.partAngle(timeHour: getCurrentHour(), timeMin: getCurrentMinute(), timeSec: getCurrentSecond())
+            let hourX = findxCoord(handLength: 70, angle:CGFloat(hourAngle))
+            let hourY = findyCoord(handLength: 70, angle:CGFloat(hourAngle))
+            path.addLine(to: CGPoint(x: newView.frame.midX + hourX, y: newView.frame.midY - hourY ))
+            hourLayer.path = path
+            hourLayer.lineWidth = 4.5
+            hourLayer.lineCap = kCALineCapRound
+            hourLayer.strokeColor = UIColor.red.cgColor
+            self.view.layer.addSublayer(hourLayer)
+            hourLayer.rasterizationScale = UIScreen.main.scale;
+            hourLayer.shouldRasterize = true
+            
+            
+            let minuteLayer = CAShapeLayer()
+            minuteLayer.frame = newView.frame
+            let mpath = CGMutablePath()
+            mpath.move(to: CGPoint(x: newView.frame.midX, y: newView.frame.midY))
+            let minuteAngle = anglePosition.tickAngle(timeHour: getCurrentHour(), timeMin: getCurrentMinute(), timeSec: getCurrentSecond())
+            let MinX = findxCoord(handLength: 90, angle:CGFloat(minuteAngle))
+            let MinY = findyCoord(handLength: 90, angle:CGFloat(minuteAngle))
+            mpath.addLine(to: CGPoint(x: newView.frame.midX + MinX, y: newView.frame.midY - MinY ))
+            minuteLayer.path = mpath
+            minuteLayer.lineWidth = 3
+            minuteLayer.lineCap = kCALineCapRound
+            minuteLayer.strokeColor = UIColor.white.cgColor
+            self.view.layer.addSublayer(minuteLayer)
+            
+            minuteLayer.rasterizationScale = UIScreen.main.scale;
+            minuteLayer.shouldRasterize = true
+            
+            updateHourHand(currentLayer: hourLayer, duration: CFTimeInterval(anglePosition.partDuration()))
+            updateHourHand(currentLayer: minuteLayer, duration: CFTimeInterval(anglePosition.tickDuration()))
+            getCurrentTime()
+        } else {
+            let anglePosition = Hand_Positioner(pPD: 24, pRPD: 2, tPP: 60, tRPP: 1, fRO: 0, tRO: 0)
+            let hourAngle = anglePosition.partAngle(timeHour: getCurrentHour(), timeMin: getCurrentMinute(), timeSec: getCurrentSecond())
+            let hourX = findxCoord(handLength: 70, angle:CGFloat(hourAngle))
+            let hourY = findyCoord(handLength: 70, angle:CGFloat(hourAngle))
+            path.addLine(to: CGPoint(x: newView.frame.midX + hourX, y: newView.frame.midY - hourY ))
+            hourLayer.path = path
+            hourLayer.lineWidth = 4.5
+            hourLayer.lineCap = kCALineCapRound
+            hourLayer.strokeColor = UIColor.red.cgColor
+            self.view.layer.addSublayer(hourLayer)
+            hourLayer.rasterizationScale = UIScreen.main.scale;
+            hourLayer.shouldRasterize = true
+            
+            
+            let minuteLayer = CAShapeLayer()
+            minuteLayer.frame = newView.frame
+            let mpath = CGMutablePath()
+            mpath.move(to: CGPoint(x: newView.frame.midX, y: newView.frame.midY))
+            let minuteAngle = anglePosition.tickAngle(timeHour: getCurrentHour(), timeMin: getCurrentMinute(), timeSec: getCurrentSecond())
+            let MinX = findxCoord(handLength: 90, angle:CGFloat(minuteAngle))
+            let MinY = findyCoord(handLength: 90, angle:CGFloat(minuteAngle))
+            mpath.addLine(to: CGPoint(x: newView.frame.midX + MinX, y: newView.frame.midY - MinY ))
+            minuteLayer.path = mpath
+            minuteLayer.lineWidth = 3
+            minuteLayer.lineCap = kCALineCapRound
+            minuteLayer.strokeColor = UIColor.white.cgColor
+            self.view.layer.addSublayer(minuteLayer)
+            
+            minuteLayer.rasterizationScale = UIScreen.main.scale;
+            minuteLayer.shouldRasterize = true
+            
+            updateHourHand(currentLayer: hourLayer, duration: CFTimeInterval(anglePosition.partDuration()))
+            updateHourHand(currentLayer: minuteLayer, duration: CFTimeInterval(anglePosition.tickDuration()))
+            getCurrentTime()
+        }
     }
-    
 }
 func findxCoord(handLength : CGFloat, angle: CGFloat)->CGFloat {
     return handLength * sin(angle)
