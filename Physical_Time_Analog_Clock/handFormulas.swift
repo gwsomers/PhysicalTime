@@ -26,7 +26,7 @@ class Hand_Positioner{
 
     
     
-    init(pPD: Int, pRPD: Int, tPP: Int, tRPP: Int, fRO:Float = 0, tRO: Int = 0, mode: Int = NOON_MODE){
+    init(pPD: Int = 24, pRPD: Int = 2, tPP: Int = 60, tRPP: Int = 1, fRO:Float = 0, tRO: Int = 0, mode: Int = NOON_MODE){
         partsPerDay = pPD
         partsOnFace = pPD/pRPD
         partRevsPerDay = pRPD
