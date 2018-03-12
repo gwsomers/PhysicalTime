@@ -26,7 +26,7 @@ class Hand_Positioner{
 
     
     
-    init(pPD: Int, pRPD: Int, tPP: Int, tRPP: Int, fRO:Float = 0, tRO: Int = 0, mode: Int = NOON_MODE){
+    init(pPD: Int = 24, pRPD: Int = 2, tPP: Int = 60, tRPP: Int = 1, fRO:Float = 0, tRO: Int = 0, mode: Int = NOON_MODE){
         partsPerDay = pPD
         partsOnFace = pPD/pRPD
         partRevsPerDay = pRPD
@@ -47,6 +47,9 @@ class Hand_Positioner{
         totalTime = TimeResetOffset + totalTime + getModeOffset()
         let fullDay = getFullDay()
         let portionOfDay:Float = Float(totalTime)/Float(fullDay)
+        print("portionOfDay: ", portionOfDay)
+        print(fullDay)
+        print(totalTime)
         return (2 * Float(Double.pi) * portionOfDay) * Float(partRevsPerDay) + FaceResetOffset
         
     }
@@ -78,7 +81,8 @@ class Hand_Positioner{
     //TODO: Find how much time will be had by a dawn mode clock
     func getFullDay()->Int{
         if(Clockmode == DAWN_MODE){
-            return 24*60*60 - (getDawn(myDate: NSDate() as Date))-getDawn(myDate: NSDate() as Date)
+            return 24*60*60 - ((getDawn(myDate: NSDate() as Date)) -
+                getDawn(myDate: Date.init(timeInterval: 24*3600, since: NSDate() as Date)))
         }
         return 24*60*60
     }
@@ -89,7 +93,21 @@ class Hand_Positioner{
         //That'll involve timezones, convert to hours/minutes/seconds, the works
         print( (Solarcalc?.sunrise as NSDate?)?.description as Any )
         print( Solarcalc?.sunrise?.description as Any )
-        return 8 * 3600
+        let convertedDawn = convertToTimezone(time: (Solarcalc?.sunrise)!)
+        print(convertedDawn)
+        var startoftoday = Date.init(timeIntervalSinceReferenceDate: 1)
+        while (startoftoday.timeIntervalSinceReferenceDate < convertedDawn.timeIntervalSinceReferenceDate)
+        {
+            startoftoday = Date.init(timeInterval: 24*3600, since: startoftoday)
+        }
+        startoftoday = Date.init(timeInterval: -24*3600, since: startoftoday)
+        print("seconds to dawn: ", convertedDawn.timeIntervalSince(startoftoday))
+        return (Int(convertedDawn.timeIntervalSince(startoftoday)))
+    }
+    
+    func convertToTimezone(time: Date)->NSDate{
+        return NSDate.init(timeInterval: (8*60*60), since:time)
+    
     }
     
     
