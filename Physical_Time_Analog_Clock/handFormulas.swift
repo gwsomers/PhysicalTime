@@ -76,6 +76,7 @@ class Hand_Positioner{
         if(Clockmode == DAWN_MODE){
             modeOffset = -getDawn(myDate: NSDate() as Date)
         }
+        print("modeOffset: ", modeOffset)
         return modeOffset
     }
     //TODO: Find how much time will be had by a dawn mode clock
