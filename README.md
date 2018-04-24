@@ -1,5 +1,5 @@
 # The Physical Time `README`
-#### Contributors: Khai Hua <kdhua@ucsc.edu>, Xi Ouyang <xouyang@ucsc.edu>, George Somers <gwsomers@ucsc.edu>, Cristian Gonzales <xcristian.gonzales@gmail.com>
+#### Contributors: Khai Hua <kdhua@ucsc.edu>, Xi Ouyang <xouyang@ucsc.edu>, George Somers <gwsomers@ucsc.edu>, Cristian Gonzales <xcristian.gonzales@gmail.com>, Erik Lau
 ---
 
 ![](https://media.giphy.com/media/l0MYGYbyoeBJMp6gM/source.gif)
