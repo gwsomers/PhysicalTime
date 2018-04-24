@@ -1,10 +1,8 @@
-//
-//  ViewController.swift
-//  PhysicalTime
-//
-//  Created by Xi Stephen Ouyang on 3/5/18.
-//  Copyright © 2018 Xi Stephen Ouyang. All rights reserved.
-//
+/**
+ - Author:
+ Xi Stephen Ouyang
+ Created for Physical Time, 2018
+ */
 
 import UIKit
 
@@ -35,7 +33,8 @@ class ViewController: UIViewController {
         hourLayer.frame = newView.frame
         let path = CGMutablePath()
         path.move(to: CGPoint(x: newView.frame.midX, y: newView.frame.midY))
-        let anglePosition = Hand_Positioner(pPD: self.hoursPerDay, pRPD: self.revolutionPerDay, tPP: self.minutesPerHour, tRPP: self.minuteRevolutionPerHour, fRO: self.angleOffset, tRO: self.timeOffset, mode: self.mode)
+        let anglePosition = Hand_Positioner(pPD: self.hoursPerDay, pRPD: self.revolutionPerDay, tPP: self.minutesPerHour, tRPP: self.minuteRevolutionPerHour,
+                                            fRO: self.angleOffset, tRO: self.timeOffset, mode: self.mode)
         let hourAngle = anglePosition.partAngle(timeHour: getCurrentHour(), timeMin: getCurrentMinute(), timeSec: getCurrentSecond())
         let hourX = findxCoord(handLength: 70, angle:CGFloat(hourAngle))
         let hourY = findyCoord(handLength: 70, angle:CGFloat(hourAngle))
@@ -88,15 +87,16 @@ class ViewController: UIViewController {
         return clockSide
     }
     
-    func getModulus()-> Int {
+    func getModulus()-> Int
+    {
         clockHours = totalHoursPerDay / revolution
         //print("\(clockHours)")
         modulus = clockSide / clockHours
         return modulus
     }
     
-    func updateHand(currentLayer: CALayer, duration: CFTimeInterval) {
-        
+    func updateHand(currentLayer: CALayer, duration: CFTimeInterval)
+    {
         let angle = degree2radian(360)
         let animation = CABasicAnimation(keyPath:"transform.rotation.z")
         animation.duration = duration
@@ -105,39 +105,39 @@ class ViewController: UIViewController {
         animation.repeatCount = Float.infinity
         animation.toValue = angle
         currentLayer.add(animation, forKey: "rotate")
-        
     }
     
-    func getCurrentTime() {
-        
+    func getCurrentTime()
+    {
         let hour = getCurrentHour()
         let minutes = getCurrentMinute()
         let seconds = getCurrentSecond()
         print("time = \(hour):\(minutes):\(seconds)")
-        
     }
     
-    func getCurrentHour()-> Int {
+    func getCurrentHour()-> Int
+    {
         let date = Date()
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
         return hour
     }
     
-    func getCurrentMinute()-> Int {
+    func getCurrentMinute()-> Int
+    {
         let date = Date()
         let calendar = Calendar.current
         let minute = calendar.component(.minute, from: date)
         return minute
     }
     
-    func getCurrentSecond()-> Int {
+    func getCurrentSecond()-> Int
+    {
         let date = Date()
         let calendar = Calendar.current
         let second = calendar.component(.second, from: date)
         return second
     }
-
 }
 
 
