@@ -32,7 +32,7 @@ class SettingsViewController: UIViewController {
     
     // called right before segueway occurs on current ViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let defaults = UserDefaults.standard
+
         if let identifier = segue.identifier {
             if identifier == "segueToClock" {
                 let clockViewController = segue.destination as! ViewController
@@ -43,8 +43,6 @@ class SettingsViewController: UIViewController {
                 clockViewController.angleOffset = Float(angleOffsetText.text!)
                 clockViewController.timeOffset = Int(timeOffsetText.text!)
                 clockViewController.mode = Int(modeText.text!)
-                
-                defaults.set(Int(hoursPerDayText.text!)!, forKey: defaultHandValues.hoursPerDay)
                 
             }
         }
