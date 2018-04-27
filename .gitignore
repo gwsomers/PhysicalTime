@@ -3,3 +3,4 @@
 
 # Ignore all .DS_Store files in all directories
 **/.DS_Store
+*.xcuserstate

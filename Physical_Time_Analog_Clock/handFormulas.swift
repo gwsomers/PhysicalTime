@@ -23,10 +23,11 @@ class Hand_Positioner{
     var TimeResetOffset: Int  //How many seconds away from noon we are starting the clock at
     //The clockmode decides our anchor point, currently accepts noon and dawn
     var Clockmode: Int
+    var locationManager: CLLocationManager
 
     
     
-    init(pPD: Int = 24, pRPD: Int = 2, tPP: Int = 60, tRPP: Int = 1, fRO:Float = 0, tRO: Int = 0, mode: Int = NOON_MODE){
+    init(pPD: Int = 24, pRPD: Int = 2, tPP: Int = 60, tRPP: Int = 1, fRO:Float = 0, tRO: Int = 0, mode: Int = NOON_MODE, locMan: CLLocationManager){
         partsPerDay = pPD
         partsOnFace = pPD/pRPD
         partRevsPerDay = pRPD
@@ -35,6 +36,7 @@ class Hand_Positioner{
         FaceResetOffset = fRO
         TimeResetOffset = tRO
         Clockmode = mode
+        locationManager = locMan
         getDawn(myDate: NSDate() as Date)
         
         
@@ -89,25 +91,28 @@ class Hand_Positioner{
     }
     //TODO: Implement Cris' method for dawn finding
     func getDawn(myDate: Date)->Int{
-        let Solarcalc = Solar.init(for: myDate, coordinate: CLLocationCoordinate2D.init(latitude: 39.37, longitude: 122.03))
-        //Ok, we have the date we need for sunrise, now to convert it
-        //That'll involve timezones, convert to hours/minutes/seconds, the works
-        print( (Solarcalc?.sunrise as NSDate?)?.description as Any )
-        print( Solarcalc?.sunrise?.description as Any )
-        let convertedDawn = convertToTimezone(time: (Solarcalc?.sunrise)!)
-        print(convertedDawn)
-        var startoftoday = Date.init(timeIntervalSinceReferenceDate: 1)
-        while (startoftoday.timeIntervalSinceReferenceDate < convertedDawn.timeIntervalSinceReferenceDate)
+        var coords = CLLocationCoordinate2D.init(latitude: 39.37, longitude: 122.03)
+        print(locationManager.location?.coordinate as Any)
+        if(CLLocationManager.locationServicesEnabled())
+        {
+            coords = locationManager.location!.coordinate
+        }
+        
+        let Solarcalc = Solar.init(for: myDate, coordinate: coords)
+
+        let sunriseUTC = Solarcalc!.sunrise!
+        var startoftoday = Date.init(timeIntervalSinceReferenceDate: 0)
+        while (startoftoday.timeIntervalSinceReferenceDate < sunriseUTC.timeIntervalSinceReferenceDate)
         {
             startoftoday = Date.init(timeInterval: 24*3600, since: startoftoday)
         }
         startoftoday = Date.init(timeInterval: -24*3600, since: startoftoday)
-        print("seconds to dawn: ", convertedDawn.timeIntervalSince(startoftoday))
-        return (Int(convertedDawn.timeIntervalSince(startoftoday)))
+        print("seconds to dawn: ", (sunriseUTC.timeIntervalSince(startoftoday)-(8*60*60)))
+        return (Int(sunriseUTC.timeIntervalSince(startoftoday)))
     }
     
-    func convertToTimezone(time: Date)->NSDate{
-        return NSDate.init(timeInterval: (8*60*60), since:time)
+    func convertToTimezone(time: TimeInterval)->TimeInterval{
+        return time + (-8*60*60)
     
     }
     

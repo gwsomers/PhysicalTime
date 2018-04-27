@@ -5,6 +5,7 @@
  */
 
 import UIKit
+import CoreLocation
 
 var clockSide: Int!
 var totalHoursPerDay: Int!
@@ -15,6 +16,7 @@ var modulus: Int!
 class ViewController: UIViewController {
     
     let timer = Timer()
+    let locationManager = CLLocationManager()
     var hoursPerDay: Int!
     var minutesPerHour: Int!
     var revolutionPerDay: Int!
@@ -25,6 +27,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestLocation()
         let newView = View(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.width))
         newView.backgroundColor = UIColor.white
         view.addSubview(newView)
@@ -32,9 +37,19 @@ class ViewController: UIViewController {
         let hourLayer = CAShapeLayer()
         hourLayer.frame = newView.frame
         let path = CGMutablePath()
+        
+        hoursPerDay = 24
+        minutesPerHour = 60
+        revolutionPerDay = 2
+        minuteRevolutionPerHour = 1
+        angleOffset = 0
+        timeOffset = 0
+        mode = 2
+        
+        
         path.move(to: CGPoint(x: newView.frame.midX, y: newView.frame.midY))
         let anglePosition = Hand_Positioner(pPD: self.hoursPerDay, pRPD: self.revolutionPerDay, tPP: self.minutesPerHour, tRPP: self.minuteRevolutionPerHour,
-                                            fRO: self.angleOffset, tRO: self.timeOffset, mode: self.mode)
+                                            fRO: self.angleOffset, tRO: self.timeOffset, mode: self.mode, locMan: locationManager)
         let hourAngle = anglePosition.partAngle(timeHour: getCurrentHour(), timeMin: getCurrentMinute(), timeSec: getCurrentSecond())
         let hourX = findxCoord(handLength: 70, angle:CGFloat(hourAngle))
         let hourY = findyCoord(handLength: 70, angle:CGFloat(hourAngle))
@@ -140,6 +155,17 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("succeeded in getting locations")
+    }
+}
 
 
 
