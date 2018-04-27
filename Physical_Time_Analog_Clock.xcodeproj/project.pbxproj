@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0222D929204E05ED0067EC35 /* Solar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0222D928204E05ED0067EC35 /* Solar.swift */; };
+		5217E64E209283CD00FA9A69 /* PhysicalTimeSuncalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5217E64D209283CD00FA9A69 /* PhysicalTimeSuncalc.swift */; };
 		5D3BC88520453FD100DA51F3 /* clockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3BC88420453FD100DA51F3 /* clockFace.swift */; };
 		5D83A5392055C34100BFAE08 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D83A5382055C34100BFAE08 /* SettingsViewController.swift */; };
 		5D9576532044A4A3004760D4 /* handFormulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9576522044A4A3004760D4 /* handFormulas.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		0222D928204E05ED0067EC35 /* Solar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solar.swift; sourceTree = "<group>"; };
+		5217E64D209283CD00FA9A69 /* PhysicalTimeSuncalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicalTimeSuncalc.swift; sourceTree = "<group>"; };
 		5D3BC88420453FD100DA51F3 /* clockFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clockFace.swift; sourceTree = "<group>"; };
 		5D83A5382055C34100BFAE08 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5D9576522044A4A3004760D4 /* handFormulas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = handFormulas.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				5DF847402038F4F5007E7322 /* LaunchScreen.storyboard */,
 				5DF847432038F4F5007E7322 /* Info.plist */,
 				0222D928204E05ED0067EC35 /* Solar.swift */,
+				5217E64D209283CD00FA9A69 /* PhysicalTimeSuncalc.swift */,
 			);
 			path = Physical_Time_Analog_Clock;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				0222D929204E05ED0067EC35 /* Solar.swift in Sources */,
 				5DF847382038F4F5007E7322 /* AppDelegate.swift in Sources */,
 				5D83A5392055C34100BFAE08 /* SettingsViewController.swift in Sources */,
+				5217E64E209283CD00FA9A69 /* PhysicalTimeSuncalc.swift in Sources */,
 				5DE0B91E2080761D00607D4C /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
