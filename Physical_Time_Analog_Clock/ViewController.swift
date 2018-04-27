@@ -17,13 +17,13 @@ class ViewController: UIViewController {
     
     let timer = Timer()
     let locationManager = CLLocationManager()
-    var hoursPerDay: Int!
-    var minutesPerHour: Int!
-    var revolutionPerDay: Int!
-    var minuteRevolutionPerHour: Int!
-    var angleOffset: Float!
-    var timeOffset: Int!
-    var mode: Int!
+    var hoursPerDay: Int! = defaultHandValues.hoursPerDay
+    var minutesPerHour: Int! = defaultHandValues.minsPerHour
+    var revolutionPerDay: Int! = defaultHandValues.hourRevsPerDay
+    var minuteRevolutionPerHour: Int! = defaultHandValues.minRevsPerHour
+    var angleOffset: Float! = defaultHandValues.FaceOffset
+    var timeOffset: Int! = defaultHandValues.TimeOffset
+    var mode: Int! = defaultHandValues.mode
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,19 +38,10 @@ class ViewController: UIViewController {
         hourLayer.frame = newView.frame
         let path = CGMutablePath()
         
-        hoursPerDay = 24
-        minutesPerHour = 60
-        revolutionPerDay = 2
-        minuteRevolutionPerHour = 1
-        angleOffset = 0
-        timeOffset = 0
-        mode = 2
-        
-        
         path.move(to: CGPoint(x: newView.frame.midX, y: newView.frame.midY))
         let anglePosition = Hand_Positioner(pPD: self.hoursPerDay, pRPD: self.revolutionPerDay, tPP: self.minutesPerHour, tRPP: self.minuteRevolutionPerHour,
                                             fRO: self.angleOffset, tRO: self.timeOffset, mode: self.mode, locMan: locationManager)
-        let hourAngle = anglePosition.partAngle(timeHour: getCurrentHour(), timeMin: getCurrentMinute(), timeSec: getCurrentSecond())
+        let hourAngle = anglePosition.hourAngle(timeHour: getCurrentHour(), timeMin: getCurrentMinute(), timeSec: getCurrentSecond())
         let hourX = findxCoord(handLength: 70, angle:CGFloat(hourAngle))
         let hourY = findyCoord(handLength: 70, angle:CGFloat(hourAngle))
         path.addLine(to: CGPoint(x: newView.frame.midX + hourX, y: newView.frame.midY - hourY ))
@@ -67,7 +58,7 @@ class ViewController: UIViewController {
         minuteLayer.frame = newView.frame
         let mpath = CGMutablePath()
         mpath.move(to: CGPoint(x: newView.frame.midX, y: newView.frame.midY))
-        let minuteAngle = anglePosition.tickAngle(timeHour: getCurrentHour(), timeMin: getCurrentMinute(), timeSec: getCurrentSecond())
+        let minuteAngle = anglePosition.minuteAngle(timeHour: getCurrentHour(), timeMin: getCurrentMinute(), timeSec: getCurrentSecond())
         let MinX = findxCoord(handLength: 90, angle:CGFloat(minuteAngle))
         let MinY = findyCoord(handLength: 90, angle:CGFloat(minuteAngle))
         mpath.addLine(to: CGPoint(x: newView.frame.midX + MinX, y: newView.frame.midY - MinY ))
@@ -80,8 +71,8 @@ class ViewController: UIViewController {
         minuteLayer.rasterizationScale = UIScreen.main.scale;
         minuteLayer.shouldRasterize = true
 
-        updateHand(currentLayer: hourLayer, duration: CFTimeInterval(anglePosition.partDuration()))
-        updateHand(currentLayer: minuteLayer, duration: CFTimeInterval(anglePosition.tickDuration()))
+        updateHand(currentLayer: hourLayer, duration: CFTimeInterval(anglePosition.hourDuration()))
+        updateHand(currentLayer: minuteLayer, duration: CFTimeInterval(anglePosition.minuteDuration()))
         getCurrentTime()
         
         clockSide = self.minutesPerHour

@@ -12,12 +12,22 @@ import CoreLocation
 let NOON_MODE = 1
 let DAWN_MODE = 2
 
+public struct defaultHandValues {
+    static let hoursPerDay = 24
+    static let hourRevsPerDay = 2
+    static let minsPerHour = 60
+    static let minRevsPerHour = 1
+    static let FaceOffset = Float(0.0)
+    static let TimeOffset = 0
+    static let mode = NOON_MODE
+}
+
 class Hand_Positioner{
-    var partsPerDay: Int
-    var partsOnFace: Int
-    var partRevsPerDay: Int
-    var ticksPerPart: Int
-    var tickRevsPerPart: Int
+    var hoursPerDay: Int
+    var hoursOnFace: Int
+    var hourRevsPerDay: Int
+    var minutesPerhour: Int
+    var minuteRevsPerhour: Int
     var FaceResetOffset: Float //enter the angle away from TOP, so to reset at the right
     //would be pi/2
     var TimeResetOffset: Int  //How many seconds away from noon we are starting the clock at
@@ -28,22 +38,22 @@ class Hand_Positioner{
     
     
     init(pPD: Int = 24, pRPD: Int = 2, tPP: Int = 60, tRPP: Int = 1, fRO:Float = 0, tRO: Int = 0, mode: Int = NOON_MODE, locMan: CLLocationManager){
-        partsPerDay = pPD
-        partsOnFace = pPD/pRPD
-        partRevsPerDay = pRPD
-        ticksPerPart = tPP
-        tickRevsPerPart = tRPP
+        hoursPerDay = pPD
+        hoursOnFace = pPD/pRPD
+        hourRevsPerDay = pRPD
+        minutesPerhour = tPP
+        minuteRevsPerhour = tRPP
         FaceResetOffset = fRO
         TimeResetOffset = tRO
         Clockmode = mode
         locationManager = locMan
-        getDawn(myDate: NSDate() as Date)
+
         
         
     }
     //Calcs where the arm is angled at given a start time.
     //Useful when initializing clock
-    func partAngle (timeHour:Int, timeMin:Int, timeSec:Int)->Float{
+    func hourAngle (timeHour:Int, timeMin:Int, timeSec:Int)->Float{
         var totalTime :Int
         totalTime = timeSec + (timeMin * 60) + (timeHour * 3600)
         totalTime = TimeResetOffset + totalTime + getModeOffset()
@@ -52,25 +62,25 @@ class Hand_Positioner{
         print("portionOfDay: ", portionOfDay)
         print(fullDay)
         print(totalTime)
-        return (2 * Float(Double.pi) * portionOfDay) * Float(partRevsPerDay) + FaceResetOffset
+        return (2 * Float(Double.pi) * portionOfDay) * Float(hourRevsPerDay) + FaceResetOffset
         
     }
-    //Time it takes for a 360 degree turn of our clock's part hand, in seconds. Can be used to find
+    //Time it takes for a 360 degree turn of our clock's hour hand, in seconds. Can be used to find
     //Animation speed
-    func partDuration()->Int{
-        return getFullDay() / partRevsPerDay
+    func hourDuration()->Int{
+        return getFullDay() / hourRevsPerDay
     }
     
-    func tickAngle(timeHour:Int, timeMin:Int, timeSec:Int)->Float{
+    func minuteAngle(timeHour:Int, timeMin:Int, timeSec:Int)->Float{
         var totalTime :Int
         totalTime = timeSec + (timeMin * 60) + (timeHour * 3600) + TimeResetOffset + getModeOffset()
-        let partTime : Int = (getFullDay()/partsPerDay)
-        totalTime %= partTime
-        let portionOfPart:Float = Float(totalTime)/Float(partTime)
-        return (2 * Float(Double.pi) * portionOfPart) * Float(tickRevsPerPart) + FaceResetOffset
+        let hourTime : Int = (getFullDay()/hoursPerDay)
+        totalTime %= hourTime
+        let portionOfhour:Float = Float(totalTime)/Float(hourTime)
+        return (2 * Float(Double.pi) * portionOfhour) * Float(minuteRevsPerhour) + FaceResetOffset
     }
-    func tickDuration()->Int{
-        return getFullDay()/(partsPerDay * tickRevsPerPart)
+    func minuteDuration()->Int{
+        return getFullDay()/(hoursPerDay * minuteRevsPerhour)
     }
     
     func getModeOffset()->Int{
