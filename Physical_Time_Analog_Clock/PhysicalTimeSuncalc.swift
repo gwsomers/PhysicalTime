@@ -58,7 +58,7 @@ class PhysicalTimeSuncalc
     internal let e: Double = (Double.pi / 180) * 23.4397
     
     // Sun time configuration (angle, morning name, evening name)
-    internal var times: [Any] = [
+    internal var times: [[Any]] = [
         [-0.833, "sunrise",       "sunset"      ],
         [  -0.3, "sunriseEnd",    "sunsetStart" ],
         [    -6.0, "dawn",          "dusk"        ],
@@ -298,7 +298,7 @@ class PhysicalTimeSuncalc
     private func sunCoords(d: Double) -> Dictionary<String, Double>
     {
         let mean = solarMeanAnomaly(d: d)
-        let long = eclipticLongitude(mean: mean)
+        let long = eclipticLongitude(m: mean)
         
         return [
             "declination": declination(l: long, b: 0),
@@ -372,7 +372,7 @@ class PhysicalTimeSuncalc
      */
     private func hourAngle(h: Double, phi: Double, d: Double) -> Double
     {
-        acos((sin(h) - sin(phi) * sin(d)) / (cos(phi) * cos(d)))
+        return acos((sin(h) - sin(phi) * sin(d)) / (cos(phi) * cos(d)))
     }
 
     /**
@@ -393,7 +393,7 @@ class PhysicalTimeSuncalc
     private func getSetJ(h: Double, lw: Double, phi: Double,
                         dec: Double, n: Double, M: Double, L: Double) -> Double
     {
-        var w: Double = hourAngle(h: h, phi: phi, d: dec),
+        let w: Double = hourAngle(h: h, phi: phi, d: dec),
             a: Double = approxTransit(Ht: w, lw: lw, n: n)
         
         return solarTransitJ(ds: a, M: M, L: L)
@@ -412,7 +412,7 @@ class PhysicalTimeSuncalc
     private func moonCoords(d: Double) -> Dictionary<String, Double>
     {
             // Ecliptic longitude
-        var L: Double = rad * (218.316 + 13.176396 * d),
+        let L: Double = rad * (218.316 + 13.176396 * d),
             // Mean anomaly
             M: Double = rad * (134.963 + 13.064993 * d),
             // Mean distance
@@ -443,7 +443,7 @@ class PhysicalTimeSuncalc
      */
     private func hoursLater(date: Date, h: Double) -> Date
     {
-        return Date(milliseconds: Int(date.millisecondsSince1970 + h * dayMs  / 24))
+        return Date(milliseconds: Int(Double(date.millisecondsSince1970) + h * dayMs  / 24))
     }
     
     /**
@@ -465,7 +465,7 @@ class PhysicalTimeSuncalc
      - return:
      Dictionary containing azimuth and altitude values, both expressed as type Double
      */
-    public func getPosition(date: Date, lat: Double, lng: Double) -> Dictionary<String, Double>
+    public func getPosition(date: Date, lat: Double, lng: Double) throws -> Dictionary<String, Double>
     {
         var lw = rad * -lng,
             phi = rad * lat,
@@ -493,7 +493,7 @@ class PhysicalTimeSuncalc
      */
     public func addTime(angle: Double, riseName: String, setName: String)
     {
-        times.append(contentsOf: [angle, riseName, setName])
+        times.append([angle, riseName, setName])
     }
 
     /**
@@ -505,27 +505,41 @@ class PhysicalTimeSuncalc
         - lng: The longitude given by the caller, expressed as a Double
      
      - returns:
-     TODO
+     A dictionary of strings indicating the time, and an associated date indicating the times at which
+     these occurences occur
      */
-    //  public func getTimes(date: Date, lat: Double, long: Double) -> Array[Any]
-    //  {
-    //      var lw: Double = rad * -lng,
-    //          phi: Double = rad * lat,
-
-    //          d: Double = toDays(date: date),
-    //          n: Double = julianCycle(d: d, lw: lw),
-    //          ds: Double = approxTransit(Ht: 0.0, lw: lw, n: n),
-
-    //          M: Double = solarMeanAnomaly(d: ds),
-    //          L: Double = eclipticLongitude(m: M),
-    //          dec: Double = declination(l: L, b: 0),
-
-    //          Jnoon: Double = solarTransitJ(ds: ds, M: M, L: L),
-
-    //          i: Int, len: Int, time: [Any], Jset: Double, Jrise: Double
-
-
-    //  }
+    public func getTimes(date: Date, lat: Double, lng: Double) throws -> Dictionary<String, Date>
+    {
+        var lw: Double = rad * -lng,
+            phi: Double = rad * lat,
+        
+            d: Double = toDays(date: date),
+            n: Double = julianCycle(d: d, lw: lw),
+            ds: Double = approxTransit(Ht: 0.0, lw: lw, n: n),
+        
+            M: Double = solarMeanAnomaly(d: ds),
+            L: Double = eclipticLongitude(m: M),
+            dec: Double = declination(l: L, b: 0),
+        
+            Jnoon: Double = solarTransitJ(ds: ds, M: M, L: L),
+        
+            i: Int, len: Int, time: [Any], Jset: Double, Jrise: Double
+        
+        var result: Dictionary<String, Date> = [
+            "solarNoon": fromJulian(j: Jnoon),
+            "nadir": fromJulian(j: (Jnoon - 0.5))
+        ]
+        
+        for i in 0...times.count
+        {
+            time = times[i]
+            
+            // TODO: See https://stackoverflow.com/questions/46470067/casting-from-any-to-double-swift
+//            Jset = getSetJ(h: Double(time[0]) * rad, lw: lw, phi: phi, dec: dec, n: n, M: M, L: L)
+        }
+        
+        return result
+    }
 }
 
 /**
