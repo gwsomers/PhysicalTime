@@ -22,8 +22,8 @@ class WelcomeView: UIViewController
     var defaultminute = 60
     var defaultREVDAY = 2
     var defaultREVHOUR = 0
-    var defaultANGOFF = 1
-    var defaultTIMEOFF = 0.0
+    var defaultANGOFF = Float(1.0)
+    var defaultTIMEOFF = 0
     var defaultMODE = 1
     override func viewDidLoad()
     {
@@ -41,7 +41,35 @@ class WelcomeView: UIViewController
             let WordsArray = recievedinfo.components(separatedBy: ":")
             var count = 0;
             for sect in WordsArray{
-                
+                if count == 0{
+                    let dh: String = sect
+                    defaulthour = Int(dh)!
+                }
+                if count == 1{
+                    let dh: String = sect
+                    defaultminute = Int(dh)!
+                }
+                if count == 2{
+                    let dh: String = sect
+                    defaultREVDAY = Int(dh)!
+                }
+                if count == 3{
+                    let dh: String = sect
+                    defaultREVHOUR = Int(dh)!
+                }
+                if count == 4{
+                    let dh: String = sect
+                    defaultANGOFF = Float(dh)!
+                }
+                if count == 5{
+                    let dh: String = sect
+                    defaultTIMEOFF = Int(dh)!
+                }
+                if count == 6{
+                    let dh: String = sect
+                    defaultMODE = Int(dh)!
+                }
+                count = count + 1
             }
         }
             catch{
