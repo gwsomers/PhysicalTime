@@ -293,7 +293,7 @@ class PhysicalTimeSuncalc
             (whole and fractional) days.
      
      - return:
-     The equatorial coordinates from the ecliptic coordinates.
+     The equatorial coordinates from the ecliptic coordinates (declination and right ascension)
      */
     private func sunCoords(d: Double) -> Dictionary<String, Double>
     {
@@ -301,8 +301,8 @@ class PhysicalTimeSuncalc
         let long = eclipticLongitude(m: mean)
         
         return [
-            "declination": declination(l: long, b: 0),
-            "r-ascension": rightAscension(l: long, b: 0)
+            "dec": declination(l: long, b: 0),
+            "ra": rightAscension(l: long, b: 0)
         ]
     }
 
@@ -425,7 +425,7 @@ class PhysicalTimeSuncalc
             dt: Double = 385001 - 20905 * cos(M)
 
         return [
-            "r-ascension": rightAscension(l: l, b: b),
+            "ra": rightAscension(l: l, b: b),
             "dec": declination(l: l, b: b),
             "dist": dt
         ]
@@ -472,11 +472,11 @@ class PhysicalTimeSuncalc
             d = toDays(date: date),
         
             c = sunCoords(d: d),
-            H = siderealTime(d: d, lw: lw) - c["r-ascension"]!
+            H = siderealTime(d: d, lw: lw) - c["ra"]!
         
         return [
-            "azimuth": azimuth(H: H, phi: phi, dec: c["declination"]!),
-            "altitude": altitude(H: H, phi: phi, dec: c["declination"]!)
+            "azimuth": azimuth(H: H, phi: phi, dec: c["dec"]!),
+            "altitude": altitude(H: H, phi: phi, dec: c["dec"]!)
         ]
     }
     
@@ -505,7 +505,7 @@ class PhysicalTimeSuncalc
         - lng: The longitude given by the caller, expressed as a Double
      
      - returns:
-     A dictionary of strings indicating the time, and an associated date indicating the times at which
+     A dictionary of strings indicating the time, and an associated date indicating the time at which
      these occurences occur
      */
     public func getTimes(date: Date, lat: Double, lng: Double) throws -> Dictionary<String, Date>
@@ -523,7 +523,7 @@ class PhysicalTimeSuncalc
         
             Jnoon: Double = solarTransitJ(ds: ds, M: M, L: L),
         
-            i: Int, len: Int, time: [Any], Jset: Double, Jrise: Double
+            time: [Any], Jset: Double, Jrise: Double
         
         var result: Dictionary<String, Date> = [
             "solarNoon": fromJulian(j: Jnoon),
@@ -534,11 +534,82 @@ class PhysicalTimeSuncalc
         {
             time = times[i]
             
-            // TODO: See https://stackoverflow.com/questions/46470067/casting-from-any-to-double-swift
-//            Jset = getSetJ(h: Double(time[0]) * rad, lw: lw, phi: phi, dec: dec, n: n, M: M, L: L)
+            Jset = getSetJ(h: (time[0] as! Double) * rad, lw: lw, phi: phi, dec: dec, n: n, M: M, L: L)
+            Jrise = Jnoon - (Jset - Jnoon)
+            
+            result[time[1] as! String] = fromJulian(j: Jrise)
+            result[time[2] as! String] = fromJulian(j: Jset)
+        }
+        return result
+    }
+    
+    /**
+     Calculates the moon position for a given date and latitude/longitude.
+     
+     - parameters:
+         - date: The current date, given as a Date() object
+         - lat: The latitude given by the caller, expressed as a Double
+         - lng: The longitude given by the caller, expressed as a Double
+     
+     - returns:
+     A dictionary of strings indicating the azimuth, altitude, distance, and parallactic angle, and
+     an associated date indicating the time at which these occurences occur.
+     */
+    public func getMoonPosition(date: Date, lat: Double, lng: Double) -> Dictionary<String, Double>
+    {
+        var lw: Double = rad * -lng,
+            phi: Double = rad * lat,
+            d: Double = toDays(date: date),
+        
+            c: Dictionary<String, Double> = moonCoords(d: d),
+            H: Double = siderealTime(d: d, lw: lw) - c["ra"]!,
+            alt: Double = altitude(H: H, phi: phi, dec: c["dec"]!),
+            // Formula 14.1 of "Astronomical Algorithms" 2nd edition by Jean Meeus (Willmann-Bell,
+            // Richmond) 1998.
+            pa: Double = atan(sin(H) / (tan(phi) * cos(c["dec"]!) - sin(c["dec"]!) * cos(H))),
+            // Altitude correction for refraction
+            h: Double = alt + astroRefraction(h: alt)
+        
+        return [
+            "azimuth": azimuth(H: H, phi: phi, dec: c["dec"]!),
+            "altitude": h,
+            "distance": c["dist"]!,
+            "parallacticAngle": pa
+        ]
+    }
+    
+    /**
+     Calculations for illumination parameters of the moon,
+     based on http://idlastro.gsfc.nasa.gov/ftp/pro/astro/mphase.pro formulas and
+     Chapter 48 of "Astronomical Algorithms" 2nd edition by Jean Meeus (Willmann-Bell, Richmond) 1998.
+     
+     - parameters:
+        - date: Date for requested moon illumination metrics
+     
+     - returns:
+     A dictionary with "fraction", "phase", and "angle" values
+     */
+    public func getMoonIllumination(date: Date) // -> Dictionary<String, Double>
+    {
+        var d: Double;
+        if date > Date()
+        {
+            d = toDays(date: date)
+        }
+        else
+        {
+            d = toDays(date: Date())
         }
         
-        return result
+        var s: Dictionary<String, Double> = sunCoords(d: d),
+            m: Dictionary<String, Double> = moonCoords(d: d),
+            // Distance from Earth to Sun in km
+            sdist: Double = Double(149598000),
+        
+            phi: Double = acos(sin(s["dec"]!) * sin(m["dec"]!) + cos(s["dec"]!)
+                                * cos(m["dec"]!) * cos(s["ra"]! - m["ra"]!)),
+            inc: Double = atan((sdist * sin(phi)) / (m["dist"]! - sdist * cos(phi)))
+        // TODO
     }
 }
 
