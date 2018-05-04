@@ -51,7 +51,8 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage:UIImage(named: "morningGoldenHour.jpeg")!)
+        let background = changeBackground()
+        self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
 
         // Do any additional setup after loading the view.
     }

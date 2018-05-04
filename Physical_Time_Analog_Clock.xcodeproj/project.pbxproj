@@ -11,6 +11,7 @@
 		5217E64E209283CD00FA9A69 /* PhysicalTimeSuncalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5217E64D209283CD00FA9A69 /* PhysicalTimeSuncalc.swift */; };
 		5D3BC88520453FD100DA51F3 /* clockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3BC88420453FD100DA51F3 /* clockFace.swift */; };
 		5D4ECDA1209CD90B000F75E6 /* FeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4ECDA0209CD90B000F75E6 /* FeatureViewController.swift */; };
+		5D4ECDA3209CDBA1000F75E6 /* changeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4ECDA2209CDBA1000F75E6 /* changeBackground.swift */; };
 		5D83A5392055C34100BFAE08 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D83A5382055C34100BFAE08 /* SettingsViewController.swift */; };
 		5D9576532044A4A3004760D4 /* handFormulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9576522044A4A3004760D4 /* handFormulas.swift */; };
 		5DE0B91E2080761D00607D4C /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0B91D2080761D00607D4C /* WelcomeView.swift */; };
@@ -27,6 +28,7 @@
 		5217E64D209283CD00FA9A69 /* PhysicalTimeSuncalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicalTimeSuncalc.swift; sourceTree = "<group>"; };
 		5D3BC88420453FD100DA51F3 /* clockFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clockFace.swift; sourceTree = "<group>"; };
 		5D4ECDA0209CD90B000F75E6 /* FeatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureViewController.swift; sourceTree = "<group>"; };
+		5D4ECDA2209CDBA1000F75E6 /* changeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeBackground.swift; sourceTree = "<group>"; };
 		5D83A5382055C34100BFAE08 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5D9576522044A4A3004760D4 /* handFormulas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = handFormulas.swift; sourceTree = "<group>"; };
 		5DE0B91D2080761D00607D4C /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				5DF847392038F4F5007E7322 /* ViewController.swift */,
 				5D3BC88420453FD100DA51F3 /* clockFace.swift */,
 				5D83A5382055C34100BFAE08 /* SettingsViewController.swift */,
+				5D4ECDA2209CDBA1000F75E6 /* changeBackground.swift */,
 				5D4ECDA0209CD90B000F75E6 /* FeatureViewController.swift */,
 				5D9576522044A4A3004760D4 /* handFormulas.swift */,
 				5DF8473B2038F4F5007E7322 /* Main.storyboard */,
@@ -161,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DF8473A2038F4F5007E7322 /* ViewController.swift in Sources */,
+				5D4ECDA3209CDBA1000F75E6 /* changeBackground.swift in Sources */,
 				5DE0B9202080782100607D4C /* MenuView.swift in Sources */,
 				5D3BC88520453FD100DA51F3 /* clockFace.swift in Sources */,
 				5D9576532044A4A3004760D4 /* handFormulas.swift in Sources */,

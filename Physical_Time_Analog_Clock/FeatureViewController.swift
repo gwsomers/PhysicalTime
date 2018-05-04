@@ -12,6 +12,9 @@ class FeatureViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let background = changeBackground()
+        self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
+
 
         // Do any additional setup after loading the view.
     }
