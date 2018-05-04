@@ -98,6 +98,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="tYd-n0-jpG"/>
                     </view>
+                    <connections>
+                        <outlet property="lunarFeatureButton" destination="gm1-CS-9Xp" id="wlJ-Df-cQS"/>
+                        <outlet property="planetaryVisButton" destination="aHY-qG-L5D" id="eNC-Li-gtY"/>
+                        <outlet property="wadokeiFeatureButton" destination="xCT-zk-VvQ" id="E7A-Zv-Zge"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jd9-SG-tFX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -144,6 +149,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Wal-Mo-3Ng"/>
                     </view>
+                    <connections>
+                        <outlet property="goToClockButton" destination="Kfa-dT-dDj" id="YMP-Wm-j1C"/>
+                        <outlet property="goToFeatureButton" destination="VxR-qI-O1G" id="BIe-AC-VBB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vei-Nb-3zl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -303,7 +312,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BKm-NE-TiG"/>
+        <segue reference="3Rf-nH-Phd"/>
         <segue reference="Z8A-bJ-UVi"/>
     </inferredMetricsTieBreakers>
 </document>
