@@ -23,17 +23,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ljt-wg-6ju">
-                                <rect key="frame" x="142" y="536" width="130" height="83"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <state key="normal" title="Continue">
-                                    <color key="titleColor" red="1" green="0.62362597990000002" blue="0.1007249285" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="checkIfNew:" destination="Zcv-aI-EVX" eventType="touchUpInside" id="Whp-RO-mOj"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Physical Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6B0-Oq-Z2M">
                                 <rect key="frame" x="119" y="56" width="177" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -45,6 +34,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="FJR-Dm-4UZ"/>
                     </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" id="h3F-7A-gw0"/>
+                        <segue destination="sgD-8R-5H3" kind="show" id="wfY-da-QoI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sC0-W7-egs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -204,7 +197,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4uM-25-Eei" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-372" y="-17"/>
+            <point key="canvasLocation" x="-372.46376811594206" y="-17.119565217391305"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -233,6 +226,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BKm-NE-TiG"/>
+        <segue reference="h3F-7A-gw0"/>
+        <segue reference="wfY-da-QoI"/>
     </inferredMetricsTieBreakers>
 </document>
