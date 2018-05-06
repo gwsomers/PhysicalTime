@@ -23,17 +23,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ljt-wg-6ju">	
-                                <rect key="frame" x="142" y="536" width="130" height="83"/>	
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>	
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>	
-                                <state key="normal" title="Continue">	
-                                    <color key="titleColor" red="1" green="0.62362597990000002" blue="0.1007249285" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>	
-                                </state>	
-                                <connections>	
-                                    <action selector="checkIfNew:" destination="Zcv-aI-EVX" eventType="touchUpInside" id="Whp-RO-mOj"/>	
-                                </connections>	
-                               </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ljt-wg-6ju">
+                                <rect key="frame" x="142" y="536" width="130" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="1" green="0.62362597990000002" blue="0.1007249285" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkIfNew:" destination="Zcv-aI-EVX" eventType="touchUpInside" id="Whp-RO-mOj"/>
+                                    <segue destination="0kC-eR-1mm" kind="show" id="A4E-Dg-5B2"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Physical Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6B0-Oq-Z2M">
                                 <rect key="frame" x="119" y="56" width="177" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -239,5 +240,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="h3F-7A-gw0"/>
         <segue reference="wfY-da-QoI"/>
+        <segue reference="A4E-Dg-5B2"/>
     </inferredMetricsTieBreakers>
 </document>
