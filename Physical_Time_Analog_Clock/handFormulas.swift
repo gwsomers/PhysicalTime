@@ -13,13 +13,13 @@ let NOON_MODE = 1
 let DAWN_MODE = 2
 
 public struct defaultHandValues {
-    static let hoursPerDay = 24
-    static let hourRevsPerDay = 2
-    static let minsPerHour = 60
-    static let minRevsPerHour = 1
-    static let FaceOffset = Float(0.0)
-    static let TimeOffset = 0
-    static let mode = NOON_MODE
+    static let hoursPerDay = "hoursPerDay"
+    static let hourRevsPerDay = "hourRevsPerDay"
+    static let minsPerHour = "minsPerHour"
+    static let minRevsPerHour = "minRevsPerHour"
+    static let FaceOffset = "faceOffset"
+    static let TimeOffset = "timeOffset"
+    static let mode = "mode"
 }
 
 class Hand_Positioner{

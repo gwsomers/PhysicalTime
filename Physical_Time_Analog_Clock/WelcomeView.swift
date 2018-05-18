@@ -31,7 +31,7 @@ class WelcomeView: UIViewController
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: "morningGoldenHour.jpeg")!)
     }
     @IBAction func checkIfNew(_ sender: UIButton) {
-        let file = "boring"
+        /*let file = "boring"
         let defaultinfo = "24:60:2:0:1:0:1"
         var recievedinfo=""
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first{
@@ -78,7 +78,7 @@ class WelcomeView: UIViewController
                 }
                 catch{}
             }
-        }
+        }*/
     }
     
     

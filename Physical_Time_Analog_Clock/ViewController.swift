@@ -12,18 +12,19 @@ var totalHoursPerDay: Int!
 var revolution: Int!
 var clockHours: Int!
 var modulus: Int!
+let defaults = UserDefaults.standard
 
 class ViewController: UIViewController {
     
     let timer = Timer()
     let locationManager = CLLocationManager()
-    var hoursPerDay: Int! = defaultHandValues.hoursPerDay
-    var minutesPerHour: Int! = defaultHandValues.minsPerHour
-    var revolutionPerDay: Int! = defaultHandValues.hourRevsPerDay
-    var minuteRevolutionPerHour: Int! = defaultHandValues.minRevsPerHour
-    var angleOffset: Float! = defaultHandValues.FaceOffset
-    var timeOffset: Int! = defaultHandValues.TimeOffset
-    var mode: Int! = defaultHandValues.mode
+    var hoursPerDay: Int! = defaults.integer(forKey: defaultHandValues.hoursPerDay)
+    var minutesPerHour: Int! = defaults.integer(forKey: defaultHandValues.minsPerHour)
+    var revolutionPerDay: Int! = defaults.integer(forKey: defaultHandValues.hourRevsPerDay)
+    var minuteRevolutionPerHour: Int! = defaults.integer(forKey: defaultHandValues.minRevsPerHour)
+    var angleOffset: Float! = defaults.float(forKey: defaultHandValues.FaceOffset)
+    var timeOffset: Int! = defaults.integer(forKey: defaultHandValues.TimeOffset)
+    var mode: Int! = defaults.integer(forKey: defaultHandValues.mode)
     
     override func viewDidLoad() {
         super.viewDidLoad()

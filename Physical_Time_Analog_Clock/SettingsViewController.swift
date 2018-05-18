@@ -35,14 +35,22 @@ class SettingsViewController: UIViewController {
 
         if let identifier = segue.identifier {
             if identifier == "segueToClock" {
+                let defaults = UserDefaults.standard
                 let clockViewController = segue.destination as! ViewController
                 clockViewController.hoursPerDay = Int(hoursPerDayText.text!)
+                defaults.set(Int(hoursPerDayText.text!), forKey: defaultHandValues.hoursPerDay)
                 clockViewController.minutesPerHour = Int(minutesPerHourText.text!)
+                defaults.set(Int(minutesPerHourText.text!), forKey: defaultHandValues.minsPerHour)
                 clockViewController.revolutionPerDay = Int(revolutionPerDayText.text!)
+                defaults.set(Int(revolutionPerDayText.text!), forKey: defaultHandValues.hourRevsPerDay)
                 clockViewController.minuteRevolutionPerHour = Int(minutesRevolutionPerHourText.text!)
+                defaults.set(Int(minutesRevolutionPerHourText.text!), forKey: defaultHandValues.minRevsPerHour)
                 clockViewController.angleOffset = Float(angleOffsetText.text!)
+                defaults.set(Float(angleOffsetText.text!), forKey: defaultHandValues.FaceOffset)
                 clockViewController.timeOffset = Int(timeOffsetText.text!)
+                defaults.set(Int(timeOffsetText.text!), forKey: defaultHandValues.TimeOffset)
                 clockViewController.mode = Int(modeText.text!)
+                defaults.set(Int(modeText.text!), forKey: defaultHandValues.mode)
                 
             }
         }
