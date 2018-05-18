@@ -1,13 +1,4 @@
 /**
- - Author:
- Cristian Gonzales
- 
- Created for Physical Time, 2018
- */
-
-import Foundation
-
-/**
  (c) 2011-2015, Vladimir Agafonkin
  SunCalc is a JavaScript library for calculating sun/moon position and light phases.
  
@@ -16,8 +7,11 @@ import Foundation
  All formulas used, as stated in @mourner's suncalc.js file, can be found here:
  http://aa.quae.nl/en/reken/zonpositie.html
  
+ - Author:
+ Cristian Gonzales
+ 
  - Version:
- 1.0
+ 0.1
  
  - License:
  MIT License
@@ -42,6 +36,9 @@ import Foundation
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  SOFTWARE.
  */
+
+import Foundation
+
 class PhysicalTimeSuncalc
 {
     // Simple conventions
@@ -82,13 +79,15 @@ class PhysicalTimeSuncalc
      */
     private func toJulian(date: Date) -> Double
     {
-        return Double(Date().millisecondsSince1970) / dayMs - 0.5 + J1970
+        return Double(date.millisecondsSince1970) / dayMs - 0.5 + J1970
     }
     
     /**
      Conversion of a given date from Julian date (double) to a date object (1970 and onward)
+     
      - parameters:
         - j: an integer offset to calculate the date in milliseconds
+     
      - returns:
      A date object for any specified Julian value
      */
@@ -186,7 +185,7 @@ class PhysicalTimeSuncalc
         - phi: Latitude φ [phi] north
         - dec: Equatorial coordinates to express the position of the body between the stars
      
-     - return:
+     - returns:
      Altitude, expressed as a Double
      */
     private func altitude(H: Double, phi: Double, dec: Double) -> Double
@@ -205,7 +204,7 @@ class PhysicalTimeSuncalc
         - d: The rate of change of sidereal time, in degrees per day
         - lw: Longitude west, measured by degrees
      
-     - return:
+     - returns:
      The sidereal time (a value between 0 and 24 hours)
      */
     private func siderealTime(d: Double, lw: Double) -> Double
@@ -221,7 +220,7 @@ class PhysicalTimeSuncalc
      - parameters:
         - h: Measure of degrees
      
-     - return:
+     - returns:
      Measure of astronomical refraction in radians
      */
     private func astroRefraction(h: Double) -> Double
@@ -253,7 +252,7 @@ class PhysicalTimeSuncalc
         - d: The time since 00:00 UTC at the beginning of the most recent January 1st, measured in (whole and
             fractional) days.
      
-     - return:
+     - returns:
      The mean anomaly
      */
     private func solarMeanAnomaly(d: Double) -> Double
@@ -270,7 +269,7 @@ class PhysicalTimeSuncalc
      - parameters:
         - m: The mean anomaly, as a Double
      
-     - return:
+     - returns:
      The ecliptical longitude, as a Double
      */
     private func eclipticLongitude(m: Double) -> Double
@@ -292,8 +291,8 @@ class PhysicalTimeSuncalc
         - d: The time since 00:00 UTC at the beginning of the most recent January 1st, measured in
             (whole and fractional) days.
      
-     - return:
-     The equatorial coordinates from the ecliptic coordinates.
+     - returns:
+     The equatorial coordinates from the ecliptic coordinates (declination and right ascension)
      */
     private func sunCoords(d: Double) -> Dictionary<String, Double>
     {
@@ -301,8 +300,8 @@ class PhysicalTimeSuncalc
         let long = eclipticLongitude(m: mean)
         
         return [
-            "declination": declination(l: long, b: 0),
-            "r-ascension": rightAscension(l: long, b: 0)
+            "dec": declination(l: long, b: 0),
+            "ra": rightAscension(l: long, b: 0)
         ]
     }
 
@@ -313,7 +312,7 @@ class PhysicalTimeSuncalc
         - d: The rate of change of sidereal time, in degrees per day
         - lw: Longitude west, measured by degrees
 
-     - return:
+     - returns:
      TODO
      */
     private func julianCycle(d: Double, lw: Double) -> Double
@@ -331,7 +330,7 @@ class PhysicalTimeSuncalc
         - lw: Longitude west, measured by degrees
         - n: TODO
 
-     - return:
+     - returns:
      TODO
      */
     private func approxTransit(Ht: Double, lw: Double, n: Double) -> Double
@@ -348,7 +347,7 @@ class PhysicalTimeSuncalc
         - M: TODO
         - L: TODO
 
-     - return:
+     - returns:
      TODO
      */
     private func solarTransitJ(ds: Double, M: Double, L: Double) -> Double
@@ -406,7 +405,7 @@ class PhysicalTimeSuncalc
         - d: is the number of days since 1 January 2000, 12:00 UTC, just like in the calculations
         for the planets
 
-     - return:   
+     - returns:
      Geocentric ecliptic coordinates of the moon
      */
     private func moonCoords(d: Double) -> Dictionary<String, Double>
@@ -425,7 +424,7 @@ class PhysicalTimeSuncalc
             dt: Double = 385001 - 20905 * cos(M)
 
         return [
-            "r-ascension": rightAscension(l: l, b: b),
+            "ra": rightAscension(l: l, b: b),
             "dec": declination(l: l, b: b),
             "dist": dt
         ]
@@ -438,7 +437,7 @@ class PhysicalTimeSuncalc
         - date: The initial date to be offset
         - h: The amount of hours to offset `date` by
 
-     - return:
+     - returns:
      The new date after the offset.
      */
     private func hoursLater(date: Date, h: Double) -> Date
@@ -462,7 +461,7 @@ class PhysicalTimeSuncalc
         - lat: The latitude given by the caller, expressed as a Double
         - lng: The longitude given by the caller, expressed as a Double
      
-     - return:
+     - returns:
      Dictionary containing azimuth and altitude values, both expressed as type Double
      */
     public func getPosition(date: Date, lat: Double, lng: Double) throws -> Dictionary<String, Double>
@@ -472,11 +471,11 @@ class PhysicalTimeSuncalc
             d = toDays(date: date),
         
             c = sunCoords(d: d),
-            H = siderealTime(d: d, lw: lw) - c["r-ascension"]!
+            H = siderealTime(d: d, lw: lw) - c["ra"]!
         
         return [
-            "azimuth": azimuth(H: H, phi: phi, dec: c["declination"]!),
-            "altitude": altitude(H: H, phi: phi, dec: c["declination"]!)
+            "azimuth": azimuth(H: H, phi: phi, dec: c["dec"]!),
+            "altitude": altitude(H: H, phi: phi, dec: c["dec"]!)
         ]
     }
     
@@ -488,7 +487,7 @@ class PhysicalTimeSuncalc
         - riseName: Name of the rise (e.g 'sunrise' or 'sunriseEnd')
         - setName: Name of the set (e.g. 'sunset' or 'sunsetStart')
      
-     - return:
+     - returns:
      Nil
      */
     public func addTime(angle: Double, riseName: String, setName: String)
@@ -505,7 +504,7 @@ class PhysicalTimeSuncalc
         - lng: The longitude given by the caller, expressed as a Double
      
      - returns:
-     A dictionary of strings indicating the time, and an associated date indicating the times at which
+     A dictionary of strings indicating the time, and an associated date indicating the time at which
      these occurences occur
      */
     public func getTimes(date: Date, lat: Double, lng: Double) throws -> Dictionary<String, Date>
@@ -523,7 +522,7 @@ class PhysicalTimeSuncalc
         
             Jnoon: Double = solarTransitJ(ds: ds, M: M, L: L),
         
-            i: Int, len: Int, time: [Any], Jset: Double, Jrise: Double
+            time: [Any], Jset: Double, Jrise: Double
         
         var result: Dictionary<String, Date> = [
             "solarNoon": fromJulian(j: Jnoon),
@@ -534,12 +533,199 @@ class PhysicalTimeSuncalc
         {
             time = times[i]
             
-            // TODO: See https://stackoverflow.com/questions/46470067/casting-from-any-to-double-swift
-//            Jset = getSetJ(h: Double(time[0]) * rad, lw: lw, phi: phi, dec: dec, n: n, M: M, L: L)
+            Jset = getSetJ(h: (time[0] as! Double) * rad, lw: lw, phi: phi, dec: dec, n: n, M: M, L: L)
+            Jrise = Jnoon - (Jset - Jnoon)
+            
+            result[time[1] as! String] = fromJulian(j: Jrise)
+            result[time[2] as! String] = fromJulian(j: Jset)
+        }
+        return result
+    }
+    
+    /**
+     Calculates the moon position for a given date and latitude/longitude.
+     
+     - parameters:
+         - date: The current date, given as a Date() object
+         - lat: The latitude given by the caller, expressed as a Double
+         - lng: The longitude given by the caller, expressed as a Double
+     
+     - returns:
+     A dictionary of strings indicating the azimuth, altitude, distance, and parallactic angle, and
+     an associated date indicating the time at which these occurences occur.
+     */
+    public func getMoonPosition(date: Date, lat: Double, lng: Double) -> Dictionary<String, Double>
+    {
+        var lw: Double = rad * -lng,
+            phi: Double = rad * lat,
+            d: Double = toDays(date: date),
+        
+            c: Dictionary<String, Double> = moonCoords(d: d),
+            H: Double = siderealTime(d: d, lw: lw) - c["ra"]!,
+            alt: Double = altitude(H: H, phi: phi, dec: c["dec"]!),
+            // Formula 14.1 of "Astronomical Algorithms" 2nd edition by Jean Meeus (Willmann-Bell,
+            // Richmond) 1998.
+            pa: Double = atan(sin(H) / (tan(phi) * cos(c["dec"]!) - sin(c["dec"]!) * cos(H))),
+            // Altitude correction for refraction
+            h: Double = alt + astroRefraction(h: alt)
+        
+        return [
+            "azimuth": azimuth(H: H, phi: phi, dec: c["dec"]!),
+            "altitude": h,
+            "distance": c["dist"]!,
+            "parallacticAngle": pa
+        ]
+    }
+    
+    /**
+     Calculations for illumination parameters of the moon,
+     based on http://idlastro.gsfc.nasa.gov/ftp/pro/astro/mphase.pro formulas and
+     Chapter 48 of "Astronomical Algorithms" 2nd edition by Jean Meeus (Willmann-Bell, Richmond) 1998.
+     
+     - parameters:
+        - date: Date for requested moon illumination metrics
+     
+     - returns:
+     A dictionary with "fraction", "phase", and "angle" values
+     */
+    public func getMoonIllumination(date: Date) -> Dictionary<String, Double>
+    {
+        var d: Double;
+        if date > Date()
+        {
+            d = toDays(date: date)
+        }
+        else
+        {
+            d = toDays(date: Date())
+        }
+        
+        var s: Dictionary<String, Double> = sunCoords(d: d),
+            m: Dictionary<String, Double> = moonCoords(d: d),
+            // Distance from Earth to Sun in km
+            sdist: Double = Double(149598000),
+        
+            phi: Double = acos(sin(s["dec"]!) * sin(m["dec"]!) + cos(s["dec"]!)
+                                * cos(m["dec"]!) * cos(s["ra"]! - m["ra"]!)),
+            inc: Double = atan((sdist * sin(phi)) / (m["dist"]! - sdist * cos(phi))),
+            angle: Double = atan((cos(s["dec"]!) * sin(s["ra"]! - m["ra"]!)) / (sin(s["dec"]!) * cos(m["dec"]!) -
+                cos(s["dec"]!) * sin(m["dec"]!) * cos(s["ra"]! - m["ra"]!)))
+        
+        return [
+            "fraction": (1.0 + cos(inc)) / 2.0,
+            "phrase": 0.5 + 0.5 * inc * (angle < 0 ? -1 : 1) / PI,
+            "angle": angle
+        ]
+    }
+    
+    
+    /**
+     User helper method to determine calculations for moon rise/set times, as based on
+     http://www.stargazing.net/kepler/moonrise.html article
+     
+     - important:
+     The default for all iOS devices is local time, so the `inUTC` parameter boolean option
+     was omitted from the function signature.
+     
+     - parameters:
+         - date: The current date, given as a Date() object
+         - lat: The latitude given by the caller, expressed as a Double
+         - lng: The longitude given by the caller, expressed as a Double
+     
+     - returns:
+     A dictionary with associated "rise" and "set" values to be indexed. In the function
+     signature, the Date value is optional because there might not be a computable value
+     for "rise" or "set". In the case that there is no value, `nil` will take it's place.
+     */
+    public func getMoonTimes(date: Date, lat: Double, lng: Double) -> Dictionary<String, Date?>
+    {
+        var t: Date =  Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: date)!,
+            hc: Double = 0.133 * rad,
+            h0: Double = getMoonPosition(date: t, lat: lat, lng: lng)["altitude"]! - hc,
+            h1: Double, h2: Double, rise: Double? = nil, set: Double? = nil, a: Double, b: Double, xe: Double,
+            ye: Double, d: Double, roots: Int, x1: Double? = nil, x2: Double? = nil, dx: Double
+        
+        // Go in 2-hour chunks, each time seeing if a 3-point quadratic curve crosses zero
+        // (which means rise or set)
+        for i in stride(from: 2, to: 24, by: 2)
+        {
+            h1 = getMoonPosition(date: hoursLater(date: t,
+                                                  h: Double(i)), lat: lat, lng: lng)["altitude"]! - hc
+            h2 = getMoonPosition(date: hoursLater(date: t,
+                                                  h: Double(i + 1)), lat: lat, lng: lng)["altitude"]! - hc
+            
+            a = (h0 + h2) / 2.0 - h1
+            b = (h2 - h0) / 2.0
+            xe = -b / (2.0 * a)
+            ye = (a * xe + b) * xe + h1
+            d = b * b - 4.0 * a * h1
+            roots = 0
+            
+            if d >= 0
+            {
+                dx = Double(abs(Int(d))) / Double(abs(Int(a)) * 2)
+                x1 = xe - dx
+                x2 = xe + dx
+                if abs(Int(x1!)) <= 1
+                {
+                    roots = roots + 1
+                }
+                if abs(Int(x2!)) <= 1
+                {
+                    roots = roots + 1
+                }
+                if x1! < -1.0
+                {
+                    x1 = x2
+                }
+            }
+            
+            if roots == 1
+            {
+                if h0 < 0
+                {
+                    rise = Double(i) + x1!
+                }
+                else
+                {
+                    set = Double(i) + x1!
+                }
+            }
+            else if roots == 2
+            {
+                rise = Double(i) + (ye < 0.0 ? x2! : x1!)
+                set = Double(i) + (ye < 0.0 ? x2! : x1!)
+            }
+            
+            if (rise != nil && set != nil)
+            {
+                break
+            }
+            
+            h0 = h2
+        }
+        
+        var result: Dictionary<String, Date?> = ["rise": nil, "set": nil]
+        
+        if (rise != nil)
+        {
+            result["rise"] = hoursLater(date: t, h: rise!)
+        }
+        if (set != nil)
+        {
+            result["set"] = hoursLater(date: t, h: rise!)
         }
         
         return result
     }
+}
+
+/**
+ Custom excpetion for the Suncalc library
+ */
+fileprivate enum SuncalcExceeption: Error
+{
+    case message(msg: String)
 }
 
 /**

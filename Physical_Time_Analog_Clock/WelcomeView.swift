@@ -28,7 +28,8 @@ class WelcomeView: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage:UIImage(named: "morningGoldenHour.jpeg")!)
+        let background = changeBackground()
+        self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
     }
     @IBAction func checkIfNew(_ sender: UIButton) {
         /*let file = "boring"
