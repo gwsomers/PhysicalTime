@@ -12,60 +12,75 @@ import CoreLocation
 let NOON_MODE = 1
 let DAWN_MODE = 2
 
+public struct defaultHandValues {
+    static let hoursPerDay = 24
+    static let hourRevsPerDay = 2
+    static let minsPerHour = 60
+    static let minRevsPerHour = 1
+    static let FaceOffset = Float(0.0)
+    static let TimeOffset = 0
+    static let mode = NOON_MODE
+}
+
 class Hand_Positioner{
-    var partsPerDay: Int
-    var partsOnFace: Int
-    var partRevsPerDay: Int
-    var ticksPerPart: Int
-    var tickRevsPerPart: Int
+    var hoursPerDay: Int
+    var hoursOnFace: Int
+    var hourRevsPerDay: Int
+    var minutesPerhour: Int
+    var minuteRevsPerhour: Int
     var FaceResetOffset: Float //enter the angle away from TOP, so to reset at the right
     //would be pi/2
     var TimeResetOffset: Int  //How many seconds away from noon we are starting the clock at
     //The clockmode decides our anchor point, currently accepts noon and dawn
     var Clockmode: Int
+    var locationManager: CLLocationManager
 
     
     
-    init(pPD: Int, pRPD: Int, tPP: Int, tRPP: Int, fRO:Float = 0, tRO: Int = 0, mode: Int = NOON_MODE){
-        partsPerDay = pPD
-        partsOnFace = pPD/pRPD
-        partRevsPerDay = pRPD
-        ticksPerPart = tPP
-        tickRevsPerPart = tRPP
+    init(pPD: Int = 24, pRPD: Int = 2, tPP: Int = 60, tRPP: Int = 1, fRO:Float = 0, tRO: Int = 0, mode: Int = NOON_MODE, locMan: CLLocationManager){
+        hoursPerDay = pPD
+        hoursOnFace = pPD/pRPD
+        hourRevsPerDay = pRPD
+        minutesPerhour = tPP
+        minuteRevsPerhour = tRPP
         FaceResetOffset = fRO
         TimeResetOffset = tRO
         Clockmode = mode
-        getDawn(myDate: NSDate() as Date)
+        locationManager = locMan
+
         
         
     }
     //Calcs where the arm is angled at given a start time.
     //Useful when initializing clock
-    func partAngle (timeHour:Int, timeMin:Int, timeSec:Int)->Float{
+    func hourAngle (timeHour:Int, timeMin:Int, timeSec:Int)->Float{
         var totalTime :Int
         totalTime = timeSec + (timeMin * 60) + (timeHour * 3600)
         totalTime = TimeResetOffset + totalTime + getModeOffset()
         let fullDay = getFullDay()
         let portionOfDay:Float = Float(totalTime)/Float(fullDay)
-        return (2 * Float(Double.pi) * portionOfDay) * Float(partRevsPerDay) + FaceResetOffset
+        print("portionOfDay: ", portionOfDay)
+        print(fullDay)
+        print(totalTime)
+        return (2 * Float(Double.pi) * portionOfDay) * Float(hourRevsPerDay) + FaceResetOffset
         
     }
-    //Time it takes for a 360 degree turn of our clock's part hand, in seconds. Can be used to find
+    //Time it takes for a 360 degree turn of our clock's hour hand, in seconds. Can be used to find
     //Animation speed
-    func partDuration()->Int{
-        return getFullDay() / partRevsPerDay
+    func hourDuration()->Int{
+        return getFullDay() / hourRevsPerDay
     }
     
-    func tickAngle(timeHour:Int, timeMin:Int, timeSec:Int)->Float{
+    func minuteAngle(timeHour:Int, timeMin:Int, timeSec:Int)->Float{
         var totalTime :Int
         totalTime = timeSec + (timeMin * 60) + (timeHour * 3600) + TimeResetOffset + getModeOffset()
-        let partTime : Int = (getFullDay()/partsPerDay)
-        totalTime %= partTime
-        let portionOfPart:Float = Float(totalTime)/Float(partTime)
-        return (2 * Float(Double.pi) * portionOfPart) * Float(tickRevsPerPart) + FaceResetOffset
+        let hourTime : Int = (getFullDay()/hoursPerDay)
+        totalTime %= hourTime
+        let portionOfhour:Float = Float(totalTime)/Float(hourTime)
+        return (2 * Float(Double.pi) * portionOfhour) * Float(minuteRevsPerhour) + FaceResetOffset
     }
-    func tickDuration()->Int{
-        return getFullDay()/(partsPerDay * tickRevsPerPart)
+    func minuteDuration()->Int{
+        return getFullDay()/(hoursPerDay * minuteRevsPerhour)
     }
     
     func getModeOffset()->Int{
@@ -73,23 +88,42 @@ class Hand_Positioner{
         if(Clockmode == DAWN_MODE){
             modeOffset = -getDawn(myDate: NSDate() as Date)
         }
+        print("modeOffset: ", modeOffset)
         return modeOffset
     }
     //TODO: Find how much time will be had by a dawn mode clock
     func getFullDay()->Int{
         if(Clockmode == DAWN_MODE){
-            return 24*60*60 - (getDawn(myDate: NSDate() as Date))-getDawn(myDate: NSDate() as Date)
+            return 24*60*60 - ((getDawn(myDate: NSDate() as Date)) -
+                getDawn(myDate: Date.init(timeInterval: 24*3600, since: NSDate() as Date)))
         }
         return 24*60*60
     }
     //TODO: Implement Cris' method for dawn finding
     func getDawn(myDate: Date)->Int{
-        let Solarcalc = Solar.init(for: myDate, coordinate: CLLocationCoordinate2D.init(latitude: 39.37, longitude: 122.03))
-        //Ok, we have the date we need for sunrise, now to convert it
-        //That'll involve timezones, convert to hours/minutes/seconds, the works
-        print( (Solarcalc?.sunrise as NSDate?)?.description as Any )
-        print( Solarcalc?.sunrise?.description as Any )
-        return 8 * 3600
+        var coords = CLLocationCoordinate2D.init(latitude: 39.37, longitude: 122.03)
+        print(locationManager.location?.coordinate as Any)
+        if(CLLocationManager.locationServicesEnabled())
+        {
+            coords = locationManager.location!.coordinate
+        }
+        
+        let Solarcalc = Solar.init(for: myDate, coordinate: coords)
+
+        let sunriseUTC = Solarcalc!.sunrise!
+        var startoftoday = Date.init(timeIntervalSinceReferenceDate: 0)
+        while (startoftoday.timeIntervalSinceReferenceDate < sunriseUTC.timeIntervalSinceReferenceDate)
+        {
+            startoftoday = Date.init(timeInterval: 24*3600, since: startoftoday)
+        }
+        startoftoday = Date.init(timeInterval: -24*3600, since: startoftoday)
+        print("seconds to dawn: ", (sunriseUTC.timeIntervalSince(startoftoday)-(8*60*60)))
+        return (Int(sunriseUTC.timeIntervalSince(startoftoday)))
+    }
+    
+    func convertToTimezone(time: TimeInterval)->TimeInterval{
+        return time + (-8*60*60)
+    
     }
     
     
