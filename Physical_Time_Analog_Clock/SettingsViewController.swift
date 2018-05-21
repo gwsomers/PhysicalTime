@@ -24,10 +24,17 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var angleOffsetText: UITextField!
     @IBOutlet weak var timeOffsetText: UITextField!
     @IBOutlet weak var modeText: UITextField!
+    @IBOutlet weak var fname: UITextField!
     
     
     @IBAction func buttonTap(_ sender: UIButton) {
         self.performSegue(withIdentifier: "segueToClock", sender: self)
+    }
+    @IBAction func export(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "segueToClockE", sender: self)
+    }
+    @IBAction func importing(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "segueToClockI", sender: self)
     }
     
     // called right before segueway occurs on current ViewController
@@ -43,7 +50,47 @@ class SettingsViewController: UIViewController {
                 clockViewController.angleOffset = Float(angleOffsetText.text!)
                 clockViewController.timeOffset = Int(timeOffsetText.text!)
                 clockViewController.mode = Int(modeText.text!)
+        
+            }
+            else if identifier == "segueToClockE" {
                 
+            }
+            else if identifier == "segueToClockI" {
+                let clockViewController = segue.destination as! ViewController
+                let information = InOut().importSettings(fname)
+                let WordsArray = information.components(separatedBy: ":")
+                var count = 0;
+                for sect in WordsArray{
+                    if count == 0{
+                        let dh: String = sect
+                        clockViewController.hoursPerDay = Int(dh)!
+                    }
+                    if count == 1{
+                        let dh: String = sect
+                        clockViewController.minutesPerHour = Int(dh)!
+                    }
+                    if count == 2{
+                        let dh: String = sect
+                        clockViewController.revolutionPerDay = Int(dh)!
+                    }
+                    if count == 3{
+                        let dh: String = sect
+                        clockViewController.minuteRevolutionPerHour = Int(dh)!
+                    }
+                    if count == 4{
+                        let dh: String = sect
+                        clockViewController.angleOffset = Float(dh)!
+                    }
+                    if count == 5{
+                        let dh: String = sect
+                        clockViewController.timeOffset = Int(dh)!
+                    }
+                    if count == 6{
+                        let dh: String = sect
+                        clockViewController.mode = Int(dh)!
+                    }
+                    count = count + 1
+                }
             }
         }
     }
