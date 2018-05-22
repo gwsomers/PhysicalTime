@@ -57,7 +57,7 @@ class SettingsViewController: UIViewController {
             }
             else if identifier == "segueToClockI" {
                 let clockViewController = segue.destination as! ViewController
-                let information = InOut().importSettings(fname)
+                let information = importSettings(fileName : String(fname.text!))
                 let WordsArray = information.components(separatedBy: ":")
                 var count = 0;
                 for sect in WordsArray{

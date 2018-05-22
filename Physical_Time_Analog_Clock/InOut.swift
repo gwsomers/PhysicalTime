@@ -9,7 +9,7 @@ import Foundation
 func exportSettings(fileName : String, hour : Int, minute : Int , rev : Int , mrph : Int , angle : Float , timeoff : Int , mode : Int) {
     //For exporting
      let file = fileName
-     let recievedinfo = hour + ":" + minute + ":" + rev + ":" + mrph + ":" + angle + ":" + timeoff + ":" + mode
+     let recievedinfo = String(hour) + ":" + String(minute) + ":" + String(rev) + ":" + String(mrph) + ":" + String(angle) + ":" + String(timeoff) + ":" + String(mode)
      if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first{
      let fileURL = dir.appendingPathComponent(file)
      do {
@@ -28,10 +28,10 @@ func importSettings(fileName : String) -> String{
      let fileURL = dir.appendingPathComponent(file)
      do {
      recievedinfo = try String(contentsOf: fileURL,encoding: .utf8)
-        return recievedinfo
      }
      catch{
         print("File Does not exist")
      }
 }
+    return recievedinfo
 }
