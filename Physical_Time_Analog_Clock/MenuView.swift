@@ -47,7 +47,7 @@ class MenuView: UIViewController
         case "sunset.jpg":
             goToClockButton.setTitleColor(UIColor.orange, for: .normal);
             goToFeatureButton.setTitleColor(UIColor.orange, for: .normal);
-        case "night.jpg":
+        case "evening.jpg":
             goToClockButton.setTitleColor(UIColor.orange, for: .normal);
             goToFeatureButton.setTitleColor(UIColor.orange, for: .normal);
         case "lunar_pic.jpg":

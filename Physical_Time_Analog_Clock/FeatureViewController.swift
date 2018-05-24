@@ -45,7 +45,7 @@ class FeatureViewController: UIViewController {
             lunarFeatureButton.setTitleColor(UIColor.orange, for: .normal);
             wadokeiFeatureButton.setTitleColor(UIColor.orange, for: .normal);
             planetaryVisButton.setTitleColor(UIColor.orange, for: .normal);
-        case "night.jpg":
+        case "evening.jpg":
             lunarFeatureButton.setTitleColor(UIColor.orange, for: .normal);
             wadokeiFeatureButton.setTitleColor(UIColor.orange, for: .normal);
             planetaryVisButton.setTitleColor(UIColor.orange, for: .normal);
