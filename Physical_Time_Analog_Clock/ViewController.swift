@@ -155,7 +155,7 @@ class ViewController: UIViewController {
         }
         if (revolutionPerDay == 0)
         {
-            revolutionPerDay = 1
+            revolutionPerDay = 2
         }
         if (minuteRevolutionPerHour == 0)
         {
