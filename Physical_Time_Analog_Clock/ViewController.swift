@@ -38,7 +38,6 @@ class ViewController: UIViewController {
         hourLayer.transform = CATransform3DMakeRotation(CGFloat(hourAngle), 0.0, 0.0, 1.0)
         hourLayer.rasterizationScale = UIScreen.main.scale;
         hourLayer.shouldRasterize = true
-        updateHourHand(currentLayer: hourLayer, duration: 43200)
         
         let minuteLayer = CAShapeLayer()
         minuteLayer.frame = newView.frame
@@ -55,13 +54,15 @@ class ViewController: UIViewController {
         minuteLayer.transform = CATransform3DMakeRotation(CGFloat(minuteAngle), 0.0, 0.0, 1.0)
         minuteLayer.rasterizationScale = UIScreen.main.scale;
         minuteLayer.shouldRasterize = true
-        updateHourHand(currentLayer: minuteLayer, duration: 3600)
+        
+        //updateHand(currentLayer: hourLayer, duration: 43200)
+        //updateHand(currentLayer: minuteLayer, duration: 3600)
         getCurrentTime()
     }
     
 }
 
-func updateHourHand(currentLayer: CALayer, duration: CFTimeInterval) {
+func updateHand(currentLayer: CALayer, duration: CFTimeInterval) {
     
     let angle = degree2radian(360)
     let animation = CABasicAnimation(keyPath:"transform.rotation.z")
