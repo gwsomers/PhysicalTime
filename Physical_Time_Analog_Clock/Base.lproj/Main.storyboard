@@ -32,6 +32,7 @@
                                 </state>
                                 <connections>
                                     <action selector="checkIfNew:" destination="Zcv-aI-EVX" eventType="touchUpInside" id="Whp-RO-mOj"/>
+                                    <segue destination="0kC-eR-1mm" kind="show" id="A4E-Dg-5B2"/>
                                     <segue destination="0kC-eR-1mm" kind="show" id="qbO-q6-MNy"/>
                                 </connections>
                             </button>
@@ -46,6 +47,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="FJR-Dm-4UZ"/>
                     </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" id="h3F-7A-gw0"/>
+                        <segue destination="sgD-8R-5H3" kind="show" id="wfY-da-QoI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sC0-W7-egs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -270,6 +275,36 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9f-ft-bhR">
+                                <rect key="frame" x="197" y="610" width="19" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5R-Zv-PqR">
+                                <rect key="frame" x="270" y="639" width="106" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Import Settings"/>
+                                <connections>
+                                    <action selector="importing:" destination="sgD-8R-5H3" eventType="touchUpInside" id="AA3-oR-off"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilr-zg-Odp">
+                                <rect key="frame" x="35" y="639" width="106" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Export Settings"/>
+                                <connections>
+                                    <action selector="export:" destination="sgD-8R-5H3" eventType="touchUpInside" id="Vdi-Uq-VoH"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="filename.txt" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hUQ-Rr-WXF">
+                                <rect key="frame" x="154" y="639" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -310,6 +345,7 @@
                     </view>
                     <connections>
                         <outlet property="angleOffsetText" destination="MDg-V0-r0O" id="Rhf-nQ-6H3"/>
+                        <outlet property="fname" destination="hUQ-Rr-WXF" id="NMj-Iq-BCP"/>
                         <outlet property="hoursPerDayText" destination="uNP-58-pp3" id="fw8-Ip-8JQ"/>
                         <outlet property="minutesPerHourText" destination="5xI-D5-l5x" id="bns-Hn-Xda"/>
                         <outlet property="minutesRevolutionPerHourText" destination="nxk-2p-V5z" id="uvO-a0-ekR"/>
@@ -321,7 +357,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4uM-25-Eei" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-372" y="-17"/>
+            <point key="canvasLocation" x="-372.46376811594206" y="-17.119565217391305"/>
         </scene>
         <!--Lunar View Controller-->
         <scene sceneID="uNz-zB-6AF">
@@ -439,6 +475,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="BKm-NE-TiG"/>
+        <segue reference="wfY-da-QoI"/>
+        <segue reference="DBT-Jx-fxw"/>
         <segue reference="3Rf-nH-Phd"/>
         <segue reference="jhe-x8-GcQ"/>
         <segue reference="SeJ-cg-ZzU"/>

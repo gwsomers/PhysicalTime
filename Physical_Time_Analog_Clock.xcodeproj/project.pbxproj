@@ -24,6 +24,7 @@
 		5DF8473D2038F4F5007E7322 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DF8473B2038F4F5007E7322 /* Main.storyboard */; };
 		5DF8473F2038F4F5007E7322 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DF8473E2038F4F5007E7322 /* Assets.xcassets */; };
 		5DF847422038F4F5007E7322 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DF847402038F4F5007E7322 /* LaunchScreen.storyboard */; };
+		9CF4710820B3422700076239 /* InOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4710720B3422700076239 /* InOut.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		5DF8473E2038F4F5007E7322 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DF847412038F4F5007E7322 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DF847432038F4F5007E7322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CF4710720B3422700076239 /* InOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InOut.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		5DF847362038F4F5007E7322 /* Physical_Time_Analog_Clock */ = {
 			isa = PBXGroup;
 			children = (
+				9CF4710720B3422700076239 /* InOut.swift */,
 				5DF847372038F4F5007E7322 /* AppDelegate.swift */,
 				5DE0B91D2080761D00607D4C /* WelcomeView.swift */,
 				5DE0B91F2080782100607D4C /* MenuView.swift */,
@@ -181,6 +184,7 @@
 				0222D929204E05ED0067EC35 /* Solar.swift in Sources */,
 				5D16BBD120B6885E00E0252F /* WadokeiViewController.swift in Sources */,
 				5DF847382038F4F5007E7322 /* AppDelegate.swift in Sources */,
+				9CF4710820B3422700076239 /* InOut.swift in Sources */,
 				5D16BBCF20B6883100E0252F /* wadokeiFace.swift in Sources */,
 				5D83A5392055C34100BFAE08 /* SettingsViewController.swift in Sources */,
 				5D4ECDA1209CD90B000F75E6 /* FeatureViewController.swift in Sources */,
