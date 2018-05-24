@@ -24,7 +24,8 @@ class WelcomeView: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage:UIImage(named: "morningGoldenHour.jpeg")!)
+        let background = changeBackground()
+        self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
     }
     @IBAction func checkIfNew(_ sender: UIButton) {
        // if firstTime == true{
@@ -39,12 +40,51 @@ class WelcomeView: UIViewController
             if let ident = segue.identifier {
                 if ident == "first"{
                 let menuViewController = segue.destination as! SettingsViewController
+        /*let file = "boring"
+        let defaultinfo = "24:60:2:0:1:0:1"
+        var recievedinfo=""
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first{
+        let fileURL = dir.appendingPathComponent(file).appendingPathExtension("txt")
+        do {
+            recievedinfo = try String(contentsOf: fileURL,encoding: .utf8)
+            let WordsArray = recievedinfo.components(separatedBy: ":")
+            var count = 0;
+            for sect in WordsArray{
+                if count == 0{
+                    let dh: String = sect
+                    defaulthour = Int(dh)!
+                }
+                if count == 1{
+                    let dh: String = sect
+                    defaultminute = Int(dh)!
+                }
+                if count == 2{
+                    let dh: String = sect
+                    defaultREVDAY = Int(dh)!
+                }
+                if count == 3{
+                    let dh: String = sect
+                    defaultREVHOUR = Int(dh)!
+                }
+                if count == 4{
+                    let dh: String = sect
+                    defaultANGOFF = Float(dh)!
+                }
+                if count == 5{
+                    let dh: String = sect
+                    defaultTIMEOFF = Int(dh)!
+                }
+                if count == 6{
+                    let dh: String = sect
+                    defaultMODE = Int(dh)!
                 }
                 else{
                 let menuViewController = segue.destination as! ViewController
                 }
             }
         }
+        }*/
+    }
     
     
 }

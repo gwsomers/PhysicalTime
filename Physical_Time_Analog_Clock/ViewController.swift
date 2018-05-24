@@ -12,29 +12,31 @@ var totalHoursPerDay: Int!
 var revolution: Int!
 var clockHours: Int!
 var modulus: Int!
+let defaults = UserDefaults.standard
 
 class ViewController: UIViewController {
     
     let timer = Timer()
     let locationManager = CLLocationManager()
-    var hoursPerDay: Int! = defaultHandValues.hoursPerDay
-    var minutesPerHour: Int! = defaultHandValues.minsPerHour
-    var revolutionPerDay: Int! = defaultHandValues.hourRevsPerDay
-    var minuteRevolutionPerHour: Int! = defaultHandValues.minRevsPerHour
-    var angleOffset: Float! = defaultHandValues.FaceOffset
-    var timeOffset: Int! = defaultHandValues.TimeOffset
-    var mode: Int! = defaultHandValues.mode
+    var hoursPerDay: Int! = defaults.integer(forKey: defaultHandValues.hoursPerDay)
+    var minutesPerHour: Int! = defaults.integer(forKey: defaultHandValues.minsPerHour)
+    var revolutionPerDay: Int! = defaults.integer(forKey: defaultHandValues.hourRevsPerDay)
+    var minuteRevolutionPerHour: Int! = defaults.integer(forKey: defaultHandValues.minRevsPerHour)
+    var angleOffset: Float! = defaults.float(forKey: defaultHandValues.FaceOffset)
+    var timeOffset: Int! = defaults.integer(forKey: defaultHandValues.TimeOffset)
+    var mode: Int! = defaults.integer(forKey: defaultHandValues.mode)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         locationManager.requestLocation()
-
+        let background = changeBackground()
+        self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let newView = View(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.width))
-        newView.backgroundColor = UIColor.white
+        newView.isOpaque = false
         view.addSubview(newView)
 
         let hourLayer = CAShapeLayer()
@@ -45,8 +47,8 @@ class ViewController: UIViewController {
         let anglePosition = Hand_Positioner(pPD: self.hoursPerDay, pRPD: self.revolutionPerDay, tPP: self.minutesPerHour, tRPP: self.minuteRevolutionPerHour,
                                             fRO: self.angleOffset, tRO: self.timeOffset, mode: self.mode, locMan: locationManager)
         let hourAngle = anglePosition.hourAngle(timeHour: getCurrentHour(), timeMin: getCurrentMinute(), timeSec: getCurrentSecond())
-        let hourX = findxCoord(handLength: 70, angle:CGFloat(hourAngle))
-        let hourY = findyCoord(handLength: 70, angle:CGFloat(hourAngle))
+        let hourX = findxCoord(handLength: 100, angle:CGFloat(hourAngle))
+        let hourY = findyCoord(handLength: 100, angle:CGFloat(hourAngle))
         path.addLine(to: CGPoint(x: newView.frame.midX + hourX, y: newView.frame.midY - hourY ))
         hourLayer.path = path
         hourLayer.lineWidth = 4.5
@@ -55,15 +57,13 @@ class ViewController: UIViewController {
         self.view.layer.addSublayer(hourLayer)
         hourLayer.rasterizationScale = UIScreen.main.scale;
         hourLayer.shouldRasterize = true
-
-
         let minuteLayer = CAShapeLayer()
         minuteLayer.frame = newView.frame
         let mpath = CGMutablePath()
         mpath.move(to: CGPoint(x: newView.frame.midX, y: newView.frame.midY))
         let minuteAngle = anglePosition.minuteAngle(timeHour: getCurrentHour(), timeMin: getCurrentMinute(), timeSec: getCurrentSecond())
-        let MinX = findxCoord(handLength: 90, angle:CGFloat(minuteAngle))
-        let MinY = findyCoord(handLength: 90, angle:CGFloat(minuteAngle))
+        let MinX = findxCoord(handLength: 120, angle:CGFloat(minuteAngle))
+        let MinY = findyCoord(handLength: 120, angle:CGFloat(minuteAngle))
         mpath.addLine(to: CGPoint(x: newView.frame.midX + MinX, y: newView.frame.midY - MinY ))
         minuteLayer.path = mpath
         minuteLayer.lineWidth = 3
@@ -82,11 +82,9 @@ class ViewController: UIViewController {
         totalHoursPerDay = self.hoursPerDay
         revolution = self.revolutionPerDay
     }
-    
     func findxCoord(handLength : CGFloat, angle: CGFloat)->CGFloat {
         return handLength * sin(angle)
     }
-    
     func findyCoord(handLength : CGFloat, angle: CGFloat)->CGFloat {
         return handLength * cos(angle)
     }
