@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initializeDefaultsIfNeeded()
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         locationManager.requestLocation()
@@ -144,6 +145,28 @@ class ViewController: UIViewController {
         let calendar = Calendar.current
         let second = calendar.component(.second, from: date)
         return second
+    }
+    func initializeDefaultsIfNeeded(){
+        if (hoursPerDay == 0)
+        {
+            hoursPerDay = 24
+        }
+        if (minutesPerHour == 0)
+        {
+            minutesPerHour = 60
+        }
+        if (revolutionPerDay == 0)
+        {
+            revolutionPerDay = 1
+        }
+        if (minuteRevolutionPerHour == 0)
+        {
+            minuteRevolutionPerHour = 1
+        }
+        if (mode == 0)
+        {
+            mode = NOON_MODE
+        }
     }
 }
 
