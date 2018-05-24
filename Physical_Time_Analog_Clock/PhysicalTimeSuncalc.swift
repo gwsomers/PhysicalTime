@@ -663,7 +663,8 @@ class PhysicalTimeSuncalc
             
             if d >= 0
             {
-                dx = Double(abs(Int(d))) / Double(abs(Int(a)) * 2)
+                dx = Double(abs(Int(d)))
+                dx = dx / Double(abs(Int(a)) * 2)
                 x1 = xe - dx
                 x2 = xe + dx
                 if abs(Int(x1!)) <= 1
