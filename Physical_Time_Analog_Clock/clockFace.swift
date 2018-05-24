@@ -10,13 +10,11 @@ import Foundation
 
 import UIKit
 
+let object = ViewController()
+
 func degree2radian(_ a:CGFloat)->CGFloat {
     let b = CGFloat(Double.pi) * a/180
     return b
-}
-
-func getCurrTime() {
-    
 }
 
 func circleCircumferencePoints(sides:Int, x:CGFloat,y:CGFloat, radius:CGFloat, adjustment:CGFloat=0)->[CGPoint] {
@@ -43,7 +41,7 @@ func secondMarkers(ctx:CGContext, x:CGFloat, y:CGFloat, radius:CGFloat, sides:In
     // determine length of marker as a fraction of the total radius
     var divider:CGFloat = 1/16
     for p in points.enumerated() {
-        if p.offset % 4 == 0 {
+        if p.offset % object.getModulus() == 0 {
             divider = 1/8
         }
         else {
@@ -79,7 +77,7 @@ class View: UIView {
         let ctx = UIGraphicsGetCurrentContext()
         
         // decide on radius
-        let rad = rect.width/3.5
+        let rad = rect.width/2.5
         
         let endAngle = CGFloat(2 * Double.pi)
         
@@ -100,7 +98,7 @@ class View: UIView {
         ctx?.drawPath(using: .fillStroke)
         
         
-        secondMarkers(ctx: ctx!, x: rect.midX, y: rect.midY, radius: rad, sides: 20, color: UIColor.red)
+        secondMarkers(ctx: ctx!, x: rect.midX, y: rect.midY, radius: rad, sides: object.getClockSide(), color: UIColor.red)
         
         
     }
