@@ -77,7 +77,7 @@ class View: UIView {
         let ctx = UIGraphicsGetCurrentContext()
         
         // decide on radius
-        let rad = rect.width/3.5
+        let rad = rect.width/2.5
         
         let endAngle = CGFloat(2 * Double.pi)
         
