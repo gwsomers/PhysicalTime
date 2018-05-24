@@ -34,6 +34,7 @@ class changeBackground{
         let sunsetInterval = sunset.timeIntervalSince1970
         let daytime = sunsetInterval - sunriseInterval
         var timeInterval = date.timeIntervalSince1970 - 25200
+//        timeInterval += 25000
         if (timeInterval < sunriseInterval){
             return "lunar_pic.jpg"
         } else if (timeInterval > sunriseInterval && timeInterval < (sunriseInterval + 3600)){
@@ -41,7 +42,7 @@ class changeBackground{
         }else if(timeInterval > sunriseInterval + 3600 && timeInterval < (sunriseInterval + daytime/2)){
             return "morningGoldenHour.jpeg"
         } else if(timeInterval > (sunriseInterval + daytime/2) && timeInterval < (sunsetInterval - daytime/4)){
-            return "sunset.jpg"
+            return "noon.jpg"
         } else if(timeInterval > (sunsetInterval - daytime/4) && timeInterval < sunsetInterval){
             return "evening.jpg"
         }else if(timeInterval > sunsetInterval && timeInterval < (sunsetInterval + 3600)){

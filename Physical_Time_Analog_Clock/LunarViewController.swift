@@ -19,6 +19,7 @@ class LunarViewController: UIViewController {
         return Date()
     }
     
+    var component = DateComponents();
     
     func timeString(time:TimeInterval) -> String {
         let hours = Int(time) / 3600
@@ -35,7 +36,14 @@ class LunarViewController: UIViewController {
         
         var timeInterval = currentTime.timeIntervalSince1970;
         var currentTimeAsInt = Int(timeInterval);
-        print("\(currentTimeAsInt)");
+        
+        component.setValue(1, for: .month);
+        var nextEclipse = Calendar.current.date(byAdding: component, to: currentTime);
+        var anotherTimeInterval = nextEclipse?.timeIntervalSince(currentTime);
+        var anotherTimeIntervalAsInt = Int(anotherTimeInterval!);
+        
+        print("\(currentTimeAsInt)\n");
+        print("\(anotherTimeIntervalAsInt)");
         
         seconds -= 1;
         if seconds >= 0 {
