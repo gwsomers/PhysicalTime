@@ -33,6 +33,8 @@ class ViewController: UIViewController {
         locationManager.requestLocation()
         let background = changeBackground()
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         let newView = View(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.width))
         newView.isOpaque = false
         view.addSubview(newView)
