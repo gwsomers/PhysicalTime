@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Physical_Time_Analog_Clock.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>

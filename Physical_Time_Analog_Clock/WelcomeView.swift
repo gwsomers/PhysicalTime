@@ -81,10 +81,8 @@ class WelcomeView: UIViewController
                 else{
                 let menuViewController = segue.destination as! ViewController
                 }
-            }
+            }*/
         }
-        }*/
+        }
     }
-    
-    
 }

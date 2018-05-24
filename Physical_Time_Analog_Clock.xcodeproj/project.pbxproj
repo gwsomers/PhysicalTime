@@ -21,9 +21,9 @@
 		5DE0B9202080782100607D4C /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0B91F2080782100607D4C /* MenuView.swift */; };
 		5DF847382038F4F5007E7322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF847372038F4F5007E7322 /* AppDelegate.swift */; };
 		5DF8473A2038F4F5007E7322 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF847392038F4F5007E7322 /* ViewController.swift */; };
-		5DF8473D2038F4F5007E7322 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DF8473B2038F4F5007E7322 /* Main.storyboard */; };
 		5DF8473F2038F4F5007E7322 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DF8473E2038F4F5007E7322 /* Assets.xcassets */; };
 		5DF847422038F4F5007E7322 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DF847402038F4F5007E7322 /* LaunchScreen.storyboard */; };
+		7C30166320B7853A0070F838 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C30166220B7853A0070F838 /* Main.storyboard */; };
 		9CF4710820B3422700076239 /* InOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4710720B3422700076239 /* InOut.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,10 +43,11 @@
 		5DF847342038F4F5007E7322 /* Physical_Time_Analog_Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Physical_Time_Analog_Clock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DF847372038F4F5007E7322 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DF847392038F4F5007E7322 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5DF8473C2038F4F5007E7322 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5DF8473E2038F4F5007E7322 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DF847412038F4F5007E7322 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DF847432038F4F5007E7322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C30166220B7853A0070F838 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7C8944E220B781B100533DF3 /* Main2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main2.storyboard; path = /Users/labuser/PhysicalTime/Physical_Time_Analog_Clock/Main2.storyboard; sourceTree = "<absolute>"; };
 		9CF4710720B3422700076239 /* InOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InOut.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,10 +93,11 @@
 				5D9576522044A4A3004760D4 /* handFormulas.swift */,
 				5D16BBD020B6885E00E0252F /* WadokeiViewController.swift */,
 				5D16BBCE20B6883100E0252F /* wadokeiFace.swift */,
-				5DF8473B2038F4F5007E7322 /* Main.storyboard */,
 				5DF8473E2038F4F5007E7322 /* Assets.xcassets */,
+				7C8944E220B781B100533DF3 /* Main2.storyboard */,
 				5DF847402038F4F5007E7322 /* LaunchScreen.storyboard */,
 				5DF847432038F4F5007E7322 /* Info.plist */,
+				7C30166220B7853A0070F838 /* Main.storyboard */,
 				0222D928204E05ED0067EC35 /* Solar.swift */,
 				5217E64D209283CD00FA9A69 /* PhysicalTimeSuncalc.swift */,
 				5D16BBD220B688DD00E0252F /* LunarViewController.swift */,
@@ -162,9 +164,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C30166320B7853A0070F838 /* Main.storyboard in Resources */,
 				5DF847422038F4F5007E7322 /* LaunchScreen.storyboard in Resources */,
 				5DF8473F2038F4F5007E7322 /* Assets.xcassets in Resources */,
-				5DF8473D2038F4F5007E7322 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,14 +198,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5DF8473B2038F4F5007E7322 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5DF8473C2038F4F5007E7322 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5DF847402038F4F5007E7322 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
