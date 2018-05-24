@@ -56,11 +56,27 @@ class SettingsViewController: UIViewController {
                 defaults.set(Float(angleOffsetText.text!), forKey: defaultHandValues.FaceOffset)
                 clockViewController.timeOffset = Int(timeOffsetText.text!)
                 defaults.set(Int(timeOffsetText.text!), forKey: defaultHandValues.TimeOffset)
-                clockViewController.mode = Int(modeText.text!)        
+                clockViewController.mode = Int(modeText.text!)
+                defaults.set(Int(modeText.text!), forKey: defaultHandValues.mode)
             }
             else if identifier == "segueToClockE" {
+                let defaults = UserDefaults.standard
+                let clockViewController = segue.destination as! ViewController
+                clockViewController.hoursPerDay = Int(hoursPerDayText.text!)
+                defaults.set(Int(hoursPerDayText.text!), forKey: defaultHandValues.hoursPerDay)
+                clockViewController.minutesPerHour = Int(minutesPerHourText.text!)
+                defaults.set(Int(minutesPerHourText.text!), forKey: defaultHandValues.minsPerHour)
+                clockViewController.revolutionPerDay = Int(revolutionPerDayText.text!)
+                defaults.set(Int(revolutionPerDayText.text!), forKey: defaultHandValues.hourRevsPerDay)
+                clockViewController.minuteRevolutionPerHour = Int(minutesRevolutionPerHourText.text!)
+                defaults.set(Int(minutesRevolutionPerHourText.text!), forKey: defaultHandValues.minRevsPerHour)
+                clockViewController.angleOffset = Float(angleOffsetText.text!)
+                defaults.set(Float(angleOffsetText.text!), forKey: defaultHandValues.FaceOffset)
+                clockViewController.timeOffset = Int(timeOffsetText.text!)
+                defaults.set(Int(timeOffsetText.text!), forKey: defaultHandValues.TimeOffset)
+                clockViewController.mode = Int(modeText.text!)
                 defaults.set(Int(modeText.text!), forKey: defaultHandValues.mode)
-                
+                exportSettings(fileName: String(fname.text!), hour: Int(hoursPerDayText.text!)!, minute: Int(minutesPerHourText.text!)!, rev: Int(revolutionPerDayText.text!)!, mrph: Int(minutesRevolutionPerHourText.text!)!, angle: Float(angleOffsetText.text!)!, timeoff: Int(timeOffsetText.text!)!, mode: Int(modeText.text!)!)
             }
             else if identifier == "segueToClockI" {
                 let clockViewController = segue.destination as! ViewController
@@ -71,30 +87,37 @@ class SettingsViewController: UIViewController {
                     if count == 0{
                         let dh: String = sect
                         clockViewController.hoursPerDay = Int(dh)!
+                        defaults.set(Int(dh)!, forKey: defaultHandValues.hoursPerDay)
                     }
                     if count == 1{
                         let dh: String = sect
                         clockViewController.minutesPerHour = Int(dh)!
+                        defaults.set(Int(dh)!, forKey: defaultHandValues.minsPerHour)
                     }
                     if count == 2{
                         let dh: String = sect
                         clockViewController.revolutionPerDay = Int(dh)!
+                        defaults.set(Int(dh)!, forKey: defaultHandValues.hourRevsPerDay)
                     }
                     if count == 3{
                         let dh: String = sect
                         clockViewController.minuteRevolutionPerHour = Int(dh)!
+                        defaults.set(Int(dh)!, forKey: defaultHandValues.minRevsPerHour)
                     }
                     if count == 4{
                         let dh: String = sect
                         clockViewController.angleOffset = Float(dh)!
+                        defaults.set(Float(dh)!, forKey: defaultHandValues.FaceOffset)
                     }
                     if count == 5{
                         let dh: String = sect
                         clockViewController.timeOffset = Int(dh)!
+                        defaults.set(Int(dh)!, forKey: defaultHandValues.TimeOffset)
                     }
                     if count == 6{
                         let dh: String = sect
                         clockViewController.mode = Int(dh)!
+                        defaults.set(Int(dh)!, forKey: defaultHandValues.mode)
                     }
                     count = count + 1
                 }
