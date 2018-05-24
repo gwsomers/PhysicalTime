@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zcv-aI-EVX">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,20 +9,310 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Futura.ttc">
+            <string>Futura-CondensedExtraBold</string>
+        </array>
+    </customFonts>
     <scenes>
+        <!--Welcome View-->
+        <scene sceneID="lNJ-Up-hsi">
+            <objects>
+                <viewController id="Zcv-aI-EVX" customClass="WelcomeView" customModule="Physical_Time_Analog_Clock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AO6-6T-89Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ljt-wg-6ju">
+                                <rect key="frame" x="142" y="536" width="130" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="1" green="0.62362597990000002" blue="0.1007249285" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkIfNew:" destination="Zcv-aI-EVX" eventType="touchUpInside" id="Whp-RO-mOj"/>
+                                    <segue destination="0kC-eR-1mm" kind="show" id="qbO-q6-MNy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Physical Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6B0-Oq-Z2M">
+                                <rect key="frame" x="119" y="56" width="177" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="29"/>
+                                <color key="textColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="FJR-Dm-4UZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sC0-W7-egs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1754" y="-17"/>
+        </scene>
+        <!--Feature View Controller-->
+        <scene sceneID="kaS-Ni-dzZ">
+            <objects>
+                <viewController id="IBx-24-jiA" customClass="FeatureViewController" customModule="Physical_Time_Analog_Clock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RzQ-s4-Dow">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gm1-CS-9Xp">
+                                <rect key="frame" x="157" y="220" width="101" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="Lunar">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCT-zk-VvQ">
+                                <rect key="frame" x="150" y="273" width="114" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <state key="normal" title="Wadokei">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHY-qG-L5D">
+                                <rect key="frame" x="60" y="311" width="295" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <state key="normal" title="Planetary Visualization">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yby-xj-rzM">
+                                <rect key="frame" x="184" y="621" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Menu">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="0kC-eR-1mm" kind="show" id="Z8A-bJ-UVi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="tYd-n0-jpG"/>
+                    </view>
+                    <connections>
+                        <outlet property="lunarFeatureButton" destination="gm1-CS-9Xp" id="wlJ-Df-cQS"/>
+                        <outlet property="planetaryVisButton" destination="aHY-qG-L5D" id="eNC-Li-gtY"/>
+                        <outlet property="wadokeiFeatureButton" destination="xCT-zk-VvQ" id="E7A-Zv-Zge"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jd9-SG-tFX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1755.072463768116" y="692.93478260869574"/>
+        </scene>
+        <!--Menu View-->
+        <scene sceneID="a2s-Xd-ZE4">
+            <objects>
+                <viewController id="0kC-eR-1mm" customClass="MenuView" customModule="Physical_Time_Analog_Clock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fRc-m1-687">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOK-aL-oX3">
+                                <rect key="frame" x="163" y="40" width="88" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" red="0.66799789667129517" green="0.50245910551821349" blue="0.24853574819061891" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfa-dT-dDj">
+                                <rect key="frame" x="12" y="539" width="152" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <state key="normal" title="Clock">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="3Rf-nH-Phd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VxR-qI-O1G">
+                                <rect key="frame" x="26" y="614" width="125" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <state key="normal" title="Features">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="IBx-24-jiA" kind="show" id="MHp-zB-jqb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="Wal-Mo-3Ng"/>
+                    </view>
+                    <connections>
+                        <outlet property="goToClockButton" destination="Kfa-dT-dDj" id="YMP-Wm-j1C"/>
+                        <outlet property="goToFeatureButton" destination="VxR-qI-O1G" id="BIe-AC-VBB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vei-Nb-3zl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1002.8985507246377" y="-17.119565217391305"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="p6d-Iz-rHN">
+            <objects>
+                <viewController id="sgD-8R-5H3" customClass="SettingsViewController" customModule="Physical_Time_Analog_Clock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rnA-Ch-NKu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eng-8Z-qzf">
+                                <rect key="frame" x="164" y="564" width="85" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Clock">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTap:" destination="sgD-8R-5H3" eventType="touchUpInside" id="dss-6c-Buc"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="24" borderStyle="roundedRect" placeholder="hours per day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uNP-58-pp3">
+                                <rect key="frame" x="46" y="77" width="312" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="60" borderStyle="roundedRect" placeholder="minutes per hour" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5xI-D5-l5x">
+                                <rect key="frame" x="46" y="139" width="312" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="Minutes Revolution Per Hour" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nxk-2p-V5z">
+                                <rect key="frame" x="46" y="318" width="312" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2" borderStyle="roundedRect" placeholder="revolution per day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nD8-hM-ZVf">
+                                <rect key="frame" x="46" y="197" width="312" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" placeholder="Angle Offset" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MDg-V0-r0O">
+                                <rect key="frame" x="46" y="257" width="312" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" placeholder="Time Offset" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7pW-nK-Nh9">
+                                <rect key="frame" x="46" y="372" width="312" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="Mode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uVl-6F-gKb">
+                                <rect key="frame" x="46" y="430" width="312" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uVl-6F-gKb" firstAttribute="top" secondItem="7pW-nK-Nh9" secondAttribute="bottom" constant="28" id="0ql-Up-WSa"/>
+                            <constraint firstItem="nxk-2p-V5z" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="4IY-lj-0hg"/>
+                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="nxk-2p-V5z" secondAttribute="trailing" constant="56" id="5ck-aV-ejq"/>
+                            <constraint firstItem="nD8-hM-ZVf" firstAttribute="top" secondItem="5xI-D5-l5x" secondAttribute="bottom" constant="28" id="5fI-b6-mnK"/>
+                            <constraint firstItem="uVl-6F-gKb" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="7hz-Gt-O4D"/>
+                            <constraint firstItem="MDg-V0-r0O" firstAttribute="top" secondItem="nD8-hM-ZVf" secondAttribute="bottom" constant="30" id="7uF-rE-9Lr"/>
+                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="uNP-58-pp3" secondAttribute="trailing" constant="56" id="8ow-PW-txV"/>
+                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="7pW-nK-Nh9" secondAttribute="trailing" constant="56" id="BuR-Z5-lrb"/>
+                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="uVl-6F-gKb" secondAttribute="trailing" constant="56" id="CuO-IF-lex"/>
+                            <constraint firstItem="uNP-58-pp3" firstAttribute="top" secondItem="OeN-Tk-nvx" secondAttribute="top" constant="57" id="GA6-96-GyG"/>
+                            <constraint firstItem="5xI-D5-l5x" firstAttribute="top" secondItem="uNP-58-pp3" secondAttribute="bottom" constant="32" id="Gyu-RT-dKV"/>
+                            <constraint firstItem="7pW-nK-Nh9" firstAttribute="top" secondItem="nxk-2p-V5z" secondAttribute="bottom" constant="24" id="HO6-2d-kbj"/>
+                            <constraint firstItem="eng-8Z-qzf" firstAttribute="top" secondItem="uVl-6F-gKb" secondAttribute="bottom" constant="104" id="HPQ-TM-EyE"/>
+                            <constraint firstItem="nxk-2p-V5z" firstAttribute="top" secondItem="MDg-V0-r0O" secondAttribute="bottom" constant="31" id="Jo1-8h-dQ1"/>
+                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="nD8-hM-ZVf" secondAttribute="trailing" constant="56" id="MHy-W0-X14"/>
+                            <constraint firstItem="nD8-hM-ZVf" firstAttribute="top" secondItem="5xI-D5-l5x" secondAttribute="bottom" constant="28" id="MVg-5q-ADV"/>
+                            <constraint firstItem="uNP-58-pp3" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="Mpr-XZ-wW8"/>
+                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="eng-8Z-qzf" secondAttribute="trailing" constant="165" id="Sdw-zV-DaR"/>
+                            <constraint firstItem="eng-8Z-qzf" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="164" id="T87-mp-tdo"/>
+                            <constraint firstItem="7pW-nK-Nh9" firstAttribute="top" secondItem="nxk-2p-V5z" secondAttribute="bottom" constant="24" id="Wi6-Gq-MzJ"/>
+                            <constraint firstItem="nxk-2p-V5z" firstAttribute="top" secondItem="MDg-V0-r0O" secondAttribute="bottom" constant="31" id="Xwb-92-lXY"/>
+                            <constraint firstItem="nD8-hM-ZVf" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="bdw-Uo-FhF"/>
+                            <constraint firstItem="eng-8Z-qzf" firstAttribute="top" secondItem="uVl-6F-gKb" secondAttribute="bottom" constant="104" id="bft-YX-tLY"/>
+                            <constraint firstItem="MDg-V0-r0O" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="dB4-jX-AUw"/>
+                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="MDg-V0-r0O" secondAttribute="trailing" constant="56" id="lHz-In-7NR"/>
+                            <constraint firstItem="5xI-D5-l5x" firstAttribute="top" secondItem="uNP-58-pp3" secondAttribute="bottom" constant="32" id="pZR-29-lhP"/>
+                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="5xI-D5-l5x" secondAttribute="trailing" constant="56" id="rB2-5g-pEX"/>
+                            <constraint firstItem="7pW-nK-Nh9" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="s2m-Tr-gHx"/>
+                            <constraint firstItem="uVl-6F-gKb" firstAttribute="top" secondItem="7pW-nK-Nh9" secondAttribute="bottom" constant="28" id="thJ-NF-61o"/>
+                            <constraint firstItem="5xI-D5-l5x" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="uY2-1e-JHx"/>
+                            <constraint firstItem="MDg-V0-r0O" firstAttribute="top" secondItem="nD8-hM-ZVf" secondAttribute="bottom" constant="30" id="uaV-26-vKo"/>
+                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="bottom" secondItem="eng-8Z-qzf" secondAttribute="bottom" constant="73" id="vjQ-Hy-pIS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OeN-Tk-nvx"/>
+                    </view>
+                    <connections>
+                        <outlet property="angleOffsetText" destination="MDg-V0-r0O" id="Rhf-nQ-6H3"/>
+                        <outlet property="hoursPerDayText" destination="uNP-58-pp3" id="fw8-Ip-8JQ"/>
+                        <outlet property="minutesPerHourText" destination="5xI-D5-l5x" id="bns-Hn-Xda"/>
+                        <outlet property="minutesRevolutionPerHourText" destination="nxk-2p-V5z" id="uvO-a0-ekR"/>
+                        <outlet property="modeText" destination="uVl-6F-gKb" id="YfL-fE-uOn"/>
+                        <outlet property="revolutionPerDayText" destination="nD8-hM-ZVf" id="SAT-Dd-syw"/>
+                        <outlet property="timeOffsetText" destination="7pW-nK-Nh9" id="X1t-pA-UTr"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueToClock" id="BKm-NE-TiG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4uM-25-Eei" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-372" y="-17"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Physical_Time_Analog_Clock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4Z-oH-jgF">
+                                <rect key="frame" x="170" y="597" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="sgD-8R-5H3" kind="show" id="FXV-pt-3df"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAn-CX-tSD">
+                                <rect key="frame" x="184" y="635" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Menu">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="0kC-eR-1mm" kind="show" id="mYq-pO-xBa"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-494.20289855072468" y="813.58695652173924"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="3Rf-nH-Phd"/>
+        <segue reference="Z8A-bJ-UVi"/>
+    </inferredMetricsTieBreakers>
 </document>
