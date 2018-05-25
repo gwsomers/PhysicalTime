@@ -1,3 +1,14 @@
+# PhysicalTime `CONTRIBUTING`
+
+Pull requests & contributing
+---
+All pull requests of any sort are welcome! Any problems will help with bugs, as well as any potential features to be implemented to the application.
+
+Please have a look at the [GitHub Swift Style Guide](https://github.com/github/swift-style-guide) for more niche topics on Swift styling. For the more general case, simply follow the general formatting and constructs of the current codebase.
+
+All contributions are welcome, simply make a pull request [here](https://github.com/gwsomers/PhysicalTime/issues). :sunny::sunglasses:
+
+
 Contributor guidelines for developers
 ---
 * Author headers at the beginning of each class file. For example,

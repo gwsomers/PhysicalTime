@@ -1,0 +1,3 @@
+[submodule "SwiftySuncalc"]
+	path = SwiftySuncalc
+	url = https://github.com/cristiangonzales/SwiftySuncalc.git

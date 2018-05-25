@@ -1,6 +1,3 @@
-# Physical_Time_Analog_Clock.xcodeproj/xcuserdata/
-# Physical_Time_Analog_Clock.xcodeproj/project.xcworkspace/
-
 # Ignore all .DS_Store files in all directories
 **/.DS_Store
 *.xcuserstate

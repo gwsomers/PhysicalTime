@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0222D929204E05ED0067EC35 /* Solar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0222D928204E05ED0067EC35 /* Solar.swift */; };
-		5217E64E209283CD00FA9A69 /* PhysicalTimeSuncalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5217E64D209283CD00FA9A69 /* PhysicalTimeSuncalc.swift */; };
 		5D16BBCF20B6883100E0252F /* wadokeiFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16BBCE20B6883100E0252F /* wadokeiFace.swift */; };
 		5D16BBD120B6885E00E0252F /* WadokeiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16BBD020B6885E00E0252F /* WadokeiViewController.swift */; };
 		5D16BBD320B688DD00E0252F /* LunarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16BBD220B688DD00E0252F /* LunarViewController.swift */; };
@@ -29,7 +28,6 @@
 
 /* Begin PBXFileReference section */
 		0222D928204E05ED0067EC35 /* Solar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solar.swift; sourceTree = "<group>"; };
-		5217E64D209283CD00FA9A69 /* PhysicalTimeSuncalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicalTimeSuncalc.swift; sourceTree = "<group>"; };
 		5D16BBCE20B6883100E0252F /* wadokeiFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wadokeiFace.swift; sourceTree = "<group>"; };
 		5D16BBD020B6885E00E0252F /* WadokeiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WadokeiViewController.swift; sourceTree = "<group>"; };
 		5D16BBD220B688DD00E0252F /* LunarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarViewController.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				5DF847432038F4F5007E7322 /* Info.plist */,
 				7C30166220B7853A0070F838 /* Main.storyboard */,
 				0222D928204E05ED0067EC35 /* Solar.swift */,
-				5217E64D209283CD00FA9A69 /* PhysicalTimeSuncalc.swift */,
 				5D16BBD220B688DD00E0252F /* LunarViewController.swift */,
 			);
 			path = Physical_Time_Analog_Clock;
@@ -190,7 +187,6 @@
 				5D16BBCF20B6883100E0252F /* wadokeiFace.swift in Sources */,
 				5D83A5392055C34100BFAE08 /* SettingsViewController.swift in Sources */,
 				5D4ECDA1209CD90B000F75E6 /* FeatureViewController.swift in Sources */,
-				5217E64E209283CD00FA9A69 /* PhysicalTimeSuncalc.swift in Sources */,
 				5DE0B91E2080761D00607D4C /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
