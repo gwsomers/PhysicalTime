@@ -27,6 +27,8 @@
 		9F147961961A653AD8175535 /* libPods-Physical_Time_Analog_Clock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2905804960F17BF1FF6FC9A4 /* libPods-Physical_Time_Analog_Clock.a */; };
 		B86D1DEE20B7AD5200892FA2 /* Blackout_Sunrise.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B86D1DED20B7AD5100892FA2 /* Blackout_Sunrise.ttf */; };
 		B8BA2D5520B7F72F0083DE3A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA2D5420B7F72F0083DE3A /* UIViewExtension.swift */; };
+		B8BA2D5720B82CA40083DE3A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA2D5620B82CA40083DE3A /* StatsViewController.swift */; };
+		B8BA2D5920B8365C0083DE3A /* Arvo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8BA2D5820B8365B0083DE3A /* Arvo-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		9CF4710720B3422700076239 /* InOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InOut.swift; sourceTree = "<group>"; };
 		B86D1DED20B7AD5100892FA2 /* Blackout_Sunrise.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Blackout_Sunrise.ttf; path = Physical_Time_Analog_Clock/fonts/Blackout_Sunrise.ttf; sourceTree = SOURCE_ROOT; };
 		B8BA2D5420B7F72F0083DE3A /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		B8BA2D5620B82CA40083DE3A /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		B8BA2D5820B8365B0083DE3A /* Arvo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Arvo-Regular.ttf"; path = "Physical_Time_Analog_Clock/New Group/Arvo-Regular.ttf"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 				0222D928204E05ED0067EC35 /* Solar.swift */,
 				5D16BBD220B688DD00E0252F /* LunarViewController.swift */,
 				B8BA2D5420B7F72F0083DE3A /* UIViewExtension.swift */,
+				B8BA2D5620B82CA40083DE3A /* StatsViewController.swift */,
 			);
 			path = Physical_Time_Analog_Clock;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 		B86D1DEC20B7AD2000892FA2 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				B8BA2D5820B8365B0083DE3A /* Arvo-Regular.ttf */,
 				B86D1DED20B7AD5100892FA2 /* Blackout_Sunrise.ttf */,
 			);
 			name = fonts;
@@ -200,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C30166320B7853A0070F838 /* Main.storyboard in Resources */,
+				B8BA2D5920B8365C0083DE3A /* Arvo-Regular.ttf in Resources */,
 				B86D1DEE20B7AD5200892FA2 /* Blackout_Sunrise.ttf in Resources */,
 				5DF847422038F4F5007E7322 /* LaunchScreen.storyboard in Resources */,
 				5DF8473F2038F4F5007E7322 /* Assets.xcassets in Resources */,
@@ -236,6 +243,7 @@
 			files = (
 				5DF8473A2038F4F5007E7322 /* ViewController.swift in Sources */,
 				5D4ECDA3209CDBA1000F75E6 /* ChangeBackground.swift in Sources */,
+				B8BA2D5720B82CA40083DE3A /* StatsViewController.swift in Sources */,
 				5DE0B9202080782100607D4C /* MenuViewController.swift in Sources */,
 				B8BA2D5520B7F72F0083DE3A /* UIViewExtension.swift in Sources */,
 				5D16BBD320B688DD00E0252F /* LunarViewController.swift in Sources */,

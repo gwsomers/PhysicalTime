@@ -4,6 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Arvo-Regular.ttf</string>
 		<string>Blackout_Sunrise.ttf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>

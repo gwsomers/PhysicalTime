@@ -11,6 +11,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Arvo-Regular.ttf">
+            <string>Arvo</string>
+        </array>
         <array key="Blackout_Sunrise.ttf">
             <string>Blackout-Sunrise</string>
         </array>
@@ -102,6 +105,54 @@
             </objects>
             <point key="canvasLocation" x="-1756" y="1438.8305847076463"/>
         </scene>
+        <!--Stats View Controller-->
+        <scene sceneID="hUa-bn-f09">
+            <objects>
+                <viewController id="feK-Ft-zef" userLabel="Stats View Controller" customClass="StatsViewController" customModule="Physical_Time_Analog_Clock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h5a-X3-ndb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkt-m4-49j" userLabel="Menu Button">
+                                <rect key="frame" x="42" y="531" width="99" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Menu" image="menu">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="0kC-eR-1mm" kind="show" id="cNO-m6-7GM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaV-5g-kVi">
+                                <rect key="frame" x="222" y="531" width="110" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Features" image="back">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="IBx-24-jiA" kind="show" id="XYl-at-ovw"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jUb-aX-mKg">
+                                <rect key="frame" x="42" y="74" width="275" height="386"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="3M4-lS-3Sb"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="yaV-5g-kVi" id="Ll8-eF-akH"/>
+                        <outlet property="menuButton" destination="Xkt-m4-49j" id="PXv-Mg-eF7"/>
+                        <outlet property="textView" destination="jUb-aX-mKg" id="hbO-cz-mwW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JdX-6n-3KF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-653.60000000000002" y="1501.7991004497753"/>
+        </scene>
         <!--Feature View Controller-->
         <scene sceneID="kaS-Ni-dzZ">
             <objects>
@@ -169,6 +220,9 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="feK-Ft-zef" kind="show" id="Xga-xw-pdY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yby-xj-rzM">
                                 <rect key="frame" x="145" y="531" width="84" height="82"/>
@@ -509,7 +563,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3Rf-nH-Phd"/>
-        <segue reference="jhe-x8-GcQ"/>
-        <segue reference="SeJ-cg-ZzU"/>
+        <segue reference="cNO-m6-7GM"/>
+        <segue reference="XYl-at-ovw"/>
     </inferredMetricsTieBreakers>
 </document>
