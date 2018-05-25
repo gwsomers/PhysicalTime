@@ -6,13 +6,14 @@
 
 import Foundation
 import UIKit
+import Hero
 
 /**
- TODO: Make purpose of class description more descriptive
  Class that extends the UIViewController to give the background.
  */
 class MenuView: UIViewController
 {
+    
     @IBOutlet weak var goToClockButton: UIButton!
     @IBOutlet weak var goToFeatureButton: UIButton!
     /**
@@ -23,6 +24,16 @@ class MenuView: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        // Instantiating id's for Hero transitions
+        self.hero.isEnabled = true
+        view.hero.id = "menuView"
+        // Identifier for the WelcomeView, for the scope of this method
+        let welcomeView: UIView! = WelcomeView().view
+        welcomeView.hero.id = "welcomeView"
+        welcomeView.hero.modifiers = [.scale()]
+        
+        // Dynamically change the background
         let background = changeBackground()
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
         

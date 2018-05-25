@@ -7,82 +7,87 @@
 import Foundation
 import UIKit
 
+
 /**
- TODO: Make purpose of class description more descriptive
- Class that extends the UIViewController to give the background.
+ Class that extends the UIViewController to give the background for the time of day
+ and welcomes the user.
  */
 class WelcomeView: UIViewController
 {
+    // Main title for the opening view, "Physical Time"
+    @IBOutlet weak var mainTitle: UILabel!
+    // The button to proceed to the next view
+    @IBOutlet weak var menuContinue: UIButton!
+    
     /**
-     Do any additional setup after loading the view (specifically, in our case, setting the background).
+     On load, dynamically change the background based on the time of day
      - returns:
      nil
      */
-    
-    var firstTime=true
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
         let background = changeBackground()
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
     }
-    @IBAction func checkIfNew(_ sender: UIButton) {
-       // if firstTime == true{
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        //self.performSegue(withIdentifier: "firstTime", sender: self)
-       // }
-       /* else{
-        self.performSegue(withIdentifier: "notfirst", sender: self)
-        }*/
+        // Set the alphas of the page elements to 0 initially (such that they
+        // remain hidden initially)
+        self.mainTitle.alpha = 0
+        self.menuContinue.alpha = 0
+        
+        // Do the fades to both UI elements appropriately
+        self.mainTitle.fadeIn(duration: 3.0, delay: 1.0, completion: {
+            (finished: Bool) -> Void in
+        })
+        self.menuContinue.fadeIn(duration: 2.0, delay: 4.5,  completion: {
+            (finished: Bool) -> Void in
+        })
+        
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-            if let ident = segue.identifier {
-                if ident == "first"{
-                let menuViewController = segue.destination as! SettingsViewController
-        /*let file = "boring"
-        let defaultinfo = "24:60:2:0:1:0:1"
-        var recievedinfo=""
-        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first{
-        let fileURL = dir.appendingPathComponent(file).appendingPathExtension("txt")
-        do {
-            recievedinfo = try String(contentsOf: fileURL,encoding: .utf8)
-            let WordsArray = recievedinfo.components(separatedBy: ":")
-            var count = 0;
-            for sect in WordsArray{
-                if count == 0{
-                    let dh: String = sect
-                    defaulthour = Int(dh)!
-                }
-                if count == 1{
-                    let dh: String = sect
-                    defaultminute = Int(dh)!
-                }
-                if count == 2{
-                    let dh: String = sect
-                    defaultREVDAY = Int(dh)!
-                }
-                if count == 3{
-                    let dh: String = sect
-                    defaultREVHOUR = Int(dh)!
-                }
-                if count == 4{
-                    let dh: String = sect
-                    defaultANGOFF = Float(dh)!
-                }
-                if count == 5{
-                    let dh: String = sect
-                    defaultTIMEOFF = Int(dh)!
-                }
-                if count == 6{
-                    let dh: String = sect
-                    defaultMODE = Int(dh)!
-                }
-                else{
-                let menuViewController = segue.destination as! ViewController
-                }
-            }*/
-        }
-        }
+}
+
+/**
+ Fileprivate extenstion to perform fading in and fading out of elements in the
+ view. See https://stackoverflow.com/a/46459103
+ */
+extension UIView
+{
+    /**
+     Fading in of a given UIView component
+     - parameters:
+     - duration: The duration of the fade (takes TimeInterval arg)
+     - delay: The time offset of the fade (takes TimeInterval arg)
+     - completion: Callback to perform code after the completion of the fade
+     
+     - returns:
+     nil
+     */
+    func fadeIn(duration: TimeInterval, delay: TimeInterval, completion: @escaping ((Bool) -> Void) = {(finished: Bool) -> Void in})
+    {
+        UIView.animate(withDuration: duration, delay: delay, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            self.alpha = 1.0
+        }, completion: completion)
+    }
+    
+    /**
+     Fading out of a given UIView component
+     - parameters:
+     - duration: The duration of the fade (takes TimeInterval arg)
+     - delay: The time offset of the fade (takes TimeInterval arg)
+     - completion: Callback to perform code after the completion of the fade
+     
+     - returns:
+     nil
+     */
+    func fadeOut(duration: TimeInterval, delay: TimeInterval, completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in})
+    {
+        UIView.animate(withDuration: duration, delay: delay, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            self.alpha = 0.0
+        }, completion: completion)
     }
 }
