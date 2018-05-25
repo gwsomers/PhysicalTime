@@ -1,0 +1,20 @@
+PODS:
+  - Hero (1.2.0)
+  - SwiftySuncalc (1.0.0)
+
+DEPENDENCIES:
+  - Hero (~> 1.2)
+  - SwiftySuncalc (~> 1.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Hero
+    - SwiftySuncalc
+
+SPEC CHECKSUMS:
+  Hero: 33dadf2cd1c98af71e213dcbc2902e6e03622a4e
+  SwiftySuncalc: ac9a31099a54cd73ae8067535454080e37112e81
+
+PODFILE CHECKSUM: e41e58ec7b8803a4006e005b7bf829a941e53bf0
+
+COCOAPODS: 1.5.2

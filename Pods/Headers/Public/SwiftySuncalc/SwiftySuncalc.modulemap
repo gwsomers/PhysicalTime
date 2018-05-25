@@ -1,0 +1,6 @@
+module SwiftySuncalc {
+  umbrella header "SwiftySuncalc-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -24,10 +24,13 @@
 		5DF847422038F4F5007E7322 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DF847402038F4F5007E7322 /* LaunchScreen.storyboard */; };
 		7C30166320B7853A0070F838 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C30166220B7853A0070F838 /* Main.storyboard */; };
 		9CF4710820B3422700076239 /* InOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4710720B3422700076239 /* InOut.swift */; };
+		9F147961961A653AD8175535 /* libPods-Physical_Time_Analog_Clock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2905804960F17BF1FF6FC9A4 /* libPods-Physical_Time_Analog_Clock.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0222D928204E05ED0067EC35 /* Solar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solar.swift; sourceTree = "<group>"; };
+		129F60EBAE6394B8ACE0CA17 /* Pods-Physical_Time_Analog_Clock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Physical_Time_Analog_Clock.release.xcconfig"; path = "Pods/Target Support Files/Pods-Physical_Time_Analog_Clock/Pods-Physical_Time_Analog_Clock.release.xcconfig"; sourceTree = "<group>"; };
+		2905804960F17BF1FF6FC9A4 /* libPods-Physical_Time_Analog_Clock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Physical_Time_Analog_Clock.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D16BBCE20B6883100E0252F /* wadokeiFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wadokeiFace.swift; sourceTree = "<group>"; };
 		5D16BBD020B6885E00E0252F /* WadokeiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WadokeiViewController.swift; sourceTree = "<group>"; };
 		5D16BBD220B688DD00E0252F /* LunarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		5DF847432038F4F5007E7322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C30166220B7853A0070F838 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7C8944E220B781B100533DF3 /* Main2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main2.storyboard; path = /Users/labuser/PhysicalTime/Physical_Time_Analog_Clock/Main2.storyboard; sourceTree = "<absolute>"; };
+		7F33B67ADF3C018ABBCA1DE4 /* Pods-Physical_Time_Analog_Clock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Physical_Time_Analog_Clock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Physical_Time_Analog_Clock/Pods-Physical_Time_Analog_Clock.debug.xcconfig"; sourceTree = "<group>"; };
 		9CF4710720B3422700076239 /* InOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InOut.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F147961961A653AD8175535 /* libPods-Physical_Time_Analog_Clock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,8 @@
 			children = (
 				5DF847362038F4F5007E7322 /* Physical_Time_Analog_Clock */,
 				5DF847352038F4F5007E7322 /* Products */,
+				9F82DCE84DEFEB65193EEA2E /* Pods */,
+				AE337D4EDAB520BC26611359 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +109,23 @@
 			path = Physical_Time_Analog_Clock;
 			sourceTree = "<group>";
 		};
+		9F82DCE84DEFEB65193EEA2E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F33B67ADF3C018ABBCA1DE4 /* Pods-Physical_Time_Analog_Clock.debug.xcconfig */,
+				129F60EBAE6394B8ACE0CA17 /* Pods-Physical_Time_Analog_Clock.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AE337D4EDAB520BC26611359 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2905804960F17BF1FF6FC9A4 /* libPods-Physical_Time_Analog_Clock.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,6 +133,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5DF847462038F4F5007E7322 /* Build configuration list for PBXNativeTarget "Physical_Time_Analog_Clock" */;
 			buildPhases = (
+				364CAE4DF8DCD90D26652FA9 /* [CP] Check Pods Manifest.lock */,
 				5DF847302038F4F5007E7322 /* Sources */,
 				5DF847312038F4F5007E7322 /* Frameworks */,
 				5DF847322038F4F5007E7322 /* Resources */,
@@ -168,6 +193,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		364CAE4DF8DCD90D26652FA9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Physical_Time_Analog_Clock-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5DF847302038F4F5007E7322 /* Sources */ = {
@@ -314,6 +360,7 @@
 		};
 		5DF847472038F4F5007E7322 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F33B67ADF3C018ABBCA1DE4 /* Pods-Physical_Time_Analog_Clock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -329,6 +376,7 @@
 		};
 		5DF847482038F4F5007E7322 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 129F60EBAE6394B8ACE0CA17 /* Pods-Physical_Time_Analog_Clock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
