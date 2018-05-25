@@ -1,79 +1,132 @@
-//
-//  FeatureViewController.swift
-//  Physical_Time_Analog_Clock
-//
-//  Created by Xi Stephen Ouyang on 5/4/18.
-//  Copyright © 2018 Xi Stephen Ouyang. All rights reserved.
-//
+/**
+ - Author:
+ Khai Hua
+ Created for Physical Time, 2018
+ */
 
 import UIKit
+import Foundation
+import Hero
 
-class FeatureViewController: UIViewController {
-    
+/**
+ Page with listed features.
+ */
+class FeatureViewController: UIViewController
+{
+    // UI elements for this view
     @IBOutlet weak var lunarFeatureButton: UIButton!
     @IBOutlet weak var wadokeiFeatureButton: UIButton!
     @IBOutlet weak var planetaryVisButton: UIButton!
+    @IBOutlet weak var statsButton: UIButton!
+    @IBOutlet weak var menuButton: UIButton!
     
-    override func viewDidLoad() {
+    /**
+     Change the background dynamically on a load.
+     
+     - returns:
+     nil
+     */
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        let background = changeBackground()
+        
+        // Instantiating id's for Hero transitions
+        self.hero.isEnabled = true
+        view.hero.id = "featureView"
+        // Identifier for the WelcomeView, for the scope of this method
+        let menuView: UIView! = MenuViewController().view
+        menuView.hero.id = "menuView"
+        menuView.hero.modifiers = [.scale()]
+        
+        let background = ChangeBackground()
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
-
-        // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    
+    /**
+     Change the button text dynamically on a load.
+     
+     - returns:
+     nil
+     */
+    override func viewDidAppear(_ animated: Bool)
+    {
         super.viewDidAppear(animated)
         
-        let background = changeBackground()
-        self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
+        // Fading in to the UI elements on this page
+        // Set the alphas of the page elements to 0 initially (such that they
+        // remain hidden initially)
+        self.lunarFeatureButton.alpha = 0
+        self.wadokeiFeatureButton.alpha = 0
+        self.planetaryVisButton.alpha = 0
+        self.statsButton.alpha = 0
+        self.menuButton.alpha = 0
+        // Do the fades to all UI elements appropriately
+        self.lunarFeatureButton.fadeIn(duration: 2.0, delay: 1.0, completion: {
+            (finished: Bool) -> Void in
+        })
+        self.wadokeiFeatureButton.fadeIn(duration: 2.0, delay: 1.0,  completion: {
+            (finished: Bool) -> Void in
+        })
+        self.planetaryVisButton.fadeIn(duration: 2.0, delay: 1.0, completion: {
+            (finished: Bool) -> Void in
+        })
+        self.statsButton.fadeIn(duration: 2.0, delay: 1.0,  completion: {
+            (finished: Bool) -> Void in
+        })
+        self.menuButton.fadeIn(duration: 2.0, delay: 1.0,  completion: {
+            (finished: Bool) -> Void in
+        })
         
-        switch background.getBackground() {
+        // Create a background object
+        let background = ChangeBackground()
+        // Set the font colors accordingly
+        setFontColor(button: lunarFeatureButton,
+                     backgroundType: background.getBackground())
+        setFontColor(button: wadokeiFeatureButton,
+                     backgroundType: background.getBackground())
+        setFontColor(button: planetaryVisButton,
+                     backgroundType: background.getBackground())
+        setFontColor(button: statsButton,
+                     backgroundType: background.getBackground())
+    }
+    
+    /**
+     Helper function to set the font color of a button based on the background
+     color, that of which is determined by the time of day.
+     
+     - parameters:
+     - button: The button to set the font color
+     - backgroundType: The filename extension name of the background, which
+     will determine the color of the button
+     
+     - returns:
+     nil
+     */
+    func setFontColor(button: UIButton, backgroundType: String)
+    {
+        // Setting the text colors of the respective buttons
+        switch backgroundType
+        {
         case "sunrise.jpg":
-            lunarFeatureButton.setTitleColor(UIColor.orange, for: .normal);
-            wadokeiFeatureButton.setTitleColor(UIColor.orange, for: .normal);
-            planetaryVisButton.setTitleColor(UIColor.orange, for: .normal);
+            button.setTitleColor(UIColor.orange, for: .normal);
         case "morningGoldenHour.jpg":
-            lunarFeatureButton.setTitleColor(UIColor.yellow, for: .normal);
-            wadokeiFeatureButton.setTitleColor(UIColor.yellow, for: .normal);
-            planetaryVisButton.setTitleColor(UIColor.yellow, for: .normal);
+            button.setTitleColor(UIColor.yellow, for: .normal);
         case "noon.jpg":
-            lunarFeatureButton.setTitleColor(UIColor.yellow, for: .normal);
-            wadokeiFeatureButton.setTitleColor(UIColor.yellow, for: .normal);
-            planetaryVisButton.setTitleColor(UIColor.yellow, for: .normal);
+            button.setTitleColor(UIColor.yellow, for: .normal);
         case "sunset.jpg":
-            lunarFeatureButton.setTitleColor(UIColor.orange, for: .normal);
-            wadokeiFeatureButton.setTitleColor(UIColor.orange, for: .normal);
-            planetaryVisButton.setTitleColor(UIColor.orange, for: .normal);
+            button.setTitleColor(UIColor.orange, for: .normal);
         case "evening.jpg":
-            lunarFeatureButton.setTitleColor(UIColor.orange, for: .normal);
-            wadokeiFeatureButton.setTitleColor(UIColor.orange, for: .normal);
-            planetaryVisButton.setTitleColor(UIColor.orange, for: .normal);
-        case "lunar_pic.jog":
-            lunarFeatureButton.setTitleColor(UIColor.white, for: .normal);
-            wadokeiFeatureButton.setTitleColor(UIColor.white, for: .normal);
-            planetaryVisButton.setTitleColor(UIColor.white, for: .normal);
+            button.setTitleColor(UIColor.orange, for: .normal);
+        case "lunar_pic.jpg":
+            button.setTitleColor(UIColor.white, for: .normal);
         default:
-            lunarFeatureButton.setTitleColor(UIColor.black, for: .normal);
-            wadokeiFeatureButton.setTitleColor(UIColor.black, for: .normal);
-            planetaryVisButton.setTitleColor(UIColor.black, for: .normal);
+            button.setTitleColor(UIColor.black, for: .normal);
         }
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

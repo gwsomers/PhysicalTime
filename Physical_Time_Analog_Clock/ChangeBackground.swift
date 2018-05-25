@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 import UIKit
 
-class changeBackground{
+class ChangeBackground{
     
     func getBackground()->String{
         var coords = CLLocationCoordinate2D.init(latitude: 51.5, longitude: -0.127)

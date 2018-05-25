@@ -22,7 +22,7 @@ public struct defaultHandValues {
     static let mode = "mode"
 }
 
-class Hand_Positioner{
+class HandFormulas{
     var hoursPerDay: Int
     var hoursOnFace: Int
     var hourRevsPerDay: Int

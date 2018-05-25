@@ -7,7 +7,6 @@
 //
 
 /*
- 
  Transferral of info from 1 view to another.
  
  Segueway -
@@ -128,7 +127,7 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let background = changeBackground()
+        let background = ChangeBackground()
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
 
         // Do any additional setup after loading the view.

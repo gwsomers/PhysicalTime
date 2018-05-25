@@ -13,7 +13,7 @@ import CoreLocation
 class WadokeiViewController: UIViewController {
     let locationManager = CLLocationManager()
     override func viewDidLoad() {
-        let background = changeBackground()
+        let background = ChangeBackground()
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
@@ -22,7 +22,7 @@ class WadokeiViewController: UIViewController {
         let newView = WadokeiView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.width))
         newView.isOpaque = false
         view.addSubview(newView)
-        let anglePosition = Hand_Positioner(pPD: 24, pRPD: 1, tPP: 60, tRPP: 60,
+        let anglePosition = HandFormulas(pPD: 24, pRPD: 1, tPP: 60, tRPP: 60,
                                             fRO: Float(Double.pi), tRO:0, mode:1, locMan: locationManager)
         let hourLayer = CAShapeLayer()
         hourLayer.frame = newView.frame

@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		0222D929204E05ED0067EC35 /* Solar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0222D928204E05ED0067EC35 /* Solar.swift */; };
-		5D16BBCF20B6883100E0252F /* wadokeiFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16BBCE20B6883100E0252F /* wadokeiFace.swift */; };
+		5D16BBCF20B6883100E0252F /* WadokeiFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16BBCE20B6883100E0252F /* WadokeiFace.swift */; };
 		5D16BBD120B6885E00E0252F /* WadokeiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16BBD020B6885E00E0252F /* WadokeiViewController.swift */; };
 		5D16BBD320B688DD00E0252F /* LunarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16BBD220B688DD00E0252F /* LunarViewController.swift */; };
-		5D3BC88520453FD100DA51F3 /* clockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3BC88420453FD100DA51F3 /* clockFace.swift */; };
+		5D3BC88520453FD100DA51F3 /* ClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3BC88420453FD100DA51F3 /* ClockFace.swift */; };
 		5D4ECDA1209CD90B000F75E6 /* FeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4ECDA0209CD90B000F75E6 /* FeatureViewController.swift */; };
-		5D4ECDA3209CDBA1000F75E6 /* changeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4ECDA2209CDBA1000F75E6 /* changeBackground.swift */; };
+		5D4ECDA3209CDBA1000F75E6 /* ChangeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4ECDA2209CDBA1000F75E6 /* ChangeBackground.swift */; };
 		5D83A5392055C34100BFAE08 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D83A5382055C34100BFAE08 /* SettingsViewController.swift */; };
-		5D9576532044A4A3004760D4 /* handFormulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9576522044A4A3004760D4 /* handFormulas.swift */; };
-		5DE0B91E2080761D00607D4C /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0B91D2080761D00607D4C /* WelcomeView.swift */; };
-		5DE0B9202080782100607D4C /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0B91F2080782100607D4C /* MenuView.swift */; };
+		5D9576532044A4A3004760D4 /* HandFormulas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9576522044A4A3004760D4 /* HandFormulas.swift */; };
+		5DE0B91E2080761D00607D4C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0B91D2080761D00607D4C /* WelcomeViewController.swift */; };
+		5DE0B9202080782100607D4C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0B91F2080782100607D4C /* MenuViewController.swift */; };
 		5DF847382038F4F5007E7322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF847372038F4F5007E7322 /* AppDelegate.swift */; };
 		5DF8473A2038F4F5007E7322 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF847392038F4F5007E7322 /* ViewController.swift */; };
 		5DF8473F2038F4F5007E7322 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DF8473E2038F4F5007E7322 /* Assets.xcassets */; };
@@ -26,22 +26,23 @@
 		9CF4710820B3422700076239 /* InOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4710720B3422700076239 /* InOut.swift */; };
 		9F147961961A653AD8175535 /* libPods-Physical_Time_Analog_Clock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2905804960F17BF1FF6FC9A4 /* libPods-Physical_Time_Analog_Clock.a */; };
 		B86D1DEE20B7AD5200892FA2 /* Blackout_Sunrise.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B86D1DED20B7AD5100892FA2 /* Blackout_Sunrise.ttf */; };
+		B8BA2D5520B7F72F0083DE3A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA2D5420B7F72F0083DE3A /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0222D928204E05ED0067EC35 /* Solar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solar.swift; sourceTree = "<group>"; };
 		129F60EBAE6394B8ACE0CA17 /* Pods-Physical_Time_Analog_Clock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Physical_Time_Analog_Clock.release.xcconfig"; path = "Pods/Target Support Files/Pods-Physical_Time_Analog_Clock/Pods-Physical_Time_Analog_Clock.release.xcconfig"; sourceTree = "<group>"; };
 		2905804960F17BF1FF6FC9A4 /* libPods-Physical_Time_Analog_Clock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Physical_Time_Analog_Clock.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D16BBCE20B6883100E0252F /* wadokeiFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wadokeiFace.swift; sourceTree = "<group>"; };
+		5D16BBCE20B6883100E0252F /* WadokeiFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WadokeiFace.swift; sourceTree = "<group>"; };
 		5D16BBD020B6885E00E0252F /* WadokeiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WadokeiViewController.swift; sourceTree = "<group>"; };
 		5D16BBD220B688DD00E0252F /* LunarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarViewController.swift; sourceTree = "<group>"; };
-		5D3BC88420453FD100DA51F3 /* clockFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clockFace.swift; sourceTree = "<group>"; };
+		5D3BC88420453FD100DA51F3 /* ClockFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockFace.swift; sourceTree = "<group>"; };
 		5D4ECDA0209CD90B000F75E6 /* FeatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureViewController.swift; sourceTree = "<group>"; };
-		5D4ECDA2209CDBA1000F75E6 /* changeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeBackground.swift; sourceTree = "<group>"; };
+		5D4ECDA2209CDBA1000F75E6 /* ChangeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBackground.swift; sourceTree = "<group>"; };
 		5D83A5382055C34100BFAE08 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		5D9576522044A4A3004760D4 /* handFormulas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = handFormulas.swift; sourceTree = "<group>"; };
-		5DE0B91D2080761D00607D4C /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-		5DE0B91F2080782100607D4C /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		5D9576522044A4A3004760D4 /* HandFormulas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandFormulas.swift; sourceTree = "<group>"; };
+		5DE0B91D2080761D00607D4C /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		5DE0B91F2080782100607D4C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		5DF847342038F4F5007E7322 /* Physical_Time_Analog_Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Physical_Time_Analog_Clock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DF847372038F4F5007E7322 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DF847392038F4F5007E7322 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +53,7 @@
 		7F33B67ADF3C018ABBCA1DE4 /* Pods-Physical_Time_Analog_Clock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Physical_Time_Analog_Clock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Physical_Time_Analog_Clock/Pods-Physical_Time_Analog_Clock.debug.xcconfig"; sourceTree = "<group>"; };
 		9CF4710720B3422700076239 /* InOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InOut.swift; sourceTree = "<group>"; };
 		B86D1DED20B7AD5100892FA2 /* Blackout_Sunrise.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Blackout_Sunrise.ttf; path = Physical_Time_Analog_Clock/fonts/Blackout_Sunrise.ttf; sourceTree = SOURCE_ROOT; };
+		B8BA2D5420B7F72F0083DE3A /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,22 +92,23 @@
 				B86D1DEC20B7AD2000892FA2 /* fonts */,
 				9CF4710720B3422700076239 /* InOut.swift */,
 				5DF847372038F4F5007E7322 /* AppDelegate.swift */,
-				5DE0B91D2080761D00607D4C /* WelcomeView.swift */,
-				5DE0B91F2080782100607D4C /* MenuView.swift */,
+				5DE0B91D2080761D00607D4C /* WelcomeViewController.swift */,
+				5DE0B91F2080782100607D4C /* MenuViewController.swift */,
 				5DF847392038F4F5007E7322 /* ViewController.swift */,
-				5D3BC88420453FD100DA51F3 /* clockFace.swift */,
+				5D3BC88420453FD100DA51F3 /* ClockFace.swift */,
 				5D83A5382055C34100BFAE08 /* SettingsViewController.swift */,
-				5D4ECDA2209CDBA1000F75E6 /* changeBackground.swift */,
+				5D4ECDA2209CDBA1000F75E6 /* ChangeBackground.swift */,
 				5D4ECDA0209CD90B000F75E6 /* FeatureViewController.swift */,
-				5D9576522044A4A3004760D4 /* handFormulas.swift */,
+				5D9576522044A4A3004760D4 /* HandFormulas.swift */,
 				5D16BBD020B6885E00E0252F /* WadokeiViewController.swift */,
-				5D16BBCE20B6883100E0252F /* wadokeiFace.swift */,
+				5D16BBCE20B6883100E0252F /* WadokeiFace.swift */,
 				5DF8473E2038F4F5007E7322 /* Assets.xcassets */,
 				5DF847402038F4F5007E7322 /* LaunchScreen.storyboard */,
 				5DF847432038F4F5007E7322 /* Info.plist */,
 				7C30166220B7853A0070F838 /* Main.storyboard */,
 				0222D928204E05ED0067EC35 /* Solar.swift */,
 				5D16BBD220B688DD00E0252F /* LunarViewController.swift */,
+				B8BA2D5420B7F72F0083DE3A /* UIViewExtension.swift */,
 			);
 			path = Physical_Time_Analog_Clock;
 			sourceTree = "<group>";
@@ -232,19 +235,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DF8473A2038F4F5007E7322 /* ViewController.swift in Sources */,
-				5D4ECDA3209CDBA1000F75E6 /* changeBackground.swift in Sources */,
-				5DE0B9202080782100607D4C /* MenuView.swift in Sources */,
+				5D4ECDA3209CDBA1000F75E6 /* ChangeBackground.swift in Sources */,
+				5DE0B9202080782100607D4C /* MenuViewController.swift in Sources */,
+				B8BA2D5520B7F72F0083DE3A /* UIViewExtension.swift in Sources */,
 				5D16BBD320B688DD00E0252F /* LunarViewController.swift in Sources */,
-				5D3BC88520453FD100DA51F3 /* clockFace.swift in Sources */,
-				5D9576532044A4A3004760D4 /* handFormulas.swift in Sources */,
+				5D3BC88520453FD100DA51F3 /* ClockFace.swift in Sources */,
+				5D9576532044A4A3004760D4 /* HandFormulas.swift in Sources */,
 				0222D929204E05ED0067EC35 /* Solar.swift in Sources */,
 				5D16BBD120B6885E00E0252F /* WadokeiViewController.swift in Sources */,
 				5DF847382038F4F5007E7322 /* AppDelegate.swift in Sources */,
 				9CF4710820B3422700076239 /* InOut.swift in Sources */,
-				5D16BBCF20B6883100E0252F /* wadokeiFace.swift in Sources */,
+				5D16BBCF20B6883100E0252F /* WadokeiFace.swift in Sources */,
 				5D83A5392055C34100BFAE08 /* SettingsViewController.swift in Sources */,
 				5D4ECDA1209CD90B000F75E6 /* FeatureViewController.swift in Sources */,
-				5DE0B91E2080761D00607D4C /* WelcomeView.swift in Sources */,
+				5DE0B91E2080761D00607D4C /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

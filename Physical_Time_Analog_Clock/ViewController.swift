@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         locationManager.requestLocation()
-        let background = changeBackground()
+        let background = ChangeBackground()
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
         let newView = View(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.width))
         newView.isOpaque = false
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         let path = CGMutablePath()
         
         path.move(to: CGPoint(x: newView.frame.midX, y: newView.frame.midY))
-        let anglePosition = Hand_Positioner(pPD: self.hoursPerDay, pRPD: self.revolutionPerDay, tPP: self.minutesPerHour, tRPP: self.minuteRevolutionPerHour,
+        let anglePosition = HandFormulas(pPD: self.hoursPerDay, pRPD: self.revolutionPerDay, tPP: self.minutesPerHour, tRPP: self.minuteRevolutionPerHour,
                                             fRO: self.angleOffset, tRO: self.timeOffset, mode: self.mode, locMan: locationManager)
         let hourAngle = anglePosition.hourAngle(timeHour: getCurrentHour(), timeMin: getCurrentMinute(), timeSec: getCurrentSecond())
         let hourX = findxCoord(handLength: 100, angle:CGFloat(hourAngle))

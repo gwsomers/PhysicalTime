@@ -70,9 +70,7 @@ class View: UIView {
     
     
     override func draw(_ rect:CGRect)
-        
     {
-        
         // obtain context
         let ctx = UIGraphicsGetCurrentContext()
         
@@ -99,7 +97,5 @@ class View: UIView {
         
         
         secondMarkers(ctx: ctx!, x: rect.midX, y: rect.midY, radius: rad, sides: object.getClockSide(), color: UIColor.red)
-        
-        
     }
 }
