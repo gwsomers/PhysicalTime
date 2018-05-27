@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zcv-aI-EVX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zcv-aI-EVX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -391,6 +391,28 @@
                                     <action selector="buttonTap:" destination="sgD-8R-5H3" eventType="touchUpInside" id="dss-6c-Buc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4a-gb-Tzj">
+                                <rect key="frame" x="273" y="617" width="46" height="30"/>
+                                <state key="normal" title="Import"/>
+                                <connections>
+                                    <action selector="importing:" destination="sgD-8R-5H3" eventType="touchUpInside" id="1dt-Pg-gY0"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="segueToClockI" id="oUo-OU-kSF"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="config.txt" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="abD-Qu-3Qu">
+                                <rect key="frame" x="139" y="614" width="98" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXA-rW-Vyp">
+                                <rect key="frame" x="60" y="617" width="46" height="30"/>
+                                <state key="normal" title="Export"/>
+                                <connections>
+                                    <action selector="export:" destination="sgD-8R-5H3" eventType="touchUpInside" id="0vm-Tt-06j"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="segueToClockE" id="G4Y-t2-fJ8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -398,9 +420,11 @@
                             <constraint firstItem="nxk-2p-V5z" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="4IY-lj-0hg"/>
                             <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="nxk-2p-V5z" secondAttribute="trailing" constant="56" id="5ck-aV-ejq"/>
                             <constraint firstItem="nD8-hM-ZVf" firstAttribute="top" secondItem="5xI-D5-l5x" secondAttribute="bottom" constant="28" id="5fI-b6-mnK"/>
+                            <constraint firstItem="O4a-gb-Tzj" firstAttribute="leading" secondItem="abD-Qu-3Qu" secondAttribute="trailing" constant="19" id="6c8-f0-5HE"/>
                             <constraint firstItem="uVl-6F-gKb" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="7hz-Gt-O4D"/>
                             <constraint firstItem="MDg-V0-r0O" firstAttribute="top" secondItem="nD8-hM-ZVf" secondAttribute="bottom" constant="30" id="7uF-rE-9Lr"/>
                             <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="uNP-58-pp3" secondAttribute="trailing" constant="56" id="8ow-PW-txV"/>
+                            <constraint firstItem="abD-Qu-3Qu" firstAttribute="leading" secondItem="sXA-rW-Vyp" secondAttribute="trailing" constant="25" id="92w-mW-EEL"/>
                             <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="7pW-nK-Nh9" secondAttribute="trailing" constant="56" id="BuR-Z5-lrb"/>
                             <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="uVl-6F-gKb" secondAttribute="trailing" constant="56" id="CuO-IF-lex"/>
                             <constraint firstItem="uNP-58-pp3" firstAttribute="top" secondItem="OeN-Tk-nvx" secondAttribute="top" constant="57" id="GA6-96-GyG"/>
@@ -414,21 +438,32 @@
                             <constraint firstItem="nxk-2p-V5z" firstAttribute="top" secondItem="MDg-V0-r0O" secondAttribute="bottom" constant="31" id="Xwb-92-lXY"/>
                             <constraint firstItem="nD8-hM-ZVf" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="bdw-Uo-FhF"/>
                             <constraint firstItem="eng-8Z-qzf" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="139" id="cbD-Wh-8gS"/>
+                            <constraint firstItem="sXA-rW-Vyp" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="100" id="cxt-Aw-6Je"/>
                             <constraint firstItem="MDg-V0-r0O" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="dB4-jX-AUw"/>
+                            <constraint firstItem="O4a-gb-Tzj" firstAttribute="top" secondItem="uVl-6F-gKb" secondAttribute="bottom" constant="157" id="fFL-M0-WHi"/>
+                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="bottom" secondItem="abD-Qu-3Qu" secondAttribute="bottom" constant="20" id="fYW-Fe-Fz9"/>
+                            <constraint firstItem="abD-Qu-3Qu" firstAttribute="top" secondItem="eng-8Z-qzf" secondAttribute="bottom" constant="11" id="gHW-tn-X0o"/>
+                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="O4a-gb-Tzj" secondAttribute="trailing" constant="56" id="hR7-q9-gbY"/>
+                            <constraint firstItem="O4a-gb-Tzj" firstAttribute="leading" secondItem="abD-Qu-3Qu" secondAttribute="trailing" constant="19" id="jWp-7g-4F4"/>
                             <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="MDg-V0-r0O" secondAttribute="trailing" constant="56" id="lHz-In-7NR"/>
+                            <constraint firstItem="abD-Qu-3Qu" firstAttribute="leading" secondItem="sXA-rW-Vyp" secondAttribute="trailing" constant="25" id="lxj-Lr-Ou6"/>
                             <constraint firstItem="eng-8Z-qzf" firstAttribute="centerX" secondItem="uVl-6F-gKb" secondAttribute="centerX" id="n3u-6d-G7Q"/>
                             <constraint firstItem="5xI-D5-l5x" firstAttribute="top" secondItem="uNP-58-pp3" secondAttribute="bottom" constant="32" id="pZR-29-lhP"/>
+                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="bottom" secondItem="sXA-rW-Vyp" secondAttribute="bottom" constant="20" id="qva-KG-NxB"/>
                             <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="5xI-D5-l5x" secondAttribute="trailing" constant="56" id="rB2-5g-pEX"/>
                             <constraint firstItem="7pW-nK-Nh9" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="s2m-Tr-gHx"/>
                             <constraint firstItem="uVl-6F-gKb" firstAttribute="top" secondItem="7pW-nK-Nh9" secondAttribute="bottom" constant="28" id="thJ-NF-61o"/>
                             <constraint firstItem="5xI-D5-l5x" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="uY2-1e-JHx"/>
                             <constraint firstItem="MDg-V0-r0O" firstAttribute="top" secondItem="nD8-hM-ZVf" secondAttribute="bottom" constant="30" id="uaV-26-vKo"/>
                             <constraint firstItem="eng-8Z-qzf" firstAttribute="top" secondItem="uVl-6F-gKb" secondAttribute="bottom" constant="60" id="vBO-yy-TGr"/>
+                            <constraint firstItem="sXA-rW-Vyp" firstAttribute="top" secondItem="eng-8Z-qzf" secondAttribute="bottom" constant="11" id="x9F-Se-2bU"/>
+                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="bottom" secondItem="O4a-gb-Tzj" secondAttribute="bottom" constant="20" id="xzY-dn-gjp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OeN-Tk-nvx"/>
                     </view>
                     <connections>
                         <outlet property="angleOffsetText" destination="MDg-V0-r0O" id="Rhf-nQ-6H3"/>
+                        <outlet property="fname" destination="abD-Qu-3Qu" id="UXH-D1-VZA"/>
                         <outlet property="hoursPerDayText" destination="uNP-58-pp3" id="fw8-Ip-8JQ"/>
                         <outlet property="minutesPerHourText" destination="5xI-D5-l5x" id="bns-Hn-Xda"/>
                         <outlet property="minutesRevolutionPerHourText" destination="nxk-2p-V5z" id="uvO-a0-ekR"/>
@@ -562,8 +597,8 @@
         <image name="settings" width="2000" height="2000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3Rf-nH-Phd"/>
-        <segue reference="cNO-m6-7GM"/>
+        <segue reference="oUo-OU-kSF"/>
+        <segue reference="HGW-Ot-53q"/>
         <segue reference="XYl-at-ovw"/>
     </inferredMetricsTieBreakers>
 </document>
