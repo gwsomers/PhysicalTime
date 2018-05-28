@@ -48,16 +48,16 @@
 		5DF847342038F4F5007E7322 /* Physical Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Physical Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DF847372038F4F5007E7322 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DF847392038F4F5007E7322 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5DF8473E2038F4F5007E7322 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Physical_Time_Analog_Clock/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		5DF8473E2038F4F5007E7322 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Physical Time/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
 		5DF847412038F4F5007E7322 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DF847432038F4F5007E7322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C30166220B7853A0070F838 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7F33B67ADF3C018ABBCA1DE4 /* Pods-Physical_Time_Analog_Clock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Physical_Time_Analog_Clock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Physical_Time_Analog_Clock/Pods-Physical_Time_Analog_Clock.debug.xcconfig"; sourceTree = "<group>"; };
 		9CF4710720B3422700076239 /* InOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InOut.swift; sourceTree = "<group>"; };
-		B86D1DED20B7AD5100892FA2 /* Blackout_Sunrise.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Blackout_Sunrise.ttf; path = Physical_Time_Analog_Clock/fonts/Blackout_Sunrise.ttf; sourceTree = SOURCE_ROOT; };
+		B86D1DED20B7AD5100892FA2 /* Blackout_Sunrise.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Blackout_Sunrise.ttf; path = "Physical Time/fonts/Blackout_Sunrise.ttf"; sourceTree = SOURCE_ROOT; };
 		B8BA2D5420B7F72F0083DE3A /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		B8BA2D5620B82CA40083DE3A /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
-		B8BA2D5820B8365B0083DE3A /* Arvo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Arvo-Regular.ttf"; path = "Physical_Time_Analog_Clock/New Group/Arvo-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		B8BA2D5820B8365B0083DE3A /* Arvo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Arvo-Regular.ttf"; path = "Physical Time/fonts/Arvo-Regular.ttf"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 		5DF8472B2038F4F4007E7322 = {
 			isa = PBXGroup;
 			children = (
-				5DF847362038F4F5007E7322 /* Physical_Time_Analog_Clock */,
+				5DF847362038F4F5007E7322 /* Physical Time */,
 				5DF847352038F4F5007E7322 /* Products */,
 				9F82DCE84DEFEB65193EEA2E /* Pods */,
 				AE337D4EDAB520BC26611359 /* Frameworks */,
@@ -90,7 +90,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5DF847362038F4F5007E7322 /* Physical_Time_Analog_Clock */ = {
+		5DF847362038F4F5007E7322 /* Physical Time */ = {
 			isa = PBXGroup;
 			children = (
 				B86D1DEC20B7AD2000892FA2 /* fonts */,
@@ -115,7 +115,7 @@
 				B8BA2D5420B7F72F0083DE3A /* UIViewExtension.swift */,
 				B8BA2D5620B82CA40083DE3A /* StatsViewController.swift */,
 			);
-			path = Physical_Time_Analog_Clock;
+			path = "Physical Time";
 			sourceTree = "<group>";
 		};
 		9F82DCE84DEFEB65193EEA2E /* Pods */ = {
@@ -388,9 +388,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Physical_Time_Analog_Clock/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Physical Time/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Physical-Time-Analog-Clock";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Physical-Time";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -404,9 +404,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Physical_Time_Analog_Clock/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Physical Time/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Physical-Time-Analog-Clock";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Physical-Time";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
