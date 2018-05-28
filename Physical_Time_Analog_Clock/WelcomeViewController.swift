@@ -28,6 +28,7 @@ class WelcomeViewController: UIViewController
     {
         super.viewDidLoad()
         
+        // Dynamically change the background on the load
         let background = ChangeBackground()
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
     }

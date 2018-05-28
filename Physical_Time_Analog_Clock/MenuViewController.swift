@@ -37,7 +37,6 @@ class MenuViewController: UIViewController
         // Dynamically change the background
         let background = ChangeBackground()
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
-        
     }
     
     /**
@@ -50,11 +49,6 @@ class MenuViewController: UIViewController
     {
         super.viewDidAppear(animated)
         
-        // Fading in to the UI elements on this page
-        // Set the alphas of the page elements to 0 initially (such that they
-        // remain hidden initially)
-        self.goToClockButton.alpha = 0
-        self.goToFeatureButton.alpha = 0
         // Do the fades to both UI elements appropriately
         self.goToClockButton.fadeIn(duration: 2.0, delay: 1.0, completion: {
             (finished: Bool) -> Void in

@@ -53,14 +53,6 @@ class FeatureViewController: UIViewController
     {
         super.viewDidAppear(animated)
         
-        // Fading in to the UI elements on this page
-        // Set the alphas of the page elements to 0 initially (such that they
-        // remain hidden initially)
-        self.lunarFeatureButton.alpha = 0
-        self.wadokeiFeatureButton.alpha = 0
-        self.planetaryVisButton.alpha = 0
-        self.statsButton.alpha = 0
-        self.menuButton.alpha = 0
         // Do the fades to all UI elements appropriately
         self.lunarFeatureButton.fadeIn(duration: 2.0, delay: 1.0, completion: {
             (finished: Bool) -> Void in
