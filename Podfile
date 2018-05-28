@@ -1,4 +1,4 @@
-target 'Physical_Time_Analog_Clock' do
+target 'Physical Time' do
   pod 'Hero', '~> 1.2'
-  pod 'SwiftySuncalc', '~> 1.0'
+  pod 'SwiftySuncalc', '~> 1.0.1'
 end

@@ -50,12 +50,6 @@ class StatsViewController: UIViewController
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        // Set the alphas of the page elements to 0 initially (such that they
-        // remain hidden initially)
-        self.menuButton.alpha = 0
-        self.backButton.alpha = 0
-        self.textView.alpha = 0
-        
         // Determine the text to set for our textView
         self.textView.text = getDescription()
         

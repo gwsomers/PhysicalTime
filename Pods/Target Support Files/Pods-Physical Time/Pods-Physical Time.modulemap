@@ -1,0 +1,6 @@
+module Pods_Physical_Time {
+  umbrella header "Pods-Physical Time-umbrella.h"
+
+  export *
+  module * { export * }
+}

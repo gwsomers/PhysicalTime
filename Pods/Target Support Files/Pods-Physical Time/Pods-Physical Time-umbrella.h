@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Physical_Time_Analog_ClockVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Physical_Time_Analog_ClockVersionString[];
+FOUNDATION_EXPORT double Pods_Physical_TimeVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Physical_TimeVersionString[];
 

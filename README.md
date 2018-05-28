@@ -1,6 +1,8 @@
 # The Physical Time `README`
 #### Contributors: Khai Hua <kdhua@ucsc.edu>, Xi Ouyang <xouyang@ucsc.edu>, George Somers <gwsomers@ucsc.edu>, Cristian Gonzales <xcristian.gonzales@gmail.com>, Erik Lau
 ---
+[![Travis CI](https://api.travis-ci.org/gwsomers/PhysicalTime.svg?branch=master)](https://travis-ci.org/gwsomers/PhysicalTime)
+[![](https://img.shields.io/badge/License-MIT-red.svg)]()
 
 ![](https://media.giphy.com/media/l0MYGYbyoeBJMp6gM/source.gif)
 

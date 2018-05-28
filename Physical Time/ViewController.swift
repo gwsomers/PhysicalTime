@@ -6,6 +6,7 @@
 
 import UIKit
 import CoreLocation
+import Hero
 
 var clockSide: Int!
 var totalHoursPerDay: Int!
@@ -26,8 +27,21 @@ class ViewController: UIViewController {
     var timeOffset: Int! = defaults.integer(forKey: defaultHandValues.TimeOffset)
     var mode: Int! = defaults.integer(forKey: defaultHandValues.mode)
   
- override func viewDidAppear(_ animated: Bool) {
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        // Instantiating id's for Hero transitions
+        self.hero.isEnabled = true
+        view.hero.id = "mainView"
+        // Identifier for the WelcomeView, for the scope of this method
+        let menuView: UIView! = MenuViewController().view
+        menuView.hero.id = "menuView"
+        menuView.hero.modifiers = [.fade]
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    
         initializeDefaultsIfNeeded()
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
