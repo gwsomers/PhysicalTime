@@ -32,7 +32,7 @@ class MenuViewController: UIViewController
         // Identifier for the WelcomeView, for the scope of this method
         let welcomeView: UIView! = WelcomeViewController().view
         welcomeView.hero.id = "welcomeView"
-        welcomeView.hero.modifiers = [.scale()]
+        welcomeView.hero.modifiers = [.fade]
         
         // Dynamically change the background
         let background = ChangeBackground()

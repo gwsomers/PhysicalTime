@@ -30,6 +30,14 @@ class StatsViewController: UIViewController
     {
         super.viewDidLoad()
         
+        // Instantiating id's for Hero transitions
+        self.hero.isEnabled = true
+        view.hero.id = "statsView"
+        // Identifier for the WelcomeView, for the scope of this method
+        let featureView: UIView! = FeatureViewController().view
+        featureView.hero.id = "menuView"
+        featureView.hero.modifiers = [.fade]
+        
         let background = ChangeBackground()
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
     }

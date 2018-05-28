@@ -36,7 +36,7 @@ class FeatureViewController: UIViewController
         // Identifier for the WelcomeView, for the scope of this method
         let menuView: UIView! = MenuViewController().view
         menuView.hero.id = "menuView"
-        menuView.hero.modifiers = [.scale()]
+        menuView.hero.modifiers = [.fade]
         
         let background = ChangeBackground()
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)

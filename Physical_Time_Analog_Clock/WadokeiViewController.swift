@@ -13,6 +13,14 @@ import CoreLocation
 class WadokeiViewController: UIViewController {
     let locationManager = CLLocationManager()
     override func viewDidLoad() {
+        // Instantiating id's for Hero transitions
+        self.hero.isEnabled = true
+        view.hero.id = "wadokeiView"
+        // Identifier for the WelcomeView, for the scope of this method
+        let featureView: UIView! = FeatureViewController().view
+        featureView.hero.id = "featureView"
+        featureView.hero.modifiers = [.fade]
+        
         let background = ChangeBackground()
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
         locationManager.delegate = self
