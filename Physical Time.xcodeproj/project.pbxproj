@@ -45,7 +45,7 @@
 		5D9576522044A4A3004760D4 /* HandFormulas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandFormulas.swift; sourceTree = "<group>"; };
 		5DE0B91D2080761D00607D4C /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		5DE0B91F2080782100607D4C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		5DF847342038F4F5007E7322 /* Physical_Time_Analog_Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Physical_Time_Analog_Clock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DF847342038F4F5007E7322 /* Physical Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Physical Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DF847372038F4F5007E7322 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DF847392038F4F5007E7322 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5DF8473E2038F4F5007E7322 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Physical_Time_Analog_Clock/Assets.xcassets; sourceTree = SOURCE_ROOT; };
@@ -85,7 +85,7 @@
 		5DF847352038F4F5007E7322 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5DF847342038F4F5007E7322 /* Physical_Time_Analog_Clock.app */,
+				5DF847342038F4F5007E7322 /* Physical Time.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,9 +148,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5DF847332038F4F5007E7322 /* Physical_Time_Analog_Clock */ = {
+		5DF847332038F4F5007E7322 /* Physical Time */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5DF847462038F4F5007E7322 /* Build configuration list for PBXNativeTarget "Physical_Time_Analog_Clock" */;
+			buildConfigurationList = 5DF847462038F4F5007E7322 /* Build configuration list for PBXNativeTarget "Physical Time" */;
 			buildPhases = (
 				364CAE4DF8DCD90D26652FA9 /* [CP] Check Pods Manifest.lock */,
 				5DF847302038F4F5007E7322 /* Sources */,
@@ -161,9 +161,9 @@
 			);
 			dependencies = (
 			);
-			name = Physical_Time_Analog_Clock;
+			name = "Physical Time";
 			productName = Physical_Time_Analog_Clock;
-			productReference = 5DF847342038F4F5007E7322 /* Physical_Time_Analog_Clock.app */;
+			productReference = 5DF847342038F4F5007E7322 /* Physical Time.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -182,7 +182,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5DF8472F2038F4F5007E7322 /* Build configuration list for PBXProject "Physical_Time_Analog_Clock" */;
+			buildConfigurationList = 5DF8472F2038F4F5007E7322 /* Build configuration list for PBXProject "Physical Time" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -195,7 +195,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5DF847332038F4F5007E7322 /* Physical_Time_Analog_Clock */,
+				5DF847332038F4F5007E7322 /* Physical Time */,
 			);
 		};
 /* End PBXProject section */
@@ -416,7 +416,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5DF8472F2038F4F5007E7322 /* Build configuration list for PBXProject "Physical_Time_Analog_Clock" */ = {
+		5DF8472F2038F4F5007E7322 /* Build configuration list for PBXProject "Physical Time" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5DF847442038F4F5007E7322 /* Debug */,
@@ -425,7 +425,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5DF847462038F4F5007E7322 /* Build configuration list for PBXNativeTarget "Physical_Time_Analog_Clock" */ = {
+		5DF847462038F4F5007E7322 /* Build configuration list for PBXNativeTarget "Physical Time" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5DF847472038F4F5007E7322 /* Debug */,
