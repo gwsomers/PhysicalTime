@@ -20,9 +20,7 @@ class WadokeiViewController: UIViewController {
         let featureView: UIView! = FeatureViewController().view
         featureView.hero.id = "featureView"
         featureView.hero.modifiers = [.fade]
-        
-        let background = ChangeBackground()
-        self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
+        self.view.backgroundColor = UIColor(patternImage:UIImage(named: "tatami.jpg")!)
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         locationManager.requestLocation()
