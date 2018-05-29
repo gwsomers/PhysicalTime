@@ -149,8 +149,7 @@
 				B8BA2D5820B8365B0083DE3A /* Arvo-Regular.ttf */,
 				B86D1DED20B7AD5100892FA2 /* Blackout_Sunrise.ttf */,
 			);
-			name = fonts;
-			path = "New Group";
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

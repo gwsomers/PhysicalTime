@@ -134,19 +134,50 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jUb-aX-mKg">
-                                <rect key="frame" x="42" y="74" width="275" height="386"/>
+                                <rect key="frame" x="50" y="74" width="275" height="386"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dPG-uZ-zJQ" userLabel="Second Text View">
+                                <rect key="frame" x="49" y="74" width="275" height="386"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="pWg-5P-9Qb" userLabel="Third Text View">
+                                <rect key="frame" x="50" y="74" width="275" height="386"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="dHx-nj-KzG" userLabel="Fourth Text View">
+                                <rect key="frame" x="50" y="74" width="275" height="386"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <pageControl opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="tHV-NG-z4R">
+                                <rect key="frame" x="168" y="487" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="pageIndicatorTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.5626879922134802" green="1" blue="0.55107125320431005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="pageChange:" destination="feK-Ft-zef" eventType="valueChanged" id="SDN-cp-t5b"/>
+                                </connections>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3M4-lS-3Sb"/>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="yaV-5g-kVi" id="Ll8-eF-akH"/>
+                        <outlet property="fourthTextView" destination="dHx-nj-KzG" id="sbg-6g-pzz"/>
                         <outlet property="menuButton" destination="Xkt-m4-49j" id="PXv-Mg-eF7"/>
-                        <outlet property="textView" destination="jUb-aX-mKg" id="hbO-cz-mwW"/>
+                        <outlet property="pageControl" destination="tHV-NG-z4R" id="nDN-F5-A4r"/>
+                        <outlet property="secondTextView" destination="dPG-uZ-zJQ" id="Ecv-y3-urR"/>
+                        <outlet property="textView" destination="jUb-aX-mKg" id="RZN-hL-tjq"/>
+                        <outlet property="thirdTextView" destination="pWg-5P-9Qb" id="vnW-Nw-JLO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JdX-6n-3KF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -598,7 +629,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3Rf-nH-Phd"/>
-        <segue reference="HGW-Ot-53q"/>
+        <segue reference="cNO-m6-7GM"/>
         <segue reference="XYl-at-ovw"/>
     </inferredMetricsTieBreakers>
 </document>
