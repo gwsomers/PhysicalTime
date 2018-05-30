@@ -358,10 +358,14 @@ class StatsViewController: UIViewController
     /**
      Helper function to get the moon and sun altitude.
      
+     - parameters:
+     - lat: The latitude of the user, expressed as a Double
+     - lng: The longitude of the user, expressed as a Double
+     
      - returns:
      A formatted string with the moon's and sun's altitude.
      */
-    func getAltitude() -> String
+    func getAltitude(lat: Double = 37.0, lng: Double = -122.0) -> String
     {
         // Declare the string variable to be appended to
         var stringBuilder: String!
@@ -371,8 +375,8 @@ class StatsViewController: UIViewController
         let today: Date! = Date()
         // Get the sun/moon positions and the moon phase
         // TODO: Fix hardcoded latitude and longitude coordinates
-        let sunPos = suncalc.getPosition(date: today, lat: 37, lng: -122)
-        let moonPos = suncalc.getMoonPosition(date: today, lat: 37, lng: -122)
+        let sunPos = suncalc.getPosition(date: today, lat: lat, lng: lng)
+        let moonPos = suncalc.getMoonPosition(date: today, lat: lat, lng: lng)
         // Building the string based on the values returned in the three dictionaries
         stringBuilder = "In the horizontal coordinate system, altitude is the " +
                         "coordinate that measures the height above the horizon (in " +
@@ -390,10 +394,14 @@ class StatsViewController: UIViewController
     /**
      Helper function to get the moon and sun azimuth.
      
+     - parameters:
+     - lat: The latitude of the user, expressed as a Double
+     - lng: The longitude of the user, expressed as a Double
+     
      - returns:
      A formatted string with the moon's and sun's azimuth.
      */
-    func getAzimuth() -> String
+    func getAzimuth(lat: Double = 37.0, lng: Double = -122.0) -> String
     {
         // Declare the string variable to be appended to
         var stringBuilder: String!
@@ -403,8 +411,8 @@ class StatsViewController: UIViewController
         let today: Date! = Date()
         // Get the sun/moon positions
         // TODO: Fix hardcoded latitude and longitude coordinates
-        let sunPos = suncalc.getPosition(date: today, lat: 37, lng: -122)
-        let moonPos = suncalc.getMoonPosition(date: today, lat: 37, lng: -122)
+        let sunPos = suncalc.getPosition(date: today, lat: lat, lng: lng)
+        let moonPos = suncalc.getMoonPosition(date: today, lat: lat, lng: lng)
         // Building the string based on the values returned in the three dictionaries
         stringBuilder = "The azimuth is the coordinate from the horizontal coordinate " +
                         "system that indicates the direction along the horizon. The " +
@@ -425,22 +433,97 @@ class StatsViewController: UIViewController
      Helper function to get miscellaneous moon data, such as the distance, parallactic angle,
      and moon phase.
      
+     - parameters:
+     - lat: The latitude of the user, expressed as a Double
+     - lng: The longitude of the user, expressed as a Double
+     
      - returns:
      A formatted string with the miscellaneous moon data, as priorly mentioned.
      */
-    func getMiscMoonData() -> String
+    func getMiscMoonData(lat: Double = 37.0, lng: Double = -122.0) -> String
     {
         // Declare the string variable to be appended to
-        var stringBuilder: String! = ""
+        var stringBuilder: String!
         // Declaring a new SwiftySuncalc object
         let suncalc: SwiftySuncalc! = SwiftySuncalc()
         // Today's date/time
         let today: Date! = Date()
         // Get the sun/moon positions and the moon phase
-        let moonPos = suncalc.getMoonPosition(date: today, lat: 37, lng: -122)
+        let moonPos = suncalc.getMoonPosition(date: today, lat: lat, lng: lng)
         let moonIllumination = suncalc.getMoonIllumination(date: today)
         
+        stringBuilder = "The distance to the moon from your latitude/longitude coordinates " +
+                        "is \(moonPos["distance"]!) kilometers.\n" +
+                        "The parallactic angle, as defined as the angle between the great " +
+                        "circle through a celestial object and the zenith, and the hour " +
+                        "circle of the objec. The parallactic angle of the moon is " +
+                        "\(moonPos["parallacticAngle"]!) radians.\nThe current moon phase " +
+                        "is \(getMoonPhase(moonPhaseVal: moonIllumination["phase"]!))"
         
         return stringBuilder
+    }
+    
+    /**
+     This is a helper function that will get the moon phase value between 0.0 and 1.0 and
+     return a formatted string to finish the caller's sentence, if you will. Phases are
+     interpreted as follows:
+     Phase    Name
+     0      New Moon
+            Waxing Crescent
+     0.25   First Quarter
+            Waxing Gibbous
+     0.5    Full Moon
+            Waning Gibbous
+     0.75   Last Quarter
+            Waning Crescent
+     * See more at https://github.com/cristiangonzales/SwiftySuncalc/blob/master/README.md
+     
+     - parameters:
+     - moonPhaseVal: A double value between 0 and 1 indicating the moon phase.
+     
+     - returns:
+     A formatted string to finish the sentence, where the caller lies.
+     */
+    func getMoonPhase(moonPhaseVal: Double) -> String
+    {
+        switch moonPhaseVal
+        {
+            case let moonPhaseVal where moonPhaseVal < 0.125:
+                return "New Moon, which is defined as the first lunar phase, when the Moon " +
+                    "and Sun have the same ecliptic longitude. At this phase, the lunar " +
+                    "disk is not visible to the unaided eye, except when silhouetted " +
+                    "during a solar eclipse."
+            case let moonPhaseVal where moonPhaseVal >= 0.125 && moonPhaseVal < 0.25:
+                return "Waxing Cresent, where the Moon starts as the Moon becomes visible " +
+                        "again after the New Moon conjunction, when the Sun and Earth were " +
+                        "on opposite sides of the Moon, making it impossible to see the " +
+                        "Moon from Earth."
+            case let moonPhaseVal where moonPhaseVal >= 0.25 && moonPhaseVal < 0.375:
+                return "First Quarter, where we can see exactly half of the Moon's surface " +
+                        "illuminated. If it is the left or right half, depends on where " +
+                        "you are on Earth."
+            case let moonPhaseVal where moonPhaseVal >= 0.375 && moonPhaseVal < 0.5:
+                return "Waxing Gibbous, which occurs just after the First Quarter Moon, " +
+                        "when we can see exactly half of the face of the Moon illuminated, " +
+                        "the intermediate phase called Waxing Gibbous Moon starts."
+            case let moonPhaseVal where moonPhaseVal >= 0.5 && moonPhaseVal < 0.625:
+                return "Full Moon, which is defined as the lunar phase when the Moon " +
+                        "appears fully illuminated from Earth's perspective. This occurs " +
+                        "when Earth is located directly between the Sun and the Moon."
+            case let moonPhaseVal where moonPhaseVal >= 0.625 && moonPhaseVal < 0.75:
+                return "Waning Gibbous, which is defined as the lunar phase or phase of " +
+                        "the Moon is the shape of the directly sunlit portion of the Moon " +
+                        "as viewed from Earth."
+            case let moonPhaseVal where moonPhaseVal >= 0.75 && moonPhaseVal < 0.875:
+                return "Last Quarter, which is defined as a moon that always rises in " +
+                    "the middle of the night, appears at its highest in the sky " +
+                    "around dawn, and sets around midday. At last quarter, the lunar " +
+                    "disk appears half-lit in sunshine and half-immersed in the moon's " +
+                    "own shadow."
+            default:
+                return "Waning Cresent, where the illuminated part of the Moon decreases " +
+                        "from the lit up semicircle at Third Quarter until it disappears " +
+                        "from view entirely at New Moon."
+        }
     }
 }
