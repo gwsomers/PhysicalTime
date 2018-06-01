@@ -19,6 +19,36 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Welcome Info View Controller-->
+        <scene sceneID="vKi-xk-KN2">
+            <objects>
+                <viewController id="jxi-5m-Sm2" userLabel="Welcome Info View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pqq-El-MGo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="SAM-e1-Vbr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OTl-6w-QZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1758" y="-784"/>
+        </scene>
+        <!--Menu Info View Controller-->
+        <scene sceneID="4mj-sw-qvv">
+            <objects>
+                <viewController id="luW-rg-VFi" userLabel="Menu Info View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HLZ-46-1Zk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="5T0-US-urI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rB8-Fk-ysU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1088" y="-795"/>
+        </scene>
         <!--Welcome View Controller-->
         <scene sceneID="lNJ-Up-hsi">
             <objects>
@@ -47,6 +77,14 @@
                                     <segue destination="0kC-eR-1mm" kind="show" id="HGW-Ot-53q"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mx-GM-VSp">
+                                <rect key="frame" x="332" y="623" width="27" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="info"/>
+                                <connections>
+                                    <segue destination="jxi-5m-Sm2" kind="show" id="DAa-q3-Nlc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -62,11 +100,12 @@
                     <connections>
                         <outlet property="mainTitle" destination="6B0-Oq-Z2M" id="u4I-bb-6v8"/>
                         <outlet property="menuContinue" destination="9uq-FN-vC5" id="r55-R4-h60"/>
+                        <outlet property="welcomeInfoButton" destination="3mx-GM-VSp" id="xAq-sQ-C1u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sC0-W7-egs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1756.521739130435" y="-17.934782608695652"/>
+            <point key="canvasLocation" x="-1757.5999999999999" y="-18.440779610194905"/>
         </scene>
         <!--Wadokei View Controller-->
         <scene sceneID="7xw-NE-WwV">
@@ -136,7 +175,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jUb-aX-mKg">
                                 <rect key="frame" x="50" y="74" width="275" height="386"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dPG-uZ-zJQ" userLabel="Second Text View">
@@ -183,6 +222,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JdX-6n-3KF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-653.60000000000002" y="1501.7991004497753"/>
+        </scene>
+        <!--Feature Info View Controller-->
+        <scene sceneID="nCs-TQ-IeQ">
+            <objects>
+                <viewController id="T1d-zN-5Ho" userLabel="Feature Info View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pEw-xA-mXB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="eCt-4m-b5r"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jqp-dN-fu9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2736" y="678"/>
         </scene>
         <!--Feature View Controller-->
         <scene sceneID="kaS-Ni-dzZ">
@@ -265,6 +319,14 @@
                                     <segue destination="0kC-eR-1mm" kind="show" id="Z8A-bJ-UVi"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TS4-Fo-QDg">
+                                <rect key="frame" x="332" y="623" width="27" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="info"/>
+                                <connections>
+                                    <segue destination="T1d-zN-5Ho" kind="show" id="emi-sj-ryp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -288,6 +350,7 @@
                         <viewLayoutGuide key="safeArea" id="tYd-n0-jpG"/>
                     </view>
                     <connections>
+                        <outlet property="featureInfoButton" destination="TS4-Fo-QDg" id="jSZ-VJ-KLL"/>
                         <outlet property="lunarFeatureButton" destination="gm1-CS-9Xp" id="wlJ-Df-cQS"/>
                         <outlet property="menuButton" destination="yby-xj-rzM" id="zge-Xe-Ya4"/>
                         <outlet property="planetaryVisButton" destination="aHY-qG-L5D" id="eNC-Li-gtY"/>
@@ -338,6 +401,14 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="3Rf-nH-Phd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEu-VB-x7G">
+                                <rect key="frame" x="332" y="623" width="27" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="info"/>
+                                <connections>
+                                    <segue destination="luW-rg-VFi" kind="show" id="y6D-fQ-BHd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -354,6 +425,7 @@
                     <connections>
                         <outlet property="goToClockButton" destination="Kfa-dT-dDj" id="YMP-Wm-j1C"/>
                         <outlet property="goToFeatureButton" destination="VxR-qI-O1G" id="BIe-AC-VBB"/>
+                        <outlet property="menuInfoButton" destination="aEu-VB-x7G" id="k7p-4N-BQh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vei-Nb-3zl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -624,12 +696,13 @@
     <resources>
         <image name="back" width="2000" height="2000"/>
         <image name="continue" width="768" height="768"/>
+        <image name="info" width="624" height="624"/>
         <image name="menu" width="2000" height="2000"/>
         <image name="settings" width="2000" height="2000"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3Rf-nH-Phd"/>
-        <segue reference="cNO-m6-7GM"/>
-        <segue reference="XYl-at-ovw"/>
+        <segue reference="HGW-Ot-53q"/>
+        <segue reference="MHp-zB-jqb"/>
     </inferredMetricsTieBreakers>
 </document>

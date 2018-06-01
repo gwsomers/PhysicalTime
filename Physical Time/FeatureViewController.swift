@@ -19,6 +19,7 @@ class FeatureViewController: UIViewController
     @IBOutlet weak var planetaryVisButton: UIButton!
     @IBOutlet weak var statsButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var featureInfoButton: UIButton!
     
     /**
      Change the background dynamically on a load.

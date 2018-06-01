@@ -18,6 +18,9 @@ class WelcomeViewController: UIViewController
     @IBOutlet weak var mainTitle: UILabel!
     // The button to proceed to the next view
     @IBOutlet weak var menuContinue: UIButton!
+    // The button that will transition to the info
+    // view for the Welcome view
+    @IBOutlet weak var welcomeInfoButton: UIButton!
     
     /**
      On load, dynamically change the background based on the time of day

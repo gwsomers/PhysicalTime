@@ -16,6 +16,7 @@ class MenuViewController: UIViewController
     // All UI elements for this view
     @IBOutlet weak var goToClockButton: UIButton!
     @IBOutlet weak var goToFeatureButton: UIButton!
+    @IBOutlet weak var menuInfoButton: UIButton!
     
     /**
      Do any additional setup after loading the view (specifically, in our case, setting the background).
