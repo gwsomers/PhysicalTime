@@ -4,7 +4,9 @@
 [![Travis CI](https://api.travis-ci.org/gwsomers/PhysicalTime.svg?branch=master)](https://travis-ci.org/gwsomers/PhysicalTime)
 [![](https://img.shields.io/badge/License-MIT-red.svg)]()
 
-![](https://media.giphy.com/media/l0MYGYbyoeBJMp6gM/source.gif)
+<p align="center">
+   <img src="http://fusionanomaly.net/daliwatch.gif"></img>
+</p>
 
 ## Purpose
 ---
