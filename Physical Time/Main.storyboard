@@ -22,30 +22,74 @@
         <!--Welcome Info View Controller-->
         <scene sceneID="vKi-xk-KN2">
             <objects>
-                <viewController id="jxi-5m-Sm2" userLabel="Welcome Info View Controller" sceneMemberID="viewController">
+                <viewController id="jxi-5m-Sm2" userLabel="Welcome Info View Controller" customClass="WelcomeInfoViewController" customModule="Physical_Time" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pqq-El-MGo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HV6-hl-tPk">
+                                <rect key="frame" x="44" y="56" width="295" height="570"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <string key="text">Welcome to Physical Time! 🌔 ☀️🌞🌄🌅🌇🎑⏳⌛️ Time is an ever-present factor in our daily lives, but it’s also a very abstract one. We know that 12:00PM is when the sun is at its highest, but that’s it. What if there was a method to interpret time beyond our standard minutes and hours? A method that displayed time revolving around what you think is important?
+Enter Physical Time, an application that lets you redefine any clock standard and visualize physical time in more ways than one. We hope you enjoy using this application as much as we enjoyed building it!
+</string>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="gHK-34-wRK" appends="YES" id="6WL-D1-OnD"/>
+                                </connections>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="SAM-e1-Vbr"/>
                     </view>
+                    <connections>
+                        <outlet property="welcomeInfoTextView" destination="HV6-hl-tPk" id="mV1-xw-9Rb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTl-6w-QZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gHK-34-wRK">
+                    <connections>
+                        <segue destination="Zcv-aI-EVX" kind="show" id="9aU-hM-gRB"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1758" y="-784"/>
+            <point key="canvasLocation" x="-1759.2" y="-784.85757121439292"/>
         </scene>
         <!--Menu Info View Controller-->
         <scene sceneID="4mj-sw-qvv">
             <objects>
-                <viewController id="luW-rg-VFi" userLabel="Menu Info View Controller" sceneMemberID="viewController">
+                <viewController id="luW-rg-VFi" userLabel="Menu Info View Controller" customClass="MenuInfoViewController" customModule="Physical_Time" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HLZ-46-1Zk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXo-qV-WVz">
+                                <rect key="frame" x="40" y="48" width="295" height="570"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">In short, "The Clock" allows users to input various settings to alter the way time is displayed on the clock. These options can range from splitting the day into different partitions or setting 12:00 as sunrise instead of noon. In addition to "The Clock",  "The Extras" option provides features for users to know the current moon cycles, the sun’s angle, and the ability to tell how much daylight they have in day. </string>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="5T0-US-urI"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="WKG-wf-tem" appends="YES" id="PsL-de-BFP"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="menuInfoTextView" destination="vXo-qV-WVz" id="pGT-KB-zTg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rB8-Fk-ysU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="WKG-wf-tem">
+                    <connections>
+                        <segue destination="0kC-eR-1mm" kind="show" id="T5x-hT-3Fo"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1088" y="-795"/>
         </scene>
@@ -57,7 +101,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Physical Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6B0-Oq-Z2M">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Physical Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6B0-Oq-Z2M">
                                 <rect key="frame" x="16" y="245" width="343" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="End-e8-hlB"/>
@@ -67,7 +111,7 @@
                                 <color key="highlightedColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uq-FN-vC5">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uq-FN-vC5">
                                 <rect key="frame" x="120" y="486" width="135" height="118"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="118" id="dqK-8Z-fw7"/>
@@ -77,7 +121,7 @@
                                     <segue destination="0kC-eR-1mm" kind="show" id="HGW-Ot-53q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mx-GM-VSp">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mx-GM-VSp">
                                 <rect key="frame" x="332" y="623" width="27" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="info"/>
@@ -172,25 +216,25 @@
                                     <segue destination="IBx-24-jiA" kind="show" id="XYl-at-ovw"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jUb-aX-mKg">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUb-aX-mKg">
                                 <rect key="frame" x="50" y="74" width="275" height="386"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dPG-uZ-zJQ" userLabel="Second Text View">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPG-uZ-zJQ" userLabel="Second Text View">
                                 <rect key="frame" x="49" y="74" width="275" height="386"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="pWg-5P-9Qb" userLabel="Third Text View">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWg-5P-9Qb" userLabel="Third Text View">
                                 <rect key="frame" x="50" y="74" width="275" height="386"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dHx-nj-KzG" userLabel="Fourth Text View">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHx-nj-KzG" userLabel="Fourth Text View">
                                 <rect key="frame" x="50" y="74" width="275" height="386"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="16"/>
@@ -226,17 +270,82 @@
         <!--Feature Info View Controller-->
         <scene sceneID="nCs-TQ-IeQ">
             <objects>
-                <viewController id="T1d-zN-5Ho" userLabel="Feature Info View Controller" sceneMemberID="viewController">
+                <viewController id="T1d-zN-5Ho" userLabel="Feature Info View Controller" customClass="FeatureInfoViewController" customModule="Physical_Time" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pEw-xA-mXB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QtR-4N-VNr">
+                                <rect key="frame" x="41" y="89" width="294" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="RRs-pv-sgi"/>
+                                </constraints>
+                                <string key="text">The lunar feature is a lunar eclipse countdown timer, for looking up when the next lunar eclipse is. This part of the app features an image of the phases of the moon. Depending on what day of the month the user checks, the image will reflect the current stage of the lunar cycle. While waiting for the next lunar eclipse, lunar enthusiasts can entertain themselves through this simple visual of the lunar cycle. </string>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="10"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1i-FI-R8r">
+                                <rect key="frame" x="41" y="212" width="295" height="178"/>
+                                <mutableString key="text">The Wadokei clock takes inspiration from Edo period Japanese clocks called Wadokei. In our current time system, “ the fixed time system”, the length of a day is equally portioned into 24 hours. Wadokeis used a “seasonal time system”. The day was split into 12 different hours with 6 hours of day and 6 hours of night. As the length of daytime and nighttime changes from season to season, the day and night hours had to change as well. Wadokeis were very helpful because in addition to telling time, they conveyed a lot of helpful information such as the seasons, the amount of sunlight, and the sunrise/sunset time. This allowed Edo period Japanese people to stay in touch with physical time.</mutableString>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="10"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPC-Gx-edg">
+                                <rect key="frame" x="41" y="398" width="295" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="EJ7-Ue-Xbo"/>
+                                </constraints>
+                                <string key="text">"The Planets" gives a vanilla visualization of the planets of our solar system, in real time. Now there's some Physical Time potpourri for you...</string>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="10"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUj-XX-jGk">
+                                <rect key="frame" x="41" y="463" width="295" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="mW4-uB-8LP"/>
+                                </constraints>
+                                <string key="text">"What Time Is It?" gives some more complicated, yet vital, metrics on Physical Time. There are many applications of these metrics to finding more data on true physical time. Metrics include the current state based on the sun's movement, the altitude and azimuth of both the moon and the sun,  the distance and parallactic angle of the moon, and the current moon phase. (all definitions  of said metrics courtesy of Space.com,and TimeAndDate.com)</string>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="10"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="xPC-Gx-edg" firstAttribute="top" secondItem="w1i-FI-R8r" secondAttribute="bottom" constant="8" symbolic="YES" id="0bs-q4-NF9"/>
+                            <constraint firstItem="QtR-4N-VNr" firstAttribute="centerX" secondItem="pEw-xA-mXB" secondAttribute="centerX" id="1bC-Wa-e2i"/>
+                            <constraint firstItem="w1i-FI-R8r" firstAttribute="trailing" secondItem="xPC-Gx-edg" secondAttribute="trailing" id="2Rf-4L-f52"/>
+                            <constraint firstItem="xPC-Gx-edg" firstAttribute="trailing" secondItem="NUj-XX-jGk" secondAttribute="trailing" id="2vO-1P-zYA"/>
+                            <constraint firstItem="xPC-Gx-edg" firstAttribute="leading" secondItem="NUj-XX-jGk" secondAttribute="leading" id="98P-0W-Kqb"/>
+                            <constraint firstItem="w1i-FI-R8r" firstAttribute="top" secondItem="QtR-4N-VNr" secondAttribute="bottom" constant="8" symbolic="YES" id="Lt0-1i-ez6"/>
+                            <constraint firstItem="w1i-FI-R8r" firstAttribute="leading" secondItem="xPC-Gx-edg" secondAttribute="leading" id="SZu-76-srF"/>
+                            <constraint firstItem="QtR-4N-VNr" firstAttribute="top" secondItem="eCt-4m-b5r" secondAttribute="top" constant="69" id="UpH-64-YpQ"/>
+                            <constraint firstItem="QtR-4N-VNr" firstAttribute="leading" secondItem="w1i-FI-R8r" secondAttribute="leading" id="lzT-Kh-8CW"/>
+                            <constraint firstItem="QtR-4N-VNr" firstAttribute="leading" secondItem="eCt-4m-b5r" secondAttribute="leading" constant="41" id="q5j-zw-1hp"/>
+                            <constraint firstItem="eCt-4m-b5r" firstAttribute="bottom" secondItem="NUj-XX-jGk" secondAttribute="bottom" constant="89" id="qWA-dg-3Qg"/>
+                            <constraint firstItem="QtR-4N-VNr" firstAttribute="centerX" secondItem="w1i-FI-R8r" secondAttribute="centerX" id="sad-Gz-VlX"/>
+                            <constraint firstItem="NUj-XX-jGk" firstAttribute="top" secondItem="xPC-Gx-edg" secondAttribute="bottom" constant="8" symbolic="YES" id="ybi-O4-btz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="eCt-4m-b5r"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="qSH-TY-svL" appends="YES" id="dpl-VW-eDw"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="lunarTextView" destination="QtR-4N-VNr" id="XwM-aL-Ge4"/>
+                        <outlet property="planetsTextView" destination="xPC-Gx-edg" id="VJz-Xc-AgN"/>
+                        <outlet property="timeTextView" destination="NUj-XX-jGk" id="3RQ-bU-oCN"/>
+                        <outlet property="wadokeiTextView" destination="w1i-FI-R8r" id="ESa-jg-y4T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jqp-dN-fu9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="qSH-TY-svL">
+                    <connections>
+                        <segue destination="IBx-24-jiA" kind="show" id="XFf-mh-48A"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-2736" y="678"/>
+            <point key="canvasLocation" x="-2736.8000000000002" y="677.81109445277366"/>
         </scene>
         <!--Feature View Controller-->
         <scene sceneID="kaS-Ni-dzZ">
@@ -319,7 +428,7 @@
                                     <segue destination="0kC-eR-1mm" kind="show" id="Z8A-bJ-UVi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TS4-Fo-QDg">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TS4-Fo-QDg">
                                 <rect key="frame" x="332" y="623" width="27" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="info"/>
@@ -401,7 +510,7 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="3Rf-nH-Phd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEu-VB-x7G">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEu-VB-x7G">
                                 <rect key="frame" x="332" y="623" width="27" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="info"/>
@@ -702,7 +811,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3Rf-nH-Phd"/>
-        <segue reference="HGW-Ot-53q"/>
-        <segue reference="MHp-zB-jqb"/>
+        <segue reference="cNO-m6-7GM"/>
+        <segue reference="XFf-mh-48A"/>
     </inferredMetricsTieBreakers>
 </document>

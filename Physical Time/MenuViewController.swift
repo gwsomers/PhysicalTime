@@ -57,6 +57,9 @@ class MenuViewController: UIViewController
         self.goToFeatureButton.fadeIn(duration: 2.0, delay: 1.0,  completion: {
             (finished: Bool) -> Void in
         })
+        self.menuInfoButton.fadeIn(duration: 2.0, delay: 1.0,  completion: {
+            (finished: Bool) -> Void in
+        })
         
         // Instance of Background
         let background = ChangeBackground()

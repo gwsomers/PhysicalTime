@@ -1,10 +1,9 @@
-//
-//  InOut.swift
-//  Physical_Time_Analog_Clock
-//
-//  Created by ercolau on 5/6/18.
-//  Copyright © 2018 Xi Stephen Ouyang. All rights reserved.
-//
+/**
+ - Author:
+ Erik Lau
+ 
+ Created for Physical Time, 2018
+ */
 import Foundation
 func exportSettings(fileName : String, hour : Int, minute : Int , rev : Int , mrph : Int , angle : Float , timeoff : Int , mode : Int) {
     print("exporting")

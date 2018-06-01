@@ -1,11 +1,13 @@
 /**
  - Author:
  Xi Stephen Ouyang
+ 
  Created for Physical Time, 2018
  */
 
 import Foundation
 import UIKit
+import Hero
 
 
 /**
@@ -31,6 +33,10 @@ class WelcomeViewController: UIViewController
     {
         super.viewDidLoad()
         
+        // Instantiating id's for Hero transitions
+        self.hero.isEnabled = true
+        view.hero.id = "welcomeView"
+        
         // Dynamically change the background on the load
         let background = ChangeBackground()
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
@@ -48,6 +54,7 @@ class WelcomeViewController: UIViewController
         // remain hidden initially)
         self.mainTitle.alpha = 0
         self.menuContinue.alpha = 0
+        self.welcomeInfoButton.alpha = 0
         
         // Do the fades to both UI elements appropriately
         self.mainTitle.fadeIn(duration: 3.0, delay: 1.0, completion: {
@@ -56,6 +63,8 @@ class WelcomeViewController: UIViewController
         self.menuContinue.fadeIn(duration: 2.0, delay: 4.5,  completion: {
             (finished: Bool) -> Void in
         })
-        
+        self.welcomeInfoButton.fadeIn(duration: 2.0, delay: 4.5,  completion: {
+            (finished: Bool) -> Void in
+        })
     }
 }

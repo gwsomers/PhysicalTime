@@ -1,6 +1,7 @@
 /**
  - Author:
  Khai Hua
+ 
  Created for Physical Time, 2018
  */
 
@@ -68,6 +69,9 @@ class FeatureViewController: UIViewController
             (finished: Bool) -> Void in
         })
         self.menuButton.fadeIn(duration: 2.0, delay: 1.0,  completion: {
+            (finished: Bool) -> Void in
+        })
+        self.featureInfoButton.fadeIn(duration: 2.0, delay: 1.0,  completion: {
             (finished: Bool) -> Void in
         })
         
