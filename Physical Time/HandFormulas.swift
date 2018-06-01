@@ -1,10 +1,8 @@
-//
-//  handPosition.swift
-//  Physical_Time_Analog_Clock
-//
-//  Created by George Somers on 2/18/18.
-//  Copyright © 2018 Xi Stephen Ouyang. All rights reserved.
-//
+/**
+ - Author:
+ George Somers
+ Created for Physical Time, 2018
+ */
 
 import Foundation
 import CoreLocation

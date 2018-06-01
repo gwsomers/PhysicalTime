@@ -1,10 +1,8 @@
-//
-//  changeBackground.swift
-//  Physical_Time_Analog_Clock
-//
-//  Created by Xi Stephen Ouyang on 5/4/18.
-//  Copyright © 2018 Xi Stephen Ouyang. All rights reserved.
-//
+/**
+ - Author:
+ Xi Stephen Ouyang
+ Created for Physical Time, 2018
+ */
 
 import Foundation
 import CoreLocation
