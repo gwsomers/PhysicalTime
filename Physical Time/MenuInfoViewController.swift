@@ -9,6 +9,10 @@ import Foundation
 import UIKit
 import Hero
 
+/**
+ Class representing the view controller that gives more info/premise past the
+ MenuViewController
+ */
 class MenuInfoViewController: UIViewController
 {
     @IBOutlet weak var menuInfoTextView: UITextView!

@@ -151,6 +151,108 @@ Enter Physical Time, an application that lets you redefine any clock standard an
             </objects>
             <point key="canvasLocation" x="-1757.5999999999999" y="-18.440779610194905"/>
         </scene>
+        <!--Planets View Controller-->
+        <scene sceneID="ili-SQ-OWV">
+            <objects>
+                <viewController id="dCN-7F-VDc" userLabel="Planets View Controller" customClass="PlanetsViewController" customModule="Physical_Time" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qDU-UH-cgH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="Lui-jB-9rS">
+                                <rect key="frame" x="162" y="308" width="50" height="50"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jupiter" translatesAutoresizingMaskIntoConstraints="NO" id="87C-Px-DaM">
+                                <rect key="frame" x="87" y="321" width="25" height="25"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saturn" translatesAutoresizingMaskIntoConstraints="NO" id="3Kk-sI-I8r">
+                                <rect key="frame" x="50" y="321" width="40" height="25"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mercury" translatesAutoresizingMaskIntoConstraints="NO" id="VG9-bs-Qpa">
+                                <rect key="frame" x="154" y="328" width="10" height="10"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mars" translatesAutoresizingMaskIntoConstraints="NO" id="grc-Wa-fay">
+                                <rect key="frame" x="111" y="329" width="10" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="fM2-JC-4WZ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="venus" translatesAutoresizingMaskIntoConstraints="NO" id="Ruh-mT-pbH">
+                                <rect key="frame" x="138" y="326" width="15" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="15" id="r0C-Ii-nbd"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earth" translatesAutoresizingMaskIntoConstraints="NO" id="u86-Ld-4b1">
+                                <rect key="frame" x="122" y="326" width="15" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="15" id="m9c-HT-phH"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uranus" translatesAutoresizingMaskIntoConstraints="NO" id="gd4-vJ-oXX">
+                                <rect key="frame" x="33" y="324" width="25" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="h4C-Is-3Rj"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="neptune" translatesAutoresizingMaskIntoConstraints="NO" id="QrC-Lh-7xe">
+                                <rect key="frame" x="16" y="324" width="19" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="19" id="b6H-n7-Afc"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="u86-Ld-4b1" firstAttribute="top" secondItem="Ruh-mT-pbH" secondAttribute="top" id="03t-zx-M8W"/>
+                            <constraint firstItem="u86-Ld-4b1" firstAttribute="top" secondItem="43w-R9-28D" secondAttribute="top" constant="306" id="1A0-07-XuM"/>
+                            <constraint firstItem="QrC-Lh-7xe" firstAttribute="bottom" secondItem="gd4-vJ-oXX" secondAttribute="bottom" id="4dn-2V-4aK"/>
+                            <constraint firstItem="gd4-vJ-oXX" firstAttribute="centerY" secondItem="3Kk-sI-I8r" secondAttribute="centerY" id="7Rf-Rl-DDX"/>
+                            <constraint firstItem="grc-Wa-fay" firstAttribute="centerY" secondItem="u86-Ld-4b1" secondAttribute="centerY" id="ExF-Qr-H5C"/>
+                            <constraint firstItem="QrC-Lh-7xe" firstAttribute="top" secondItem="43w-R9-28D" secondAttribute="top" constant="304" id="JxX-nH-bXG"/>
+                            <constraint firstItem="Lui-jB-9rS" firstAttribute="leading" secondItem="Ruh-mT-pbH" secondAttribute="trailing" constant="9" id="Ky8-M6-oGT"/>
+                            <constraint firstItem="Ruh-mT-pbH" firstAttribute="leading" secondItem="u86-Ld-4b1" secondAttribute="trailing" constant="1" id="LZL-Nc-DVb"/>
+                            <constraint firstItem="3Kk-sI-I8r" firstAttribute="top" secondItem="87C-Px-DaM" secondAttribute="top" id="NDq-0n-jSN"/>
+                            <constraint firstItem="grc-Wa-fay" firstAttribute="leading" secondItem="3Kk-sI-I8r" secondAttribute="trailing" constant="21" id="Nrl-Tv-CJY"/>
+                            <constraint firstItem="3Kk-sI-I8r" firstAttribute="bottom" secondItem="87C-Px-DaM" secondAttribute="bottom" id="PFC-RH-kB3"/>
+                            <constraint firstItem="u86-Ld-4b1" firstAttribute="bottom" secondItem="Ruh-mT-pbH" secondAttribute="bottom" id="Sxg-IK-mP4"/>
+                            <constraint firstItem="87C-Px-DaM" firstAttribute="centerY" secondItem="grc-Wa-fay" secondAttribute="centerY" id="UE2-jr-L5V"/>
+                            <constraint firstItem="VG9-bs-Qpa" firstAttribute="centerY" secondItem="Lui-jB-9rS" secondAttribute="centerY" id="WUi-d5-gc9"/>
+                            <constraint firstItem="43w-R9-28D" firstAttribute="trailing" secondItem="VG9-bs-Qpa" secondAttribute="trailing" constant="211" id="XKf-dN-5u3"/>
+                            <constraint firstItem="87C-Px-DaM" firstAttribute="leading" secondItem="gd4-vJ-oXX" secondAttribute="trailing" constant="29" id="aZ3-E7-wTU"/>
+                            <constraint firstItem="3Kk-sI-I8r" firstAttribute="top" secondItem="43w-R9-28D" secondAttribute="top" constant="301" id="axG-ZZ-5Vg"/>
+                            <constraint firstItem="VG9-bs-Qpa" firstAttribute="top" secondItem="43w-R9-28D" secondAttribute="top" constant="308" id="bs7-ZF-Yym"/>
+                            <constraint firstItem="3Kk-sI-I8r" firstAttribute="leading" secondItem="QrC-Lh-7xe" secondAttribute="trailing" constant="15" id="dmA-fc-azy"/>
+                            <constraint firstItem="gd4-vJ-oXX" firstAttribute="leading" secondItem="43w-R9-28D" secondAttribute="leading" constant="33" id="fMi-Je-nzc"/>
+                            <constraint firstItem="Lui-jB-9rS" firstAttribute="centerX" secondItem="qDU-UH-cgH" secondAttribute="centerX" id="feb-oz-eQ8"/>
+                            <constraint firstItem="Ruh-mT-pbH" firstAttribute="centerY" secondItem="VG9-bs-Qpa" secondAttribute="centerY" id="hBC-6K-7Wp"/>
+                            <constraint firstItem="u86-Ld-4b1" firstAttribute="leading" secondItem="87C-Px-DaM" secondAttribute="trailing" constant="10" id="j8b-rh-m9U"/>
+                            <constraint firstItem="43w-R9-28D" firstAttribute="trailing" secondItem="Lui-jB-9rS" secondAttribute="trailing" constant="163" id="mM5-qE-pmG"/>
+                            <constraint firstItem="QrC-Lh-7xe" firstAttribute="leading" secondItem="qDU-UH-cgH" secondAttribute="leadingMargin" id="o3O-pa-LIk"/>
+                            <constraint firstItem="Lui-jB-9rS" firstAttribute="top" secondItem="43w-R9-28D" secondAttribute="top" constant="288" id="poh-Ox-YQo"/>
+                            <constraint firstItem="grc-Wa-fay" firstAttribute="top" secondItem="43w-R9-28D" secondAttribute="top" constant="309" id="pw9-hc-kYt"/>
+                            <constraint firstItem="u86-Ld-4b1" firstAttribute="leading" secondItem="grc-Wa-fay" secondAttribute="trailing" constant="1" id="v4x-cp-kbi"/>
+                            <constraint firstItem="QrC-Lh-7xe" firstAttribute="top" secondItem="gd4-vJ-oXX" secondAttribute="top" id="vif-r7-c52"/>
+                            <constraint firstItem="VG9-bs-Qpa" firstAttribute="centerY" secondItem="qDU-UH-cgH" secondAttribute="centerY" id="vrf-Ah-vAp"/>
+                            <constraint firstItem="VG9-bs-Qpa" firstAttribute="leading" secondItem="Ruh-mT-pbH" secondAttribute="trailing" constant="1" id="wE3-DB-byP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="43w-R9-28D"/>
+                    </view>
+                    <connections>
+                        <outlet property="earth" destination="u86-Ld-4b1" id="moT-Xt-2Ra"/>
+                        <outlet property="jupiter" destination="87C-Px-DaM" id="IKx-uA-WV6"/>
+                        <outlet property="mars" destination="grc-Wa-fay" id="EHl-Vo-Lt6"/>
+                        <outlet property="mercury" destination="VG9-bs-Qpa" id="e4k-YP-h7b"/>
+                        <outlet property="neptune" destination="QrC-Lh-7xe" id="oaB-6f-Yma"/>
+                        <outlet property="saturn" destination="3Kk-sI-I8r" id="kVi-gQ-3Lm"/>
+                        <outlet property="uranus" destination="gd4-vJ-oXX" id="yUx-qX-Nwz"/>
+                        <outlet property="venus" destination="Ruh-mT-pbH" id="iGa-as-gQC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RpW-ve-Wbm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2676" y="1435.2323838080961"/>
+        </scene>
         <!--Wadokei View Controller-->
         <scene sceneID="7xw-NE-WwV">
             <objects>
@@ -286,7 +388,7 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1i-FI-R8r">
                                 <rect key="frame" x="41" y="212" width="295" height="178"/>
-                                <mutableString key="text">The Wadokei clock takes inspiration from Edo period Japanese clocks called Wadokei. In our current time system, “ the fixed time system”, the length of a day is equally portioned into 24 hours. Wadokeis used a “seasonal time system”. The day was split into 12 different hours with 6 hours of day and 6 hours of night. As the length of daytime and nighttime changes from season to season, the day and night hours had to change as well. Wadokeis were very helpful because in addition to telling time, they conveyed a lot of helpful information such as the seasons, the amount of sunlight, and the sunrise/sunset time. This allowed Edo period Japanese people to stay in touch with physical time.</mutableString>
+                                <string key="text">The Wadokei clock takes inspiration from Edo period Japanese clocks called Wadokei. In our current time system, “ the fixed time system”, the length of a day is equally portioned into 24 hours. Wadokeis used a “seasonal time system”. The day was split into 12 different hours with 6 hours of day and 6 hours of night. As the length of daytime and nighttime changes from season to season, the day and night hours had to change as well. Wadokeis were very helpful because in addition to telling time, they conveyed a lot of helpful information such as the seasons, the amount of sunlight, and the sunrise/sunset time. This allowed Edo period Japanese people to stay in touch with physical time.</string>
                                 <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="10"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -403,6 +505,9 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="dCN-7F-VDc" kind="show" id="8x1-1j-bur"/>
+                                </connections>
                             </button>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTk-Gk-p3n">
                                 <rect key="frame" x="42" y="397" width="290" height="106"/>
@@ -805,13 +910,22 @@ Enter Physical Time, an application that lets you redefine any clock standard an
     <resources>
         <image name="back" width="2000" height="2000"/>
         <image name="continue" width="768" height="768"/>
+        <image name="earth" width="512" height="512"/>
         <image name="info" width="624" height="624"/>
+        <image name="jupiter" width="1368" height="1416"/>
+        <image name="mars" width="512" height="512"/>
         <image name="menu" width="2000" height="2000"/>
+        <image name="mercury" width="512" height="512"/>
+        <image name="neptune" width="875" height="873"/>
+        <image name="saturn" width="1206" height="690"/>
         <image name="settings" width="2000" height="2000"/>
+        <image name="sun" width="660" height="660"/>
+        <image name="uranus" width="480" height="360"/>
+        <image name="venus" width="551" height="551"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3Rf-nH-Phd"/>
-        <segue reference="cNO-m6-7GM"/>
+        <segue reference="Z8A-bJ-UVi"/>
         <segue reference="XFf-mh-48A"/>
     </inferredMetricsTieBreakers>
 </document>

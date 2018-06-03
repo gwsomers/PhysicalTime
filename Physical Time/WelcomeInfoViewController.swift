@@ -9,6 +9,10 @@ import Foundation
 import UIKit
 import Hero
 
+/**
+ Class representing the view controller that gives more info/premise past the
+ WelcomeViewController
+ */
 class WelcomeInfoViewController: UIViewController
 {
     // The only UI element for this view
