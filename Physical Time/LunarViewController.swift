@@ -6,25 +6,134 @@
  */
 
 import UIKit
+import SwiftySuncalc
 
 class LunarViewController: UIViewController {
     
-    //TODO: Get the current time, get the next lunar eclipse time, and subtract.
+    let new_moon = "new_moon.png";
+    let waxing_crescent = "waxing_crescent.png";
+    let first_quarter = "1st_quarter.png";
+    let waxing_gibbous = "waxing_gibbous.png";
+    let full_moon = "moon.png";
+    let waning_gibbous = "waning_gibbous.png";
+    let third_quarter = "third_quarter.png";
+    let waning_crescent = "waning_crescent.png";
     
+    @IBOutlet weak var countdownLabel2: UILabel!
+
     @IBOutlet weak var countdownLabel: UILabel!
-    var seconds = 360000;
+    
+    var seconds = 0;
     var timer = Timer();
+    let moonPosObj = SwiftySuncalc();
+    var moonDict: [String: Double] = [:]
+    
     var currentTime: Date {
         return Date()
     }
     
-    var component = DateComponents();
+    func getNextEclipse()-> Int {
+        
+        let calendar = Calendar.current;
+        var dateComponent = DateComponents();
+        
+        dateComponent.second = 54;
+        dateComponent.hour = 8;
+        dateComponent.minute = 22;
+        dateComponent.month = 7;
+        dateComponent.day = 27;
+        dateComponent.year = 2018;
+        let julyEclipse = calendar.date(from: dateComponent as DateComponents)!
+        
+        var secUntilJulyEclipse = julyEclipse.timeIntervalSince1970;
+        var julyEclipseInt = Int(secUntilJulyEclipse);
+        return julyEclipseInt;
+    }
+    
+    func secondsUntilNextEclipse() {
+        
+        let julyEclipse = getNextEclipse();
+        //print("\(julyEclipse)")
+        
+        var timeInterval = currentTime.timeIntervalSince1970;
+        var currentTimeAsInt = Int(timeInterval);
+        
+        var nextEclipse = julyEclipse - currentTimeAsInt;
+        seconds = nextEclipse;
+    }
     
     func timeString(time:TimeInterval) -> String {
-        let hours = Int(time) / 3600
+        
+        let hours = Int(time) / 3600 % 24
         let minutes = Int(time) / 60 % 60
         let seconds = Int(time) % 60
         return String(format: "%02i:%02i:%02i", hours, minutes, seconds);
+    }
+    
+    func timeString2(time:TimeInterval) -> String {
+        let months = Int(time) / (3600 * 24 * 30) % 12
+        let days = Int(time) / (3600 * 24) % 30
+        
+        return String(format: "Month(s): %i  Day(s): %i", months, days);
+    }
+    
+    func getMoonData() -> Dictionary<String, Double> {
+        var dict: [String: Double] = [:]
+        dict = moonPosObj.getMoonIllumination(date: currentTime)
+        print("This is the console output: \(dict as AnyObject)")
+        return dict
+    }
+    
+    func getLunarCycle() -> UIImageView {
+        var dict: [String: Double] = [:]
+        dict = getMoonData()
+        //print(dict["phase"]!);
+        var phase = dict["phase"];
+        phase = 0.6;
+        
+        var someImage = UIImage();
+        var someImageView = UIImageView();
+        
+        switch phase {
+        case let x where x! <= 0.125:
+            someImage = UIImage(named: new_moon)!;
+            someImageView = UIImageView(image: someImage);
+            break;
+        case let x where x! >= 0.126 && x! <= 0.25:
+            someImage = UIImage(named: waxing_crescent)!;
+            someImageView = UIImageView(image: someImage);
+            break;
+        case let x where x! >= 0.251 && x! <= 0.375:
+            someImage = UIImage(named: first_quarter)!;
+            someImageView = UIImageView(image: someImage);
+            break;
+        case let x where x! >= 0.376 && x! <= 0.50:
+            someImage = UIImage(named: waxing_gibbous)!;
+            someImageView = UIImageView(image: someImage);
+            break;
+        case let x where x! >= 0.51 && x! <= 0.625:
+            someImage = UIImage(named: full_moon)!;
+            someImageView = UIImageView(image: someImage);
+            break;
+        case let x where x! >= 0.626 && x! <= 0.750:
+            someImage = UIImage(named: waning_gibbous)!;
+            someImageView = UIImageView(image: someImage);
+            break;
+        case let x where x! >= 0.751 && x! <= 0.875:
+            someImage = UIImage(named: third_quarter)!;
+            someImageView = UIImageView(image: someImage);
+            break;
+        case let x where x! >= 0.876 && x! <= 1:
+            someImage = UIImage(named: waning_crescent)!;
+            someImageView = UIImageView(image: someImage);
+            break;
+        default:
+            print("error");
+            break;
+        }
+        
+        return someImageView;
+        
     }
     
     func runTimer() {
@@ -33,27 +142,23 @@ class LunarViewController: UIViewController {
     
     @objc func updateTimer() {
         
-        var timeInterval = currentTime.timeIntervalSince1970;
-        var currentTimeAsInt = Int(timeInterval);
-        
-        component.setValue(1, for: .month);
-        var nextEclipse = Calendar.current.date(byAdding: component, to: currentTime);
-        var anotherTimeInterval = nextEclipse?.timeIntervalSince(currentTime);
-        var anotherTimeIntervalAsInt = Int(anotherTimeInterval!);
-        
-        print("\(currentTimeAsInt)\n");
-        print("\(anotherTimeIntervalAsInt)");
-        
         seconds -= 1;
         if seconds >= 0 {
             countdownLabel.text = timeString(time: TimeInterval(seconds));
+            countdownLabel2.text = timeString2(time: TimeInterval(seconds));
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: "lunar_pic")!)
+        var moonImage = UIImageView();
+        secondsUntilNextEclipse();
         runTimer();
+        moonDict = getMoonData()
+        moonImage = getLunarCycle()
+        moonImage.frame = CGRect(x: 98, y: 144, width: 200, height: 200);
+        view.addSubview(moonImage);
         
         // Do any additional setup after loading the view.
     }
@@ -75,4 +180,3 @@ class LunarViewController: UIViewController {
      */
     
 }
-

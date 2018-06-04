@@ -27,6 +27,7 @@
 		9CF4710820B3422700076239 /* InOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4710720B3422700076239 /* InOut.swift */; };
 		9F147961961A653AD8175535 /* libPods-Physical_Time_Analog_Clock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2905804960F17BF1FF6FC9A4 /* libPods-Physical_Time_Analog_Clock.a */; };
 		B80F894220C1A3F300558C2C /* PlanetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80F894120C1A3F300558C2C /* PlanetsViewController.swift */; };
+		B831169A20C4292700681E7B /* PlanetsPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B831169920C4292700681E7B /* PlanetsPopUpViewController.swift */; };
 		B86D1DEE20B7AD5200892FA2 /* Blackout_Sunrise.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B86D1DED20B7AD5100892FA2 /* Blackout_Sunrise.ttf */; };
 		B8786A4620C0F4CA0043C887 /* WelcomeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8786A4520C0F4CA0043C887 /* WelcomeInfoViewController.swift */; };
 		B8786A4820C0F6AC0043C887 /* MenuInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8786A4720C0F6AC0043C887 /* MenuInfoViewController.swift */; };
@@ -63,6 +64,7 @@
 		88018E9D5B1F3AABB429DDB4 /* Pods-Physical Time.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Physical Time.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Physical Time/Pods-Physical Time.debug.xcconfig"; sourceTree = "<group>"; };
 		9CF4710720B3422700076239 /* InOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InOut.swift; sourceTree = "<group>"; };
 		B80F894120C1A3F300558C2C /* PlanetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsViewController.swift; sourceTree = "<group>"; };
+		B831169920C4292700681E7B /* PlanetsPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsPopUpViewController.swift; sourceTree = "<group>"; };
 		B86D1DED20B7AD5100892FA2 /* Blackout_Sunrise.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Blackout_Sunrise.ttf; path = "Physical Time/fonts/Blackout_Sunrise.ttf"; sourceTree = SOURCE_ROOT; };
 		B8786A4520C0F4CA0043C887 /* WelcomeInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInfoViewController.swift; sourceTree = "<group>"; };
 		B8786A4720C0F6AC0043C887 /* MenuInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInfoViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,8 @@
 				7C30166220B7853A0070F838 /* Main.storyboard */,
 				B8786A4720C0F6AC0043C887 /* MenuInfoViewController.swift */,
 				5DE0B91F2080782100607D4C /* MenuViewController.swift */,
+				B831169920C4292700681E7B /* PlanetsPopUpViewController.swift */,
+				B80F894120C1A3F300558C2C /* PlanetsViewController.swift */,
 				5D83A5382055C34100BFAE08 /* SettingsViewController.swift */,
 				0222D928204E05ED0067EC35 /* Solar.swift */,
 				B8BA2D5620B82CA40083DE3A /* StatsViewController.swift */,
@@ -130,7 +134,6 @@
 				5D16BBD020B6885E00E0252F /* WadokeiViewController.swift */,
 				B8786A4520C0F4CA0043C887 /* WelcomeInfoViewController.swift */,
 				5DE0B91D2080761D00607D4C /* WelcomeViewController.swift */,
-				B80F894120C1A3F300558C2C /* PlanetsViewController.swift */,
 			);
 			path = "Physical Time";
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B831169A20C4292700681E7B /* PlanetsPopUpViewController.swift in Sources */,
 				B8786A4A20C0F7270043C887 /* FeatureInfoViewController.swift in Sources */,
 				5DF8473A2038F4F5007E7322 /* ViewController.swift in Sources */,
 				5D4ECDA3209CDBA1000F75E6 /* ChangeBackground.swift in Sources */,
