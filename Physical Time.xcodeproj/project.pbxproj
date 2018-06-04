@@ -25,7 +25,6 @@
 		5DF847422038F4F5007E7322 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DF847402038F4F5007E7322 /* LaunchScreen.storyboard */; };
 		7C30166320B7853A0070F838 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C30166220B7853A0070F838 /* Main.storyboard */; };
 		9CF4710820B3422700076239 /* InOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4710720B3422700076239 /* InOut.swift */; };
-		9F147961961A653AD8175535 /* libPods-Physical_Time_Analog_Clock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2905804960F17BF1FF6FC9A4 /* libPods-Physical_Time_Analog_Clock.a */; };
 		B80F894220C1A3F300558C2C /* PlanetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80F894120C1A3F300558C2C /* PlanetsViewController.swift */; };
 		B831169A20C4292700681E7B /* PlanetsPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B831169920C4292700681E7B /* PlanetsPopUpViewController.swift */; };
 		B86D1DEE20B7AD5200892FA2 /* Blackout_Sunrise.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B86D1DED20B7AD5100892FA2 /* Blackout_Sunrise.ttf */; };
@@ -79,7 +78,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F147961961A653AD8175535 /* libPods-Physical_Time_Analog_Clock.a in Frameworks */,
 				5B207E14622453B9CE52187F /* libPods-Physical Time.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
