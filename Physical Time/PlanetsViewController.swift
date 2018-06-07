@@ -13,7 +13,7 @@ import Hero
  In this class, we will animate the PlanetsViewController using vanilla
  UIKit to simulate the moving of the planets.
  */
-class PlanetsViewController: UIViewController
+class PlanetsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
 {
     // All the planets in our view (in order)
     @IBOutlet weak var mercury: UIImageView!
@@ -24,14 +24,25 @@ class PlanetsViewController: UIViewController
     @IBOutlet weak var saturn: UIImageView!
     @IBOutlet weak var uranus: UIImageView!
     @IBOutlet weak var neptune: UIImageView!
+    // The picker view for our controller
+    @IBOutlet weak var pickerView: UIPickerView!
+    // Label for the current orbit speed
+    @IBOutlet weak var speedLabel: UILabel!
     
+    
+    // Selection of values to pick from for the pickerView
+    let planets: [String] = [
+        "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"
+    ]
     // One revolution, in radians
     let revolutionInRadians: CGFloat = 2.0 * .pi
     // The "duration" of one earth year, where all other planets will use this value as a ratio for their
     // respective years
-    var oneEarthYear: Double = 1.0
+    var oneEarthYear: Double = 8.0
     // The intitial value of the stepper, to be used in `planetarySpeed()`
     var stepperVal: Double = 1.0
+    // The current planet value (Mercury is the default)
+    var pickerSelection: String = "Mercury"
     
     /**
      On load, statically define the background and instantiate the Hero
@@ -44,6 +55,10 @@ class PlanetsViewController: UIViewController
     {
         super.viewDidLoad()
         
+        // Picker view set up
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        
         // Instantiating id's for Hero transitions
         self.hero.isEnabled = true
         view.hero.id = "planetsView"
@@ -54,6 +69,9 @@ class PlanetsViewController: UIViewController
         
         // Setting the background programmatically
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: "space.png")!)
+        
+        // Set the text of our speed label accordingly
+        speedLabel.text = "Current Speed: 1.0x"
     }
     
     /**
@@ -68,6 +86,70 @@ class PlanetsViewController: UIViewController
         super.viewDidAppear(animated)
         // Animating the planets for the first time
         animateThePlanets()
+    }
+    
+    /**
+     Helper function used by `UIPickerView` to return the number of components
+     
+     - returns:
+     A static integer, 1
+     */
+    func numberOfComponents(in pickerView: UIPickerView) -> Int
+    {
+        return 1
+    }
+    
+    /**
+     Helper function used by `UIPickerView` to return the number of planets in our
+     picker view (in our case, 8)
+     
+     - returns:
+     Total number of planets as an int
+     */
+    func pickerView(_ pickerView: UIPickerView,
+                    numberOfRowsInComponent component: Int) -> Int
+    {
+        return planets.count
+    }
+    
+    /**
+     Helper function used by `UIPickerView` to dynamically style the picker view element.
+     
+     - returns:
+     A `UIView` object representing a single item in the picker view
+     */
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int,
+                    forComponent component: Int, reusing view: UIView?) -> UIView
+    {
+        // Instantiate a new UILabel
+        var pickerLabel: UILabel? = (view as? UILabel)
+        if pickerLabel == nil
+        {
+            pickerLabel = UILabel()
+            // Set font, size, and color accordingly
+            pickerLabel?.font = UIFont(name: "Arvo", size: 15)
+            pickerLabel?.textColor = UIColor.white
+            pickerLabel?.textAlignment = .center
+        }
+        // Create the name for the label, and a border as well
+        pickerLabel?.text = planets[row]
+        pickerLabel?.layer.borderColor = UIColor.white.cgColor
+        pickerLabel?.layer.borderWidth = 3.0
+        
+        return pickerLabel!
+    }
+    
+    /**
+     Helper function used by `UIPickerView` to instantiate an action based on the selection
+     of the user
+     
+     - returns:
+     Void
+     */
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int,
+                    inComponent component: Int) {
+        pickerSelection = planets[row]
+        print(pickerSelection)
     }
     
     /**
@@ -176,79 +258,52 @@ class PlanetsViewController: UIViewController
         // Initialize stepperVal to be the new value of the new
         // value set by the stepper
         stepperVal = sender.value
+        // Switch statement to see what the value of `stepperVal` is, to update
+        // our `speedLabel` accordingly
+        updateSpeedLabel(stepperVal: stepperVal)
         // Once again, re-animate the planets
         animateThePlanets()
     }
     
     /**
-     Function instantiated when the Sun is tapped.
+     Simple helper function that instantiates a switch statement, and will determine
+     what the updated value of the `speedLabel` should be. For example, if the value of
+     the stepper is at 5, then we are at a current speed of 1x. If we are at 6, we have
+     applied a 2x multiplier, at 7 a 4x multiplier, and so forth.
+     
+     - parameters:
+     - stepperVal: The value of the current stepper, which will determine the multiplier
+                    we update our label by
+     
+     - returns:
+     Void
      */
-    @objc private func sunTapped() -> Void
+    func updateSpeedLabel(stepperVal: Double) -> Void
     {
-        print("Sun works")
-    }
-    
-    /**
-     Function instantiated when Mercury is tapped.
-     */
-    @objc private func mercuryTapped() -> Void
-    {
-        print("Mercury works")
-    }
-    
-    /**
-     Function instantiated when Venus is tapped.
-     */
-    @objc private func venusTapped() -> Void
-    {
-        print("Venus works")
-    }
-    
-    /**
-     Function instantiated when the Earth is tapped.
-     */
-    @objc private func earthTapped() -> Void
-    {
-        print("Earth works")
-    }
-    
-    /**
-     Function instantiated when Mars is tapped.
-     */
-    @objc private func marsTapped() -> Void
-    {
-        print("Mars works")
-    }
-    
-    /**
-     Function instantiated when Jupiter is tapped.
-     */
-    @objc private func jupiterTapped() -> Void
-    {
-        print("Jupiter works")
-    }
-    
-    /**
-     Function instantiated when Saturn is tapped.
-     */
-    @objc private func saturnTapped() -> Void
-    {
-        print("Saturn works")
-    }
-    
-    /**
-     Function instantiated when Uranus is tapped.
-     */
-    @objc private func uranusTapped() -> Void
-    {
-        print("Uranus works")
-    }
-    
-    /**
-     Function instantiated when Neptune is tapped.
-     */
-    @objc private func neptuneTapped() -> Void
-    {
-        print("Mercury works")
+        // The prefix, or beginning, of every string
+        let prefix: String = "Current Speed: "
+        switch(stepperVal)
+        {
+            case 1.0:
+                speedLabel.text = prefix + "0.0625x"
+            case 2.0:
+                speedLabel.text = prefix + "0.125x"
+            case 3.0:
+                speedLabel.text = prefix + "0.25x"
+            case 4.0:
+                speedLabel.text = prefix + "0.5x"
+            case 5.0:
+                speedLabel.text = prefix + "1.0x"
+            case 6.0:
+                speedLabel.text = prefix + "2.0x"
+            case 7.0:
+                speedLabel.text = prefix + "4.0x"
+            case 8.0:
+                speedLabel.text = prefix + "8.0x"
+            case 9.0:
+                speedLabel.text = prefix + "16.0x"
+            default:
+                speedLabel.text = prefix + "32.0x"
+        }
     }
 }

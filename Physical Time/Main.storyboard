@@ -17,6 +17,9 @@
         <array key="Blackout_Sunrise.ttf">
             <string>Blackout-Sunrise</string>
         </array>
+        <array key="SpaceMono-Regular.ttf">
+            <string>SpaceMono-Regular</string>
+        </array>
         <array key="digital-7.ttf">
             <string>Digital-7</string>
         </array>
@@ -114,16 +117,6 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                 <color key="highlightedColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uq-FN-vC5">
-                                <rect key="frame" x="120" y="486" width="135" height="118"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="118" id="dqK-8Z-fw7"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="continue"/>
-                                <connections>
-                                    <segue destination="0kC-eR-1mm" kind="show" id="HGW-Ot-53q"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mx-GM-VSp">
                                 <rect key="frame" x="332" y="623" width="27" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -132,15 +125,25 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                     <segue destination="jxi-5m-Sm2" kind="show" id="DAa-q3-Nlc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uq-FN-vC5">
+                                <rect key="frame" x="137" y="486" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="dqK-8Z-fw7"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="continue"/>
+                                <connections>
+                                    <segue destination="0kC-eR-1mm" kind="show" id="HGW-Ot-53q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6B0-Oq-Z2M" firstAttribute="trailing" secondItem="AO6-6T-89Q" secondAttribute="trailingMargin" id="3NT-Ay-bT0"/>
-                            <constraint firstItem="9uq-FN-vC5" firstAttribute="leading" secondItem="FJR-Dm-4UZ" secondAttribute="leading" constant="120" id="BEM-oz-Fhg"/>
+                            <constraint firstItem="9uq-FN-vC5" firstAttribute="leading" secondItem="FJR-Dm-4UZ" secondAttribute="leading" constant="137" id="BEM-oz-Fhg"/>
                             <constraint firstItem="6B0-Oq-Z2M" firstAttribute="leading" secondItem="AO6-6T-89Q" secondAttribute="leadingMargin" id="Kh3-sj-OMA"/>
                             <constraint firstItem="6B0-Oq-Z2M" firstAttribute="centerX" secondItem="9uq-FN-vC5" secondAttribute="centerX" id="WFW-dX-qkP"/>
                             <constraint firstItem="6B0-Oq-Z2M" firstAttribute="top" secondItem="FJR-Dm-4UZ" secondAttribute="top" constant="225" id="mub-Ug-UoG"/>
-                            <constraint firstItem="FJR-Dm-4UZ" firstAttribute="bottom" secondItem="9uq-FN-vC5" secondAttribute="bottom" constant="63" id="sFU-fd-q8d"/>
+                            <constraint firstItem="FJR-Dm-4UZ" firstAttribute="bottom" secondItem="9uq-FN-vC5" secondAttribute="bottom" constant="81" id="sFU-fd-q8d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FJR-Dm-4UZ"/>
                     </view>
@@ -213,8 +216,8 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                     <constraint firstAttribute="width" constant="19" id="b6H-n7-Afc"/>
                                 </constraints>
                             </imageView>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="bVt-gm-KF9">
-                                <rect key="frame" x="265" y="618" width="94" height="29"/>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minimumValue="1" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="bVt-gm-KF9">
+                                <rect key="frame" x="27" y="530" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.97557693570000004" green="0.99783924899999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -222,6 +225,39 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                     <action selector="planetarySpeed:" destination="dCN-7F-VDc" eventType="valueChanged" id="3jN-9h-J11"/>
                                 </connections>
                             </stepper>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFc-fp-GbW">
+                                <rect key="frame" x="19" y="587" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="back"/>
+                                <connections>
+                                    <segue destination="IBx-24-jiA" kind="show" id="ire-pZ-NqY"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IAS-ue-ZIP">
+                                <rect key="frame" x="104" y="573" width="159" height="89"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Orbit Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zB2-Re-Sj5">
+                                <rect key="frame" x="17" y="503" width="115" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SpaceMono-Regular" family="Space Mono" pointSize="17"/>
+                                <color key="textColor" red="0.97557693570000004" green="0.99783924899999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Planet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jrd-8J-gwF">
+                                <rect key="frame" x="152" y="553" width="63" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SpaceMono-Regular" family="Space Mono" pointSize="17"/>
+                                <color key="textColor" red="0.97557693570000004" green="0.99783924899999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92F-bQ-Ark">
+                                <rect key="frame" x="27" y="110" width="220" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SpaceMono-Regular" family="Space Mono" pointSize="17"/>
+                                <color key="textColor" red="0.97557693570000004" green="0.99783924899999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -265,7 +301,9 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                         <outlet property="mars" destination="grc-Wa-fay" id="EHl-Vo-Lt6"/>
                         <outlet property="mercury" destination="VG9-bs-Qpa" id="e4k-YP-h7b"/>
                         <outlet property="neptune" destination="QrC-Lh-7xe" id="oaB-6f-Yma"/>
+                        <outlet property="pickerView" destination="IAS-ue-ZIP" id="gQG-cn-iT3"/>
                         <outlet property="saturn" destination="3Kk-sI-I8r" id="kVi-gQ-3Lm"/>
+                        <outlet property="speedLabel" destination="92F-bQ-Ark" id="hA3-Ea-URm"/>
                         <outlet property="uranus" destination="gd4-vJ-oXX" id="yUx-qX-Nwz"/>
                         <outlet property="venus" destination="Ruh-mT-pbH" id="iGa-as-gQC"/>
                     </connections>
@@ -319,7 +357,7 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F65-iE-3XY">
-                                <rect key="frame" x="42" y="540" width="99" height="96"/>
+                                <rect key="frame" x="50" y="547" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Menu" image="menu">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -329,7 +367,7 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9T-YI-puD">
-                                <rect key="frame" x="222" y="540" width="110" height="96"/>
+                                <rect key="frame" x="243" y="547" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Features" image="back">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -356,7 +394,7 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkt-m4-49j" userLabel="Menu Button">
-                                <rect key="frame" x="42" y="531" width="99" height="96"/>
+                                <rect key="frame" x="49" y="531" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Menu" image="menu">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -366,7 +404,7 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaV-5g-kVi">
-                                <rect key="frame" x="222" y="531" width="110" height="96"/>
+                                <rect key="frame" x="234" y="531" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Features" image="back">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -754,9 +792,9 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eng-8Z-qzf">
-                                <rect key="frame" x="139" y="520" width="87" height="86"/>
+                                <rect key="frame" x="142" y="521" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="86" id="wVZ-C1-MD1"/>
+                                    <constraint firstAttribute="height" constant="80" id="wVZ-C1-MD1"/>
                                 </constraints>
                                 <state key="normal" title="Clock" image="back">
                                     <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -811,12 +849,12 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                             <constraint firstItem="7pW-nK-Nh9" firstAttribute="top" secondItem="nxk-2p-V5z" secondAttribute="bottom" constant="24" id="Wi6-Gq-MzJ"/>
                             <constraint firstItem="nxk-2p-V5z" firstAttribute="top" secondItem="MDg-V0-r0O" secondAttribute="bottom" constant="31" id="Xwb-92-lXY"/>
                             <constraint firstItem="nD8-hM-ZVf" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="bdw-Uo-FhF"/>
-                            <constraint firstItem="eng-8Z-qzf" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="139" id="cbD-Wh-8gS"/>
+                            <constraint firstItem="eng-8Z-qzf" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="142" id="cbD-Wh-8gS"/>
                             <constraint firstItem="sXA-rW-Vyp" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="100" id="cxt-Aw-6Je"/>
                             <constraint firstItem="MDg-V0-r0O" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="dB4-jX-AUw"/>
                             <constraint firstItem="O4a-gb-Tzj" firstAttribute="top" secondItem="uVl-6F-gKb" secondAttribute="bottom" constant="157" id="fFL-M0-WHi"/>
                             <constraint firstItem="OeN-Tk-nvx" firstAttribute="bottom" secondItem="abD-Qu-3Qu" secondAttribute="bottom" constant="20" id="fYW-Fe-Fz9"/>
-                            <constraint firstItem="abD-Qu-3Qu" firstAttribute="top" secondItem="eng-8Z-qzf" secondAttribute="bottom" constant="11" id="gHW-tn-X0o"/>
+                            <constraint firstItem="abD-Qu-3Qu" firstAttribute="top" secondItem="eng-8Z-qzf" secondAttribute="bottom" constant="15" id="gHW-tn-X0o"/>
                             <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="O4a-gb-Tzj" secondAttribute="trailing" constant="56" id="hR7-q9-gbY"/>
                             <constraint firstItem="O4a-gb-Tzj" firstAttribute="leading" secondItem="abD-Qu-3Qu" secondAttribute="trailing" constant="19" id="jWp-7g-4F4"/>
                             <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="MDg-V0-r0O" secondAttribute="trailing" constant="56" id="lHz-In-7NR"/>
@@ -829,8 +867,8 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                             <constraint firstItem="uVl-6F-gKb" firstAttribute="top" secondItem="7pW-nK-Nh9" secondAttribute="bottom" constant="28" id="thJ-NF-61o"/>
                             <constraint firstItem="5xI-D5-l5x" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="uY2-1e-JHx"/>
                             <constraint firstItem="MDg-V0-r0O" firstAttribute="top" secondItem="nD8-hM-ZVf" secondAttribute="bottom" constant="30" id="uaV-26-vKo"/>
-                            <constraint firstItem="eng-8Z-qzf" firstAttribute="top" secondItem="uVl-6F-gKb" secondAttribute="bottom" constant="60" id="vBO-yy-TGr"/>
-                            <constraint firstItem="sXA-rW-Vyp" firstAttribute="top" secondItem="eng-8Z-qzf" secondAttribute="bottom" constant="11" id="x9F-Se-2bU"/>
+                            <constraint firstItem="eng-8Z-qzf" firstAttribute="top" secondItem="uVl-6F-gKb" secondAttribute="bottom" constant="61" id="vBO-yy-TGr"/>
+                            <constraint firstItem="sXA-rW-Vyp" firstAttribute="top" secondItem="eng-8Z-qzf" secondAttribute="bottom" constant="15" id="x9F-Se-2bU"/>
                             <constraint firstItem="OeN-Tk-nvx" firstAttribute="bottom" secondItem="O4a-gb-Tzj" secondAttribute="bottom" constant="20" id="xzY-dn-gjp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OeN-Tk-nvx"/>
@@ -968,9 +1006,8 @@ Enter Physical Time, an application that lets you redefine any clock standard an
         <image name="venus" width="551" height="551"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FXV-pt-3df"/>
         <segue reference="oUo-OU-kSF"/>
-        <segue reference="jp2-E5-rWh"/>
-        <segue reference="yLd-b5-dd9"/>
+        <segue reference="HGW-Ot-53q"/>
+        <segue reference="ire-pZ-NqY"/>
     </inferredMetricsTieBreakers>
 </document>
