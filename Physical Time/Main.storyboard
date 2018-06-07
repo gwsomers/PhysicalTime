@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zcv-aI-EVX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zcv-aI-EVX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -16,6 +16,9 @@
         </array>
         <array key="Blackout_Sunrise.ttf">
             <string>Blackout-Sunrise</string>
+        </array>
+        <array key="digital-7.ttf">
+            <string>Digital-7</string>
         </array>
     </customFonts>
     <scenes>
@@ -159,43 +162,13 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="Lui-jB-9rS">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="Lui-jB-9rS" userLabel="Sun">
                                 <rect key="frame" x="162" y="308" width="50" height="50"/>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="OWR-T4-QIv" appends="YES" id="t5w-HK-x6U"/>
-                                </connections>
-                            </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jupiter" translatesAutoresizingMaskIntoConstraints="NO" id="87C-Px-DaM">
-                                <rect key="frame" x="87" y="321" width="25" height="25"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="msf-3T-LUN" appends="YES" id="uES-It-1Vm"/>
-                                </connections>
-                            </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saturn" translatesAutoresizingMaskIntoConstraints="NO" id="3Kk-sI-I8r">
-                                <rect key="frame" x="50" y="321" width="40" height="25"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="twn-oO-fes" appends="YES" id="8Mo-UI-UvD"/>
-                                </connections>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mercury" translatesAutoresizingMaskIntoConstraints="NO" id="VG9-bs-Qpa">
                                 <rect key="frame" x="154" y="328" width="10" height="10"/>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="atE-3Q-dxQ" appends="YES" id="Mx6-9O-5wm"/>
-                                </connections>
-                            </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mars" translatesAutoresizingMaskIntoConstraints="NO" id="grc-Wa-fay">
-                                <rect key="frame" x="111" y="329" width="10" height="10"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="10" id="fM2-JC-4WZ"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="e3f-yS-Kxx" appends="YES" id="ItC-xj-lpG"/>
-                                </connections>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="venus" translatesAutoresizingMaskIntoConstraints="NO" id="Ruh-mT-pbH">
                                 <rect key="frame" x="138" y="326" width="15" height="15"/>
@@ -203,9 +176,6 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="r0C-Ii-nbd"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="mU2-Wa-xze" appends="YES" id="2Dg-m6-PPr"/>
-                                </connections>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earth" translatesAutoresizingMaskIntoConstraints="NO" id="u86-Ld-4b1">
                                 <rect key="frame" x="122" y="326" width="15" height="15"/>
@@ -213,9 +183,21 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="m9c-HT-phH"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="ba2-HV-cBB" appends="YES" id="7et-5V-u6X"/>
-                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jupiter" translatesAutoresizingMaskIntoConstraints="NO" id="87C-Px-DaM">
+                                <rect key="frame" x="87" y="321" width="25" height="25"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saturn" translatesAutoresizingMaskIntoConstraints="NO" id="3Kk-sI-I8r">
+                                <rect key="frame" x="50" y="321" width="40" height="25"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mars" translatesAutoresizingMaskIntoConstraints="NO" id="grc-Wa-fay">
+                                <rect key="frame" x="111" y="329" width="10" height="10"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="fM2-JC-4WZ"/>
+                                </constraints>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uranus" translatesAutoresizingMaskIntoConstraints="NO" id="gd4-vJ-oXX">
                                 <rect key="frame" x="33" y="324" width="25" height="20"/>
@@ -223,9 +205,6 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="h4C-Is-3Rj"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="EMg-Hh-q9d" appends="YES" id="Blg-JC-lJj"/>
-                                </connections>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="neptune" translatesAutoresizingMaskIntoConstraints="NO" id="QrC-Lh-7xe">
                                 <rect key="frame" x="16" y="324" width="19" height="20"/>
@@ -233,10 +212,16 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                 <constraints>
                                     <constraint firstAttribute="width" constant="19" id="b6H-n7-Afc"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="7zr-Sj-Ic1" appends="YES" id="Vqz-Rx-OtO"/>
-                                </connections>
                             </imageView>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="bVt-gm-KF9">
+                                <rect key="frame" x="265" y="618" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.97557693570000004" green="0.99783924899999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="planetarySpeed:" destination="dCN-7F-VDc" eventType="valueChanged" id="3jN-9h-J11"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -276,69 +261,16 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                     </view>
                     <connections>
                         <outlet property="earth" destination="u86-Ld-4b1" id="moT-Xt-2Ra"/>
-                        <outlet property="earthTap" destination="ba2-HV-cBB" id="SkN-Ab-bJ0"/>
                         <outlet property="jupiter" destination="87C-Px-DaM" id="IKx-uA-WV6"/>
-                        <outlet property="jupiterTap" destination="mU2-Wa-xze" id="WV2-CC-oIE"/>
                         <outlet property="mars" destination="grc-Wa-fay" id="EHl-Vo-Lt6"/>
-                        <outlet property="marsTap" destination="e3f-yS-Kxx" id="0ej-YG-7aR"/>
                         <outlet property="mercury" destination="VG9-bs-Qpa" id="e4k-YP-h7b"/>
-                        <outlet property="mercuryTap" destination="atE-3Q-dxQ" id="t8n-hp-sCd"/>
                         <outlet property="neptune" destination="QrC-Lh-7xe" id="oaB-6f-Yma"/>
-                        <outlet property="neptuneTap" destination="7zr-Sj-Ic1" id="vlH-ZW-tQo"/>
                         <outlet property="saturn" destination="3Kk-sI-I8r" id="kVi-gQ-3Lm"/>
-                        <outlet property="saturnTap" destination="twn-oO-fes" id="7NI-lj-Ff1"/>
                         <outlet property="uranus" destination="gd4-vJ-oXX" id="yUx-qX-Nwz"/>
-                        <outlet property="uranusTap" destination="EMg-Hh-q9d" id="kmh-WG-CeM"/>
                         <outlet property="venus" destination="Ruh-mT-pbH" id="iGa-as-gQC"/>
-                        <outlet property="venusTap" destination="mU2-Wa-xze" id="4Di-oI-IEk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RpW-ve-Wbm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="atE-3Q-dxQ" userLabel="Mercury Tap Recognizer">
-                    <connections>
-                        <action selector="mercuryTapped:" destination="dCN-7F-VDc" id="GRH-GP-wiS"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="7zr-Sj-Ic1" userLabel="Neptune Tap Recognizer">
-                    <connections>
-                        <action selector="neptuneTapped:" destination="dCN-7F-VDc" id="1vc-gJ-WMh"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="OWR-T4-QIv" userLabel="Sun Tap Recognizer">
-                    <connections>
-                        <action selector="sunTapped:" destination="dCN-7F-VDc" id="WJG-bJ-NJ3"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="ba2-HV-cBB" userLabel="Earth Tap Recognizer">
-                    <connections>
-                        <action selector="earthTapped:" destination="dCN-7F-VDc" id="ctK-dT-tGm"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="mU2-Wa-xze" userLabel="Venus Tap Recognizer">
-                    <connections>
-                        <action selector="venusTapped:" destination="dCN-7F-VDc" id="jlw-6D-q7Z"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="msf-3T-LUN" userLabel="Jupiter Tap Recognizer">
-                    <connections>
-                        <action selector="jupiterTapped:" destination="dCN-7F-VDc" id="Xan-p3-Jor"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="EMg-Hh-q9d" userLabel="Uranus Tap Recognizer">
-                    <connections>
-                        <action selector="uranusTapped:" destination="dCN-7F-VDc" id="Nwm-y5-FCU"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="twn-oO-fes" userLabel="Saturn Tap Recognizer">
-                    <connections>
-                        <action selector="saturnTapped:" destination="dCN-7F-VDc" id="yKl-Yv-qfB"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="e3f-yS-Kxx" userLabel="Mars Tap Recognizer">
-                    <connections>
-                        <action selector="marsTapped:" destination="dCN-7F-VDc" id="SRi-Ce-KLy"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-2676" y="1435.2323838080961"/>
         </scene>
@@ -848,7 +780,7 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXA-rW-Vyp">
-                                <rect key="frame" x="60" y="617" width="46" height="30"/>
+                                <rect key="frame" x="60" y="616" width="46" height="30"/>
                                 <state key="normal" title="Export"/>
                                 <connections>
                                     <action selector="export:" destination="sgD-8R-5H3" eventType="touchUpInside" id="0vm-Tt-06j"/>
@@ -927,63 +859,49 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjz-C1-Uro">
-                                <rect key="frame" x="164.5" y="527" width="46" height="33"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="Menu">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjz-C1-Uro">
+                                <rect key="frame" x="60" y="573" width="66" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Menu" image="menu">
+                                    <color key="titleColor" red="0.97557693570000004" green="0.99783924899999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="0kC-eR-1mm" kind="show" id="jp2-E5-rWh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5q-75-Z4g">
-                                <rect key="frame" x="151" y="568" width="73" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The next lunar eclipse will occur in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e18-l2-UCd">
+                                <rect key="frame" x="36" y="390" width="291" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="Features">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
+                                <color key="textColor" red="0.97557693570000004" green="0.99783924899999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5YR-st-gPJ">
+                                <rect key="frame" x="31" y="468" width="298" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="94"/>
+                                <color key="textColor" red="0.97557693570000004" green="0.99783924899999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzy-du-nTq">
+                                <rect key="frame" x="35" y="419" width="292" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="28"/>
+                                <color key="textColor" red="0.97557693570000004" green="0.99783924899999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5q-75-Z4g">
+                                <rect key="frame" x="240" y="573" width="66" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Features" image="back">
+                                    <color key="titleColor" red="0.97557693570000004" green="0.99783924899999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="IBx-24-jiA" kind="show" id="yLd-b5-dd9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lunar Eclipse" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmQ-9E-0GJ">
-                                <rect key="frame" x="120" y="26" width="145" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Next Lunar Eclipse:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e18-l2-UCd">
-                                <rect key="frame" x="109" y="390" width="157" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5YR-st-gPJ">
-                                <rect key="frame" x="72" y="468" width="232" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzy-du-nTq">
-                                <rect key="frame" x="41" y="419" width="292" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="fmQ-9E-0GJ" firstAttribute="leading" secondItem="TYH-Ro-Z7m" secondAttribute="leading" constant="115" id="BMk-TZ-iZO"/>
-                            <constraint firstItem="fmQ-9E-0GJ" firstAttribute="centerX" secondItem="e18-l2-UCd" secondAttribute="centerX" id="Fjk-nP-MC1"/>
-                            <constraint firstItem="fmQ-9E-0GJ" firstAttribute="centerX" secondItem="EHR-sk-cqG" secondAttribute="centerX" id="RKu-Ks-EAs"/>
-                            <constraint firstItem="Wjz-C1-Uro" firstAttribute="leading" secondItem="TYH-Ro-Z7m" secondAttribute="leading" constant="164.5" id="SBV-CP-O0W"/>
-                            <constraint firstItem="TYH-Ro-Z7m" firstAttribute="trailing" secondItem="Wjz-C1-Uro" secondAttribute="trailing" constant="164.5" id="dgh-v4-oUP"/>
-                            <constraint firstItem="fmQ-9E-0GJ" firstAttribute="top" secondItem="TYH-Ro-Z7m" secondAttribute="top" constant="6" id="k2M-dr-JGd"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TYH-Ro-Z7m"/>
                     </view>
                     <connections>
@@ -1030,7 +948,7 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-495.19999999999999" y="812.74362818590714"/>
+            <point key="canvasLocation" x="-372" y="781"/>
         </scene>
     </scenes>
     <resources>
@@ -1050,7 +968,8 @@ Enter Physical Time, an application that lets you redefine any clock standard an
         <image name="venus" width="551" height="551"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3Rf-nH-Phd"/>
+        <segue reference="FXV-pt-3df"/>
+        <segue reference="oUo-OU-kSF"/>
         <segue reference="jp2-E5-rWh"/>
         <segue reference="yLd-b5-dd9"/>
     </inferredMetricsTieBreakers>

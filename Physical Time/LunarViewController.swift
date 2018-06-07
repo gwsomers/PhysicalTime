@@ -71,10 +71,26 @@ class LunarViewController: UIViewController {
     }
     
     func timeString2(time:TimeInterval) -> String {
+        
         let months = Int(time) / (3600 * 24 * 30) % 12
         let days = Int(time) / (3600 * 24) % 30
         
-        return String(format: "Month(s): %i  Day(s): %i", months, days);
+        if (months == 1 && days == 1)
+        {
+            return "\(months) month and \(days) day"
+        }
+        else if (months == 1)
+        {
+            return "\(months) month and \(days) days"
+        }
+        else if (days == 1)
+        {
+            return "\(months) months and \(days) day"
+        }
+        else
+        {
+            return "\(months) months and \(days) days"
+        }
     }
     
     func getMoonData() -> Dictionary<String, Double> {

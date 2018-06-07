@@ -24,21 +24,14 @@ class PlanetsViewController: UIViewController
     @IBOutlet weak var saturn: UIImageView!
     @IBOutlet weak var uranus: UIImageView!
     @IBOutlet weak var neptune: UIImageView!
-    // The associated UITapGestureRecognizer objects with the items
-    @IBOutlet var mercuryTap: UITapGestureRecognizer!
-    @IBOutlet var venusTap: UITapGestureRecognizer!
-    @IBOutlet var earthTap: UITapGestureRecognizer!
-    @IBOutlet var marsTap: UITapGestureRecognizer!
-    @IBOutlet var jupiterTap: UITapGestureRecognizer!
-    @IBOutlet var saturnTap: UITapGestureRecognizer!
-    @IBOutlet var uranusTap: UITapGestureRecognizer!
-    @IBOutlet var neptuneTap: UITapGestureRecognizer!
     
     // One revolution, in radians
     let revolutionInRadians: CGFloat = 2.0 * .pi
     // The "duration" of one earth year, where all other planets will use this value as a ratio for their
     // respective years
-    let oneEarthYear: Double = 5.0
+    var oneEarthYear: Double = 1.0
+    // The intitial value of the stepper, to be used in `planetarySpeed()`
+    var stepperVal: Double = 1.0
     
     /**
      On load, statically define the background and instantiate the Hero
@@ -73,24 +66,39 @@ class PlanetsViewController: UIViewController
     override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
-        
+        // Animating the planets for the first time
+        animateThePlanets()
+    }
+    
+    /**
+     This function will instantiate the animating of all planets. It is
+     modularized in such a fashion that it may be called when the class
+     variable, `oneEarthYear`, is increased or decreased by the stepper
+     in the app.
+     
+     - returns:
+     nil
+     */
+    func animateThePlanets() -> Void
+    {
         // Animating all the planets (see docstrings for details)
         animatePlanet(yearRatio: 0.2410136986, radius: distanceFromSun(planet: mercury),
-                      planet: mercury, planetTap: mercuryTap)
+                      planet: mercury)
+        
         animatePlanet(yearRatio: 0.6156164384, radius: distanceFromSun(planet: venus),
-                      planet: venus, planetTap: venusTap)
+                      planet: venus)
         animatePlanet(yearRatio: 1.0, radius: distanceFromSun(planet: earth),
-                      planet: earth, planetTap: earthTap)
+                      planet: earth)
         animatePlanet(yearRatio: 1.88, radius: distanceFromSun(planet: mars),
-                      planet: mars, planetTap: marsTap)
+                      planet: mars)
         animatePlanet(yearRatio: 11.86, radius: distanceFromSun(planet: jupiter),
-                      planet: jupiter, planetTap: jupiterTap)
+                      planet: jupiter)
         animatePlanet(yearRatio: 29.46, radius: distanceFromSun(planet: saturn),
-                      planet: saturn, planetTap: saturnTap)
+                      planet: saturn)
         animatePlanet(yearRatio: 84.01, radius: distanceFromSun(planet: uranus),
-                      planet: uranus, planetTap: uranusTap)
+                      planet: uranus)
         animatePlanet(yearRatio: 164.79, radius: distanceFromSun(planet: neptune),
-                      planet: neptune, planetTap: neptuneTap)
+                      planet: neptune)
     }
     
     /**
@@ -115,13 +123,11 @@ class PlanetsViewController: UIViewController
      - yearRatio: The ratio of the year of the specified planet, relative to Earth
      - radius: The position of the "planet" relative to the center of the screen, or the "Sun"
      - planet: The `UIImageView` for the given planet
-     - planetTap: The corresponding `UITapGestureRecognizer` object that corresponds with its
-        associated "planet" `UIImageView` (we must set its path accordingly)
      
      - returns:
      nil
      */
-    func animatePlanet(yearRatio: Double, radius: CGFloat, planet: UIImageView, planetTap: UITapGestureRecognizer)
+    func animatePlanet(yearRatio: Double, radius: CGFloat, planet: UIImageView) -> Void
     {
         // Specified path for the respective planet
         let path: UIBezierPath = UIBezierPath(arcCenter: CGPoint(x: view.frame.midX, y: view.frame.midY),
@@ -144,14 +150,40 @@ class PlanetsViewController: UIViewController
         animation.path = path.cgPath
         // Add the respective layer for the specified planet
         planet.layer.add(animation, forKey: nil)
-        // Set the path of the UITapGestureRecognizer corresponding to the planet
-        planetTap.accessibilityPath = path
+    }
+    
+    /**
+     This is the case where the user chooses to speed up or speed down the planetary
+     speed via the stepper, and thus we must accelerate the value of 
+     
+     - returns:
+     nil
+     */
+    @IBAction func planetarySpeed(_ sender: UIStepper)
+    {
+        // If the sender's value is greater than the initial
+        // value recorded in the class variable, then make
+        // the value of one Earth year greater. If not, then
+        // make it less, or "faster"
+        if sender.value < stepperVal
+        {
+            oneEarthYear = oneEarthYear * 2.0
+        }
+        else
+        {
+            oneEarthYear = oneEarthYear / 2.0
+        }
+        // Initialize stepperVal to be the new value of the new
+        // value set by the stepper
+        stepperVal = sender.value
+        // Once again, re-animate the planets
+        animateThePlanets()
     }
     
     /**
      Function instantiated when the Sun is tapped.
      */
-    @IBAction func sunTapped(_ sender: UITapGestureRecognizer)
+    @objc private func sunTapped() -> Void
     {
         print("Sun works")
     }
@@ -159,61 +191,63 @@ class PlanetsViewController: UIViewController
     /**
      Function instantiated when Mercury is tapped.
      */
-    @IBAction func mercuryTapped(_ sender: UITapGestureRecognizer)
+    @objc private func mercuryTapped() -> Void
     {
+        print("Mercury works")
     }
     
     /**
      Function instantiated when Venus is tapped.
      */
-    @IBAction func venusTapped(_ sender: UITapGestureRecognizer)
+    @objc private func venusTapped() -> Void
     {
-        
+        print("Venus works")
     }
     
     /**
      Function instantiated when the Earth is tapped.
      */
-    @IBAction func earthTapped(_ sender: UITapGestureRecognizer)
+    @objc private func earthTapped() -> Void
     {
+        print("Earth works")
     }
     
     /**
      Function instantiated when Mars is tapped.
      */
-    @IBAction func marsTapped(_ sender: UITapGestureRecognizer)
+    @objc private func marsTapped() -> Void
     {
-        
+        print("Mars works")
     }
     
     /**
      Function instantiated when Jupiter is tapped.
      */
-    @IBAction func jupiterTapped(_ sender: UITapGestureRecognizer)
+    @objc private func jupiterTapped() -> Void
     {
-        
+        print("Jupiter works")
     }
     
     /**
      Function instantiated when Saturn is tapped.
      */
-    @IBAction func saturnTapped(_ sender: UITapGestureRecognizer)
+    @objc private func saturnTapped() -> Void
     {
-        
+        print("Saturn works")
     }
     
     /**
      Function instantiated when Uranus is tapped.
      */
-    @IBAction func uranusTapped(_ sender: UITapGestureRecognizer)
+    @objc private func uranusTapped() -> Void
     {
-        
+        print("Uranus works")
     }
     
     /**
      Function instantiated when Neptune is tapped.
      */
-    @IBAction func neptuneTapped(_ sender: UITapGestureRecognizer)
+    @objc private func neptuneTapped() -> Void
     {
         print("Mercury works")
     }
