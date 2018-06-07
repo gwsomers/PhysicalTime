@@ -42,7 +42,6 @@ class PlanetsViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     // The intitial value of the stepper, to be used in `planetarySpeed()`
     var stepperVal: Double = 1.0
     // The current planet value (Mercury is the default)
-    var pickerSelection: String = "Mercury"
     
     /**
      On load, statically define the background and instantiate the Hero
@@ -69,6 +68,9 @@ class PlanetsViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         
         // Setting the background programmatically
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: "space.png")!)
+        
+        // Reset our singleton variables
+        Singletons.pickerSelection = "Mercury"
         
         // Set the text of our speed label accordingly
         speedLabel.text = "Current Speed: 1.0x"
@@ -147,9 +149,9 @@ class PlanetsViewController: UIViewController, UIPickerViewDataSource, UIPickerV
      Void
      */
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int,
-                    inComponent component: Int) {
-        pickerSelection = planets[row]
-        print(pickerSelection)
+                    inComponent component: Int)
+    {
+        Singletons.pickerSelection = planets[row]
     }
     
     /**
@@ -232,6 +234,29 @@ class PlanetsViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         animation.path = path.cgPath
         // Add the respective layer for the specified planet
         planet.layer.add(animation, forKey: nil)
+    }
+    
+    /**
+     When the "Go" button is pressed, this function will instantiate the child view controller,
+     `PlanetsPopUpViewController`.
+     
+     - parameters:
+     - sender: The event where the button is pressed
+     
+     - returns:
+     Vod
+     */
+    @IBAction func showPopup(_ sender: UIButton)
+    {
+        // Declare `popupViewController` to represent the `PlanetsPopUpViewController`
+        let popupViewController: UIViewController = UIStoryboard(name: "Main", bundle: nil)
+                                    .instantiateViewController(withIdentifier: "planetsPopUp")
+                                    as! PlanetsPopUpViewController
+        // Declare `popupViewController` to be a child of this view controller
+        self.addChildViewController(popupViewController)
+        popupViewController.view.frame = self.view.frame
+        self.view.addSubview(popupViewController.view)
+        popupViewController.didMove(toParentViewController: self)
     }
     
     /**

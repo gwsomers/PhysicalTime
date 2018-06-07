@@ -6,9 +6,6 @@
  */
 import UIKit
 
-/**
- TODO: Class description here
- */
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

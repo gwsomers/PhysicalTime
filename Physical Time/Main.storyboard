@@ -252,12 +252,20 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92F-bQ-Ark">
-                                <rect key="frame" x="27" y="110" width="220" height="24"/>
+                                <rect key="frame" x="27" y="110" width="321" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="SpaceMono-Regular" family="Space Mono" pointSize="17"/>
                                 <color key="textColor" red="0.97557693570000004" green="0.99783924899999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJm-5A-C4X">
+                                <rect key="frame" x="299" y="587" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="go"/>
+                                <connections>
+                                    <action selector="showPopup:" destination="dCN-7F-VDc" eventType="touchUpInside" id="sfc-2K-aMJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -323,15 +331,18 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0D-Ic-tQ4">
                                 <rect key="frame" x="67" y="222" width="241" height="223"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Hello" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pup-JG-Wxj">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pup-JG-Wxj">
                                         <rect key="frame" x="4" y="8" width="233" height="207"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="12"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" name="SpaceMono-Regular" family="Space Mono" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="uFT-YE-25v" appends="YES" id="fyR-kp-cv6"/>
+                                        </connections>
                                     </textView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.048144035529999997" green="0.034079657889999997" blue="0.018921914929999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.97557693570000004" green="0.99783924899999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -345,6 +356,11 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="py6-VK-45G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="uFT-YE-25v">
+                    <connections>
+                        <action selector="closePopup:" destination="Oox-CW-LU5" id="0pq-Cg-7UN"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-2501.5999999999999" y="2134.1829085457275"/>
         </scene>
@@ -993,6 +1009,7 @@ Enter Physical Time, an application that lets you redefine any clock standard an
         <image name="back" width="2000" height="2000"/>
         <image name="continue" width="768" height="768"/>
         <image name="earth" width="512" height="512"/>
+        <image name="go" width="2000" height="2000"/>
         <image name="info" width="624" height="624"/>
         <image name="jupiter" width="1368" height="1416"/>
         <image name="mars" width="512" height="512"/>

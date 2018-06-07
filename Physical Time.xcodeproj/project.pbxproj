@@ -36,6 +36,7 @@
 		B8BA2D5720B82CA40083DE3A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA2D5620B82CA40083DE3A /* StatsViewController.swift */; };
 		B8BA2D5920B8365C0083DE3A /* Arvo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8BA2D5820B8365B0083DE3A /* Arvo-Regular.ttf */; };
 		B8FD369D20C94AA600FCFB38 /* SpaceMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8FD369C20C94AA500FCFB38 /* SpaceMono-Regular.ttf */; };
+		B8FD369F20C955D100FCFB38 /* Singletons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FD369E20C955D100FCFB38 /* Singletons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		B8BA2D5620B82CA40083DE3A /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		B8BA2D5820B8365B0083DE3A /* Arvo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Arvo-Regular.ttf"; path = "Physical Time/fonts/Arvo-Regular.ttf"; sourceTree = SOURCE_ROOT; };
 		B8FD369C20C94AA500FCFB38 /* SpaceMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceMono-Regular.ttf"; sourceTree = "<group>"; };
+		B8FD369E20C955D100FCFB38 /* Singletons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singletons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				5DF847372038F4F5007E7322 /* AppDelegate.swift */,
+				B8FD369E20C955D100FCFB38 /* Singletons.swift */,
 				5DF8473E2038F4F5007E7322 /* Assets.xcassets */,
 				5D4ECDA2209CDBA1000F75E6 /* ChangeBackground.swift */,
 				5D3BC88420453FD100DA51F3 /* ClockFace.swift */,
@@ -286,6 +289,7 @@
 				5DF847382038F4F5007E7322 /* AppDelegate.swift in Sources */,
 				9CF4710820B3422700076239 /* InOut.swift in Sources */,
 				5D16BBCF20B6883100E0252F /* WadokeiFace.swift in Sources */,
+				B8FD369F20C955D100FCFB38 /* Singletons.swift in Sources */,
 				B8786A4620C0F4CA0043C887 /* WelcomeInfoViewController.swift in Sources */,
 				5D83A5392055C34100BFAE08 /* SettingsViewController.swift in Sources */,
 				5D4ECDA1209CD90B000F75E6 /* FeatureViewController.swift in Sources */,
