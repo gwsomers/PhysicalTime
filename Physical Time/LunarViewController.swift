@@ -23,6 +23,7 @@ class LunarViewController: UIViewController {
 
     @IBOutlet weak var countdownLabel: UILabel!
     
+    @IBOutlet weak var currentMoonPhase: UILabel!
     var seconds = 0;
     var timer = Timer();
     let moonPosObj = SwiftySuncalc();
@@ -105,7 +106,6 @@ class LunarViewController: UIViewController {
         dict = getMoonData()
         //print(dict["phase"]!);
         var phase = dict["phase"];
-        phase = 0.6;
         
         var someImage = UIImage();
         var someImageView = UIImageView();
@@ -114,34 +114,42 @@ class LunarViewController: UIViewController {
         case let x where x! <= 0.125:
             someImage = UIImage(named: new_moon)!;
             someImageView = UIImageView(image: someImage);
+            currentMoonPhase.text = "New Moon"
             break;
         case let x where x! >= 0.126 && x! <= 0.25:
             someImage = UIImage(named: waxing_crescent)!;
             someImageView = UIImageView(image: someImage);
+            currentMoonPhase.text = "Waxing Crescent"
             break;
         case let x where x! >= 0.251 && x! <= 0.375:
             someImage = UIImage(named: first_quarter)!;
             someImageView = UIImageView(image: someImage);
+            currentMoonPhase.text = "First Quarter"
             break;
         case let x where x! >= 0.376 && x! <= 0.50:
             someImage = UIImage(named: waxing_gibbous)!;
             someImageView = UIImageView(image: someImage);
+            currentMoonPhase.text = "Waxing Gibbous"
             break;
         case let x where x! >= 0.51 && x! <= 0.625:
             someImage = UIImage(named: full_moon)!;
             someImageView = UIImageView(image: someImage);
+            currentMoonPhase.text = "Full Moon"
             break;
         case let x where x! >= 0.626 && x! <= 0.750:
             someImage = UIImage(named: waning_gibbous)!;
             someImageView = UIImageView(image: someImage);
+            currentMoonPhase.text = "Waning Gibbous"
             break;
         case let x where x! >= 0.751 && x! <= 0.875:
             someImage = UIImage(named: third_quarter)!;
             someImageView = UIImageView(image: someImage);
+            currentMoonPhase.text = "Third Quarter"
             break;
         case let x where x! >= 0.876 && x! <= 1:
             someImage = UIImage(named: waning_crescent)!;
             someImageView = UIImageView(image: someImage);
+            currentMoonPhase.text = "Waning Crescent"
             break;
         default:
             print("error");

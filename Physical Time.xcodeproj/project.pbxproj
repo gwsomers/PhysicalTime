@@ -30,7 +30,6 @@
 		B86D1DEE20B7AD5200892FA2 /* Blackout_Sunrise.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B86D1DED20B7AD5100892FA2 /* Blackout_Sunrise.ttf */; };
 		B8786A4620C0F4CA0043C887 /* WelcomeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8786A4520C0F4CA0043C887 /* WelcomeInfoViewController.swift */; };
 		B8786A4820C0F6AC0043C887 /* MenuInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8786A4720C0F6AC0043C887 /* MenuInfoViewController.swift */; };
-		B8786A4A20C0F7270043C887 /* FeatureInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8786A4920C0F7270043C887 /* FeatureInfoViewController.swift */; };
 		B890323620C8F03300DF66E5 /* digital-7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B890323520C8F03300DF66E5 /* digital-7.ttf */; };
 		B8BA2D5520B7F72F0083DE3A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA2D5420B7F72F0083DE3A /* UIViewExtension.swift */; };
 		B8BA2D5720B82CA40083DE3A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA2D5620B82CA40083DE3A /* StatsViewController.swift */; };
@@ -70,7 +69,6 @@
 		B86D1DED20B7AD5100892FA2 /* Blackout_Sunrise.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Blackout_Sunrise.ttf; path = "Physical Time/fonts/Blackout_Sunrise.ttf"; sourceTree = SOURCE_ROOT; };
 		B8786A4520C0F4CA0043C887 /* WelcomeInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInfoViewController.swift; sourceTree = "<group>"; };
 		B8786A4720C0F6AC0043C887 /* MenuInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInfoViewController.swift; sourceTree = "<group>"; };
-		B8786A4920C0F7270043C887 /* FeatureInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureInfoViewController.swift; sourceTree = "<group>"; };
 		B890323520C8F03300DF66E5 /* digital-7.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7.ttf"; sourceTree = "<group>"; };
 		B8BA2D5420B7F72F0083DE3A /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		B8BA2D5620B82CA40083DE3A /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
@@ -117,7 +115,6 @@
 				5DF8473E2038F4F5007E7322 /* Assets.xcassets */,
 				5D4ECDA2209CDBA1000F75E6 /* ChangeBackground.swift */,
 				5D3BC88420453FD100DA51F3 /* ClockFace.swift */,
-				B8786A4920C0F7270043C887 /* FeatureInfoViewController.swift */,
 				5D4ECDA0209CD90B000F75E6 /* FeatureViewController.swift */,
 				B86D1DEC20B7AD2000892FA2 /* fonts */,
 				5D9576522044A4A3004760D4 /* HandFormulas.swift */,
@@ -273,7 +270,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B831169A20C4292700681E7B /* PlanetsPopUpViewController.swift in Sources */,
-				B8786A4A20C0F7270043C887 /* FeatureInfoViewController.swift in Sources */,
 				5DF8473A2038F4F5007E7322 /* ViewController.swift in Sources */,
 				5D4ECDA3209CDBA1000F75E6 /* ChangeBackground.swift in Sources */,
 				B8BA2D5720B82CA40083DE3A /* StatsViewController.swift in Sources */,

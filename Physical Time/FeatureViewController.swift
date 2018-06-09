@@ -20,7 +20,6 @@ class FeatureViewController: UIViewController
     @IBOutlet weak var planetaryVisButton: UIButton!
     @IBOutlet weak var statsButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
-    @IBOutlet weak var featureInfoButton: UIButton!
     
     /**
      Change the background dynamically on a load.
@@ -69,9 +68,6 @@ class FeatureViewController: UIViewController
             (finished: Bool) -> Void in
         })
         self.menuButton.fadeIn(duration: 2.0, delay: 1.0,  completion: {
-            (finished: Bool) -> Void in
-        })
-        self.featureInfoButton.fadeIn(duration: 2.0, delay: 1.0,  completion: {
             (finished: Bool) -> Void in
         })
         
