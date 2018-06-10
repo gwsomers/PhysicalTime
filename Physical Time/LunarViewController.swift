@@ -155,9 +155,7 @@ class LunarViewController: UIViewController {
             print("error");
             break;
         }
-        
         return someImageView;
-        
     }
     
     func runTimer() {

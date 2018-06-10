@@ -242,9 +242,6 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" name="SpaceMono-Regular" family="Space Mono" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="uFT-YE-25v" appends="YES" id="fyR-kp-cv6"/>
-                                        </connections>
                                     </textView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97557693570000004" green="0.99783924899999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -258,6 +255,9 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                             <constraint firstItem="C0D-Ic-tQ4" firstAttribute="centerX" secondItem="keW-hg-7ob" secondAttribute="centerX" id="ws7-xP-fsJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dgp-6z-jCI"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="uFT-YE-25v" appends="YES" id="ok6-Aa-bi6"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="planetsTextView" destination="pup-JG-Wxj" id="n3D-YT-c2t"/>
