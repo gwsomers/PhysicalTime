@@ -42,7 +42,8 @@ class WelcomeViewController: UIViewController
      - returns:
      nil
      */
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool)
+    {
         super.viewDidAppear(animated)
         
         // Do the fades to both UI elements appropriately

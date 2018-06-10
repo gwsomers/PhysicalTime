@@ -259,6 +259,9 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dgp-6z-jCI"/>
                     </view>
+                    <connections>
+                        <outlet property="planetsTextView" destination="pup-JG-Wxj" id="n3D-YT-c2t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="py6-VK-45G" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="uFT-YE-25v">

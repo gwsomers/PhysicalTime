@@ -380,9 +380,9 @@ class StatsViewController: UIViewController
                         "the observer, astronomers often use an \"artificial\" horizon " +
                         "that runs exactly midway between the zenith and nadir.\n" +
                         "Today, the altitude of the sun is " +
-                        "\(Double(round(sunPos["altitude"]! * 1000) / 1000))°. " +
+                        "\(Double(round(sunPos["altitude"]! * 100000) / 100000))°. " +
                         "The altitude of the moon is " +
-                        "\(Double(round(moonPos["altitude"]! * 1000) / 1000))°. " +
+                        "\(Double(round(moonPos["altitude"]! * 100000) / 100000))°. " +
                         "\n\n"
         // Return the "built" string
         return stringBuilder
@@ -421,9 +421,9 @@ class StatsViewController: UIViewController
                         "in the south and to measure azimuth between −180 and +180°: that " +
                         "provides the best fit to the hour angle.\n" +
                         "Today, the azimuth of the sun is " +
-                        "\(Double(round(sunPos["azimuth"]! * 1000) / 1000))°. " +
+                        "\(Double(round(sunPos["azimuth"]! * 100000) / 100000))°. " +
                         "The aziumth of the moon is " +
-                        "\(Double(round(moonPos["azimuth"]! / 1000) / 1000))°."
+                        "\(Double(round(moonPos["azimuth"]! / 100000) / 100000))°."
         // Return the "built" string
         return stringBuilder
     }
@@ -452,11 +452,11 @@ class StatsViewController: UIViewController
         let moonIllumination = suncalc.getMoonIllumination(date: today)
         
         stringBuilder = "The distance to the moon from your latitude/longitude coordinates " +
-                        "is \(moonPos["distance"]!) kilometers.\n" +
+                        "is \(Double(round(moonPos["distance"]! / 100000) / 100000)) kilometers.\n" +
                         "The parallactic angle, as defined as the angle between the great " +
                         "circle through a celestial object and the zenith, and the hour " +
                         "circle of the objec. The parallactic angle of the moon is " +
-                        "\(moonPos["parallacticAngle"]!) radians.\nThe current moon phase " +
+                        "\(Double(round(moonPos["parallacticAngle"]! / 100000) / 100000)) radians.\nThe current moon phase " +
                         "is \(getMoonPhase(moonPhaseVal: moonIllumination["phase"]!))"
         
         return stringBuilder

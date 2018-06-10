@@ -311,24 +311,44 @@ class PlanetsViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         {
             case 1.0:
                 speedLabel.text = prefix + "0.0625x"
+                Singletons.multiplier = 0.0625
+                break
             case 2.0:
                 speedLabel.text = prefix + "0.125x"
+                Singletons.multiplier = 0.125
+                break
             case 3.0:
                 speedLabel.text = prefix + "0.25x"
+                Singletons.multiplier = 0.25
+                break
             case 4.0:
                 speedLabel.text = prefix + "0.5x"
+                Singletons.multiplier = 0.5
+                break
             case 5.0:
                 speedLabel.text = prefix + "1.0x"
+                Singletons.multiplier = 1.0
+                break
             case 6.0:
                 speedLabel.text = prefix + "2.0x"
+                Singletons.multiplier = 2.0
+                break
             case 7.0:
                 speedLabel.text = prefix + "4.0x"
+                Singletons.multiplier = 4.0
+                break
             case 8.0:
                 speedLabel.text = prefix + "8.0x"
+                Singletons.multiplier = 8.0
+                break
             case 9.0:
                 speedLabel.text = prefix + "16.0x"
+                Singletons.multiplier = 16.0
+                break
             default:
                 speedLabel.text = prefix + "32.0x"
+                Singletons.multiplier = 32.0
+                break
         }
     }
 }

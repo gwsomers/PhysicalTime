@@ -15,6 +15,29 @@ import UIKit
  */
 class PlanetsPopUpViewController: UIViewController
 {
+    // Text view for our planets description
+    @IBOutlet weak var planetsTextView: UITextView!
+    // Predefined dictionary of values to make calculations for the speeds of all planets
+    // at a 1x multiple
+    let planetValues: [String: Double] = [
+        "mercuryRotation": 58.6,
+        "mercuryRevolution": 87.97,
+        "venusRotation": 243,
+        "venusRevolution": 224.7,
+        "earthRotation": 0.99,
+        "earthRevolution": 365.26,
+        "marsRotation": 1.03,
+        "marsRevolution": 1.88,
+        "jupiterRotation": 0.41,
+        "jupiterRevolution": 11.86,
+        "saturnRotation": 0.45,
+        "saturnRevolution": 29.46,
+        "uranusRotation": 0.72,
+        "uranusRevolution": 84.01,
+        "neptuneRotation": 0.67,
+        "neptuneRevolution": 164.79
+    ]
+    
     /**
      On the load, make the background color the "fade" effect, where the
      parent ViewController can still be seen. Also, the `showAnimate()`
@@ -24,6 +47,7 @@ class PlanetsPopUpViewController: UIViewController
     {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        self.determinePlanetSpeeds()
         self.showAnimate()
     }
     
@@ -36,6 +60,81 @@ class PlanetsPopUpViewController: UIViewController
     @IBAction func closePopup(_ sender: UITapGestureRecognizer)
     {
         self.removeAnimate()
+    }
+    
+    /**
+     Function to determine the speed of the planet dependent on the multiplier and the
+     decision of the user (e.g. what planet they pick)
+     
+     - returns:
+     Void
+     */
+    func determinePlanetSpeeds() -> Void
+    {
+        // The multiplier that is used to
+        let mult: Double = Singletons.multiplier
+        // Constant prefix that starts the beginning of the sentence
+        let prefix: String = "Based on the \(mult)x multiplier chosen, "
+        // Perform a switch statement to determine which planet to display
+        switch(Singletons.pickerSelection)
+        {
+            case "Mercury":
+                planetsTextView.text = prefix + "Mercury's...\n" +
+                        "Rotation Period is \(planetValues["mercuryRotation"]! * mult) " +
+                        "Earth days, and its\n" +
+                        "Revolution Period is \(planetValues["mercuryRevolution"]! * mult) " +
+                        "Earth days."
+                break
+            case "Venus":
+                planetsTextView.text = prefix + "Venus's...\n" +
+                    "Rotation Period is \(planetValues["venusRotation"]! * mult) " +
+                    "Earth days, and its\n" +
+                    "Revolution Period is \(planetValues["venusRevolution"]! * mult) " +
+                    "Earth days."
+                break
+            case "Earth":
+                planetsTextView.text = prefix + "Earth's...\n" +
+                    "Rotation Period is \(planetValues["earthRotation"]! * mult) " +
+                    "Earth days, and its\n" +
+                    "Revolution Period is \(planetValues["earthRevolution"]! * mult) " +
+                    "Earth days."
+                break
+            case "Mars":
+                planetsTextView.text = prefix + "Mars's...\n" +
+                    "Rotation Period is \(planetValues["marsRotation"]! * mult) " +
+                    "Earth days, and its\n" +
+                    "Revolution Period is \(planetValues["marsRevolution"]! * mult) " +
+                    "Earth days."
+                break
+            case "Jupiter":
+                planetsTextView.text = prefix + "Jupiter's...\n" +
+                    "Rotation Period is \(planetValues["jupiterRotation"]! * mult) " +
+                    "Earth days, and its\n" +
+                    "Revolution Period is \(planetValues["jupiterRevolution"]! * mult) " +
+                    "Earth days."
+                break
+            case "Saturn":
+                planetsTextView.text = prefix + "Saturn's...\n" +
+                    "Rotation Period is \(planetValues["saturnRotation"]! * mult) " +
+                    "Earth days, and its\n" +
+                    "Revolution Period is \(planetValues["saturnRevolution"]! * mult) " +
+                    "Earth days."
+                break
+            case "Uranus":
+                planetsTextView.text = prefix + "Uranus's...\n" +
+                    "Rotation Period is \(planetValues["uranusRotation"]! * mult) " +
+                    "Earth days, and its\n" +
+                    "Revolution Period is \(planetValues["uranusRevolution"]! * mult) " +
+                    "Earth days."
+                break
+            default:
+                planetsTextView.text = prefix + "Neptune's...\n" +
+                    "Rotation Period is \(planetValues["neptuneRotation"]! * mult) " +
+                    "Earth days, and its\n" +
+                    "Revolution Period is \(planetValues["neptuneRevolution"]! * mult) " +
+                    "Earth days."
+                break
+        }
     }
     
     /**
