@@ -17,7 +17,8 @@ class MenuViewController: UIViewController
     @IBOutlet weak var goToClockButton: UIButton!
     @IBOutlet weak var goToFeatureButton: UIButton!
     @IBOutlet weak var menuInfoButton: UIButton!
-    
+    @IBOutlet weak var mainTitle: UILabel!
+
     /**
      Do any additional setup after loading the view (specifically, in our case, setting the background).
      - returns:
@@ -50,16 +51,10 @@ class MenuViewController: UIViewController
     {
         super.viewDidAppear(animated)
         
-        // Do the fades to both UI elements appropriately
-        self.goToClockButton.fadeIn(duration: 2.0, delay: 1.0, completion: {
-            (finished: Bool) -> Void in
-        })
-        self.goToFeatureButton.fadeIn(duration: 2.0, delay: 1.0,  completion: {
-            (finished: Bool) -> Void in
-        })
-        self.menuInfoButton.fadeIn(duration: 2.0, delay: 1.0,  completion: {
-            (finished: Bool) -> Void in
-        })
+        // Do the fades to all other UI elements appropriately
+        self.goToClockButton.fadeIn(duration: 2.0, delay: 1.0)
+        self.goToFeatureButton.fadeIn(duration: 2.0, delay: 1.0)
+        self.menuInfoButton.fadeIn(duration: 2.0, delay: 1.0)
         
         // Instance of Background
         let background = ChangeBackground()
@@ -101,6 +96,32 @@ class MenuViewController: UIViewController
                 button.setTitleColor(UIColor.white, for: .normal);
             default:
                 button.setTitleColor(UIColor.black, for: .normal);
-            }
+        }
+    }
+    
+    /**
+     Helper function to determine if the application has already been launched once. Should
+     it be the case that it has, then we can avoid fading the title in and out again, since
+     that will take away from UX.
+     
+     - returns:
+     A boolean for determining if an application has already been launched once. Without
+     loss of generality, `true` indicates is has been launched, and `false` if it has
+     not. See https://stackoverflow.com/a/47746360
+     */
+    func isAppAlreadyLaunchedOnce() -> Bool
+    {
+        let defaults = UserDefaults.standard
+        if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce")
+        {
+            print("App already launched")
+            return true
+        }
+        else
+        {
+            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
+            print("App launched first time")
+            return false
+        }
     }
 }

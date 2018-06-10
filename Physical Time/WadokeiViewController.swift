@@ -19,7 +19,7 @@ class WadokeiViewController: UIViewController {
         let featureView: UIView! = FeatureViewController().view
         featureView.hero.id = "featureView"
         featureView.hero.modifiers = [.fade]
-        self.view.backgroundColor = UIColor(patternImage:UIImage(named: "tatami.jpg")!)
+        self.view.backgroundColor = UIColor(patternImage:UIImage(named: "shinji.jpg")!)
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         locationManager.requestLocation()
@@ -90,6 +90,29 @@ class WadokeiViewController: UIViewController {
         let calendar = Calendar.current
         let second = calendar.component(.second, from: date)
         return second
+    }
+    
+    /**
+     When the "Go" button is pressed, this function will instantiate the child view controller,
+     `WadokeiInfoViewController`.
+     
+     - parameters:
+     - sender: The event where the button is pressed
+     
+     - returns:
+     Void
+     */
+    @IBAction func showPopup(_ sender: UIButton)
+    {
+        // Declare `popupViewController` to represent the `PlanetsPopUpViewController`
+        let popupViewController: UIViewController = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "wadokeiInfo")
+            as! WadokeiInfoViewController
+        // Declare `popupViewController` to be a child of this view controller
+        self.addChildViewController(popupViewController)
+        popupViewController.view.frame = self.view.frame
+        self.view.addSubview(popupViewController.view)
+        popupViewController.didMove(toParentViewController: self)
     }
     
 }

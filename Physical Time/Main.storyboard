@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zcv-aI-EVX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R3u-at-DPQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,44 +25,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Welcome Info View Controller-->
-        <scene sceneID="vKi-xk-KN2">
-            <objects>
-                <viewController id="jxi-5m-Sm2" userLabel="Welcome Info View Controller" customClass="WelcomeInfoViewController" customModule="Physical_Time" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pqq-El-MGo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HV6-hl-tPk">
-                                <rect key="frame" x="44" y="56" width="295" height="570"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <string key="text">Welcome to Physical Time! 🌔 ☀️🌞🌄🌅🌇🎑⏳⌛️ Time is an ever-present factor in our daily lives, but it’s also a very abstract one. We know that 12:00PM is when the sun is at its highest, but that’s it. What if there was a method to interpret time beyond our standard minutes and hours? A method that displayed time revolving around what you think is important?
-Enter Physical Time, an application that lets you redefine any clock standard and visualize physical time in more ways than one. We hope you enjoy using this application as much as we enjoyed building it!
-</string>
-                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="gHK-34-wRK" appends="YES" id="6WL-D1-OnD"/>
-                                </connections>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="SAM-e1-Vbr"/>
-                    </view>
-                    <connections>
-                        <outlet property="welcomeInfoTextView" destination="HV6-hl-tPk" id="mV1-xw-9Rb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OTl-6w-QZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="gHK-34-wRK">
-                    <connections>
-                        <segue destination="Zcv-aI-EVX" kind="show" id="9aU-hM-gRB"/>
-                    </connections>
-                </tapGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="-1759.2" y="-784.85757121439292"/>
-        </scene>
         <!--Menu Info View Controller-->
         <scene sceneID="4mj-sw-qvv">
             <objects>
@@ -74,8 +36,9 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXo-qV-WVz">
                                 <rect key="frame" x="40" y="48" width="295" height="570"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">In short, "The Clock" allows users to input various settings to alter the way time is displayed on the clock. These options can range from splitting the day into different partitions or setting 12:00 as sunrise instead of noon. In addition to "The Clock",  "The Extras" option provides features for users to know the current moon cycles, the sun’s angle, and the ability to tell how much daylight they have in day. </string>
-                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="16"/>
+                                <string key="text">Welcome to Physical Time! 🌔 ☀️🌞🌄🌅🌇🎑⏳⌛️ Time is an ever-present factor in our daily lives, but it’s also a very abstract one. We know that 12:00PM is when the sun is at its highest, but that’s it. What if there was a method to interpret time beyond our standard minutes and hours? A method that displayed time revolving around what you think is important?
+Enter Physical Time, an application that lets you redefine any clock standard and visualize physical time in more ways than one. We hope you enjoy using this application as much as we enjoyed building it!</string>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -98,64 +61,6 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1088" y="-795"/>
-        </scene>
-        <!--Welcome View Controller-->
-        <scene sceneID="lNJ-Up-hsi">
-            <objects>
-                <viewController id="Zcv-aI-EVX" customClass="WelcomeViewController" customModule="Physical_Time" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="AO6-6T-89Q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Physical Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6B0-Oq-Z2M">
-                                <rect key="frame" x="16" y="245" width="343" height="67"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="67" id="End-e8-hlB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Blackout-Sunrise" family="Blackout" pointSize="49"/>
-                                <color key="textColor" red="1" green="0.9866631292501471" blue="0.97612529129316006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="highlightedColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </label>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mx-GM-VSp">
-                                <rect key="frame" x="332" y="623" width="27" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="info"/>
-                                <connections>
-                                    <segue destination="jxi-5m-Sm2" kind="show" id="DAa-q3-Nlc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uq-FN-vC5">
-                                <rect key="frame" x="137" y="486" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="dqK-8Z-fw7"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="continue"/>
-                                <connections>
-                                    <segue destination="0kC-eR-1mm" kind="show" id="HGW-Ot-53q"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="6B0-Oq-Z2M" firstAttribute="trailing" secondItem="AO6-6T-89Q" secondAttribute="trailingMargin" id="3NT-Ay-bT0"/>
-                            <constraint firstItem="9uq-FN-vC5" firstAttribute="leading" secondItem="FJR-Dm-4UZ" secondAttribute="leading" constant="137" id="BEM-oz-Fhg"/>
-                            <constraint firstItem="6B0-Oq-Z2M" firstAttribute="leading" secondItem="AO6-6T-89Q" secondAttribute="leadingMargin" id="Kh3-sj-OMA"/>
-                            <constraint firstItem="6B0-Oq-Z2M" firstAttribute="centerX" secondItem="9uq-FN-vC5" secondAttribute="centerX" id="WFW-dX-qkP"/>
-                            <constraint firstItem="6B0-Oq-Z2M" firstAttribute="top" secondItem="FJR-Dm-4UZ" secondAttribute="top" constant="225" id="mub-Ug-UoG"/>
-                            <constraint firstItem="FJR-Dm-4UZ" firstAttribute="bottom" secondItem="9uq-FN-vC5" secondAttribute="bottom" constant="81" id="sFU-fd-q8d"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="FJR-Dm-4UZ"/>
-                    </view>
-                    <connections>
-                        <outlet property="mainTitle" destination="6B0-Oq-Z2M" id="u4I-bb-6v8"/>
-                        <outlet property="menuContinue" destination="9uq-FN-vC5" id="r55-R4-h60"/>
-                        <outlet property="welcomeInfoButton" destination="3mx-GM-VSp" id="xAq-sQ-C1u"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sC0-W7-egs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1757.5999999999999" y="-18.440779610194905"/>
         </scene>
         <!--Planets View Controller-->
         <scene sceneID="ili-SQ-OWV">
@@ -364,6 +269,41 @@ Enter Physical Time, an application that lets you redefine any clock standard an
             </objects>
             <point key="canvasLocation" x="-2501.5999999999999" y="2134.1829085457275"/>
         </scene>
+        <!--Wadokei Info View Controller-->
+        <scene sceneID="h8X-40-Q6v">
+            <objects>
+                <viewController storyboardIdentifier="wadokeiInfo" id="UJl-1q-q4k" userLabel="Wadokei Info View Controller" customClass="WadokeiInfoViewController" customModule="Physical_Time" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yr4-fY-ZjI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbb-2H-9Lb">
+                                <rect key="frame" x="71" y="230" width="233" height="209"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.98596834420840929" green="0.99937807772361154" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <string key="text">The Wadokei Clock (和時計) is a Japanese temporal clock that employed the “seasonal time system”, which divided one day into day and night and then partitioned each into six parts. As the length of a day changes from season to season, a seasonal time clock had to be adjusted continuously to stay in synch with the daylight hours all around the year.</string>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="wIr-Vn-Zai"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="r4L-XM-fla" appends="YES" id="OCa-CS-AgO"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kQ6-MB-qfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="r4L-XM-fla">
+                    <connections>
+                        <action selector="closePopup:" destination="UJl-1q-q4k" id="bmN-zm-ebw"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-1660" y="2194"/>
+        </scene>
         <!--Wadokei View Controller-->
         <scene sceneID="7xw-NE-WwV">
             <objects>
@@ -372,18 +312,16 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F65-iE-3XY">
-                                <rect key="frame" x="50" y="547" width="80" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFG-9L-egl">
+                                <rect key="frame" x="331" y="623" width="27" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu" image="menu">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <state key="normal" title="Button" image="info"/>
                                 <connections>
-                                    <segue destination="0kC-eR-1mm" kind="show" id="jhe-x8-GcQ"/>
+                                    <action selector="showPopup:" destination="6Bq-67-eeH" eventType="touchUpInside" id="1Ix-av-sWd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9T-YI-puD">
-                                <rect key="frame" x="243" y="547" width="80" height="80"/>
+                                <rect key="frame" x="16" y="587" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Features" image="back">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -409,18 +347,8 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkt-m4-49j" userLabel="Menu Button">
-                                <rect key="frame" x="49" y="531" width="90" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu" image="menu">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="0kC-eR-1mm" kind="show" id="cNO-m6-7GM"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaV-5g-kVi">
-                                <rect key="frame" x="234" y="531" width="90" height="90"/>
+                                <rect key="frame" x="49" y="587" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Features" image="back">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -430,31 +358,31 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUb-aX-mKg">
-                                <rect key="frame" x="50" y="74" width="275" height="386"/>
+                                <rect key="frame" x="50" y="74" width="275" height="449"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPG-uZ-zJQ" userLabel="Second Text View">
-                                <rect key="frame" x="49" y="74" width="275" height="386"/>
+                                <rect key="frame" x="49" y="74" width="275" height="449"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWg-5P-9Qb" userLabel="Third Text View">
-                                <rect key="frame" x="50" y="74" width="275" height="386"/>
+                                <rect key="frame" x="50" y="74" width="275" height="449"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHx-nj-KzG" userLabel="Fourth Text View">
-                                <rect key="frame" x="50" y="74" width="275" height="386"/>
+                                <rect key="frame" x="50" y="74" width="275" height="449"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <pageControl opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="tHV-NG-z4R">
-                                <rect key="frame" x="168" y="487" width="39" height="37"/>
+                                <rect key="frame" x="168" y="531" width="39" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="pageIndicatorTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="0.5626879922134802" green="1" blue="0.55107125320431005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -469,7 +397,6 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                     <connections>
                         <outlet property="backButton" destination="yaV-5g-kVi" id="Ll8-eF-akH"/>
                         <outlet property="fourthTextView" destination="dHx-nj-KzG" id="sbg-6g-pzz"/>
-                        <outlet property="menuButton" destination="Xkt-m4-49j" id="PXv-Mg-eF7"/>
                         <outlet property="pageControl" destination="tHV-NG-z4R" id="nDN-F5-A4r"/>
                         <outlet property="secondTextView" destination="dPG-uZ-zJQ" id="Ecv-y3-urR"/>
                         <outlet property="textView" destination="jUb-aX-mKg" id="RZN-hL-tjq"/>
@@ -488,11 +415,9 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gm1-CS-9Xp">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gm1-CS-9Xp">
                                 <rect key="frame" x="97" y="81" width="180" height="68"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="68" id="CCv-tF-6kp"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Blackout-Sunrise" family="Blackout" pointSize="49"/>
                                 <state key="normal" title="Lunar">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -505,11 +430,9 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                     <segue destination="UeR-82-aWC" kind="show" id="a7i-3x-uAF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCT-zk-VvQ">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCT-zk-VvQ">
                                 <rect key="frame" x="40" y="196" width="295" height="63"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="63" id="aEr-Dm-CPp"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Blackout-Sunrise" family="Blackout" pointSize="49"/>
                                 <state key="normal" title="Wadokei">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -523,11 +446,9 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                     <segue destination="6Bq-67-eeH" kind="show" id="bqm-GL-76P"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHY-qG-L5D">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHY-qG-L5D">
                                 <rect key="frame" x="40" y="299" width="295" height="90"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="hxX-K4-MHq"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Blackout-Sunrise" family="Blackout" pointSize="49"/>
                                 <state key="normal" title="The Planets">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -540,8 +461,9 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                     <segue destination="dCN-7F-VDc" kind="show" id="8x1-1j-bur"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTk-Gk-p3n">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTk-Gk-p3n">
                                 <rect key="frame" x="42" y="397" width="290" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Blackout-Sunrise" family="Blackout" pointSize="37"/>
                                 <state key="normal" title="What time is it?">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -554,36 +476,16 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                     <segue destination="feK-Ft-zef" kind="show" id="Xga-xw-pdY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yby-xj-rzM">
-                                <rect key="frame" x="145" y="531" width="84" height="82"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="82" id="MIh-ev-anr"/>
-                                </constraints>
-                                <state key="normal" title="Menu" image="menu"/>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yby-xj-rzM">
+                                <rect key="frame" x="40" y="571" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Menu" image="back"/>
                                 <connections>
                                     <segue destination="0kC-eR-1mm" kind="show" id="Z8A-bJ-UVi"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="xCT-zk-VvQ" firstAttribute="leading" secondItem="tYd-n0-jpG" secondAttribute="leading" constant="40" id="0fg-g8-ZvX"/>
-                            <constraint firstItem="eTk-Gk-p3n" firstAttribute="top" secondItem="aHY-qG-L5D" secondAttribute="bottom" constant="8" symbolic="YES" id="0lI-bk-V3y"/>
-                            <constraint firstItem="yby-xj-rzM" firstAttribute="leading" secondItem="tYd-n0-jpG" secondAttribute="leading" constant="145" id="7uv-Tw-93H"/>
-                            <constraint firstItem="yby-xj-rzM" firstAttribute="top" secondItem="eTk-Gk-p3n" secondAttribute="bottom" constant="28" id="Ebk-Sy-y7C"/>
-                            <constraint firstItem="xCT-zk-VvQ" firstAttribute="trailing" secondItem="aHY-qG-L5D" secondAttribute="trailing" id="FDx-nl-Uu5"/>
-                            <constraint firstItem="eTk-Gk-p3n" firstAttribute="centerX" secondItem="yby-xj-rzM" secondAttribute="centerX" id="Fao-L4-mJr"/>
-                            <constraint firstItem="gm1-CS-9Xp" firstAttribute="leading" secondItem="tYd-n0-jpG" secondAttribute="leading" constant="97" id="L8i-dR-2TM"/>
-                            <constraint firstItem="eTk-Gk-p3n" firstAttribute="leading" secondItem="tYd-n0-jpG" secondAttribute="leading" constant="42" id="TWV-pW-0hi"/>
-                            <constraint firstItem="aHY-qG-L5D" firstAttribute="top" secondItem="xCT-zk-VvQ" secondAttribute="bottom" constant="40" id="gLr-Ah-ZbQ"/>
-                            <constraint firstItem="gm1-CS-9Xp" firstAttribute="centerX" secondItem="xCT-zk-VvQ" secondAttribute="centerX" id="jBN-iM-g9Y"/>
-                            <constraint firstItem="xCT-zk-VvQ" firstAttribute="leading" secondItem="aHY-qG-L5D" secondAttribute="leading" id="jZQ-St-ZgG"/>
-                            <constraint firstItem="aHY-qG-L5D" firstAttribute="centerX" secondItem="eTk-Gk-p3n" secondAttribute="centerX" id="mMO-nl-ZYf"/>
-                            <constraint firstItem="gm1-CS-9Xp" firstAttribute="top" secondItem="tYd-n0-jpG" secondAttribute="top" constant="61" id="oI9-ZF-0Se"/>
-                            <constraint firstItem="gm1-CS-9Xp" firstAttribute="centerX" secondItem="RzQ-s4-Dow" secondAttribute="centerX" id="vms-OQ-gbJ"/>
-                            <constraint firstItem="xCT-zk-VvQ" firstAttribute="top" secondItem="gm1-CS-9Xp" secondAttribute="bottom" constant="47" id="xxb-KE-Wma"/>
-                            <constraint firstItem="tYd-n0-jpG" firstAttribute="bottom" secondItem="yby-xj-rzM" secondAttribute="bottom" constant="54" id="zsu-eo-HCK"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tYd-n0-jpG"/>
                     </view>
                     <connections>
@@ -598,10 +500,38 @@ Enter Physical Time, an application that lets you redefine any clock standard an
             </objects>
             <point key="canvasLocation" x="-1756" y="692.20389805097454"/>
         </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="hKR-Dn-OM6">
+            <objects>
+                <viewController id="R3u-at-DPQ" customClass="WelcomeViewController" customModule="Physical_Time" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="34Z-Ih-QLc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Physical Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6B0-Oq-Z2M">
+                                <rect key="frame" x="16" y="239" width="343" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Blackout-Sunrise" family="Blackout" pointSize="49"/>
+                                <color key="textColor" red="1" green="0.9866631292501471" blue="0.97612529129316006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="U2v-f0-lzW"/>
+                    </view>
+                    <connections>
+                        <outlet property="mainTitle" destination="6B0-Oq-Z2M" id="f1E-WU-E0i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8fV-pN-5dH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1843" y="-71"/>
+        </scene>
         <!--Menu View Controller-->
         <scene sceneID="a2s-Xd-ZE4">
             <objects>
-                <viewController id="0kC-eR-1mm" customClass="MenuViewController" customModule="Physical_Time" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="menuVC" id="0kC-eR-1mm" customClass="MenuViewController" customModule="Physical_Time" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fRc-m1-687">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -661,6 +591,7 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                     <connections>
                         <outlet property="goToClockButton" destination="Kfa-dT-dDj" id="YMP-Wm-j1C"/>
                         <outlet property="goToFeatureButton" destination="VxR-qI-O1G" id="BIe-AC-VBB"/>
+                        <outlet property="mainTitle" destination="6B0-Oq-Z2M" id="7c9-QB-Gcf"/>
                         <outlet property="menuInfoButton" destination="aEu-VB-x7G" id="k7p-4N-BQh"/>
                     </connections>
                 </viewController>
@@ -824,16 +755,6 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjz-C1-Uro">
-                                <rect key="frame" x="60" y="573" width="66" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu" image="menu">
-                                    <color key="titleColor" red="0.97557693570000004" green="0.99783924899999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="0kC-eR-1mm" kind="show" id="jp2-E5-rWh"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The next lunar eclipse will occur in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e18-l2-UCd">
                                 <rect key="frame" x="36" y="390" width="291" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -862,8 +783,15 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                 <color key="textColor" red="0.97557693570000004" green="0.99783924899999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The current moon cycle is" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFT-63-2ip">
+                                <rect key="frame" x="73" y="57" width="218" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
+                                <color key="textColor" red="0.97557693570000004" green="0.99783924899999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5q-75-Z4g">
-                                <rect key="frame" x="240" y="573" width="66" height="64"/>
+                                <rect key="frame" x="41" y="583" width="66" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Features" image="back">
                                     <color key="titleColor" red="0.97557693570000004" green="0.99783924899999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -872,13 +800,6 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                     <segue destination="IBx-24-jiA" kind="show" id="yLd-b5-dd9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The current moon cycle is" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFT-63-2ip">
-                                <rect key="frame" x="73" y="57" width="218" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
-                                <color key="textColor" red="0.97557693570000004" green="0.99783924899999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="TYH-Ro-Z7m"/>
@@ -901,24 +822,24 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAn-CX-tSD">
-                                <rect key="frame" x="49" y="534" width="76" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Menu" image="menu">
-                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="0kC-eR-1mm" kind="show" id="mYq-pO-xBa"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4Z-oH-jgF">
-                                <rect key="frame" x="254" y="534" width="76" height="74"/>
+                                <rect key="frame" x="303" y="592" width="56" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Settings" image="settings">
+                                <state key="normal" title="Settings" image="gears">
                                     <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="sgD-8R-5H3" kind="show" id="FXV-pt-3df"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAn-CX-tSD">
+                                <rect key="frame" x="16" y="592" width="56" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Menu" image="back">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="0kC-eR-1mm" kind="show" id="mYq-pO-xBa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -928,29 +849,27 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-372" y="781"/>
+            <point key="canvasLocation" x="-372" y="780.35982008995506"/>
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="2000" height="2000"/>
-        <image name="continue" width="768" height="768"/>
+        <image name="back" width="168" height="168"/>
         <image name="earth" width="512" height="512"/>
+        <image name="gears" width="512" height="512"/>
         <image name="go" width="2000" height="2000"/>
         <image name="info" width="624" height="624"/>
         <image name="jupiter" width="1368" height="1416"/>
         <image name="mars" width="512" height="512"/>
-        <image name="menu" width="2000" height="2000"/>
         <image name="mercury" width="512" height="512"/>
         <image name="neptune" width="875" height="873"/>
         <image name="saturn" width="1206" height="690"/>
-        <image name="settings" width="2000" height="2000"/>
         <image name="sun" width="660" height="660"/>
         <image name="uranus" width="480" height="360"/>
         <image name="venus" width="551" height="551"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oUo-OU-kSF"/>
-        <segue reference="jp2-E5-rWh"/>
-        <segue reference="yLd-b5-dd9"/>
+        <segue reference="3Rf-nH-Phd"/>
+        <segue reference="T5x-hT-3Fo"/>
+        <segue reference="MHp-zB-jqb"/>
     </inferredMetricsTieBreakers>
 </document>

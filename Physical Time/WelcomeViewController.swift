@@ -18,11 +18,6 @@ class WelcomeViewController: UIViewController
 {
     // Main title for the opening view, "Physical Time"
     @IBOutlet weak var mainTitle: UILabel!
-    // The button to proceed to the next view
-    @IBOutlet weak var menuContinue: UIButton!
-    // The button that will transition to the info
-    // view for the Welcome view
-    @IBOutlet weak var welcomeInfoButton: UIButton!
     
     /**
      On load, dynamically change the background based on the time of day
@@ -50,21 +45,16 @@ class WelcomeViewController: UIViewController
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        // Set the alphas of the page elements to 0 initially (such that they
-        // remain hidden initially)
-        self.mainTitle.alpha = 0
-        self.menuContinue.alpha = 0
-        self.welcomeInfoButton.alpha = 0
-        
         // Do the fades to both UI elements appropriately
-        self.mainTitle.fadeIn(duration: 3.0, delay: 1.0, completion: {
+        // Do the fades to both UI elements appropriately
+        self.mainTitle.fadeIn(duration: 3.0, delay: 1.0)
+        self.mainTitle.fadeOut(duration: 3.0, delay: 4.0, completion: {
             (finished: Bool) -> Void in
-        })
-        self.menuContinue.fadeIn(duration: 2.0, delay: 4.5,  completion: {
-            (finished: Bool) -> Void in
-        })
-        self.welcomeInfoButton.fadeIn(duration: 2.0, delay: 4.5,  completion: {
-            (finished: Bool) -> Void in
+            // On the closure, instantiate the transition to the menu view controller
+            let menuViewController =
+                self.storyboard?.instantiateViewController(withIdentifier: "menuVC")
+                    as? MenuViewController
+            self.present(menuViewController!, animated: true, completion: nil)
         })
     }
 }

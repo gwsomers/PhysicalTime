@@ -17,7 +17,6 @@ import Hero
 class StatsViewController: UIViewController
 {
     // All UI elements for this view
-    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var secondTextView: UITextView!
@@ -60,10 +59,6 @@ class StatsViewController: UIViewController
         self.thirdTextView.text = getAzimuth()
         self.fourthTextView.text = getMiscMoonData()
         
-        // Do the fades to all UI elements appropriately
-        self.menuButton.fadeIn(duration: 2.0, delay: 1.0, completion: {
-            (finished: Bool) -> Void in
-        })
         self.backButton.fadeIn(duration: 2.0, delay: 1.0,  completion: {
             (finished: Bool) -> Void in
         })
@@ -384,9 +379,11 @@ class StatsViewController: UIViewController
                         "horizon depends on the local landscape and the exact location of " +
                         "the observer, astronomers often use an \"artificial\" horizon " +
                         "that runs exactly midway between the zenith and nadir.\n" +
-                        "Today, the altitude of the sun is \(sunPos["altitude"]!)°" +
-                        ". The altitude of the moon is \(moonPos["altitude"]!)°" +
-                        ".\n\n"
+                        "Today, the altitude of the sun is " +
+                        "\(Double(round(sunPos["altitude"]! * 1000) / 1000))°. " +
+                        "The altitude of the moon is " +
+                        "\(Double(round(moonPos["altitude"]! * 1000) / 1000))°. " +
+                        "\n\n"
         // Return the "built" string
         return stringBuilder
     }
@@ -423,8 +420,10 @@ class StatsViewController: UIViewController
                         "north. For astronomical application it is convenient to set 0° " +
                         "in the south and to measure azimuth between −180 and +180°: that " +
                         "provides the best fit to the hour angle.\n" +
-                        "Today, the azimuth of the sun is \(sunPos["azimuth"]!)°. " +
-                        "The aziumth of the moon is \(moonPos["altitude"]!)°."
+                        "Today, the azimuth of the sun is " +
+                        "\(Double(round(sunPos["azimuth"]! * 1000) / 1000))°. " +
+                        "The aziumth of the moon is " +
+                        "\(Double(round(moonPos["azimuth"]! / 1000) / 1000))°."
         // Return the "built" string
         return stringBuilder
     }
