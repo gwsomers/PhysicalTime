@@ -71,37 +71,37 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="Lui-jB-9rS" userLabel="Sun">
-                                <rect key="frame" x="162" y="308" width="50" height="50"/>
+                                <rect key="frame" x="163" y="308" width="49" height="50"/>
                                 <gestureRecognizers/>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mercury" translatesAutoresizingMaskIntoConstraints="NO" id="VG9-bs-Qpa">
-                                <rect key="frame" x="154" y="328" width="10" height="10"/>
+                                <rect key="frame" x="155" y="328" width="9" height="10"/>
                                 <gestureRecognizers/>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="venus" translatesAutoresizingMaskIntoConstraints="NO" id="Ruh-mT-pbH">
-                                <rect key="frame" x="138" y="326" width="15" height="15"/>
+                                <rect key="frame" x="139" y="326" width="15" height="15"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="r0C-Ii-nbd"/>
                                 </constraints>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earth" translatesAutoresizingMaskIntoConstraints="NO" id="u86-Ld-4b1">
-                                <rect key="frame" x="122" y="326" width="15" height="15"/>
+                                <rect key="frame" x="123" y="326" width="15" height="15"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="m9c-HT-phH"/>
                                 </constraints>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jupiter" translatesAutoresizingMaskIntoConstraints="NO" id="87C-Px-DaM">
-                                <rect key="frame" x="87" y="321" width="25" height="25"/>
+                                <rect key="frame" x="87" y="321" width="26" height="25"/>
                                 <gestureRecognizers/>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saturn" translatesAutoresizingMaskIntoConstraints="NO" id="3Kk-sI-I8r">
-                                <rect key="frame" x="50" y="321" width="40" height="25"/>
+                                <rect key="frame" x="50" y="321" width="41" height="25"/>
                                 <gestureRecognizers/>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mars" translatesAutoresizingMaskIntoConstraints="NO" id="grc-Wa-fay">
-                                <rect key="frame" x="111" y="329" width="10" height="10"/>
+                                <rect key="frame" x="112" y="329" width="10" height="10"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="10" id="fM2-JC-4WZ"/>
@@ -540,7 +540,7 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VxR-qI-O1G">
-                                <rect key="frame" x="78" y="361" width="218" height="72"/>
+                                <rect key="frame" x="78" y="361" width="219" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="LqO-Zd-CR8"/>
                                 </constraints>
@@ -557,7 +557,7 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfa-dT-dDj">
-                                <rect key="frame" x="51" y="167" width="273" height="122"/>
+                                <rect key="frame" x="51" y="167" width="274" height="122"/>
                                 <fontDescription key="fontDescription" name="Blackout-Sunrise" family="Blackout" pointSize="49"/>
                                 <state key="normal" title="The clock.">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -673,13 +673,13 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="config.txt" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="abD-Qu-3Qu">
-                                <rect key="frame" x="139" y="616" width="98" height="30"/>
+                                <rect key="frame" x="139" y="617" width="98" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXA-rW-Vyp">
-                                <rect key="frame" x="60" y="616" width="46" height="30"/>
+                                <rect key="frame" x="60" y="617" width="46" height="30"/>
                                 <state key="normal" title="Export"/>
                                 <connections>
                                     <action selector="export:" destination="sgD-8R-5H3" eventType="touchUpInside" id="0vm-Tt-06j"/>
@@ -809,8 +809,8 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                     </view>
                     <connections>
                         <outlet property="countdownLabel" destination="5YR-st-gPJ" id="wqh-ru-IWL"/>
-                        <outlet property="countdownLabel2" destination="xzy-du-nTq" id="bLq-yT-Wew"/>
                         <outlet property="currentMoonPhase" destination="eLi-0j-bZq" id="jdW-N0-yTO"/>
+                        <outlet property="lunarEclipseLabel" destination="xzy-du-nTq" id="bLq-yT-Wew"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Och-IB-WxB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -873,6 +873,6 @@ Enter Physical Time, an application that lets you redefine any clock standard an
     <inferredMetricsTieBreakers>
         <segue reference="3Rf-nH-Phd"/>
         <segue reference="T5x-hT-3Fo"/>
-        <segue reference="MHp-zB-jqb"/>
+        <segue reference="yLd-b5-dd9"/>
     </inferredMetricsTieBreakers>
 </document>

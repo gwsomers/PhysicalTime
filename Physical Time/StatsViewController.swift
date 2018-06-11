@@ -24,6 +24,10 @@ class StatsViewController: UIViewController
     @IBOutlet weak var fourthTextView: UITextView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    // Proposed longitude and latitude
+    var lat: Double!
+    var lng: Double!
+    
     /**
      On load, dynamically change the background based on the time of day
      - returns:
@@ -40,9 +44,12 @@ class StatsViewController: UIViewController
         let featureView: UIView! = FeatureViewController().view
         featureView.hero.id = "menuView"
         featureView.hero.modifiers = [.fade]
-        
+        // Initialize the background
         let background = ChangeBackground()
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
+        // Initialize the latitude and longitude
+        lat = Singletons.latitude
+        lng = Singletons.longitude
     }
     
     /**
@@ -211,7 +218,7 @@ class StatsViewController: UIViewController
         let today: Date! = Date()
         // Get the times for today
         // TODO: Prompt users for their location, hardcoded for now
-        var times = suncalc.getTimes(date: today, lat: 37, lng: -122)
+        var times = suncalc.getTimes(date: today, lat: lat, lng: lng)
         // Identifier to be used in the switch statement below
         var identifier: String!
         // Now, we need to compare the current time with the times given by

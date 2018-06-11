@@ -6,48 +6,8 @@
  */
 
 import Foundation
-
 import UIKit
-
 import CoreLocation
-
-
-
-func degree2radians(_ a:CGFloat)->CGFloat {
-    
-    let b = CGFloat(Double.pi) * a/180
-    
-    return b
-    
-}
-
-func getSunrise()->Double{
-    
-    let coords = CLLocationCoordinate2D.init(latitude: 51.5, longitude: -0.127)
-    
-    let solar = Solar.init(coordinate: coords )
-    
-    let sunrise = solar!.sunrise!
-    
-    return sunrise.timeIntervalSince1970
-    
-}
-
-
-
-func getSunset()->Double{
-    
-    let coords = CLLocationCoordinate2D.init(latitude: 51.5, longitude: -0.127)
-    
-    let solar = Solar.init(coordinate: coords )
-    
-    let sunset = solar!.sunset!
-    
-    return sunset.timeIntervalSince1970
-    
-    
-    
-}
 
 class WadokeiView: UIView {
     
@@ -141,6 +101,41 @@ class WadokeiView: UIView {
             }
         }
         
+    }
+    func degree2radians(_ a:CGFloat)->CGFloat
+    {
+        
+        let b = CGFloat(Double.pi) * a/180
+        
+        return b
+        
+    }
+    
+    func getSunrise()->Double
+    {
+        
+        let coords = CLLocationCoordinate2D.init(latitude: 51.5, longitude: -0.127)
+        
+        let solar = Solar.init(coordinate: coords )
+        
+        let sunrise = solar!.sunrise!
+        
+        return sunrise.timeIntervalSince1970
+        
+    }
+    
+    
+    
+    func getSunset()->Double
+    {
+        
+        let coords = CLLocationCoordinate2D.init(latitude: 51.5, longitude: -0.127)
+        
+        let solar = Solar.init(coordinate: coords )
+        
+        let sunset = solar!.sunset!
+        
+        return sunset.timeIntervalSince1970
     }
     
     

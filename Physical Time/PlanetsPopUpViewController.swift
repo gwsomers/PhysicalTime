@@ -71,10 +71,17 @@ class PlanetsPopUpViewController: UIViewController
      */
     func determinePlanetSpeeds() -> Void
     {
-        // The multiplier that is used to
+        // The initial "speed" that was chosen by the user
+        var speed: Double!
+        // The multiplier that is used to do the calculation of the planet values
         let mult: Double = Singletons.multiplier
+        // Determine the speed based on the multiplier. That is to say, if the speed
+        // is chosen at 4x, then we will be doing the multiplication calculations by
+        // the inverse of this multiplier, and we will display the "actual" speed
+        // to the user
+        speed = determineSpeed(mult: mult)
         // Constant prefix that starts the beginning of the sentence
-        let prefix: String = "Based on the \(mult)x multiplier chosen, "
+        let prefix: String = "Based on the \(speed!)x multiplier chosen, "
         // Perform a switch statement to determine which planet to display
         switch(Singletons.pickerSelection)
         {
@@ -134,6 +141,42 @@ class PlanetsPopUpViewController: UIViewController
                     "Revolution Period is \(planetValues["neptuneRevolution"]! * mult) " +
                     "Earth days."
                 break
+        }
+    }
+    
+    /**
+     Given a `mult`, or multiplier, determine the speed that has been instantiated by the
+     user. This is simply the inverse.
+     
+     - parameters:
+     - mult: The multiplier which we pass in
+     
+     - returns:
+     A double indicating the true "speed", per se
+     */
+    func determineSpeed(mult: Double) -> Double
+    {
+        switch mult {
+            case 0.03125:
+                return 32.0
+            case 0.0625:
+                return 16.0
+            case 0.125:
+                return 8.0
+            case 0.25:
+                return 4.0
+            case 0.5:
+                return 2.0
+            case 1.0:
+                return 1.0
+            case 2.0:
+                return 0.5
+            case 4.0:
+                return 0.25
+            case 8.0:
+                return 0.125
+            default:
+                return 0.0625
         }
     }
     

@@ -23,7 +23,7 @@
 		5DF8473F2038F4F5007E7322 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DF8473E2038F4F5007E7322 /* Assets.xcassets */; };
 		5DF847422038F4F5007E7322 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DF847402038F4F5007E7322 /* LaunchScreen.storyboard */; };
 		7C30166320B7853A0070F838 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C30166220B7853A0070F838 /* Main.storyboard */; };
-		9CF4710820B3422700076239 /* InOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4710720B3422700076239 /* InOut.swift */; };
+		9CF4710820B3422700076239 /* TransferSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4710720B3422700076239 /* TransferSettings.swift */; };
 		B80C344720CC911200E81AA6 /* WadokeiInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80C344620CC911200E81AA6 /* WadokeiInfoViewController.swift */; };
 		B80F894220C1A3F300558C2C /* PlanetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80F894120C1A3F300558C2C /* PlanetsViewController.swift */; };
 		B831169A20C4292700681E7B /* PlanetsPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B831169920C4292700681E7B /* PlanetsPopUpViewController.swift */; };
@@ -62,7 +62,7 @@
 		7C30166220B7853A0070F838 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7F33B67ADF3C018ABBCA1DE4 /* Pods-Physical_Time_Analog_Clock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Physical_Time_Analog_Clock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Physical_Time_Analog_Clock/Pods-Physical_Time_Analog_Clock.debug.xcconfig"; sourceTree = "<group>"; };
 		88018E9D5B1F3AABB429DDB4 /* Pods-Physical Time.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Physical Time.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Physical Time/Pods-Physical Time.debug.xcconfig"; sourceTree = "<group>"; };
-		9CF4710720B3422700076239 /* InOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InOut.swift; sourceTree = "<group>"; };
+		9CF4710720B3422700076239 /* TransferSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferSettings.swift; sourceTree = "<group>"; };
 		B80C344620CC911200E81AA6 /* WadokeiInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WadokeiInfoViewController.swift; sourceTree = "<group>"; };
 		B80F894120C1A3F300558C2C /* PlanetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsViewController.swift; sourceTree = "<group>"; };
 		B831169920C4292700681E7B /* PlanetsPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsPopUpViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 				B86D1DEC20B7AD2000892FA2 /* fonts */,
 				5D9576522044A4A3004760D4 /* HandFormulas.swift */,
 				5DF847432038F4F5007E7322 /* Info.plist */,
-				9CF4710720B3422700076239 /* InOut.swift */,
+				9CF4710720B3422700076239 /* TransferSettings.swift */,
 				5DF847402038F4F5007E7322 /* LaunchScreen.storyboard */,
 				5D16BBD220B688DD00E0252F /* LunarViewController.swift */,
 				7C30166220B7853A0070F838 /* Main.storyboard */,
@@ -284,7 +284,7 @@
 				B8786A4820C0F6AC0043C887 /* MenuInfoViewController.swift in Sources */,
 				5D16BBD120B6885E00E0252F /* WadokeiViewController.swift in Sources */,
 				5DF847382038F4F5007E7322 /* AppDelegate.swift in Sources */,
-				9CF4710820B3422700076239 /* InOut.swift in Sources */,
+				9CF4710820B3422700076239 /* TransferSettings.swift in Sources */,
 				B80C344720CC911200E81AA6 /* WadokeiInfoViewController.swift in Sources */,
 				5D16BBCF20B6883100E0252F /* WadokeiFace.swift in Sources */,
 				B8FD369F20C955D100FCFB38 /* Singletons.swift in Sources */,

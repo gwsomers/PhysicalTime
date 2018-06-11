@@ -11,9 +11,10 @@ import UIKit
 
 let object = ViewController()
 
-func degree2radian(_ a:CGFloat)->CGFloat {
-    let b = CGFloat(Double.pi) * a/180
-    return b
+func degree2radian(_ deg:CGFloat) -> CGFloat
+{
+    let radValue = CGFloat(Double.pi) * deg / 180
+    return radValue
 }
 
 func circleCircumferencePoints(sides:Int, x:CGFloat,y:CGFloat, radius:CGFloat, adjustment:CGFloat=0)->[CGPoint] {
@@ -65,15 +66,17 @@ func secondMarkers(ctx:CGContext, x:CGFloat, y:CGFloat, radius:CGFloat, sides:In
     
 }
 
-class View: UIView {
-    
-    
+/**
+ TODO: Complete docstrings for this class
+ */
+class View: UIView
+{
     override func draw(_ rect:CGRect)
     {
-        // obtain context
+        // Obtain context
         let ctx = UIGraphicsGetCurrentContext()
         
-        // decide on radius
+        // Decide on radius
         let rad = rect.width/2.5
         
         let endAngle = CGFloat(2 * Double.pi)

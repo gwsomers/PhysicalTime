@@ -6,6 +6,7 @@
  */
 
 import Foundation
+import CoreLocation
 
 /**
  A basic, bare-bones struct to keep all Singleton variables in one place.
@@ -16,7 +17,21 @@ struct Singletons
     // `PlanetsPopUpViewController`
     static var pickerSelection = "Mercury"
     static var multiplier = 1.0
-    // TODO
+    // The global CLLocation object
+    static var locationManager: CLLocationManager!
+    static var currentLocation: CLLocation!
+    // Latitude and longitude values, initially set to 0
     static var latitude = 0.0
     static var longitude = 0.0
+    // Enumuration values for the `forKey` values
+    static let hoursPerDay = "hoursPerDay"
+    static let hourRevsPerDay = "hourRevsPerDay"
+    static let minsPerHour = "minsPerHour"
+    static let minRevsPerHour = "minRevsPerHour"
+    static let FaceOffset = "faceOffset"
+    static let TimeOffset = "timeOffset"
+    static let mode = "mode"
+    // Singletons to identify "dawn/noon" mode in the main clockface
+    static let NOON_MODE = 1
+    static let DAWN_MODE = 2
 }

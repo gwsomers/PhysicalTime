@@ -36,86 +36,88 @@ class SettingsViewController: UIViewController {
     }
     
     // called right before segueway occurs on current ViewController
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        // Declaration of a transferSettings object to transfer settings
+        var transferSettings = TransferSettings()
         if let identifier = segue.identifier {
             if identifier == "segueToClock" {
                 let defaults = UserDefaults.standard
                 let clockViewController = segue.destination as! ViewController
                 clockViewController.hoursPerDay = Int(hoursPerDayText.text!)
-                defaults.set(Int(hoursPerDayText.text!), forKey: defaultHandValues.hoursPerDay)
+                defaults.set(Int(hoursPerDayText.text!), forKey: Singletons.hoursPerDay)
                 clockViewController.minutesPerHour = Int(minutesPerHourText.text!)
-                defaults.set(Int(minutesPerHourText.text!), forKey: defaultHandValues.minsPerHour)
+                defaults.set(Int(minutesPerHourText.text!), forKey: Singletons.minsPerHour)
                 clockViewController.revolutionPerDay = Int(revolutionPerDayText.text!)
-                defaults.set(Int(revolutionPerDayText.text!), forKey: defaultHandValues.hourRevsPerDay)
+                defaults.set(Int(revolutionPerDayText.text!), forKey: Singletons.hourRevsPerDay)
                 clockViewController.minuteRevolutionPerHour = Int(minutesRevolutionPerHourText.text!)
-                defaults.set(Int(minutesRevolutionPerHourText.text!), forKey: defaultHandValues.minRevsPerHour)
+                defaults.set(Int(minutesRevolutionPerHourText.text!), forKey: Singletons.minRevsPerHour)
                 clockViewController.angleOffset = Float(angleOffsetText.text!)
-                defaults.set(Float(angleOffsetText.text!), forKey: defaultHandValues.FaceOffset)
+                defaults.set(Float(angleOffsetText.text!), forKey: Singletons.FaceOffset)
                 clockViewController.timeOffset = Int(timeOffsetText.text!)
-                defaults.set(Int(timeOffsetText.text!), forKey: defaultHandValues.TimeOffset)
+                defaults.set(Int(timeOffsetText.text!), forKey: Singletons.TimeOffset)
                 clockViewController.mode = Int(modeText.text!)
-                defaults.set(Int(modeText.text!), forKey: defaultHandValues.mode)
+                defaults.set(Int(modeText.text!), forKey: Singletons.mode)
             }
             else if identifier == "segueToClockE" {
                 let defaults = UserDefaults.standard
                 let clockViewController = segue.destination as! ViewController
                 clockViewController.hoursPerDay = Int(hoursPerDayText.text!)
-                defaults.set(Int(hoursPerDayText.text!), forKey: defaultHandValues.hoursPerDay)
+                defaults.set(Int(hoursPerDayText.text!), forKey: Singletons.hoursPerDay)
                 clockViewController.minutesPerHour = Int(minutesPerHourText.text!)
-                defaults.set(Int(minutesPerHourText.text!), forKey: defaultHandValues.minsPerHour)
+                defaults.set(Int(minutesPerHourText.text!), forKey: Singletons.minsPerHour)
                 clockViewController.revolutionPerDay = Int(revolutionPerDayText.text!)
-                defaults.set(Int(revolutionPerDayText.text!), forKey: defaultHandValues.hourRevsPerDay)
+                defaults.set(Int(revolutionPerDayText.text!), forKey: Singletons.hourRevsPerDay)
                 clockViewController.minuteRevolutionPerHour = Int(minutesRevolutionPerHourText.text!)
-                defaults.set(Int(minutesRevolutionPerHourText.text!), forKey: defaultHandValues.minRevsPerHour)
+                defaults.set(Int(minutesRevolutionPerHourText.text!), forKey: Singletons.minRevsPerHour)
                 clockViewController.angleOffset = Float(angleOffsetText.text!)
-                defaults.set(Float(angleOffsetText.text!), forKey: defaultHandValues.FaceOffset)
+                defaults.set(Float(angleOffsetText.text!), forKey: Singletons.FaceOffset)
                 clockViewController.timeOffset = Int(timeOffsetText.text!)
-                defaults.set(Int(timeOffsetText.text!), forKey: defaultHandValues.TimeOffset)
+                defaults.set(Int(timeOffsetText.text!), forKey: Singletons.TimeOffset)
                 clockViewController.mode = Int(modeText.text!)
-                defaults.set(Int(modeText.text!), forKey: defaultHandValues.mode)
-                exportSettings(fileName: String(fname.text!), hour: Int(hoursPerDayText.text!)!, minute: Int(minutesPerHourText.text!)!, rev: Int(revolutionPerDayText.text!)!, mrph: Int(minutesRevolutionPerHourText.text!)!, angle: Float(angleOffsetText.text!)!, timeoff: Int(timeOffsetText.text!)!, mode: Int(modeText.text!)!)
+                defaults.set(Int(modeText.text!), forKey: Singletons.mode)
+                transferSettings.exportSettings(fileName: String(fname.text!), hour: Int(hoursPerDayText.text!)!, minute: Int(minutesPerHourText.text!)!, rev: Int(revolutionPerDayText.text!)!, mrph: Int(minutesRevolutionPerHourText.text!)!, angle: Float(angleOffsetText.text!)!, timeoff: Int(timeOffsetText.text!)!, mode: Int(modeText.text!)!)
             }
             else if identifier == "segueToClockI" {
                 let clockViewController = segue.destination as! ViewController
-                let information = importSettings(fileName : String(fname.text!))
+                let information = transferSettings.importSettings(fileName : String(fname.text!))
                 let WordsArray = information.components(separatedBy: ":")
                 var count = 0;
                 for sect in WordsArray{
                     if count == 0{
                         let dh: String = sect
                         clockViewController.hoursPerDay = Int(dh)!
-                        defaults.set(Int(dh)!, forKey: defaultHandValues.hoursPerDay)
+                        defaults.set(Int(dh)!, forKey: Singletons.hoursPerDay)
                     }
                     if count == 1{
                         let dh: String = sect
                         clockViewController.minutesPerHour = Int(dh)!
-                        defaults.set(Int(dh)!, forKey: defaultHandValues.minsPerHour)
+                        defaults.set(Int(dh)!, forKey: Singletons.minsPerHour)
                     }
                     if count == 2{
                         let dh: String = sect
                         clockViewController.revolutionPerDay = Int(dh)!
-                        defaults.set(Int(dh)!, forKey: defaultHandValues.hourRevsPerDay)
+                        defaults.set(Int(dh)!, forKey: Singletons.hourRevsPerDay)
                     }
                     if count == 3{
                         let dh: String = sect
                         clockViewController.minuteRevolutionPerHour = Int(dh)!
-                        defaults.set(Int(dh)!, forKey: defaultHandValues.minRevsPerHour)
+                        defaults.set(Int(dh)!, forKey: Singletons.minRevsPerHour)
                     }
                     if count == 4{
                         let dh: String = sect
                         clockViewController.angleOffset = Float(dh)!
-                        defaults.set(Float(dh)!, forKey: defaultHandValues.FaceOffset)
+                        defaults.set(Float(dh)!, forKey: Singletons.FaceOffset)
                     }
                     if count == 5{
                         let dh: String = sect
                         clockViewController.timeOffset = Int(dh)!
-                        defaults.set(Int(dh)!, forKey: defaultHandValues.TimeOffset)
+                        defaults.set(Int(dh)!, forKey: Singletons.TimeOffset)
                     }
                     if count == 6{
                         let dh: String = sect
                         clockViewController.mode = Int(dh)!
-                        defaults.set(Int(dh)!, forKey: defaultHandValues.mode)
+                        defaults.set(Int(dh)!, forKey: Singletons.mode)
                     }
                     count = count + 1
                 }
@@ -124,28 +126,16 @@ class SettingsViewController: UIViewController {
     }
     
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         let background = ChangeBackground()
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
-
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

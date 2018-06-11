@@ -21,6 +21,7 @@ class MenuViewController: UIViewController
 
     /**
      Do any additional setup after loading the view (specifically, in our case, setting the background).
+     
      - returns:
      nil
      */
@@ -44,6 +45,7 @@ class MenuViewController: UIViewController
     /**
      At this stage in the view's lifecycle, we shall fade in all UI elements
      and set the font colors for the UI buttons based on the time of day.
+     
      - returns:
      nil
      */
@@ -96,32 +98,6 @@ class MenuViewController: UIViewController
                 button.setTitleColor(UIColor.white, for: .normal);
             default:
                 button.setTitleColor(UIColor.black, for: .normal);
-        }
-    }
-    
-    /**
-     Helper function to determine if the application has already been launched once. Should
-     it be the case that it has, then we can avoid fading the title in and out again, since
-     that will take away from UX.
-     
-     - returns:
-     A boolean for determining if an application has already been launched once. Without
-     loss of generality, `true` indicates is has been launched, and `false` if it has
-     not. See https://stackoverflow.com/a/47746360
-     */
-    func isAppAlreadyLaunchedOnce() -> Bool
-    {
-        let defaults = UserDefaults.standard
-        if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce")
-        {
-            print("App already launched")
-            return true
-        }
-        else
-        {
-            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
-            print("App launched first time")
-            return false
         }
     }
 }

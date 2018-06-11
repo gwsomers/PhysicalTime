@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4018872D57F55991F82FE325DDEFC4D7"
+               BlueprintIdentifier = "9B73035D8E5B7BBC28F2240BA8CBBDF1"
                BlueprintName = "SwiftySuncalc"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libSwiftySuncalc.a">

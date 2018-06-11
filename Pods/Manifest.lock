@@ -1,20 +1,24 @@
 PODS:
   - Hero (1.2.0)
+  - SwiftSoup (1.7.1)
   - SwiftySuncalc (1.0.1)
 
 DEPENDENCIES:
   - Hero (~> 1.2)
+  - SwiftSoup
   - SwiftySuncalc (~> 1.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Hero
+    - SwiftSoup
     - SwiftySuncalc
 
 SPEC CHECKSUMS:
   Hero: 33dadf2cd1c98af71e213dcbc2902e6e03622a4e
+  SwiftSoup: 277f7ef548826e0ca7603a06b30d4a5df3ee0587
   SwiftySuncalc: dd6a8b7886cb047056fefecf9c2fe7de7c1d93df
 
-PODFILE CHECKSUM: d9edd495665b917843c2451b79bf2f3e251a5b31
+PODFILE CHECKSUM: f8375757f00f6408a26bd9acad4c7664732852f9
 
 COCOAPODS: 1.5.3

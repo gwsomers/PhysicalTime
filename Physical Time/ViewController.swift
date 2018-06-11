@@ -20,13 +20,13 @@ class ViewController: UIViewController {
     
     let timer = Timer()
     let locationManager = CLLocationManager()
-    var hoursPerDay: Int! = defaults.integer(forKey: defaultHandValues.hoursPerDay)
-    var minutesPerHour: Int! = defaults.integer(forKey: defaultHandValues.minsPerHour)
-    var revolutionPerDay: Int! = defaults.integer(forKey: defaultHandValues.hourRevsPerDay)
-    var minuteRevolutionPerHour: Int! = defaults.integer(forKey: defaultHandValues.minRevsPerHour)
-    var angleOffset: Float! = defaults.float(forKey: defaultHandValues.FaceOffset)
-    var timeOffset: Int! = defaults.integer(forKey: defaultHandValues.TimeOffset)
-    var mode: Int! = defaults.integer(forKey: defaultHandValues.mode)
+    var hoursPerDay: Int! = defaults.integer(forKey: Singletons.hoursPerDay)
+    var minutesPerHour: Int! = defaults.integer(forKey: Singletons.minsPerHour)
+    var revolutionPerDay: Int! = defaults.integer(forKey: Singletons.hourRevsPerDay)
+    var minuteRevolutionPerHour: Int! = defaults.integer(forKey: Singletons.minRevsPerHour)
+    var angleOffset: Float! = defaults.float(forKey: Singletons.FaceOffset)
+    var timeOffset: Int! = defaults.integer(forKey: Singletons.TimeOffset)
+    var mode: Int! = defaults.integer(forKey: Singletons.mode)
   
     override func viewDidLoad()
     {
@@ -58,8 +58,8 @@ class ViewController: UIViewController {
         let path = CGMutablePath()
         
         path.move(to: CGPoint(x: newView.frame.midX, y: newView.frame.midY))
-        let anglePosition = HandFormulas(pPD: self.hoursPerDay, pRPD: self.revolutionPerDay, tPP: self.minutesPerHour, tRPP: self.minuteRevolutionPerHour,
-                                            fRO: self.angleOffset, tRO: self.timeOffset, mode: self.mode, locMan: locationManager)
+        let anglePosition = HandFormulas(hoursPerDay: self.hoursPerDay, hourRevsPerDay: self.revolutionPerDay, minutesPerHour: self.minutesPerHour, minuteRevsPerhour: self.minuteRevolutionPerHour,
+                                            faceResetOffset: self.angleOffset, timeResetOffset: self.timeOffset, mode: self.mode, locMan: locationManager)
         let hourAngle = anglePosition.hourAngle(timeHour: getCurrentHour(), timeMin: getCurrentMinute(), timeSec: getCurrentSecond())
         let hourX = findxCoord(handLength: 100, angle:CGFloat(hourAngle))
         let hourY = findyCoord(handLength: 100, angle:CGFloat(hourAngle))
@@ -178,7 +178,7 @@ class ViewController: UIViewController {
         }
         if (mode == 0)
         {
-            mode = NOON_MODE
+            mode = Singletons.NOON_MODE
         }
     }
 }

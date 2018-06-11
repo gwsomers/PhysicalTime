@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 import Hero
 
 
@@ -18,6 +19,8 @@ class WelcomeViewController: UIViewController
 {
     // Main title for the opening view, "Physical Time"
     @IBOutlet weak var mainTitle: UILabel!
+    // The location manager for the scope of this class
+    let locationManager = CLLocationManager()
     
     /**
      On load, dynamically change the background based on the time of day
@@ -35,6 +38,11 @@ class WelcomeViewController: UIViewController
         // Dynamically change the background on the load
         let background = ChangeBackground()
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
+        
+        // Configuration for our LocationManager
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestLocation()
     }
     
     /**
@@ -57,5 +65,43 @@ class WelcomeViewController: UIViewController
                     as? MenuViewController
             self.present(menuViewController!, animated: true, completion: nil)
         })
+    }
+}
+
+/**
+ The different test cases that may happen in the case that the user changes their
+ authorization statuses accordingly
+ */
+extension WelcomeViewController: CLLocationManagerDelegate
+{
+    /**
+     The case that the user changes the authorization status
+     */
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
+    {
+        // TODO: Go to a different view controller
+        
+    }
+    
+    /**
+     The case that the user denies access
+     */
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
+    {
+        // TODO: Go to a different view controller
+        print("2")
+    }
+    
+    /**
+     The case that the user allows authorization access
+     */
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        // In the case that it is a success, initialize the location of the location
+        // manager and the latitude/longitude coordinates
+        Singletons.currentLocation = locationManager.location
+        Singletons.latitude = Singletons.currentLocation.coordinate.latitude
+        Singletons.longitude = Singletons.currentLocation.coordinate.longitude
+        print("Latitude: \(Singletons.latitude)\nLongitude: \(Singletons.longitude)")
     }
 }

@@ -27,8 +27,8 @@ class WadokeiViewController: UIViewController {
         let newView = WadokeiView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.width))
         newView.isOpaque = false
         view.addSubview(newView)
-        let anglePosition = HandFormulas(pPD: 24, pRPD: 1, tPP: 60, tRPP: 60,
-                                            fRO: Float(Double.pi), tRO:0, mode:1, locMan: locationManager)
+        let anglePosition = HandFormulas(hoursPerDay: 24, hourRevsPerDay: 1, minutesPerHour: 60, minuteRevsPerhour: 60,
+                                            faceResetOffset: Float(Double.pi), timeResetOffset:0, mode:1, locMan: locationManager)
         let hourLayer = CAShapeLayer()
         hourLayer.frame = newView.frame
         let path = CGMutablePath()
