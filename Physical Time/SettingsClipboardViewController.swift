@@ -15,6 +15,10 @@ import CoreLocation
  */
 class SettingsClipboardViewController: UIViewController
 {
+    // All UI elements to be configured on load
+    @IBOutlet weak var configStringField: UITextField!
+    @IBOutlet weak var copiedPopupImage: UIImageView!
+    
     /**
      On the load, make the background color the "fade" effect, where the
      parent ViewController can still be seen. Also, the `showAnimate()`
@@ -25,6 +29,7 @@ class SettingsClipboardViewController: UIViewController
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         self.showAnimate()
+        configStringField.text = Singletons.configString
     }
     
     /**
@@ -38,6 +43,19 @@ class SettingsClipboardViewController: UIViewController
         self.removeAnimate()
     }
     
+    /**
+     When the user clicks the button,
+     
+     - returns:
+     Void
+     */
+    @IBAction func copyPressed(_ sender: UIButton)
+    {
+        // Initialize the pasting to the device's clipboard
+        UIPasteboard.general.string = Singletons.configString
+        // Make the pop-up appear sporadically
+        copiedPopupImage.alpha = 1
+    }
     /**
      Helper function to animate this view by changing its
      alpha and transform values.

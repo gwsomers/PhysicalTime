@@ -81,6 +81,14 @@ class SettingsViewController: UIViewController
      */
     @IBAction func copyToCliopboard(_ sender: UIButton)
     {
+        // Initialize the string to be built based off of the current settings
+        configStringBuilder(hour: Int(hoursPerDayText.text!)!,
+                            minute: Int(minutesPerHourText.text!)!,
+                            rev: Int(revolutionPerDayText.text!)!,
+                            mrph: Int(minutesRevolutionPerHourText.text!)!,
+                            angle: Float(angleOffsetText.text!)!,
+                            timeoff: Int(timeOffsetText.text!)!,
+                            mode: Int(modeText.text!)!)
         // Declare `popupViewController` to represent the
         // `SettingsClipboardViewController`
         let popupViewController: UIViewController = UIStoryboard(name: "Main", bundle: nil)
@@ -193,6 +201,30 @@ class SettingsViewController: UIViewController
             }
         }
     }
+    
+    /**
+     Helper function instantiated by the caller to save the config string
+     in a Singleton variable so the user may copy to their clipboard.
+     
+     - parameters:
+     - hour: The amount of hours in a day, as parsed and passed in by the caller
+     - minute: The amount of minutes in a day, as parsed and passed in by the caller
+     - rev: The hour revolutions for the day, as parsed and passed in by the caller
+     - mrph: The amount of minute revolutions per hour, as parsed and passed in by the caller
+     - angle: TODO
+     - timeoff: The revolutions for the day, as parsed and passed in by the caller
+     - mode: If we are in "dawn" mode, as parsed and passed in by the caller
+     */
+    func configStringBuilder(hour: Int, minute: Int, rev: Int,
+                             mrph: Int, angle: Float, timeoff: Int,
+                             mode: Int) -> Void
+    {
+        Singletons.configString = String(hour) + ":" + String(minute) +
+                                    ":" + String(rev) + ":" + String(mrph) +
+                                    ":" + String(angle) + ":" +
+                                    String(timeoff) + ":" + String(mode)
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()

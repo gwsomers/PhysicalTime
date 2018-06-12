@@ -819,13 +819,39 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ue-tB-DA0">
-                                <rect key="frame" x="71" y="230" width="233" height="207"/>
+                                <rect key="frame" x="16" y="266" width="343" height="135"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.96858315602920597" green="1" blue="0.99399906739881094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cEq-TQ-D3N">
+                                <rect key="frame" x="81" y="306" width="272" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="36"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1o-eF-jEe">
+                                <rect key="frame" x="31" y="306" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="copyclipboard"/>
+                                <connections>
+                                    <action selector="copyPressed:" destination="noE-3F-6Uu" eventType="touchUpInside" id="Lgr-7s-h8E"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="copiedicon" translatesAutoresizingMaskIntoConstraints="NO" id="kHP-Bu-IWJ">
+                                <rect key="frame" x="28" y="276" width="43" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your configuration key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhJ-5F-vnW">
+                                <rect key="frame" x="111" y="362" width="193" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -834,15 +860,19 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                             <outletCollection property="gestureRecognizers" destination="epA-LC-yXL" appends="YES" id="UVl-PV-Epq"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="configStringField" destination="cEq-TQ-D3N" id="YgE-JA-qKl"/>
+                        <outlet property="copiedPopupImage" destination="kHP-Bu-IWJ" id="kWi-ab-o0c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJJ-bo-rbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="epA-LC-yXL">
+                <tapGestureRecognizer numberOfTapsRequired="2" numberOfTouchesRequired="2" id="epA-LC-yXL">
                     <connections>
                         <action selector="closePopup:" destination="noE-3F-6Uu" id="P3e-Ra-Q0K"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="323" y="-20"/>
+            <point key="canvasLocation" x="322.39999999999998" y="-20.239880059970016"/>
         </scene>
         <!--Lunar View Controller-->
         <scene sceneID="uNz-zB-6AF">
@@ -978,6 +1008,7 @@ Enter Physical Time, an application that lets you redefine any clock standard an
     </scenes>
     <resources>
         <image name="back" width="168" height="168"/>
+        <image name="copiedicon" width="200" height="133"/>
         <image name="copyclipboard" width="512" height="512"/>
         <image name="earth" width="512" height="512"/>
         <image name="export" width="420" height="420"/>
