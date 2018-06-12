@@ -250,37 +250,17 @@ class Physical_TimeTests: XCTestCase
         let label: UILabel = UILabel()
         settingsViewController.setLabelColor(label: label, backgroundType: "sunset.jpg")
         XCTAssertEqual(UIColor.orange, label.textColor, "Colors do not match!")
+        // Testing the functionality of the String builder
+        settingsViewController.configStringBuilder(hour: 2, minute: 1, rev: 3, mrph: 3, angle: 2, timeoff: 2, mode: 1)
+        XCTAssertEqual("2:1:3:3:2.0:2:1", Singletons.configString, "Stringbuilder did not initialize values correctly!")
     }
 
     /**
-     
-     */
-    func testStatsViewController()
-    {
-        
-    }
-
-    /**
-     
+     Testing the `TransferSettings` class
      */
     func testTransferSettings()
     {
-        
-    }
-    
-    /**
-     
-     */
-    func testWadokeiInfoViewController()
-    {
-        
-    }
-
-    /**
-     
-     */
-    func testWelcomeViewController()
-    {
-        
+        let importStr: String = transferSettings.importSettings(fileName: "config.txt")
+        XCTAssertEqual("24:60:2:1:0.0:0:1", importStr, "The import strings are not equal!")
     }
 }
