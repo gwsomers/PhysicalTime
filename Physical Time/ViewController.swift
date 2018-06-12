@@ -88,7 +88,6 @@ class ViewController: UIViewController {
 
         updateHand(currentLayer: hourLayer, duration: CFTimeInterval(anglePosition.hourDuration()))
         updateHand(currentLayer: minuteLayer, duration: CFTimeInterval(anglePosition.minuteDuration()))
-        getCurrentTime()
         
         clockSide = self.minutesPerHour
         totalHoursPerDay = self.hoursPerDay
@@ -125,15 +124,7 @@ class ViewController: UIViewController {
         animation.toValue = angle
         currentLayer.add(animation, forKey: "rotate")
     }
-    
-    func getCurrentTime()
-    {
-        let hour = getCurrentHour()
-        let minutes = getCurrentMinute()
-        let seconds = getCurrentSecond()
-        print("time = \(hour):\(minutes):\(seconds)")
-    }
-    
+  
     func getCurrentHour()-> Int
     {
         let date = Date()

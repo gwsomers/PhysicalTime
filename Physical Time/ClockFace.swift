@@ -16,12 +16,22 @@ import UIKit
 
 let object = ViewController()
 
+/**
+ helper function to convert degrees into radians
+ 
+ - returns: CGFloat radians
+ */
 func degree2radian(_ deg:CGFloat) -> CGFloat
 {
     let radValue = CGFloat(Double.pi) * deg / 180
     return radValue
 }
-
+/**
+ helper functions that gets inputted number of partititons and splits the circle into equal partitions
+ 
+ -returns:
+ points: that are equally partition in a cirlce
+ */
 func circleCircumferencePoints(sides:Int, x:CGFloat,y:CGFloat, radius:CGFloat, adjustment:CGFloat=0)->[CGPoint] {
     let angle = degree2radian(360/CGFloat(sides))
     let cx = x // x origin
@@ -37,7 +47,10 @@ func circleCircumferencePoints(sides:Int, x:CGFloat,y:CGFloat, radius:CGFloat, a
     }
     return points
 }
-
+/**
+ helper function that draws a marker at each point given differentiating between a second marker and an hour marker
+ - returns: nil
+ */
 func secondMarkers(ctx:CGContext, x:CGFloat, y:CGFloat, radius:CGFloat, sides:Int, color:UIColor) {
     // retrieve points
     let points = circleCircumferencePoints(sides:sides,x:x,y:y,radius:radius)
@@ -72,7 +85,7 @@ func secondMarkers(ctx:CGContext, x:CGFloat, y:CGFloat, radius:CGFloat, sides:In
 }
 
 /**
- TODO: Complete docstrings for this class
+ Class representing the UIView subclass that draws the augmented clock ViewController
  */
 class View: UIView
 {
@@ -89,9 +102,8 @@ class View: UIView
         // add the circle to the context
         ctx?.addArc(center: CGPoint(x:rect.midX, y:rect.midY), radius: rad, startAngle: 0, endAngle: endAngle, clockwise: true)
         
-        
         // set fill color
-        ctx?.setFillColor(UIColor.black.cgColor)
+        ctx?.setFillColor(UIColor.blue.cgColor)
         
         // set stroke color
         ctx?.setStrokeColor(UIColor.black.cgColor)
@@ -102,7 +114,7 @@ class View: UIView
         // draw the path
         ctx?.drawPath(using: .fillStroke)
         
-        
-        secondMarkers(ctx: ctx!, x: rect.midX, y: rect.midY, radius: rad, sides: object.getClockSide(), color: UIColor.red)
+        // uses helper function secondMarkers to draw the markers given amount of hours and minutes in a day
+        secondMarkers(ctx: ctx!, x: rect.midX, y: rect.midY, radius: rad, sides: object.getClockSide(), color: UIColor.black)
     }
 }

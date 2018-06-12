@@ -146,7 +146,7 @@ class HandFormulas
                                           since: NSDate() as Date))
         }
         // If not, simply return the true number of seconds in one day
-        return numOfSecondsInADay
+       return numOfSecondsInADay
     }
     
     /**
@@ -160,11 +160,26 @@ class HandFormulas
      */
     func getDawn(myDate: Date) -> Int
     {
+        var coords: CLLocationCoordinate2D!
         // Initialize the solar object from the given date and coordinates, dependant on
         // if the user gave their coordinates
-        let coords = Singletons.coords
+        if (CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() == .authorizedWhenInUse)
+        {
+            coords = CLLocationCoordinate2D.init(
+                latitude: Singletons.coords.latitude,
+                longitude: Singletons.coords.longitude
+            )
+        }
+        else
+        {
+            coords = CLLocationCoordinate2D.init(
+                latitude: 37.0,
+                longitude: -122.0
+            )
+        }
         // Initialize the Solar object
-        let Solarcalc = Solar.init(for: myDate, coordinate: coords!)
+        let Solarcalc = Solar.init(for: myDate, coordinate: coords)
         // Get the sunrise time in UTC
         let sunriseUTC = Solarcalc!.sunrise!
         var startoftoday = Date.init(timeIntervalSinceReferenceDate: 0)
