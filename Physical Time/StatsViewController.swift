@@ -188,9 +188,9 @@ class StatsViewController: UIViewController
         case "sunrise.jpg":
             textView.textColor = UIColor.orange
         case "morningGoldenHour.jpg":
-            textView.textColor = UIColor.yellow
+            textView.textColor = UIColor.black
         case "noon.jpg":
-            textView.textColor = UIColor.yellow
+            textView.textColor = UIColor.black
         case "sunset.jpg":
             textView.textColor = UIColor.orange
         case "evening.jpg":

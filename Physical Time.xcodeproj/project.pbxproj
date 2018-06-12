@@ -26,6 +26,7 @@
 		9CF4710820B3422700076239 /* TransferSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4710720B3422700076239 /* TransferSettings.swift */; };
 		B80C344720CC911200E81AA6 /* WadokeiInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80C344620CC911200E81AA6 /* WadokeiInfoViewController.swift */; };
 		B80F894220C1A3F300558C2C /* PlanetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80F894120C1A3F300558C2C /* PlanetsViewController.swift */; };
+		B82F8E1F20CFC76A00958626 /* SettingsClipboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82F8E1E20CFC76900958626 /* SettingsClipboardViewController.swift */; };
 		B831169A20C4292700681E7B /* PlanetsPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B831169920C4292700681E7B /* PlanetsPopUpViewController.swift */; };
 		B86D1DEE20B7AD5200892FA2 /* Blackout_Sunrise.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B86D1DED20B7AD5100892FA2 /* Blackout_Sunrise.ttf */; };
 		B8786A4820C0F6AC0043C887 /* MenuInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8786A4720C0F6AC0043C887 /* MenuInfoViewController.swift */; };
@@ -65,6 +66,7 @@
 		9CF4710720B3422700076239 /* TransferSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferSettings.swift; sourceTree = "<group>"; };
 		B80C344620CC911200E81AA6 /* WadokeiInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WadokeiInfoViewController.swift; sourceTree = "<group>"; };
 		B80F894120C1A3F300558C2C /* PlanetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsViewController.swift; sourceTree = "<group>"; };
+		B82F8E1E20CFC76900958626 /* SettingsClipboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsClipboardViewController.swift; sourceTree = "<group>"; };
 		B831169920C4292700681E7B /* PlanetsPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsPopUpViewController.swift; sourceTree = "<group>"; };
 		B86D1DED20B7AD5100892FA2 /* Blackout_Sunrise.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Blackout_Sunrise.ttf; path = "Physical Time/fonts/Blackout_Sunrise.ttf"; sourceTree = SOURCE_ROOT; };
 		B8786A4720C0F6AC0043C887 /* MenuInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInfoViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +120,6 @@
 				B86D1DEC20B7AD2000892FA2 /* fonts */,
 				5D9576522044A4A3004760D4 /* HandFormulas.swift */,
 				5DF847432038F4F5007E7322 /* Info.plist */,
-				9CF4710720B3422700076239 /* TransferSettings.swift */,
 				5DF847402038F4F5007E7322 /* LaunchScreen.storyboard */,
 				5D16BBD220B688DD00E0252F /* LunarViewController.swift */,
 				7C30166220B7853A0070F838 /* Main.storyboard */,
@@ -126,10 +127,12 @@
 				5DE0B91F2080782100607D4C /* MenuViewController.swift */,
 				B831169920C4292700681E7B /* PlanetsPopUpViewController.swift */,
 				B80F894120C1A3F300558C2C /* PlanetsViewController.swift */,
+				B82F8E1E20CFC76900958626 /* SettingsClipboardViewController.swift */,
 				5D83A5382055C34100BFAE08 /* SettingsViewController.swift */,
 				B8FD369E20C955D100FCFB38 /* Singletons.swift */,
 				0222D928204E05ED0067EC35 /* Solar.swift */,
 				B8BA2D5620B82CA40083DE3A /* StatsViewController.swift */,
+				9CF4710720B3422700076239 /* TransferSettings.swift */,
 				B8BA2D5420B7F72F0083DE3A /* UIViewExtension.swift */,
 				5DF847392038F4F5007E7322 /* ViewController.swift */,
 				5D16BBCE20B6883100E0252F /* WadokeiFace.swift */,
@@ -285,6 +288,7 @@
 				5D16BBD120B6885E00E0252F /* WadokeiViewController.swift in Sources */,
 				5DF847382038F4F5007E7322 /* AppDelegate.swift in Sources */,
 				9CF4710820B3422700076239 /* TransferSettings.swift in Sources */,
+				B82F8E1F20CFC76A00958626 /* SettingsClipboardViewController.swift in Sources */,
 				B80C344720CC911200E81AA6 /* WadokeiInfoViewController.swift in Sources */,
 				5D16BBCF20B6883100E0252F /* WadokeiFace.swift in Sources */,
 				B8FD369F20C955D100FCFB38 /* Singletons.swift in Sources */,

@@ -5,6 +5,11 @@
  Created for Physical Time, 2018
  */
 
+/**
+ TODO: Add docstrings and refactor for readability/code cleanliness, and decouple
+ dependencies (e.g. `object`)
+ */
+
 import Foundation
 
 import UIKit

@@ -610,53 +610,58 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="24" borderStyle="roundedRect" placeholder="hours per day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uNP-58-pp3">
-                                <rect key="frame" x="46" y="77" width="273" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="24" borderStyle="roundedRect" placeholder="hours per day" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uNP-58-pp3">
+                                <rect key="frame" x="281" y="48" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="60" borderStyle="roundedRect" placeholder="minutes per hour" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5xI-D5-l5x">
-                                <rect key="frame" x="46" y="139" width="273" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="60" borderStyle="roundedRect" placeholder="minutes per hour" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5xI-D5-l5x">
+                                <rect key="frame" x="281" y="91" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="Minutes Revolution Per Hour" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nxk-2p-V5z">
-                                <rect key="frame" x="46" y="318" width="273" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="Minutes Revolution Per Hour" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nxk-2p-V5z">
+                                <rect key="frame" x="281" y="215" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2" borderStyle="roundedRect" placeholder="revolution per day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nD8-hM-ZVf">
-                                <rect key="frame" x="46" y="197" width="273" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2" borderStyle="roundedRect" placeholder="revolution per day" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nD8-hM-ZVf">
+                                <rect key="frame" x="281" y="133" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" placeholder="Angle Offset" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MDg-V0-r0O">
-                                <rect key="frame" x="46" y="257" width="273" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" placeholder="Angle Offset" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MDg-V0-r0O">
+                                <rect key="frame" x="281" y="174" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" placeholder="Time Offset" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7pW-nK-Nh9">
-                                <rect key="frame" x="46" y="372" width="273" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" placeholder="Time Offset" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7pW-nK-Nh9">
+                                <rect key="frame" x="281" y="254" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="Mode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uVl-6F-gKb">
-                                <rect key="frame" x="46" y="430" width="273" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="Mode" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uVl-6F-gKb">
+                                <rect key="frame" x="281" y="299" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eng-8Z-qzf">
-                                <rect key="frame" x="142" y="521" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="wVZ-C1-MD1"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eng-8Z-qzf">
+                                <rect key="frame" x="16" y="587" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Clock" image="back">
                                     <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -664,84 +669,139 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                                     <action selector="buttonTap:" destination="sgD-8R-5H3" eventType="touchUpInside" id="dss-6c-Buc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4a-gb-Tzj">
-                                <rect key="frame" x="273" y="617" width="46" height="30"/>
-                                <state key="normal" title="Import"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4a-gb-Tzj">
+                                <rect key="frame" x="274" y="409" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Import" image="import"/>
                                 <connections>
-                                    <action selector="importing:" destination="sgD-8R-5H3" eventType="touchUpInside" id="1dt-Pg-gY0"/>
+                                    <action selector="importButton:" destination="sgD-8R-5H3" eventType="touchUpInside" id="1dt-Pg-gY0"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="segueToClockI" id="oUo-OU-kSF"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="config.txt" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="abD-Qu-3Qu">
-                                <rect key="frame" x="139" y="617" width="98" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="config.txt" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="abD-Qu-3Qu">
+                                <rect key="frame" x="51" y="362" width="273" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXA-rW-Vyp">
-                                <rect key="frame" x="60" y="617" width="46" height="30"/>
-                                <state key="normal" title="Export"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXA-rW-Vyp">
+                                <rect key="frame" x="50" y="409" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Export" image="export"/>
                                 <connections>
-                                    <action selector="export:" destination="sgD-8R-5H3" eventType="touchUpInside" id="0vm-Tt-06j"/>
+                                    <action selector="exportButton:" destination="sgD-8R-5H3" eventType="touchUpInside" id="0vm-Tt-06j"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="segueToClockE" id="G4Y-t2-fJ8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hours Per Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33s-dw-Uof">
+                                <rect key="frame" x="46" y="48" width="168" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minutes Per Hour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58W-AE-DnW">
+                                <rect key="frame" x="46" y="95" width="168" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minutes Revolution Per Hour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dir-If-uQg">
+                                <rect key="frame" x="46" y="137" width="206" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Revolution Per Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2y-ly-kR0">
+                                <rect key="frame" x="46" y="178" width="173" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Angle Offset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rh-Gp-8ga">
+                                <rect key="frame" x="46" y="219" width="173" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Offset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJg-xp-YKD">
+                                <rect key="frame" x="46" y="259" width="168" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkN-5v-UKw">
+                                <rect key="frame" x="46" y="304" width="168" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Copy current configuration to clipboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrE-xJ-3eY">
+                                <rect key="frame" x="46" y="476" width="260" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Relative filesystem path" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDL-Vx-HBW">
+                                <rect key="frame" x="105" y="337" width="164" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Import" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7C-ZE-Iph">
+                                <rect key="frame" x="278" y="396" width="38" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Export" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdj-ba-dJX">
+                                <rect key="frame" x="55" y="396" width="36" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLg-yz-Q6M">
+                                <rect key="frame" x="275" y="467" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="copyclipboard"/>
+                                <connections>
+                                    <action selector="copyToCliopboard:" destination="sgD-8R-5H3" eventType="touchUpInside" id="Kpg-ZO-ZPa"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="uVl-6F-gKb" firstAttribute="top" secondItem="7pW-nK-Nh9" secondAttribute="bottom" constant="28" id="0ql-Up-WSa"/>
-                            <constraint firstItem="nxk-2p-V5z" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="4IY-lj-0hg"/>
-                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="nxk-2p-V5z" secondAttribute="trailing" constant="56" id="5ck-aV-ejq"/>
-                            <constraint firstItem="nD8-hM-ZVf" firstAttribute="top" secondItem="5xI-D5-l5x" secondAttribute="bottom" constant="28" id="5fI-b6-mnK"/>
-                            <constraint firstItem="O4a-gb-Tzj" firstAttribute="leading" secondItem="abD-Qu-3Qu" secondAttribute="trailing" constant="19" id="6c8-f0-5HE"/>
-                            <constraint firstItem="uVl-6F-gKb" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="7hz-Gt-O4D"/>
-                            <constraint firstItem="MDg-V0-r0O" firstAttribute="top" secondItem="nD8-hM-ZVf" secondAttribute="bottom" constant="30" id="7uF-rE-9Lr"/>
-                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="uNP-58-pp3" secondAttribute="trailing" constant="56" id="8ow-PW-txV"/>
-                            <constraint firstItem="abD-Qu-3Qu" firstAttribute="leading" secondItem="sXA-rW-Vyp" secondAttribute="trailing" constant="25" id="92w-mW-EEL"/>
-                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="7pW-nK-Nh9" secondAttribute="trailing" constant="56" id="BuR-Z5-lrb"/>
-                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="uVl-6F-gKb" secondAttribute="trailing" constant="56" id="CuO-IF-lex"/>
-                            <constraint firstItem="uNP-58-pp3" firstAttribute="top" secondItem="OeN-Tk-nvx" secondAttribute="top" constant="57" id="GA6-96-GyG"/>
-                            <constraint firstItem="5xI-D5-l5x" firstAttribute="top" secondItem="uNP-58-pp3" secondAttribute="bottom" constant="32" id="Gyu-RT-dKV"/>
-                            <constraint firstItem="7pW-nK-Nh9" firstAttribute="top" secondItem="nxk-2p-V5z" secondAttribute="bottom" constant="24" id="HO6-2d-kbj"/>
-                            <constraint firstItem="nxk-2p-V5z" firstAttribute="top" secondItem="MDg-V0-r0O" secondAttribute="bottom" constant="31" id="Jo1-8h-dQ1"/>
-                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="nD8-hM-ZVf" secondAttribute="trailing" constant="56" id="MHy-W0-X14"/>
-                            <constraint firstItem="nD8-hM-ZVf" firstAttribute="top" secondItem="5xI-D5-l5x" secondAttribute="bottom" constant="28" id="MVg-5q-ADV"/>
-                            <constraint firstItem="uNP-58-pp3" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="Mpr-XZ-wW8"/>
-                            <constraint firstItem="7pW-nK-Nh9" firstAttribute="top" secondItem="nxk-2p-V5z" secondAttribute="bottom" constant="24" id="Wi6-Gq-MzJ"/>
-                            <constraint firstItem="nxk-2p-V5z" firstAttribute="top" secondItem="MDg-V0-r0O" secondAttribute="bottom" constant="31" id="Xwb-92-lXY"/>
-                            <constraint firstItem="nD8-hM-ZVf" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="bdw-Uo-FhF"/>
-                            <constraint firstItem="eng-8Z-qzf" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="142" id="cbD-Wh-8gS"/>
-                            <constraint firstItem="sXA-rW-Vyp" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="100" id="cxt-Aw-6Je"/>
-                            <constraint firstItem="MDg-V0-r0O" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="dB4-jX-AUw"/>
-                            <constraint firstItem="O4a-gb-Tzj" firstAttribute="top" secondItem="uVl-6F-gKb" secondAttribute="bottom" constant="157" id="fFL-M0-WHi"/>
-                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="bottom" secondItem="abD-Qu-3Qu" secondAttribute="bottom" constant="20" id="fYW-Fe-Fz9"/>
-                            <constraint firstItem="abD-Qu-3Qu" firstAttribute="top" secondItem="eng-8Z-qzf" secondAttribute="bottom" constant="15" id="gHW-tn-X0o"/>
-                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="O4a-gb-Tzj" secondAttribute="trailing" constant="56" id="hR7-q9-gbY"/>
-                            <constraint firstItem="O4a-gb-Tzj" firstAttribute="leading" secondItem="abD-Qu-3Qu" secondAttribute="trailing" constant="19" id="jWp-7g-4F4"/>
-                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="MDg-V0-r0O" secondAttribute="trailing" constant="56" id="lHz-In-7NR"/>
-                            <constraint firstItem="abD-Qu-3Qu" firstAttribute="leading" secondItem="sXA-rW-Vyp" secondAttribute="trailing" constant="25" id="lxj-Lr-Ou6"/>
-                            <constraint firstItem="eng-8Z-qzf" firstAttribute="centerX" secondItem="uVl-6F-gKb" secondAttribute="centerX" id="n3u-6d-G7Q"/>
-                            <constraint firstItem="5xI-D5-l5x" firstAttribute="top" secondItem="uNP-58-pp3" secondAttribute="bottom" constant="32" id="pZR-29-lhP"/>
-                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="bottom" secondItem="sXA-rW-Vyp" secondAttribute="bottom" constant="20" id="qva-KG-NxB"/>
-                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="trailing" secondItem="5xI-D5-l5x" secondAttribute="trailing" constant="56" id="rB2-5g-pEX"/>
-                            <constraint firstItem="7pW-nK-Nh9" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="s2m-Tr-gHx"/>
-                            <constraint firstItem="uVl-6F-gKb" firstAttribute="top" secondItem="7pW-nK-Nh9" secondAttribute="bottom" constant="28" id="thJ-NF-61o"/>
-                            <constraint firstItem="5xI-D5-l5x" firstAttribute="leading" secondItem="OeN-Tk-nvx" secondAttribute="leading" constant="46" id="uY2-1e-JHx"/>
-                            <constraint firstItem="MDg-V0-r0O" firstAttribute="top" secondItem="nD8-hM-ZVf" secondAttribute="bottom" constant="30" id="uaV-26-vKo"/>
-                            <constraint firstItem="eng-8Z-qzf" firstAttribute="top" secondItem="uVl-6F-gKb" secondAttribute="bottom" constant="61" id="vBO-yy-TGr"/>
-                            <constraint firstItem="sXA-rW-Vyp" firstAttribute="top" secondItem="eng-8Z-qzf" secondAttribute="bottom" constant="15" id="x9F-Se-2bU"/>
-                            <constraint firstItem="OeN-Tk-nvx" firstAttribute="bottom" secondItem="O4a-gb-Tzj" secondAttribute="bottom" constant="20" id="xzY-dn-gjp"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OeN-Tk-nvx"/>
                     </view>
                     <connections>
+                        <outlet property="angleOffsetLabel" destination="3rh-Gp-8ga" id="ptv-4k-6pA"/>
                         <outlet property="angleOffsetText" destination="MDg-V0-r0O" id="Rhf-nQ-6H3"/>
+                        <outlet property="clipboardLabel" destination="qrE-xJ-3eY" id="JhF-UB-cKt"/>
+                        <outlet property="exportLabel" destination="Jdj-ba-dJX" id="7db-dJ-rof"/>
                         <outlet property="fname" destination="abD-Qu-3Qu" id="UXH-D1-VZA"/>
+                        <outlet property="hoursPerDayLabel" destination="33s-dw-Uof" id="uef-b0-2Ae"/>
                         <outlet property="hoursPerDayText" destination="uNP-58-pp3" id="fw8-Ip-8JQ"/>
+                        <outlet property="importLabel" destination="H7C-ZE-Iph" id="yZQ-WK-Nqf"/>
+                        <outlet property="minuteRevolutionPerHourLabel" destination="Dir-If-uQg" id="Gc9-CK-StG"/>
+                        <outlet property="minutesPerHourLabel" destination="58W-AE-DnW" id="ReA-P4-ePj"/>
                         <outlet property="minutesPerHourText" destination="5xI-D5-l5x" id="bns-Hn-Xda"/>
                         <outlet property="minutesRevolutionPerHourText" destination="nxk-2p-V5z" id="uvO-a0-ekR"/>
+                        <outlet property="modeLabel" destination="HkN-5v-UKw" id="juT-7N-zMU"/>
                         <outlet property="modeText" destination="uVl-6F-gKb" id="YfL-fE-uOn"/>
+                        <outlet property="pathLabel" destination="MDL-Vx-HBW" id="K1C-hh-v2z"/>
+                        <outlet property="revolutionPerDayLabel" destination="S2y-ly-kR0" id="vET-22-Nju"/>
                         <outlet property="revolutionPerDayText" destination="nD8-hM-ZVf" id="SAT-Dd-syw"/>
+                        <outlet property="timeOffsetLabel" destination="lJg-xp-YKD" id="yqm-DC-131"/>
                         <outlet property="timeOffsetText" destination="7pW-nK-Nh9" id="X1t-pA-UTr"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="segueToClock" id="BKm-NE-TiG"/>
                     </connections>
@@ -749,6 +809,40 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4uM-25-Eei" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-372" y="-17.541229385307346"/>
+        </scene>
+        <!--Copy to Clipboard View Controller-->
+        <scene sceneID="Ym3-it-nIv">
+            <objects>
+                <viewController storyboardIdentifier="copyToClipboard" id="noE-3F-6Uu" userLabel="Copy to Clipboard View Controller" customClass="SettingsClipboardViewController" customModule="Physical_Time" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t1Z-6f-dEX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ue-tB-DA0">
+                                <rect key="frame" x="71" y="230" width="233" height="207"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96858315602920597" green="1" blue="0.99399906739881094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" name="Arvo" family="Arvo" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="Zb8-t8-LCM"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="epA-LC-yXL" appends="YES" id="UVl-PV-Epq"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cJJ-bo-rbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="epA-LC-yXL">
+                    <connections>
+                        <action selector="closePopup:" destination="noE-3F-6Uu" id="P3e-Ra-Q0K"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="323" y="-20"/>
         </scene>
         <!--Lunar View Controller-->
         <scene sceneID="uNz-zB-6AF">
@@ -884,9 +978,12 @@ Enter Physical Time, an application that lets you redefine any clock standard an
     </scenes>
     <resources>
         <image name="back" width="168" height="168"/>
+        <image name="copyclipboard" width="512" height="512"/>
         <image name="earth" width="512" height="512"/>
+        <image name="export" width="420" height="420"/>
         <image name="gears" width="512" height="512"/>
         <image name="go" width="2000" height="2000"/>
+        <image name="import" width="420" height="420"/>
         <image name="info" width="624" height="624"/>
         <image name="jupiter" width="1368" height="1416"/>
         <image name="mars" width="512" height="512"/>
@@ -898,8 +995,8 @@ Enter Physical Time, an application that lets you redefine any clock standard an
         <image name="venus" width="551" height="551"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3Rf-nH-Phd"/>
-        <segue reference="T5x-hT-3Fo"/>
-        <segue reference="yLd-b5-dd9"/>
+        <segue reference="oUo-OU-kSF"/>
+        <segue reference="mYq-pO-xBa"/>
+        <segue reference="MHp-zB-jqb"/>
     </inferredMetricsTieBreakers>
 </document>
