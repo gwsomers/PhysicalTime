@@ -80,7 +80,6 @@ extension WelcomeViewController: CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
     {
         // TODO: Go to a different view controller
-        
     }
     
     /**
