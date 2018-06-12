@@ -19,6 +19,8 @@ let defaults = UserDefaults.standard
 class ViewController: UIViewController {
     
     let timer = Timer()
+    //Load user defaults for clock. These will be changed if we loaded from settings page,
+    //or stay the same if loaded directly
     var hoursPerDay: Int! = defaults.integer(forKey: Singletons.hoursPerDay)
     var minutesPerHour: Int! = defaults.integer(forKey: Singletons.minsPerHour)
     var revolutionPerDay: Int! = defaults.integer(forKey: Singletons.hourRevsPerDay)
