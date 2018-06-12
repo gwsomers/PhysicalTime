@@ -1,0 +1,7 @@
+module SwiftSoup {
+  umbrella header "SwiftSoup-iOS11.4-umbrella.h"
+  exclude header "SwiftSoup-iOS11.2-umbrella.h"
+
+  export *
+  module * { export * }
+}

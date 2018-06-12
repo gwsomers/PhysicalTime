@@ -1,0 +1,6 @@
+module Pods_Physical_TimeTests {
+  umbrella header "Pods-Physical TimeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

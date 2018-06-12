@@ -27,6 +27,7 @@
 		B80C344720CC911200E81AA6 /* WadokeiInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80C344620CC911200E81AA6 /* WadokeiInfoViewController.swift */; };
 		B80F894220C1A3F300558C2C /* PlanetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80F894120C1A3F300558C2C /* PlanetsViewController.swift */; };
 		B82F8E1F20CFC76A00958626 /* SettingsClipboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82F8E1E20CFC76900958626 /* SettingsClipboardViewController.swift */; };
+		B82F8E3520CFEEFA00958626 /* Physical_TimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82F8E3420CFEEFA00958626 /* Physical_TimeTests.swift */; };
 		B831169A20C4292700681E7B /* PlanetsPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B831169920C4292700681E7B /* PlanetsPopUpViewController.swift */; };
 		B86D1DEE20B7AD5200892FA2 /* Blackout_Sunrise.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B86D1DED20B7AD5100892FA2 /* Blackout_Sunrise.ttf */; };
 		B8786A4820C0F6AC0043C887 /* MenuInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8786A4720C0F6AC0043C887 /* MenuInfoViewController.swift */; };
@@ -37,7 +38,18 @@
 		B8BA2D5920B8365C0083DE3A /* Arvo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8BA2D5820B8365B0083DE3A /* Arvo-Regular.ttf */; };
 		B8FD369D20C94AA600FCFB38 /* SpaceMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8FD369C20C94AA500FCFB38 /* SpaceMono-Regular.ttf */; };
 		B8FD369F20C955D100FCFB38 /* Singletons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FD369E20C955D100FCFB38 /* Singletons.swift */; };
+		BC7D9D4BAD8AF1953D04BCA0 /* libPods-Physical TimeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AAFA1EBF140025AB98E9AD /* libPods-Physical TimeTests.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B82F8E3720CFEEFA00958626 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DF8472C2038F4F5007E7322 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DF847332038F4F5007E7322;
+			remoteInfo = "Physical Time";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0222D928204E05ED0067EC35 /* Solar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solar.swift; sourceTree = "<group>"; };
@@ -45,6 +57,8 @@
 		1DFEC7171DF67086875FC6A4 /* Pods-Physical Time.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Physical Time.release.xcconfig"; path = "Pods/Target Support Files/Pods-Physical Time/Pods-Physical Time.release.xcconfig"; sourceTree = "<group>"; };
 		208736F6518B4029F0E7BCE4 /* libPods-Physical Time.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Physical Time.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2905804960F17BF1FF6FC9A4 /* libPods-Physical_Time_Analog_Clock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Physical_Time_Analog_Clock.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		33153FD57CB25C89775B7150 /* Pods-Physical TimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Physical TimeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Physical TimeTests/Pods-Physical TimeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		373E3E2A017705FACEDC842F /* Pods-Physical TimeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Physical TimeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Physical TimeTests/Pods-Physical TimeTests.release.xcconfig"; sourceTree = "<group>"; };
 		5D16BBCE20B6883100E0252F /* WadokeiFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WadokeiFace.swift; sourceTree = "<group>"; };
 		5D16BBD020B6885E00E0252F /* WadokeiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WadokeiViewController.swift; sourceTree = "<group>"; };
 		5D16BBD220B688DD00E0252F /* LunarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarViewController.swift; sourceTree = "<group>"; };
@@ -63,10 +77,14 @@
 		7C30166220B7853A0070F838 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7F33B67ADF3C018ABBCA1DE4 /* Pods-Physical_Time_Analog_Clock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Physical_Time_Analog_Clock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Physical_Time_Analog_Clock/Pods-Physical_Time_Analog_Clock.debug.xcconfig"; sourceTree = "<group>"; };
 		88018E9D5B1F3AABB429DDB4 /* Pods-Physical Time.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Physical Time.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Physical Time/Pods-Physical Time.debug.xcconfig"; sourceTree = "<group>"; };
+		93AAFA1EBF140025AB98E9AD /* libPods-Physical TimeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Physical TimeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF4710720B3422700076239 /* TransferSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferSettings.swift; sourceTree = "<group>"; };
 		B80C344620CC911200E81AA6 /* WadokeiInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WadokeiInfoViewController.swift; sourceTree = "<group>"; };
 		B80F894120C1A3F300558C2C /* PlanetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsViewController.swift; sourceTree = "<group>"; };
 		B82F8E1E20CFC76900958626 /* SettingsClipboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsClipboardViewController.swift; sourceTree = "<group>"; };
+		B82F8E3220CFEEFA00958626 /* Physical TimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Physical TimeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B82F8E3420CFEEFA00958626 /* Physical_TimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Physical_TimeTests.swift; sourceTree = "<group>"; };
+		B82F8E3620CFEEFA00958626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B831169920C4292700681E7B /* PlanetsPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsPopUpViewController.swift; sourceTree = "<group>"; };
 		B86D1DED20B7AD5100892FA2 /* Blackout_Sunrise.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Blackout_Sunrise.ttf; path = "Physical Time/fonts/Blackout_Sunrise.ttf"; sourceTree = SOURCE_ROOT; };
 		B8786A4720C0F6AC0043C887 /* MenuInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInfoViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +106,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B82F8E2F20CFEEFA00958626 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC7D9D4BAD8AF1953D04BCA0 /* libPods-Physical TimeTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -95,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				5DF847362038F4F5007E7322 /* Physical Time */,
+				B82F8E3320CFEEFA00958626 /* Physical TimeTests */,
 				5DF847352038F4F5007E7322 /* Products */,
 				9F82DCE84DEFEB65193EEA2E /* Pods */,
 				AE337D4EDAB520BC26611359 /* Frameworks */,
@@ -105,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				5DF847342038F4F5007E7322 /* Physical Time.app */,
+				B82F8E3220CFEEFA00958626 /* Physical TimeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,6 +178,8 @@
 				129F60EBAE6394B8ACE0CA17 /* Pods-Physical_Time_Analog_Clock.release.xcconfig */,
 				88018E9D5B1F3AABB429DDB4 /* Pods-Physical Time.debug.xcconfig */,
 				1DFEC7171DF67086875FC6A4 /* Pods-Physical Time.release.xcconfig */,
+				33153FD57CB25C89775B7150 /* Pods-Physical TimeTests.debug.xcconfig */,
+				373E3E2A017705FACEDC842F /* Pods-Physical TimeTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -159,8 +189,18 @@
 			children = (
 				2905804960F17BF1FF6FC9A4 /* libPods-Physical_Time_Analog_Clock.a */,
 				208736F6518B4029F0E7BCE4 /* libPods-Physical Time.a */,
+				93AAFA1EBF140025AB98E9AD /* libPods-Physical TimeTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B82F8E3320CFEEFA00958626 /* Physical TimeTests */ = {
+			isa = PBXGroup;
+			children = (
+				B82F8E3420CFEEFA00958626 /* Physical_TimeTests.swift */,
+				B82F8E3620CFEEFA00958626 /* Info.plist */,
+			);
+			path = "Physical TimeTests";
 			sourceTree = "<group>";
 		};
 		B86D1DEC20B7AD2000892FA2 /* fonts */ = {
@@ -195,19 +235,43 @@
 			productReference = 5DF847342038F4F5007E7322 /* Physical Time.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B82F8E3120CFEEFA00958626 /* Physical TimeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B82F8E3920CFEEFA00958626 /* Build configuration list for PBXNativeTarget "Physical TimeTests" */;
+			buildPhases = (
+				044146570B6A5863D3D75988 /* [CP] Check Pods Manifest.lock */,
+				B82F8E2E20CFEEFA00958626 /* Sources */,
+				B82F8E2F20CFEEFA00958626 /* Frameworks */,
+				B82F8E3020CFEEFA00958626 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B82F8E3820CFEEFA00958626 /* PBXTargetDependency */,
+			);
+			name = "Physical TimeTests";
+			productName = "Physical TimeTests";
+			productReference = B82F8E3220CFEEFA00958626 /* Physical TimeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		5DF8472C2038F4F5007E7322 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Xi Stephen Ouyang";
 				TargetAttributes = {
 					5DF847332038F4F5007E7322 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+					};
+					B82F8E3120CFEEFA00958626 = {
+						CreatedOnToolsVersion = 9.4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5DF847332038F4F5007E7322;
 					};
 				};
 			};
@@ -225,6 +289,7 @@
 			projectRoot = "";
 			targets = (
 				5DF847332038F4F5007E7322 /* Physical Time */,
+				B82F8E3120CFEEFA00958626 /* Physical TimeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -244,9 +309,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B82F8E3020CFEEFA00958626 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		044146570B6A5863D3D75988 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Physical TimeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		364CAE4DF8DCD90D26652FA9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -297,7 +387,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B82F8E2E20CFEEFA00958626 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B82F8E3520CFEEFA00958626 /* Physical_TimeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B82F8E3820CFEEFA00958626 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DF847332038F4F5007E7322 /* Physical Time */;
+			targetProxy = B82F8E3720CFEEFA00958626 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5DF847402038F4F5007E7322 /* LaunchScreen.storyboard */ = {
@@ -456,6 +562,42 @@
 			};
 			name = Release;
 		};
+		B82F8E3A20CFEEFA00958626 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33153FD57CB25C89775B7150 /* Pods-Physical TimeTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Physical TimeTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.PhysicalTime.Physical-TimeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Physical Time.app/Physical Time";
+			};
+			name = Debug;
+		};
+		B82F8E3B20CFEEFA00958626 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 373E3E2A017705FACEDC842F /* Pods-Physical TimeTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Physical TimeTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.PhysicalTime.Physical-TimeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Physical Time.app/Physical Time";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -473,6 +615,15 @@
 			buildConfigurations = (
 				5DF847472038F4F5007E7322 /* Debug */,
 				5DF847482038F4F5007E7322 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B82F8E3920CFEEFA00958626 /* Build configuration list for PBXNativeTarget "Physical TimeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B82F8E3A20CFEEFA00958626 /* Debug */,
+				B82F8E3B20CFEEFA00958626 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

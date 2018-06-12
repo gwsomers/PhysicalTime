@@ -4,7 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Hero.xcscheme</key>
+		<key>Hero-iOS11.2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Hero-iOS11.4.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -14,12 +19,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SwiftSoup.xcscheme</key>
+		<key>Pods-Physical TimeTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SwiftySuncalc.xcscheme</key>
+		<key>SwiftSoup-iOS11.2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftSoup-iOS11.4.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftySuncalc-iOS11.2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftySuncalc-iOS11.4.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

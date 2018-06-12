@@ -3,3 +3,9 @@ target 'Physical Time' do
   pod 'SwiftySuncalc', '~> 1.0.1'
   pod 'SwiftSoup'
 end
+
+target 'Physical TimeTests' do
+  pod 'Hero', '~> 1.2'
+  pod 'SwiftySuncalc', '~> 1.0.1'
+  pod 'SwiftSoup'
+end

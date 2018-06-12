@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "85A2F82F63860D6A8C7B0FB5F25DAC08"
-               BlueprintName = "Pods-Physical Time"
+               BlueprintIdentifier = "15FD467FB7F8C6348F7A3DCBC56E1D37"
+               BlueprintName = "SwiftSoup-iOS11.4"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-Physical Time.a">
+               BuildableName = "libSwiftSoup-iOS11.4.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -1,11 +1,11 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Hero" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftSoup" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftySuncalc"
-OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Hero/Hero.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/SwiftSoup/SwiftSoup.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/SwiftySuncalc/SwiftySuncalc.modulemap"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"Hero" -l"SwiftSoup" -l"SwiftySuncalc" -framework "Foundation" -framework "UIKit"
-OTHER_SWIFT_FLAGS = $(inherited) -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Hero/Hero.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/SwiftSoup/SwiftSoup.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/SwiftySuncalc/SwiftySuncalc.modulemap" $(inherited) "-D" "COCOAPODS"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Hero-iOS11.2" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftSoup-iOS11.2" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftySuncalc-iOS11.2"
+OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Hero-iOS11.2/Hero.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/SwiftSoup-iOS11.2/SwiftSoup.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/SwiftySuncalc-iOS11.2/SwiftySuncalc.modulemap"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Hero-iOS11.2" -l"SwiftSoup-iOS11.2" -l"SwiftySuncalc-iOS11.2" -framework "Foundation" -framework "UIKit"
+OTHER_SWIFT_FLAGS = $(inherited) -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Hero-iOS11.2/Hero.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/SwiftSoup-iOS11.2/SwiftSoup.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/SwiftySuncalc-iOS11.2/SwiftySuncalc.modulemap" $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
 PODS_ROOT = ${SRCROOT}/Pods
-SWIFT_INCLUDE_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Hero" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftSoup" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftySuncalc"
+SWIFT_INCLUDE_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Hero-iOS11.2" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftSoup-iOS11.2" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftySuncalc-iOS11.2"

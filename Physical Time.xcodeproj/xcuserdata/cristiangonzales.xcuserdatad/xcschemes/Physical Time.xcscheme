@@ -28,6 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B82F8E2320CFEC7D00958626"
+               BuildableName = "PhysicalTimeTests.xctest"
+               BlueprintName = "PhysicalTimeTests"
+               ReferencedContainer = "container:Physical Time.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B82F8E3120CFEEFA00958626"
+               BuildableName = "Physical TimeTests.xctest"
+               BlueprintName = "Physical TimeTests"
+               ReferencedContainer = "container:Physical Time.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
