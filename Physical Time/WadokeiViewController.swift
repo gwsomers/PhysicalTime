@@ -10,7 +10,6 @@ import UIKit
 import CoreLocation
 
 class WadokeiViewController: UIViewController {
-    let locationManager = CLLocationManager()
     override func viewDidLoad() {
         // Instantiating id's for Hero transitions
         self.hero.isEnabled = true
@@ -20,15 +19,12 @@ class WadokeiViewController: UIViewController {
         featureView.hero.id = "featureView"
         featureView.hero.modifiers = [.fade]
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: "shinji.jpg")!)
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
-        locationManager.requestLocation()
         super.viewDidLoad()
         let newView = WadokeiView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.width))
         newView.isOpaque = false
         view.addSubview(newView)
         let anglePosition = HandFormulas(hoursPerDay: 24, hourRevsPerDay: 1, minutesPerHour: 60, minuteRevsPerhour: 60,
-                                            faceResetOffset: Float(Double.pi), timeResetOffset:0, mode:1, locMan: locationManager)
+                                            faceResetOffset: Float(Double.pi), timeResetOffset:0, mode:1)
         let hourLayer = CAShapeLayer()
         hourLayer.frame = newView.frame
         let path = CGMutablePath()
@@ -113,19 +109,6 @@ class WadokeiViewController: UIViewController {
         popupViewController.view.frame = self.view.frame
         self.view.addSubview(popupViewController.view)
         popupViewController.didMove(toParentViewController: self)
-    }
-    
-}
-
-extension WadokeiViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        
-    }
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        
-    }
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("succeeded in getting locations")
     }
 }
 

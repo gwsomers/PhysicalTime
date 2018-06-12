@@ -31,6 +31,11 @@ class WelcomeViewController: UIViewController
     {
         super.viewDidLoad()
         
+        // Configuration for our LocationManager
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestLocation()
+        
         // Instantiating id's for Hero transitions
         self.hero.isEnabled = true
         view.hero.id = "welcomeView"
@@ -38,11 +43,6 @@ class WelcomeViewController: UIViewController
         // Dynamically change the background on the load
         let background = ChangeBackground()
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
-        
-        // Configuration for our LocationManager
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
-        locationManager.requestLocation()
     }
     
     /**
@@ -88,7 +88,6 @@ extension WelcomeViewController: CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
     {
         // TODO: Go to a different view controller
-        print("2")
     }
     
     /**
@@ -99,8 +98,6 @@ extension WelcomeViewController: CLLocationManagerDelegate
         // In the case that it is a success, initialize the location of the location
         // manager and the latitude/longitude coordinates
         Singletons.currentLocation = locationManager.location
-        Singletons.latitude = Singletons.currentLocation.coordinate.latitude
-        Singletons.longitude = Singletons.currentLocation.coordinate.longitude
-        print("Latitude: \(Singletons.latitude)\nLongitude: \(Singletons.longitude)")
+        Singletons.coords = Singletons.currentLocation.coordinate
     }
 }

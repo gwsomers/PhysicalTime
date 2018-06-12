@@ -284,7 +284,7 @@ class SettingsViewController: UIViewController
         switch backgroundType
         {
             case "sunrise.jpg":
-                label.textColor = UIColor.orange
+                label.textColor = UIColor.black
             case "morningGoldenHour.jpg":
                 label.textColor = UIColor.black
             case "noon.jpg":

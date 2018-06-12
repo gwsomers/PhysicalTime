@@ -27,7 +27,6 @@ class HandFormulas
     var TimeResetOffset: Int
     // The clockmode decides our anchor point, currently accepts noon and dawn
     var clockMode: Int
-    var locationManager: CLLocationManager
 
     /**
      Class constructor initializing the different time metrics
@@ -45,7 +44,7 @@ class HandFormulas
      */
     init(hoursPerDay: Int = 24, hourRevsPerDay: Int = 2, minutesPerHour: Int = 60,
          minuteRevsPerhour: Int = 1, faceResetOffset:Float = 0, timeResetOffset: Int = 0,
-         mode: Int = Singletons.NOON_MODE, locMan: CLLocationManager)
+         mode: Int = Singletons.NOON_MODE)
     {
         self.hoursPerDay = hoursPerDay
         self.hoursOnFace = hoursPerDay / hourRevsPerDay
@@ -55,7 +54,6 @@ class HandFormulas
         self.FaceResetOffset = faceResetOffset
         self.TimeResetOffset = timeResetOffset
         self.clockMode = mode
-        self.locationManager = locMan
     }
     
     /**
@@ -162,16 +160,11 @@ class HandFormulas
      */
     func getDawn(myDate: Date) -> Int
     {
-        // Predefined latitude/longitude if the user has not enabled location
-        var coords = CLLocationCoordinate2D.init(latitude: 39.37, longitude: 122.03)
-        // If the user has enabled location, then get their true coordinates
-        if(CLLocationManager.locationServicesEnabled())
-        {
-            coords = locationManager.location!.coordinate
-        }
         // Initialize the solar object from the given date and coordinates, dependant on
         // if the user gave their coordinates
-        let Solarcalc = Solar.init(for: myDate, coordinate: coords)
+        let coords = Singletons.coords
+        // Initialize the Solar object
+        let Solarcalc = Solar.init(for: myDate, coordinate: coords!)
         // Get the sunrise time in UTC
         let sunriseUTC = Solarcalc!.sunrise!
         var startoftoday = Date.init(timeIntervalSinceReferenceDate: 0)

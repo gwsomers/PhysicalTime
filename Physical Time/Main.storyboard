@@ -866,7 +866,7 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJJ-bo-rbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer numberOfTapsRequired="2" numberOfTouchesRequired="2" id="epA-LC-yXL">
+                <tapGestureRecognizer numberOfTapsRequired="2" id="epA-LC-yXL">
                     <connections>
                         <action selector="closePopup:" destination="noE-3F-6Uu" id="P3e-Ra-Q0K"/>
                     </connections>
@@ -892,7 +892,7 @@ Enter Physical Time, an application that lets you redefine any clock standard an
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5YR-st-gPJ">
                                 <rect key="frame" x="16" y="468" width="343" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="75"/>
+                                <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="70"/>
                                 <color key="textColor" red="0.97557693570000004" green="0.99783924899999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1028,6 +1028,6 @@ Enter Physical Time, an application that lets you redefine any clock standard an
     <inferredMetricsTieBreakers>
         <segue reference="oUo-OU-kSF"/>
         <segue reference="mYq-pO-xBa"/>
-        <segue reference="MHp-zB-jqb"/>
+        <segue reference="yLd-b5-dd9"/>
     </inferredMetricsTieBreakers>
 </document>

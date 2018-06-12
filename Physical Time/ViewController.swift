@@ -19,7 +19,6 @@ let defaults = UserDefaults.standard
 class ViewController: UIViewController {
     
     let timer = Timer()
-    let locationManager = CLLocationManager()
     var hoursPerDay: Int! = defaults.integer(forKey: Singletons.hoursPerDay)
     var minutesPerHour: Int! = defaults.integer(forKey: Singletons.minsPerHour)
     var revolutionPerDay: Int! = defaults.integer(forKey: Singletons.hourRevsPerDay)
@@ -44,9 +43,6 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
     
         initializeDefaultsIfNeeded()
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
-        locationManager.requestLocation()
         let background = ChangeBackground()
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
         let newView = View(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.width))
@@ -59,7 +55,7 @@ class ViewController: UIViewController {
         
         path.move(to: CGPoint(x: newView.frame.midX, y: newView.frame.midY))
         let anglePosition = HandFormulas(hoursPerDay: self.hoursPerDay, hourRevsPerDay: self.revolutionPerDay, minutesPerHour: self.minutesPerHour, minuteRevsPerhour: self.minuteRevolutionPerHour,
-                                            faceResetOffset: self.angleOffset, timeResetOffset: self.timeOffset, mode: self.mode, locMan: locationManager)
+                                            faceResetOffset: self.angleOffset, timeResetOffset: self.timeOffset, mode: self.mode)
         let hourAngle = anglePosition.hourAngle(timeHour: getCurrentHour(), timeMin: getCurrentMinute(), timeSec: getCurrentSecond())
         let hourX = findxCoord(handLength: 100, angle:CGFloat(hourAngle))
         let hourY = findyCoord(handLength: 100, angle:CGFloat(hourAngle))
@@ -180,18 +176,6 @@ class ViewController: UIViewController {
         {
             mode = Singletons.NOON_MODE
         }
-    }
-}
-
-extension ViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        
-    }
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        
-    }
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("succeeded in getting locations")
     }
 }
 

@@ -85,7 +85,7 @@ class MenuViewController: UIViewController
         switch backgroundType
         {
             case "sunrise.jpg":
-                button.setTitleColor(UIColor.orange, for: .normal);
+                button.setTitleColor(UIColor.black, for: .normal);
             case "morningGoldenHour.jpg":
                 button.setTitleColor(UIColor.black, for: .normal);
             case "noon.jpg":

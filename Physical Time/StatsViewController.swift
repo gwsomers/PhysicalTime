@@ -48,8 +48,8 @@ class StatsViewController: UIViewController
         let background = ChangeBackground()
         self.view.backgroundColor = UIColor(patternImage:UIImage(named: background.getBackground())!)
         // Initialize the latitude and longitude
-        lat = Singletons.latitude
-        lng = Singletons.longitude
+        lat = Singletons.coords.latitude
+        lng = Singletons.coords.longitude
     }
     
     /**
@@ -186,7 +186,7 @@ class StatsViewController: UIViewController
         switch backgroundType
         {
         case "sunrise.jpg":
-            textView.textColor = UIColor.orange
+            textView.textColor = UIColor.black
         case "morningGoldenHour.jpg":
             textView.textColor = UIColor.black
         case "noon.jpg":

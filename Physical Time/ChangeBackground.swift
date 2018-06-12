@@ -24,7 +24,18 @@ class ChangeBackground
      */
     func getBackground() -> String
     {
-        let coords = CLLocationCoordinate2D.init(latitude: 51.5, longitude: -0.127)
+        var coords: CLLocationCoordinate2D!
+        if (Singletons.coords != nil)
+        {
+            coords = CLLocationCoordinate2D.init(
+                latitude: Singletons.coords.latitude,
+                longitude: Singletons.coords.longitude
+            )
+        }
+        else
+        {
+            return "white.png"
+        }
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
         // Getting date components year, month, day

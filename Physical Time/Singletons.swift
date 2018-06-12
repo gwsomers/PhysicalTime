@@ -20,9 +20,7 @@ struct Singletons
     // The global CLLocation object
     static var locationManager: CLLocationManager!
     static var currentLocation: CLLocation!
-    // Latitude and longitude values, initially set to 0
-    static var latitude = 0.0
-    static var longitude = 0.0
+    static var coords: CLLocationCoordinate2D!
     // Configuration string for the case that the user wishes to share
     // configurable settings
     static var configString = "24:60:2:1:0.0:0:1"
