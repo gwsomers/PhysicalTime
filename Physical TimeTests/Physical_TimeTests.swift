@@ -23,7 +23,6 @@ class Physical_TimeTests: XCTestCase
     var menuInfoViewController: MenuInfoViewController!
     var menuViewController: MenuViewController!
     var planetsPopUpViewController: PlanetsPopUpViewController!
-    var planetsViewController: PlanetsViewController!
     var settingsClipoboardViewController: SettingsClipboardViewController!
     var settingsViewController: SettingsViewController!
     var statsViewController: StatsViewController!
@@ -44,7 +43,6 @@ class Physical_TimeTests: XCTestCase
         menuInfoViewController = MenuInfoViewController()
         menuViewController = MenuViewController()
         planetsPopUpViewController = PlanetsPopUpViewController()
-        planetsViewController = PlanetsViewController()
         settingsClipoboardViewController = SettingsClipboardViewController()
         settingsViewController = SettingsViewController()
         statsViewController = StatsViewController()
@@ -65,7 +63,6 @@ class Physical_TimeTests: XCTestCase
         menuInfoViewController = nil
         menuViewController = nil
         planetsPopUpViewController = nil
-        planetsViewController = nil
         settingsClipoboardViewController = nil
         settingsViewController = nil
         statsViewController = nil
@@ -151,63 +148,108 @@ class Physical_TimeTests: XCTestCase
      */
     func testHandFormulas()
     {
-        
+        // Approximate the hour angle and test accordingly
+        let hourAngle: Float = handFormulas.hourAngle(timeHour: 3,
+                                                      timeMin: 20, timeSec: 40)
+        XCTAssertEqual(Double(1.75), Double(round(hourAngle * 100) / 100),
+                       "Hour angles not equal!")
+        // Test the hour duration
+        let hourDuration: Int = handFormulas.hourDuration()
+        XCTAssertEqual(43200, hourDuration, "The hour duration values are not equal!")
+        // Test the minute angle
+        let minuteAngle: Float = handFormulas.minuteAngle(timeHour: 3,
+                                                          timeMin: 20, timeSec: 40)
+        XCTAssertEqual(2.16, round(minuteAngle * 100) / 100,
+                       "The minute angle values are not equal!")
+        // Test the duration of one minute
+        let minuteDuration: Int = handFormulas.minuteDuration()
+        XCTAssertEqual(3600, minuteDuration, "Minute duration values are not equal!")
+        // Test the mode offset function
+        let modeOffset: Int = handFormulas.getModeOffset()
+        XCTAssertEqual(0, modeOffset, "Mode offset values are not equal!")
+        // Test the `getFullDay()` function
+        let fullDayVal: Int = handFormulas.getFullDay()
+        XCTAssertEqual(86400, fullDayVal, "Full day values are not equal!")
+        // Get the dawn value
+        let dawnVal: Int = handFormulas.getDawn(myDate: Date())
+        XCTAssertEqual(46025, dawnVal, "Dawn values are not equal!")
+        // Testing the "convert to timezone" function
+        let timeInterval: TimeInterval = handFormulas.convertToTimezone(time: 1000)
+        XCTAssertEqual(-27800.0, timeInterval,
+                       "The time intervals for converting to timezone are not equal!")
     }
     
     /**
-     
+     Testing the `LunarViewController` class
      */
     func testLunarViewController()
     {
-        
+        // Function to put a "0" in front of a "single-digit string"
+        let makeDate: String = lunarViewController
+                                    .makeDateValuesTwoDigits(dateValue: "1")
+        XCTAssertEqual(makeDate, "01", "Mutable date strings are not the same!")
+        // Create a test date to XCTest
+        // Specify date components
+        var dateComponents = DateComponents()
+        dateComponents.year = 2018
+        dateComponents.month = 3
+        dateComponents.day = 26
+        // Time zone specified by caller
+        dateComponents.timeZone = TimeZone(abbreviation: "GMT")
+        dateComponents.hour = 12
+        dateComponents.minute = 0
+        dateComponents.second = 0
+        // Create date from components
+        let createdDate: Date = Calendar.current.date(from: dateComponents)!
+        // Function to see if the dates are equal
+        let testDate: Date = lunarViewController
+                                    .getDate(year: 2018, month: 3, day: 26,
+                                             zone: "GMT", hour: 12, minute: 0, second: 0)
+        XCTAssertEqual(createdDate, testDate,
+                       "The two seperately constructed test dates are not equal!")
     }
     
     /**
-     
+     Testing the `MenuInfoViewController` class
      */
     func testMenuInfoViewController()
     {
-        
+        // Create a UI button to test setting the font color
+        let textView: UITextView = UITextView()
+        menuInfoViewController.setFontColor(textView: textView, backgroundType: "morningGoldenHour.jpg")
+        XCTAssertEqual(UIColor.black, textView.textColor, "Colors do not match!")
     }
     
     /**
-     
+     Testing the `MenuViewController` class
      */
     func testMenuViewController()
     {
-        
+        // Create a UI button to test setting the font color
+        let button: UIButton = UIButton()
+        menuViewController.setFontColor(button: button, backgroundType: "evening.jpg")
+        XCTAssertEqual(UIColor.orange, button.currentTitleColor, "Colors do not match!")
     }
     
     /**
-     
+     Testing the `PlanetsPopUpViewController` class
      */
     func testPlanetsPopUpViewController()
     {
-        
-    }
-
-    /**
-     
-     */
-    func testPlanetsViewController()
-    {
-        
+        // Testing the speed switch statement
+        let speed: Double = planetsPopUpViewController.determineSpeed(mult: 0.03125)
+        XCTAssertEqual(32.0, speed, "Speed values are not equal!")
     }
     
     /**
-     
-     */
-    func testSettingsClipboardViewController()
-    {
-        
-    }
-    
-    /**
-     
+     Testing the `SettingsViewController` class
      */
     func testSettingsViewController()
     {
-        
+        // Create a UI button to test setting the font color
+        let label: UILabel = UILabel()
+        settingsViewController.setLabelColor(label: label, backgroundType: "sunset.jpg")
+        XCTAssertEqual(UIColor.orange, label.textColor, "Colors do not match!")
     }
 
     /**

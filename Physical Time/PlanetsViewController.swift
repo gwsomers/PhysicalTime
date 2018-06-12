@@ -244,7 +244,7 @@ class PlanetsViewController: UIViewController, UIPickerViewDataSource, UIPickerV
      - sender: The event where the button is pressed
      
      - returns:
-     Vod
+     Void
      */
     @IBAction func showPopup(_ sender: UIButton)
     {
