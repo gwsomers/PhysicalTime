@@ -55,7 +55,8 @@ class ChangeBackground
         let sunriseInterval = sunrise.timeIntervalSince1970
         let sunsetInterval = sunset.timeIntervalSince1970
         let daytime = sunsetInterval - sunriseInterval
-        let timeInterval = date.timeIntervalSince1970 - 25200
+        let timeInterval = date.timeIntervalSince1970
+
         let oneHourInSeconds: Double = 3600.0
         // Switch statement to determine what time of the day it is, and thus we can
         // dynamically give the name of the background to the caller

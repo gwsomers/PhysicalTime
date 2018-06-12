@@ -35,6 +35,14 @@ class WelcomeViewController: UIViewController
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         locationManager.requestLocation()
+        // In the case that it is a success, initialize the location of the location
+        // manager and the latitude/longitude coordinates
+        if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() ==  .authorizedAlways)
+        {
+            Singletons.currentLocation = locationManager.location
+            Singletons.coords = locationManager.location?.coordinate
+        }
         
         // Instantiating id's for Hero transitions
         self.hero.isEnabled = true
